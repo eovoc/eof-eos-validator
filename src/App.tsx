@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { validateJson, ValidationResult } from "./validateJson";
+import { validateJson, ValidationResult } from "./utils/validateJson";
 import FileUploadCard from "./components/FileUploadCard";
 import useJsonFile from "./hooks/useJsonFile";
 

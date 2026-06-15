@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { validateJson } from "./src/validateJson";
+import { validateJson } from "./src/utils/validateJson";
 
 function parseArgs(argv: string[]) {
   const args = argv.slice(2);
