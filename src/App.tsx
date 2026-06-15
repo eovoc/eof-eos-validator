@@ -2,35 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 import { validateJson, ValidationResult } from "./validateJson";
 import FileUploadCard from "./components/FileUploadCard";
-
-function useJsonFile() {
-  const [file, setFile] = useState<File | null>(null);
-  const [content, setContent] = useState<unknown>(null);
-  const [parseError, setParseError] = useState<string | null>(null);
-
-  function handleFile(f: File | null) {
-    setFile(f);
-    setContent(null);
-    setParseError(null);
-    if (!f) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try {
-        setContent(JSON.parse(e.target!.result as string));
-      } catch {
-        setParseError(`"${f.name}" is not valid JSON.`);
-      }
-    };
-    reader.readAsText(f);
-  }
-
-  return { file, content, parseError, handleFile };
-}
+import readJsonFile from "./hooks/readJsonFile";
 
 
 export default function App() {
-  const data = useJsonFile();
-  const schema = useJsonFile();
+  const data = readJsonFile();
+  const schema = readJsonFile();
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
