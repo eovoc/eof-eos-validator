@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 import { validateJson, ValidationResult } from "./validateJson";
 import FileUploadCard from "./components/FileUploadCard";
-import readJsonFile from "./hooks/readJsonFile";
+import useJsonFile from "./hooks/useJsonFile";
 
 
 export default function App() {
-  const data = readJsonFile();
-  const schema = readJsonFile();
+  const data = useJsonFile();
+  const schema = useJsonFile();
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);

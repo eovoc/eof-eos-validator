@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function readJsonFile() {
+function useJsonFile() {
   const [file, setFile] = useState<File | null>(null);
   const [content, setContent] = useState<unknown>(null);
   const [parseError, setParseError] = useState<string | null>(null);
@@ -24,4 +24,4 @@ function readJsonFile() {
   return { file, content, parseError, handleFile };
 }
 
-export default readJsonFile;
+export default useJsonFile;
