@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div className="app">
       <h1>JSON Validator</h1>
-      <p className="subtitle">Upload a JSON file and a JSON Schema to validate it.</p>
+      <p className="subtitle">Upload or paste a JSON file and a JSON Schema to validate it.</p>
 
       <div className="upload-grid">
         <FileUploadCard
@@ -45,6 +45,7 @@ export default function App() {
             icon="📋"
             file={schema.file}
             onFile={(f) => { schema.handleFile(f); setResult(null); setRuntimeError(null); }}
+            onText={(t) => { schema.handleText(t); setResult(null); setRuntimeError(null); }}
             accept=".json,application/json"
         />
         <FileUploadCard
@@ -53,6 +54,7 @@ export default function App() {
           icon="📄"
           file={data.file}
           onFile={(f) => { data.handleFile(f); setResult(null); setRuntimeError(null); }}
+          onText={(t) => { data.handleText(t); setResult(null); setRuntimeError(null); }}
           accept=".json,application/json"
         />
       </div>

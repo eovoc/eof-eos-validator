@@ -21,7 +21,22 @@ function useJsonFile() {
     reader.readAsText(f);
   }
 
-  return { file, content, parseError, handleFile };
+  function handleText(text: string) {
+    setFile(null);
+    setParseError(null);
+    if (!text.trim()) {
+      setContent(null);
+      return;
+    }
+    try {
+      setContent(JSON.parse(text));
+    } catch {
+      setContent(null);
+      setParseError("Pasted text is not valid JSON.");
+    }
+  }
+
+  return { file, content, parseError, handleFile, handleText };
 }
 
 export default useJsonFile;
