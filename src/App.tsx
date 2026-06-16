@@ -44,6 +44,7 @@ export default function App() {
             hint="The schema to validate against"
             icon="📋"
             file={schema.file}
+            content={schema.content}
             onFile={(f) => { schema.handleFile(f); setResult(null); setRuntimeError(null); }}
             onText={(t) => { schema.handleText(t); setResult(null); setRuntimeError(null); }}
             accept=".json,application/json"
@@ -53,6 +54,7 @@ export default function App() {
           hint="The file to validate"
           icon="📄"
           file={data.file}
+          content={data.content}
           onFile={(f) => { data.handleFile(f); setResult(null); setRuntimeError(null); }}
           onText={(t) => { data.handleText(t); setResult(null); setRuntimeError(null); }}
           accept=".json,application/json"

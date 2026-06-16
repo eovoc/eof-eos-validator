@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function FileUploadCard({
   label,
   hint,
   icon,
   file,
+  content,
   onFile,
   onText,
   accept,
@@ -13,12 +14,23 @@ function FileUploadCard({
   hint: string;
   icon: string;
   file: File | null;
+  content: unknown;
   onFile: (f: File | null) => void;
   onText: (text: string) => void;
   accept: string;
 }) {
   const [mode, setMode] = useState<"file" | "paste">("file");
   const [pastedText, setPastedText] = useState("");
+
+  //Effect used to update EditJson tab after uplaading a JSON file.
+  // When a file is successfully parsed, switch to the editor tab and show the content.
+  // Guard on `file` so this doesn't fire when content was set via the textarea.
+  useEffect(() => {
+    if (file !== null && content !== null) {
+      setPastedText(JSON.stringify(content, null, 2));
+      setMode("paste");
+    }
+  }, [file, content]);
 
   function switchMode(newMode: "file" | "paste") {
     if (newMode === mode) return;
@@ -35,6 +47,7 @@ function FileUploadCard({
 
   return (
     <div className={`upload-card ${hasContent ? "has-file" : ""}`}>
+      {/* Buttons */}
       <div className="upload-tabs">
         <button
           className={`upload-tab ${mode === "file" ? "active" : ""}`}
@@ -48,10 +61,11 @@ function FileUploadCard({
           onClick={() => switchMode("paste")}
           type="button"
         >
-          Paste JSON
+          Edit JSON
         </button>
       </div>
 
+      {/* Upload/Edit area */}
       {mode === "file" ? (
         <div className="upload-file-area">
           <input
@@ -79,10 +93,12 @@ function FileUploadCard({
               e.preventDefault();
               const text = e.clipboardData.getData("text");
               try {
+                //Pretty print
                 const pretty = JSON.stringify(JSON.parse(text), null, 2);
                 setPastedText(pretty);
                 onText(pretty);
               } catch {
+                //in case pretty-print fails
                 setPastedText(text);
                 onText(text);
               }
