@@ -49,13 +49,19 @@ export default function App() {
         />
       </div>
 
-      {parseError && <div className="parse-error">⚠ {parseError}</div>}
+      <div className="button-grid">
+        <button className="validate-btn" onClick={handleValidate} disabled={!ready || loading}>
+          {loading ? "Fetching referenced schemas…" : "Validate"}
+        </button>
 
-      <button className="validate-btn" onClick={handleValidate} disabled={!ready || loading}>
-        {loading ? "Fetching referenced schemas…" : "Validate"}
-      </button>
+        <button className="convert-btn" disabled>
+          {loading ? "Fetching referenced schemas…" : "Convert"}
+        </button>
+
+      </div>
 
       {runtimeError && <div className="parse-error">⚠ {runtimeError}</div>}
+      {parseError && <div className="parse-error">⚠ {parseError}</div>}
 
       {result && (
         <div className={`result ${result.valid ? "valid" : "invalid"}`}>

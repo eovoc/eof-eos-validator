@@ -89,7 +89,7 @@ function FileUploadCard({
         <div className="upload-paste-area">
           <div className="upload-label">{label}</div>
           <Editor
-            height="500px"
+            height="650px"
             language="json"
             value={editorText}
             onChange={handleEditorChange}
