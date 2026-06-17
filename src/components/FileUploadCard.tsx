@@ -22,7 +22,7 @@ function FileUploadCard({
   const [mode, setMode] = useState<"file" | "paste">("file");
   const [pastedText, setPastedText] = useState("");
 
-  //Effect used to update EditJson tab after uplaading a JSON file.
+  //Effect used to update EditJson tab after uploading a JSON file.
   // When a file is successfully parsed, switch to the editor tab and show the content.
   // Guard on `file` so this doesn't fire when content was set via the textarea.
   useEffect(() => {
