@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Editor from "@monaco-editor/react";
 
 function FileUploadCard({
   label,
@@ -20,14 +21,14 @@ function FileUploadCard({
   accept: string;
 }) {
   const [mode, setMode] = useState<"file" | "paste">("paste");
-  const [pastedText, setPastedText] = useState("");
+  const [editorText, setEditorText] = useState("");
 
   //Effect used to update EditJson tab after uploading a JSON file.
   // When a file is successfully parsed, switch to the editor tab and show the content.
-  // Guard on `file` so this doesn't fire when content was set via the textarea.
+  // Guard on `file` so this doesn't fire when content was set via the editor.
   useEffect(() => {
     if (file !== null && content !== null) {
-      setPastedText(JSON.stringify(content, null, 2));
+      setEditorText(JSON.stringify(content, null, 2));
       setMode("paste");
     }
   }, [file, content]);
@@ -35,7 +36,7 @@ function FileUploadCard({
   function switchMode(newMode: "file" | "paste") {
     if (newMode === mode) return;
     setMode(newMode);
-    setPastedText("");
+    setEditorText("");
     if (newMode === "paste") {
       onFile(null);
     } else {
@@ -43,7 +44,13 @@ function FileUploadCard({
     }
   }
 
-  const hasContent = mode === "file" ? !!file : !!pastedText;
+  function handleEditorChange(value: string | undefined) {
+    const text = value ?? "";
+    setEditorText(text);
+    onText(text);
+  }
+
+  const hasContent = mode === "file" ? !!file : !!editorText;
 
   return (
     <div className={`upload-card ${hasContent ? "has-file" : ""}`}>
@@ -81,27 +88,16 @@ function FileUploadCard({
       ) : (
         <div className="upload-paste-area">
           <div className="upload-label">{label}</div>
-          <textarea
-            className="paste-area"
-            placeholder='{ "paste": "your JSON here" }'
-            value={pastedText}
-            onChange={(e) => {
-              setPastedText(e.target.value);
-              onText(e.target.value);
-            }}
-            onPaste={(e) => {
-              e.preventDefault();
-              const text = e.clipboardData.getData("text");
-              try {
-                //Pretty print
-                const pretty = JSON.stringify(JSON.parse(text), null, 2);
-                setPastedText(pretty);
-                onText(pretty);
-              } catch {
-                //in case pretty-print fails
-                setPastedText(text);
-                onText(text);
-              }
+          <Editor
+            height="500px"
+            language="json"
+            value={editorText}
+            onChange={handleEditorChange}
+            options={{
+              minimap: { enabled: false },
+              scrollBeyondLastLine: false,
+              formatOnPaste: true,
+              tabSize: 2,
             }}
           />
         </div>
