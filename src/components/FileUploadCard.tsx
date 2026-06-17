@@ -19,7 +19,7 @@ function FileUploadCard({
   onText: (text: string) => void;
   accept: string;
 }) {
-  const [mode, setMode] = useState<"file" | "paste">("file");
+  const [mode, setMode] = useState<"file" | "paste">("paste");
   const [pastedText, setPastedText] = useState("");
 
   //Effect used to update EditJson tab after uploading a JSON file.

@@ -7,13 +7,12 @@ import useJsonFile from "./hooks/useJsonFile";
 
 export default function App() {
   const data = useJsonFile();
-  const schema = useJsonFile();
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
 
-  const parseError = data.parseError ?? schema.parseError;
-  const ready = data.content !== null && schema.content !== null && !parseError;
+  const parseError = data.parseError;
+  const ready = data.content !== null && !parseError;
 
   async function handleValidate() {
     if (!ready) return;
@@ -22,7 +21,7 @@ export default function App() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await validateJson(data.content, schema.content as object);
+      const result = await validateJson(data.content);
       console.log("[validator] done", result);
       setResult(result);
     } catch (e) {
@@ -35,22 +34,11 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>JSON Validator</h1>
-      <p className="subtitle">Upload or paste a JSON file and a JSON Schema to validate it.</p>
+      <h1>JSON EOPF-EOS Validator</h1>
 
       <div className="upload-grid">
         <FileUploadCard
-            label="JSON Schema"
-            hint="The schema to validate against"
-            icon="📋"
-            file={schema.file}
-            content={schema.content}
-            onFile={(f) => { schema.handleFile(f); setResult(null); setRuntimeError(null); }}
-            onText={(t) => { schema.handleText(t); setResult(null); setRuntimeError(null); }}
-            accept=".json,application/json"
-        />
-        <FileUploadCard
-          label="JSON File"
+          label=""
           hint="The file to validate"
           icon="📄"
           file={data.file}

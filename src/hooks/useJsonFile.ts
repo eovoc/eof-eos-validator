@@ -30,9 +30,9 @@ function useJsonFile() {
     }
     try {
       setContent(JSON.parse(text));
-    } catch {
+    } catch(error){
       setContent(null);
-      setParseError("Pasted text is not valid JSON.");
+      setParseError("Pasted text is not valid JSON."+error);
     }
   }
 

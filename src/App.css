@@ -26,8 +26,6 @@ h1 {
 }
 
 .upload-grid {
-  display: grid;
-  grid-template-columns: 40% 40%;
   gap: 16px;
   margin-bottom: 20px;
   justify-content: center;

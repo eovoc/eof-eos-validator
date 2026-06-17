@@ -1,8 +1,26 @@
-# Getting Started with Create React App
+# Getting Started 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Validation script
 
-## Available Scripts
+The validation can be executed directly from a terminal, using the AJV JSON Schema validator [see](https://ajv.js.org/)
+
+### Prerequisites
+1. Node should be installed on the host.
+2. NPM should be installed on the host.
+3. ajv and ajv-cli packages should be installed
+
+To install ajv and ajv-cli with npm, use:
+```shell
+npm install ajv ajv-cli
+```
+
+### Execution
+Open resources/example in a terminal and execute the following command:
+```shell
+ajv validate -d "example-biomass.json" -s "eo-geojson-schema-standalone-flexible-draft07.json" --strict=false -r "dqc.json" -r "mdj.json"
+```
+
+## Web Application Scripts
 
 In the project directory, you can run:
 

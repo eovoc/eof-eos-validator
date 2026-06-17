@@ -25,14 +25,28 @@ const schemasReady: Promise<void> = (async () => {
   }
 })();
 
+let mainSchema : any;
+const mainSchemaReady: Promise<void> = (async () => {
+  const VALIDATION_SCHEMA = "/schemas/eo-geojson-schema-standalone-flexible-v2-draft07.json"
+    try {
+      const res = await fetch(VALIDATION_SCHEMA);
+      mainSchema = await res.json();
+
+    } catch {}
+})();
+
+
 export interface ValidationResult {
   valid: boolean;
   errors: ErrorObject[] | null;
 }
 
-export async function validateJson(data: unknown, schema: object): Promise<ValidationResult> {
+export async function validateJson(data: unknown): Promise<ValidationResult> {
+
   await schemasReady;
-  const validate = ajv.compile(schema);
+  await mainSchemaReady;
+
+  const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
   return { valid, errors: validate.errors ?? null };
 }
