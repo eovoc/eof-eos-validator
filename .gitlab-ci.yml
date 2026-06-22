@@ -1,3 +1,5 @@
+image: node:20
+
 pages:
   stage: deploy
   script:
