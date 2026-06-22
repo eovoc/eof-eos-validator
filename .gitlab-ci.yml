@@ -1,0 +1,4 @@
+create-pages:
+  script:
+    - npm run build
+pages: true
