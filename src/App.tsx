@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>JSON EOPF-EOS Validator</h1>
+      <h1>EOF-EOS Validator</h1>
 
       <div className="upload-grid">
         <FileUploadCard

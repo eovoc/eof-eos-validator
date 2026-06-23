@@ -1,5 +1,5 @@
 {
-	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$schema": "http://json-schema.org/draft-04/schema#",
 	"title": "GeoJSON encoding of OGC 17-003 Earth Observation Metadata",
 	"description": "Definition of EO Dataset document.  Note that numbers in the instance should not be surrounded by double-quotes to validate against this schema. ",
 	"$ref": "#/definitions/EarthObservation",

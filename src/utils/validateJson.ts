@@ -27,7 +27,7 @@ const schemasReady: Promise<void> = (async () => {
 
 let mainSchema : any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = "/schemas/eo-geojson-schema-standalone-flexible-v2-draft07.json"
+  const VALIDATION_SCHEMA = "/schemas/eo-geojson-schema-standalone-flexible-draft07.json"
     try {
       const res = await fetch(VALIDATION_SCHEMA);
       mainSchema = await res.json();
