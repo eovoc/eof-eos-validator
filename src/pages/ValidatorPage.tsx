@@ -1,11 +1,11 @@
-import { useState } from "react";
+import {useContext, useState} from "react";
 import { useNavigate } from "react-router";
 import { validateJson, ValidationResult } from "../utils/validateJson";
 import FileUploadCard from "../components/FileUploadCard";
-import useJsonFile from "../hooks/useJsonFile";
+import { JsonFileContext } from "../App";
 
 export default function ValidatorPage() {
-  const data = useJsonFile();
+  const data = useContext(JsonFileContext)!;
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
@@ -25,6 +25,7 @@ export default function ValidatorPage() {
       const result = await validateJson(data.content);
       console.log("[validator] done", result);
       setResult(result);
+
     } catch (e) {
       console.error("[validator] error", e);
       setRuntimeError(e instanceof Error ? e.message : String(e));
