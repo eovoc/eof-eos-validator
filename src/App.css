@@ -6,6 +6,54 @@ body {
   background: #f0f2f5;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 32px;
+  height: 52px;
+  background: #4f6ef7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-right: 16px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-link.active {
+  color: #fff;
+}
+
+.page-placeholder {
+  margin-top: 48px;
+  text-align: center;
+  color: #555;
+}
+
 .app {
   margin: 48px auto;
   padding: 0 16px;
