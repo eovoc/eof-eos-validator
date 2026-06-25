@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/eof-eos-validator/static/css/main.a07a457d.css",
+    "main.js": "/eof-eos-validator/static/js/main.2f5ea73c.js",
+    "static/js/453.c5a270ef.chunk.js": "/eof-eos-validator/static/js/453.c5a270ef.chunk.js",
+    "index.html": "/eof-eos-validator/index.html",
+    "main.a07a457d.css.map": "/eof-eos-validator/static/css/main.a07a457d.css.map",
+    "main.2f5ea73c.js.map": "/eof-eos-validator/static/js/main.2f5ea73c.js.map",
+    "453.c5a270ef.chunk.js.map": "/eof-eos-validator/static/js/453.c5a270ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a07a457d.css",
+    "static/js/main.2f5ea73c.js"
+  ]
+}
