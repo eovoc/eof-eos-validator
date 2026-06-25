@@ -9,9 +9,11 @@ try { ajv.addSchema(draft7MetaSchema, "http://json-schema.org/draft-07/schema");
 
 // Schema files are served from /schemas/ as static assets so they can be
 // overridden at runtime (e.g. via a Kubernetes ConfigMap mount).
+const BASE = process.env.PUBLIC_URL ?? "";
+
 const STATIC_SCHEMAS = [
-  "/schemas/mdj.json",
-  "/schemas/dqc.json",
+  `${BASE}/schemas/mdj.json`,
+  `${BASE}/schemas/dqc.json`,
 ];
 
 const schemasReady: Promise<void> = (async () => {
@@ -27,7 +29,7 @@ const schemasReady: Promise<void> = (async () => {
 
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = "/schemas/eo-geojson-schema-standalone-flexible-draft07.json";
+  const VALIDATION_SCHEMA = `${BASE}/schemas/eo-geojson-schema-standalone-flexible-draft07.json`;
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();
