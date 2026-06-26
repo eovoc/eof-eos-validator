@@ -40,7 +40,7 @@ export default function ConverterPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "converted.json";
+    a.download = "stac.json";
     a.click();
     URL.revokeObjectURL(url);
   }
