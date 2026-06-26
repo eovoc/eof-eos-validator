@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
+import { prettyPrint } from "../utils/jsonUtil";
 
 function FileUploadCard({
   label,
@@ -21,14 +22,14 @@ function FileUploadCard({
   accept: string;
 }) {
   const [mode, setMode] = useState<"file" | "paste">("paste");
-  const [editorText, setEditorText] = useState("");
+  const [editorText, setEditorText] = useState(content != null ? prettyPrint(content) : "");
 
   //Effect used to update EditJson tab after uploading a JSON file.
   // When a file is successfully parsed, switch to the editor tab and show the content.
   // Guard on `file` so this doesn't fire when content was set via the editor.
   useEffect(() => {
     if (file !== null && content !== null) {
-      setEditorText(JSON.stringify(content, null, 2));
+      setEditorText(prettyPrint(content));
       setMode("paste");
     }
   }, [file, content]);
@@ -39,8 +40,6 @@ function FileUploadCard({
     setEditorText("");
     if (newMode === "paste") {
       onFile(null);
-    } else {
-      onText("");
     }
   }
 

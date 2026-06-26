@@ -68,10 +68,7 @@ export default function ConverterPage() {
       </div>
 
       <div className="button-grid">
-        {/*<button className="validate-btn" disabled={!content || loading}>*/}
-        {/*  Validate*/}
-        {/*</button>*/}
-        <button className="validate-btn" disabled={true}>
+        <button className="validate-btn" disabled={true} >
           Validate
         </button>
 
