@@ -64,7 +64,7 @@ export default function ConverterPage() {
             />
           </div>
         ) : (
-          <p>No JSON loaded yet. Upload or paste a file first.</p>
+          <p>No JSON loaded yet. Upload or paste an OGC file first.</p>
         )}
       </div>
 
