@@ -45,9 +45,10 @@ export default function ConverterPage() {
     URL.revokeObjectURL(url);
   }
 
-
   return (
     <>
+      {loading && <div> Loading ...</div>}
+
       <div className="upload-grid">
         {content ? (
           <div className="upload-paste-area">
