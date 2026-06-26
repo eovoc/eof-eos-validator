@@ -11,8 +11,6 @@ export default function ConverterPage() {
 
   useEffect(() => { handleConvert(); }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  const editorValue = "";
-
   async function handleConvert() {
     if (!content) return;
     setLoading(true);
@@ -36,7 +34,7 @@ export default function ConverterPage() {
 
   function handleDownload() {
     if (!result) return;
-    const blob = new Blob([result], { type: "application/json" });
+    const blob = new Blob([result], { type: "application/geo+json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
