@@ -14,7 +14,6 @@ export default function ValidatorPage() {
   const ready = data.content !== null && !parseError;
   let navigate = useNavigate();
 
-
   async function handleValidate() {
     if (!ready) return;
     setLoading(true);
@@ -73,6 +72,7 @@ export default function ValidatorPage() {
           ) : (
             <>
               <p className="result-title">✗ Invalid — {result.errors!.length} error{result.errors!.length !== 1 ? "s" : ""} found.</p>
+              <a href={`${process.env.PUBLIC_URL}/schemas/eo-geojson-schema-standalone-flexible-draft07.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
               <ul className="error-list">
                 {result.errors!.map((err, i) => (
                   <li key={i} className="error-item">
