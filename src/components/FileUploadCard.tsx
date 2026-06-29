@@ -88,11 +88,12 @@ function FileUploadCard({
         <div className="upload-paste-area">
           <div className="upload-label">{label}</div>
           <Editor
-            height="500px"
+            className="editor"
             language="json"
             value={editorText}
             onChange={handleEditorChange}
             options={{
+              automaticLayout: true,
               minimap: { enabled: false },
               scrollBeyondLastLine: false,
               formatOnPaste: true,

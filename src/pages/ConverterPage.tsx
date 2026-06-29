@@ -51,10 +51,11 @@ export default function ConverterPage() {
         {content ? (
           <div className="upload-paste-area">
             <Editor
-              height="500px"
+              className="editor"
               language="json"
               value={result}
               options={{
+                automaticLayout: true,
                 readOnly: true,
                 minimap: { enabled: false },
                 scrollBeyondLastLine: false,
