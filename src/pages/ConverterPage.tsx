@@ -45,7 +45,7 @@ export default function ConverterPage() {
 
   return (
     <>
-      {loading && <div> Loading ...</div>}
+      {loading ? (<p> Loading ...</p>): (<p>STAC Representation</p>)}
 
       <div className="upload-grid">
         {content ? (
