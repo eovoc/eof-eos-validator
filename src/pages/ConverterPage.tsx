@@ -68,11 +68,11 @@ export default function ConverterPage() {
       </div>
 
       <div className="button-grid">
-        <button className="validate-btn" disabled={true} >
+        <button className="primary-btn" disabled={true} >
           Validate
         </button>
 
-        <button className="convert-btn" onClick={handleDownload} disabled={!result}>
+        <button className="primary-btn" onClick={handleDownload} disabled={!result}>
           Download
         </button>
       </div>

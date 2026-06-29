@@ -50,12 +50,12 @@ export default function ValidatorPage() {
       </div>
 
       <div className="button-grid">
-        <button className="validate-btn" onClick={handleValidate} disabled={!ready || loading}>
+        <button className="primary-btn" onClick={handleValidate} disabled={!ready || loading}>
           {loading ? "Fetching referenced schemas…" : "Validate"}
         </button>
 
         {/*id results defined and valid button is not disabled di*/}
-        <button className="convert-btn"
+        <button className="primary-btn"
                 disabled={!(result ? result.valid : false)}
                 onClick={() => {navigate("/converter")}}>
 
