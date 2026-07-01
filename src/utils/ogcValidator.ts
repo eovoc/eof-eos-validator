@@ -7,8 +7,7 @@ addFormats(ajv);
 
 try { ajv.addSchema(draft7MetaSchema, "http://json-schema.org/draft-07/schema"); } catch {}
 
-// Schema files are served from /schemas/ as static assets so they can be
-// overridden at runtime (e.g. via a Kubernetes ConfigMap mount).
+// Schema files are served from /schemas/ as static assets
 const BASE = process.env.PUBLIC_URL ?? "";
 
 const STATIC_SCHEMAS = [
@@ -41,7 +40,7 @@ export interface ValidationResult {
   errors: ErrorObject[] | null;
 }
 
-export async function validateJson(data: unknown): Promise<ValidationResult> {
+export async function ogcValidator(data: unknown): Promise<ValidationResult> {
 
   await schemasReady;
   await mainSchemaReady;

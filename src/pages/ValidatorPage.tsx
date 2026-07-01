@@ -1,6 +1,6 @@
 import {useContext, useState} from "react";
 import { useNavigate } from "react-router";
-import { validateJson, ValidationResult } from "../utils/validateJson";
+import { ogcValidator, ValidationResult } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import { JsonFileContext } from "../App";
 
@@ -21,7 +21,7 @@ export default function ValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await validateJson(data.content);
+      const result = await ogcValidator(data.content);
       console.log("[validator] done", result);
       setResult(result);
 

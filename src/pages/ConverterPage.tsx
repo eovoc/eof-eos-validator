@@ -2,12 +2,14 @@ import { useContext, useState, useEffect } from "react";
 import { JsonFileContext } from "../App";
 import Editor from "@monaco-editor/react";
 import {convert} from "../utils/stacConverter";
+import {stacValidator, ValidationResult} from "../utils/stacValidator";
 
 export default function ConverterPage() {
   const { content } = useContext(JsonFileContext)!;
-  const [result, setResult] = useState<string | undefined>(undefined);
+  const [stacContent, setStacContent] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<String | null>(null);
+  const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
 
   useEffect(() => { handleConvert(); }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -15,12 +17,12 @@ export default function ConverterPage() {
     if (!content) return;
     setLoading(true);
     setError(null);
-    setResult(undefined);
+    setStacContent(undefined);
     try {
 
       let conversionResult = await convert(content);
       if(conversionResult.result != null){
-        setResult(conversionResult.result)
+        setStacContent(conversionResult.result)
       }else{
         setError(conversionResult.error === null ? null :conversionResult.error.message);
       }
@@ -33,14 +35,31 @@ export default function ConverterPage() {
   }
 
   function handleDownload() {
-    if (!result) return;
-    const blob = new Blob([result], { type: "application/geo+json" });
+    if (!stacContent) return;
+    const blob = new Blob([stacContent], { type: "application/geo+json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
     a.download = "stac.json";
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  async function handleValidate() {
+    if (loading) return;
+    setValidationResult(null);
+    console.log("[validator] starting validation");
+    try {
+      const result = await stacValidator(stacContent);
+      setValidationResult(result);
+      console.log("[validator] done", validationResult);
+
+    } catch (e) {
+      console.error("[validator] error", e);
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -53,7 +72,7 @@ export default function ConverterPage() {
             <Editor
               className="editor"
               language="json"
-              value={result}
+              value={stacContent}
               options={{
                 automaticLayout: true,
                 readOnly: true,
@@ -69,16 +88,38 @@ export default function ConverterPage() {
       </div>
 
       <div className="button-grid">
-        <button className="primary-btn" disabled={true} >
+        <button className="primary-btn" disabled={!stacContent}
+        onClick={handleValidate}>
           Validate
         </button>
 
-        <button className="primary-btn" onClick={handleDownload} disabled={!result}>
+        <button className="primary-btn" onClick={handleDownload} disabled={!stacContent}>
           Download
         </button>
       </div>
 
       {error && <div className="parse-error">⚠ {error}</div>}
+
+      {validationResult && (
+          <div className={`result ${validationResult.valid ? "valid" : "invalid"}`}>
+            {validationResult.valid ? (
+                <p className="result-title">✓ Valid — the file conforms to the schema.</p>
+            ) : (
+                <>
+                  <p className="result-title">✗ Invalid — {validationResult.errors!.length} error{validationResult.errors!.length !== 1 ? "s" : ""} found.</p>
+                  <a href={`${process.env.PUBLIC_URL}/schemas/stac.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
+                  <ul className="error-list">
+                    {validationResult.errors!.map((err, i) => (
+                        <li key={i} className="error-item">
+                          <span className="error-path">{err.instancePath}</span>
+                          <span className="error-msg">{err.message}</span>
+                        </li>
+                    ))}
+                  </ul>
+                </>
+            )}
+          </div>
+      )}
     </>
   );
 }
