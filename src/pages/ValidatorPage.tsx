@@ -5,13 +5,14 @@ import FileUploadCard from "../components/FileUploadCard";
 import { JsonFileContext } from "../App";
 
 export default function ValidatorPage() {
-  const data = useContext(JsonFileContext)!;
+  const { content, setContent } = useContext(JsonFileContext)!;
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
+  const [parseError, setParseError] = useState<string | null>(null);
 
-  const parseError = data.parseError;
-  const ready = data.content !== null && !parseError;
+  // const parseError = data.parseError;
+  const ready = content !== null && !parseError;
   let navigate = useNavigate();
 
   async function handleValidate() {
@@ -21,7 +22,7 @@ export default function ValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await ogcValidator(data.content);
+      const result = await ogcValidator(content);
       console.log("[validator] done", result);
       setResult(result);
 
@@ -40,10 +41,9 @@ export default function ValidatorPage() {
           label=""
           hint="The file to validate"
           icon="📄"
-          file={data.file}
-          content={data.content}
-          onFile={(f) => { data.handleFile(f); setResult(null); setRuntimeError(null); }}
-          onText={(t) => { data.handleText(t); setResult(null); setRuntimeError(null); }}
+          content={content}
+          setContent={setContent}
+          setError={setParseError}
           accept=".json,application/json"
         />
       </div>

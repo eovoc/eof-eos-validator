@@ -6,22 +6,22 @@ function FileUploadCard({
   label,
   hint,
   icon,
-  file,
   content,
-  onFile,
-  onText,
+  setContent,
+  setError,
   accept,
 }: {
   label: string;
   hint: string;
   icon: string;
-  file: File | null;
   content: unknown;
-  onFile: (f: File | null) => void;
-  onText: (text: string) => void;
+  setContent: (c: unknown | null) => void;
+  setError: (c: string | null) => void;
   accept: string;
 }) {
   const [mode, setMode] = useState<"file" | "paste">("paste");
+  const [file, setFile] = useState<File | null>(null);
+  // const [content, setContent] = useState<unknown>(null);
   const [editorText, setEditorText] = useState(content != null ? prettyPrint(content) : "");
 
   //Effect used to update EditJson tab after uploading a JSON file.
@@ -39,10 +39,41 @@ function FileUploadCard({
     setMode(newMode);
   }
 
+  function handleFile(f: File | null) {
+    setFile(f);
+    setContent(null);
+    setError(null);
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        setContent(JSON.parse(e.target!.result as string));
+      } catch {
+        setError(`"${f.name}" is not valid JSON.`);
+      }
+    };
+    reader.readAsText(f);
+  }
+
+  function handleText(text: string) {
+    setFile(null);
+    setError(null);
+    if (!text.trim()) {
+      setContent(null);
+      return;
+    }
+    try {
+      setContent(JSON.parse(text));
+    } catch(error){
+      setContent(null);
+      setError("Pasted text is not valid JSON."+error);
+    }
+  }
+
   function handleEditorChange(value: string | undefined) {
     const text = value ?? "";
     setEditorText(text);
-    onText(text);
+    handleText(text);
   }
 
   const hasContent = mode === "file" ? !!file : !!editorText;
@@ -73,7 +104,7 @@ function FileUploadCard({
           <input
             type="file"
             accept={accept}
-            onChange={(e) => onFile(e.target.files?.[0] ?? null)}
+            onChange={(e) => handleFile(e.target.files?.[0] ?? null)}
           />
           <div className="upload-icon">{icon}</div>
           <div className="upload-label">{label}</div>
