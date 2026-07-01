@@ -37,10 +37,6 @@ function FileUploadCard({
   function switchMode(newMode: "file" | "paste") {
     if (newMode === mode) return;
     setMode(newMode);
-    setEditorText("");
-    if (newMode === "paste") {
-      onFile(null);
-    }
   }
 
   function handleEditorChange(value: string | undefined) {
