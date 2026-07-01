@@ -2,9 +2,10 @@ import { useContext, useState, useEffect } from "react";
 import { JsonFileContext } from "../App";
 import Editor from "@monaco-editor/react";
 import {convert} from "../utils/stacConverter";
-import {stacValidator, ValidationResult} from "../utils/stacValidator";
+import {stacValidator} from "../utils/stacValidator";
+import {ValidationResult} from "../utils/ValidationResult";
 
-export default function ConverterPage() {
+export default function StacConverterPage() {
   const { content } = useContext(JsonFileContext)!;
   const [stacContent, setStacContent] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);

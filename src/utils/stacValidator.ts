@@ -1,6 +1,7 @@
 import Ajv, { ErrorObject } from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
+import {ValidationResult} from "./ValidationResult";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -18,11 +19,6 @@ const mainSchemaReady: Promise<void> = (async () => {
     mainSchema = await res.json();
 })();
 
-
-export interface ValidationResult {
-    valid: boolean;
-    errors: ErrorObject[] | null;
-}
 
 export async function stacValidator(data: unknown): Promise<ValidationResult> {
 

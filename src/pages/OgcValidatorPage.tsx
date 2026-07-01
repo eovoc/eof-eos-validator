@@ -1,10 +1,11 @@
 import {useContext, useState} from "react";
 import { useNavigate } from "react-router";
-import { ogcValidator, ValidationResult } from "../utils/ogcValidator";
+import { ogcValidator } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
+import {ValidationResult} from "../utils/ValidationResult";
 import { JsonFileContext } from "../App";
 
-export default function ValidatorPage() {
+export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
   const [result, setResult] = useState<ValidationResult | null>(null);
   const [loading, setLoading] = useState(false);

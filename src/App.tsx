@@ -2,8 +2,8 @@ import { createContext, useState } from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import ValidatorPage from "./pages/ValidatorPage";
-import ConverterPage from "./pages/ConverterPage";
+import OgcValidatorPage from "./pages/OgcValidatorPage";
+import StacConverterPage from "./pages/StacConverterPage";
 
 export type JsonFileContextType = { content: unknown; setContent: (c: unknown) => void };
 
@@ -18,8 +18,8 @@ export default function App() {
         <NavBar />
         <div className="app">
           <Routes>
-            <Route path="/" element={<ValidatorPage />} />
-            <Route path="/converter" element={<ConverterPage />} />
+            <Route path="/" element={<OgcValidatorPage />} />
+            <Route path="/converter" element={<StacConverterPage />} />
           </Routes>
         </div>
       </HashRouter>
