@@ -73,7 +73,7 @@ export default function OgcValidatorPage() {
           ) : (
             <>
               <p className="result-title">✗ Invalid — {result.errors!.length} error{result.errors!.length !== 1 ? "s" : ""} found.</p>
-              <a href={`${process.env.PUBLIC_URL}/schemas/eo-geojson-schema-standalone-flexible-draft07.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
+              <a href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
               <ul className="error-list">
                 {result.errors!.map((err, i) => (
                   <li key={i} className="error-item">
