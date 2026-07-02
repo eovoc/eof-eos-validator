@@ -89,7 +89,8 @@ export default function StacConverterPage() {
       </div>
 
       <div className="button-grid">
-        <button className="primary-btn" disabled={!stacContent}
+        <button className="primary-btn" disabled={true}
+                // disabled={!stacContent}
         onClick={handleValidate}>
           Validate
         </button>
