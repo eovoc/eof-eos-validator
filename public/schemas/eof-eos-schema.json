@@ -14,23 +14,11 @@
 					"minLength": 2,
 					"maxLength": 3
 				},
-				"updated": {
-					"type": "string",
-					"pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[\\+\\-][0-9]{2}:[0-9]{2})$",
-					"format": "date-time"
-				},
-				"published": {
-					"type": "string",
-					"format": "date-time"
-				},
 				"creationDate": {
 					"type": "string",
 					"format": "date-time"
 				}
-			},
-			"required": [
-				"updated"
-			]
+			}
 		},
 		"DataIdentification": {
 			"description": "Subset of Properties",
