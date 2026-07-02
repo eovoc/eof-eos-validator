@@ -348,12 +348,6 @@
 			"description": "Objects with Links grouped by \"relation\" (i.e. Atom \"rel\" attribute).",
 			"type": "object",
 			"properties": {
-				"type": {
-					"type": "string",
-					"enum": [
-						"Links"
-					]
-				},
 				"measurements": {
 					"type": "array",
 					"items": {
@@ -373,54 +367,6 @@
 					}
 				},
 				"condition": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"qualityReport": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"via": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"data": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"archives": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"up": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"describedby": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"related": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
-				"alternates": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Link"
