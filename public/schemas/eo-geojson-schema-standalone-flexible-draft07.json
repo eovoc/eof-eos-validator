@@ -810,10 +810,6 @@
 						"statusDetail": {
 							"type": "string"
 						},
-						"availabilityTime": {
-							"type": "string",
-							"format": "date-time"
-						},
 						"timeliness": {
 							"type": "string"
 						},
