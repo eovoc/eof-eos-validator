@@ -45,9 +45,6 @@
 				"title": {
 					"type": "string"
 				},
-				"identifier": {
-					"type": "string"
-				},
 				"date": {
 					"type": "string"
 				},
@@ -65,7 +62,6 @@
 			},
 			"required": [
 				"title",
-				"identifier",
 				"date"
 			]
 		},
