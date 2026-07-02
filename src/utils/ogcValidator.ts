@@ -29,7 +29,7 @@ const schemasReady: Promise<void> = (async () => {
 
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = `${BASE}/schemas/eo-geojson-schema-standalone-flexible-draft07.json`;
+  const VALIDATION_SCHEMA = `${BASE}/schemas/eof-eos-schema.json`;
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();

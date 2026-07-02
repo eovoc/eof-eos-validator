@@ -396,12 +396,6 @@
 						"$ref": "#/definitions/Link"
 					}
 				},
-				"previews": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Link"
-					}
-				},
 				"via": {
 					"type": "array",
 					"items": {
@@ -846,10 +840,7 @@
 							"type": "string",
 							"format": "date-time"
 						}
-					},
-					"required": [
-						"availabilityTime"
-					]
+					}
 				},
 				{
 					"$ref": "#/definitions/ProcessingInformation"
