@@ -66,7 +66,7 @@ export default function OgcValidatorPage() {
       {runtimeError && <div className="parse-error">⚠ {runtimeError}</div>}
       {parseError && <div className="parse-error">⚠ {parseError}</div>}
 
-      {result && (
+      {(result && !parseError)&& (
         <div className={`result ${result.valid ? "valid" : "invalid"}`}>
           {result.valid ? (
             <p className="result-title">✓ Valid — the file conforms to the schema.</p>
