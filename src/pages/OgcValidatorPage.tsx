@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router";
 import { ogcValidator } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
@@ -13,9 +13,13 @@ export default function OgcValidatorPage() {
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
 
-  // const parseError = data.parseError;
   const ready = content !== null && !parseError;
   let navigate = useNavigate();
+
+  //Reset validation result when content has changed.
+  useEffect(() => {
+    setResult(null);
+  }, [content]);
 
 
   async function handleValidate() {
