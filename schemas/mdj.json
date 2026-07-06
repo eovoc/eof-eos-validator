@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json",
+	"$id": "mdj.json",
 	"definitions": {
 		"Abstract_ConstraintUnion": {
 			"$comment": "Abstract_ConstraintUnion",
@@ -1334,7 +1334,7 @@
 			"type": "object",
 			"properties": {
 				"resourceScope": {
-					"$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_ScopeCode"
+					"$ref": "mdj.json#/definitions/MD_ScopeCode"
 				},
 				"name": {
 					"type": "string"
@@ -1401,7 +1401,7 @@
 			"type": "object",
 			"properties": {
 				"level": {
-					"$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_ScopeCode"
+					"$ref": "mdj.json#/definitions/MD_ScopeCode"
 				},
 				"extent": {
 					"type": "array",
