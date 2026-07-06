@@ -4,6 +4,7 @@ import { ogcValidator } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import {ValidationResult} from "../utils/ValidationResult";
 import { JsonFileContext } from "../App";
+import DocumentationPanel, {DocumentationLink} from "../components/DocumenationPanel";
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
@@ -15,6 +16,7 @@ export default function OgcValidatorPage() {
   // const parseError = data.parseError;
   const ready = content !== null && !parseError;
   let navigate = useNavigate();
+
 
   async function handleValidate() {
     if (!ready) return;
@@ -86,6 +88,9 @@ export default function OgcValidatorPage() {
           )}
         </div>
       )}
+
+      <DocumentationPanel ></DocumentationPanel>
+
     </>
   );
 }
