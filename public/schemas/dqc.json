@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/dqc.json",
+  "$id": "dqc.json",
   "definitions": {
     "AbsolutePositionalAccuracy": {
       "$comment": "AbsolutePositionalAccuracy",
@@ -93,19 +93,19 @@
           "$ref": "#/definitions/EvaluationMethodTypeCode"
         },
         "evaluationProcedure": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "dateTime": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+            "$ref": "mdj.json#/definitions/DateOrDateTime"
           },
           "uniqueItems": true
         },
         "referenceDoc": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+            "$ref": "mdj.json#/definitions/CI_Citation"
           },
           "uniqueItems": true
         },
@@ -271,16 +271,16 @@
           "const": "ConformanceResult"
         },
         "dateTime": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+          "$ref": "mdj.json#/definitions/DateOrDateTime"
         },
         "resultScope": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Scope"
+          "$ref": "mdj.json#/definitions/MD_Scope"
         },
         "pass": {
           "type": "boolean"
         },
         "specification": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "explanation": {
           "type": "string"
@@ -300,13 +300,13 @@
           "const": "CoverageResult"
         },
         "dateTime": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+          "$ref": "mdj.json#/definitions/DateOrDateTime"
         },
         "resultScope": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Scope"
+          "$ref": "mdj.json#/definitions/MD_Scope"
         },
         "spatialRepresentationType": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_SpatialRepresentationTypeCode"
+          "$ref": "mdj.json#/definitions/MD_SpatialRepresentationTypeCode"
         }
       },
       "required": [
@@ -333,7 +333,7 @@
       "type": "object",
       "properties": {
         "scope": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Scope"
+          "$ref": "mdj.json#/definitions/MD_Scope"
         },
         "report": {
           "type": "array",
@@ -358,10 +358,10 @@
           "const": "DescriptiveResult"
         },
         "dateTime": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+          "$ref": "mdj.json#/definitions/DateOrDateTime"
         },
         "resultScope": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Scope"
+          "$ref": "mdj.json#/definitions/MD_Scope"
         },
         "statement": {
           "type": "string"
@@ -512,19 +512,19 @@
           "$ref": "#/definitions/EvaluationMethodTypeCode"
         },
         "evaluationProcedure": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "dateTime": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+            "$ref": "mdj.json#/definitions/DateOrDateTime"
           },
           "uniqueItems": true
         },
         "referenceDoc": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+            "$ref": "mdj.json#/definitions/CI_Citation"
           },
           "uniqueItems": true
         },
@@ -630,19 +630,19 @@
           "$ref": "#/definitions/EvaluationMethodTypeCode"
         },
         "evaluationProcedure": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "dateTime": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+            "$ref": "mdj.json#/definitions/DateOrDateTime"
           },
           "uniqueItems": true
         },
         "referenceDoc": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+            "$ref": "mdj.json#/definitions/CI_Citation"
           },
           "uniqueItems": true
         },
@@ -719,7 +719,7 @@
       "type": "object",
       "properties": {
         "measureIdentification": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Identifier"
+          "$ref": "mdj.json#/definitions/MD_Identifier"
         },
         "nameOfMeasure": {
           "type": "array",
@@ -912,7 +912,7 @@
       "type": "object",
       "properties": {
         "reportReference": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "abstract": {
           "type": "string"
@@ -941,7 +941,7 @@
           "const": "QualityMeasure"
         },
         "measureIdentifier": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Identifier"
+          "$ref": "mdj.json#/definitions/MD_Identifier"
         },
         "name": {
           "type": "string"
@@ -1071,10 +1071,10 @@
           "const": "QuantitativeResult"
         },
         "dateTime": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+          "$ref": "mdj.json#/definitions/DateOrDateTime"
         },
         "resultScope": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/MD_Scope"
+          "$ref": "mdj.json#/definitions/MD_Scope"
         },
         "value": {
           "type": "array",
@@ -1184,19 +1184,19 @@
           "$ref": "#/definitions/EvaluationMethodTypeCode"
         },
         "evaluationProcedure": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         },
         "dateTime": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/DateOrDateTime"
+            "$ref": "mdj.json#/definitions/DateOrDateTime"
           },
           "uniqueItems": true
         },
         "referenceDoc": {
           "type": "array",
           "items": {
-            "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+            "$ref": "mdj.json#/definitions/CI_Citation"
           },
           "uniqueItems": true
         },
@@ -1225,7 +1225,7 @@
       "type": "object",
       "properties": {
         "citation": {
-          "$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/CI_Citation"
+          "$ref": "mdj.json#/definitions/CI_Citation"
         }
       },
       "required": [

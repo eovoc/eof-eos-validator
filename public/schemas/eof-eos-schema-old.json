@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "GeoJSON encoding of OGC 17-003 Earth Observation Metadata",
-	"description": "Definition of EOF-EOS Metadata model derived from OGC 17-003r2.",
+	"description": "Definition of EO Dataset document.  Note that numbers in the instance should not be surrounded by double-quotes to validate against this schema. ",
 	"$ref": "#/definitions/EarthObservation",
 	"definitions": {
 		"MetadataInformation": {
@@ -24,6 +24,9 @@
 			"description": "Subset of Properties",
 			"type": "object",
 			"properties": {
+				"parentIdentifier": {
+					"type": "string"
+				},
 				"doi": {
 					"type": "string"
 				},
@@ -37,6 +40,9 @@
 					"type": "string",
 					"format": "date-time"
 				},
+				"available": {
+					"type": "string"
+				},
 				"additionalAttributes": {
 					"type": "object",
 					"minProperties": 1
@@ -44,7 +50,7 @@
 			},
 			"required": [
 				"title",
-				"date", "created"
+				"date"
 			]
 		},
 		"ProcessingInformation": {
@@ -53,10 +59,10 @@
 			"properties": {
 				"resourceLineage": {
 					"type": "array",
-					"uniqueItems": true,
 					"items": {
-						"$ref": "mdj.json#/definitions/LI_Lineage"
-					}
+						"$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/mdj.json#/definitions/LI_Lineage"
+					},
+					"uniqueItems": true
 				},
 				"processingLevel": {
 					"type": "string",
@@ -76,6 +82,7 @@
 					"type": "string"
 				},
 				"processingCenter": {
+					"description": "Codelist",
 					"type": "string"
 				},
 				"processingDate": {
@@ -83,6 +90,7 @@
 					"format": "date-time"
 				},
 				"processingMode": {
+					"description": "Codelist",
 					"type": "string"
 				},
 				"compositeType": {
@@ -337,7 +345,7 @@
 		},
 		"Links": {
 			"title": "Links",
-			"description": "Objects with Links grouped by \"relation\".",
+			"description": "Objects with Links grouped by \"relation\" (i.e. Atom \"rel\" attribute).",
 			"type": "object",
 			"properties": {
 				"measurements": {
@@ -364,8 +372,6 @@
 						"$ref": "#/definitions/Link"
 					}
 				}
-				
-			
 			}
 		},
 		"Properties": {
@@ -375,11 +381,22 @@
 				{
 					"type": "object",
 					"properties": {
-						
+						"type": {
+							"type": "string",
+							"enum": [
+								"Properties"
+							]
+						},
 						"status": {
 							"type": "string",
 							"enum": [
+								"ARCHIVED",
+								"PLANNED",
 								"ACQUIRED",
+								"CANCELLED",
+								"FAILED",
+								"POTENTIAL",
+								"REJECTED",
 								"QUALITYDEGRADED"
 							]
 						},
@@ -394,16 +411,25 @@
 						},
 						"links": {
 							"$ref": "#/definitions/Links"
+						},
+						"offerings": {
+							"description": "OGC 14-055r2",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Offering"
+							}
 						}
 					},
 					"required": [
 						"status",
-						"acquisitionInformation",
-						"productInformation"
+						"acquisitionInformation"
 					]
 				},
 				{
 					"$ref": "#/definitions/DataIdentification"
+				},
+				{
+					"$ref": "#/definitions/MetadataInformation"
 				}
 			]
 		},
@@ -411,7 +437,9 @@
 			"description": "GeoJSON Feature",
 			"type": "object",
 			"properties": {
-			
+				"@context": {
+					"type": "string"
+				},
 				"type": {
 					"title": "type",
 					"type": "string",
@@ -456,6 +484,16 @@
 			"type": "object",
 			"minProperties": 1,
 			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"Platform"
+					]
+				},
+				"id": {
+					"type": "string",
+					"format": "uri"
+				},
 				"platformShortName": {
 					"type": "string"
 				},
@@ -471,16 +509,32 @@
 				}
 			},
 			"required": [
-				"platformShortName",
-				"orbitType"
+				"platformShortName"
 			],
 			"additionalProperties": false
 		},
 		"Instrument": {
 			"type": "object",
 			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"Instrument"
+					]
+				},
+				"id": {
+					"type": "string",
+					"format": "uri"
+				},
 				"sensorType": {
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"OPTICAL",
+						"RADAR",
+						"ATMOSPHERIC",
+						"ALTIMETRIC",
+						"LIMB"
+					]
 				},
 				"instrumentShortName": {
 					"type": "string"
@@ -490,7 +544,6 @@
 				}
 			},
 			"required": [
-				"sensorType",
 				"instrumentShortName"
 			],
 			"additionalProperties": false
@@ -642,6 +695,7 @@
 					"minimum": 0
 				},
 				"category": {
+					"description": "Media category property defined by MediaRSS.",
 					"type": "string",
 					"enum": [
 						"THUMBNAIL",
@@ -651,11 +705,22 @@
 						"SNOW",
 						"QUALITY"
 					]
+				},
+				"expression": {
+					"description": "Media expression property defined by MediaRSS.",
+					"type": "string",
+					"enum": [
+						"full",
+						"sample"
+					]
+				},
+				"conformsTo": {
+					"type": "string",
+					"format": "uri"
 				}
-				
 			},
 			"required": [
-				"href", "type", "title", "category"
+				"href"
 			],
 			"additionalProperties": false
 		},
@@ -665,14 +730,28 @@
 				{
 					"type": "object",
 					"properties": {
-						
+						"type": {
+							"type": "string",
+							"enum": [
+								"ProductInformation"
+							]
+						},
 						"productType": {
 							"type": "string"
 						},
 						"size": {
 							"type": "integer"
 						},
-					
+						"productVersion": {
+							"type": "string"
+						},
+						"statusSubType": {
+							"type": "string",
+							"enum": [
+								"ON-LINE",
+								"OFF-LINE"
+							]
+						},
 						"qualityInformation": {
 							"$ref": "#/definitions/QualityInformation"
 						},
@@ -682,8 +761,18 @@
 						"timeliness": {
 							"type": "string"
 						},
+						"productGroupId": {
+							"type": "string"
+						},
+						"archivingCenter": {
+							"type": "string"
+						},
 						"referenceSystemIdentifier": {
 							"type": "string"
+						},
+						"archivingDate": {
+							"type": "string",
+							"format": "date-time"
 						}
 					}
 				},
@@ -749,7 +838,7 @@
 		"QualityInformation": {
 			"anyOf": [
 				{
-					"$ref": "dqc.json#/definitions/DataQuality"
+					"$ref": "https://eovoc.github.io/eof-eos-stac-extension/v0.0.2/dqc.json#/definitions/DataQuality"
 				},
 				{
 					"type": "object",
@@ -775,7 +864,8 @@
 								"MANUAL"
 							]
 						}
-					}
+					},
+					"additionalProperties": true
 				}
 			]
 		},
@@ -821,6 +911,12 @@
 			"type": "object",
 			"minProperties": 1,
 			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"WavelengthInformation"
+					]
+				},
 				"discreteWavelengths": {
 					"type": "array",
 					"minItems": 1,
@@ -829,11 +925,6 @@
 						"minimum": 0,
 						"exclusiveMinimum": 0
 					}
-				},
-				"startWavelength": {
-					"type": "number",
-					"minimum": 0,
-					"exclusiveMinimum": 0
 				},
 				"endWavelength": {
 					"type": "number",
@@ -854,6 +945,11 @@
 						"MICROWAVE",
 						"OTHER"
 					]
+				},
+				"startWavelength": {
+					"type": "number",
+					"minimum": 0,
+					"exclusiveMinimum": 0
 				},
 				"wavelengthResolution": {
 					"type": "number"
@@ -901,6 +997,12 @@
 		"AcquisitionInformation": {
 			"type": "object",
 			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"AcquisitionInformation"
+					]
+				},
 				"platform": {
 					"$ref": "#/definitions/Platform"
 				},
