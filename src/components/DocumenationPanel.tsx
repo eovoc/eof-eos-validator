@@ -9,7 +9,7 @@ export default function DocumentationPanel(){
 
 
     const documentationLinks = links.map(link =>
-        <li><a title={link.title} href={link.href} target="_blank">{link.title}</a></li>
+        <li><a title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a></li>
     );
 
     return(
