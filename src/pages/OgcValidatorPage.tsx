@@ -4,7 +4,7 @@ import { ogcValidator } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import {ValidationResult} from "../utils/ValidationResult";
 import { JsonFileContext } from "../App";
-import DocumentationPanel, {DocumentationLink} from "../components/DocumenationPanel";
+import DocumentationPanel from "../components/DocumenationPanel";
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;

@@ -1,4 +1,4 @@
-import Ajv, { ErrorObject } from "ajv";
+import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {ValidationResult} from "./ValidationResult";
