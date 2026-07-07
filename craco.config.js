@@ -2,6 +2,8 @@ module.exports = {
   webpack: {
     configure: (webpackConfig) => {
       webpackConfig.resolve.fallback = {
+        //fallback for stac-node-validator
+        //see: https://www.npmjs.com/package/stac-node-validator?activeTab=dependencies
         ...webpackConfig.resolve.fallback,
         path: require.resolve("path-browserify"),
         assert: require.resolve("assert/"),
