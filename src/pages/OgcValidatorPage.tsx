@@ -75,10 +75,10 @@ export default function OgcValidatorPage() {
       {(result && !parseError)&& (
         <div className={`result ${result.valid ? "valid" : "invalid"}`}>
           {result.valid ? (
-            <p className="result-title">✓ Valid — the file conforms to the schema.</p>
+            <p className="result-title">Valid — the file conforms to the schema.</p>
           ) : (
             <>
-              <p className="result-title">✗ Invalid — {result.errors!.length} error{result.errors!.length !== 1 ? "s" : ""} found.</p>
+              <p className="result-title">Invalid — {result.errors!.length} error{result.errors!.length !== 1 ? "s" : ""} found.</p>
               <a href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
               <ul className="error-list">
                 {result.errors!.map((err, i) => (

@@ -89,9 +89,7 @@ export default function StacConverterPage() {
       </div>
 
       <div className="button-grid">
-        <button className="primary-btn"
-                 disabled={!stacContent}
-        onClick={handleValidate}>
+        <button className="primary-btn" disabled={!stacContent} onClick={handleValidate}>
           Validate
         </button>
 
@@ -105,10 +103,10 @@ export default function StacConverterPage() {
       {validationResult && (
           <div className={`result ${validationResult.valid ? "valid" : "invalid"}`}>
             {validationResult.valid ? (
-                <p className="result-title">✓ Valid — the file conforms to the schema.</p>
+                <p className="result-title">Valid — the file conforms to the schema.</p>
             ) : (
                 <>
-                  <p className="result-title">✗ Invalid — {validationResult.errors!.length} error{validationResult.errors!.length !== 1 ? "s" : ""} found.</p>
+                  <p className="result-title">Invalid — {validationResult.errors!.length} error{validationResult.errors!.length !== 1 ? "s" : ""} found.</p>
 
                   <ul className="error-list">
                     {validationResult.errors!.map((err, i) => (
@@ -121,8 +119,8 @@ export default function StacConverterPage() {
                 </>
             )}
           </div>
-
       )}
+
     </>
   );
 }
