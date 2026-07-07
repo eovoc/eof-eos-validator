@@ -89,8 +89,8 @@ export default function StacConverterPage() {
       </div>
 
       <div className="button-grid">
-        <button className="primary-btn" disabled={true}
-                // disabled={!stacContent}
+        <button className="primary-btn"
+                 disabled={!stacContent}
         onClick={handleValidate}>
           Validate
         </button>
@@ -109,7 +109,7 @@ export default function StacConverterPage() {
             ) : (
                 <>
                   <p className="result-title">✗ Invalid — {validationResult.errors!.length} error{validationResult.errors!.length !== 1 ? "s" : ""} found.</p>
-                  <a href={`${process.env.PUBLIC_URL}/schemas/stac.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
+
                   <ul className="error-list">
                     {validationResult.errors!.map((err, i) => (
                         <li key={i} className="error-item">

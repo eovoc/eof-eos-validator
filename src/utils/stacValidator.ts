@@ -1,30 +1,45 @@
-import Ajv, { ErrorObject } from "ajv";
-import addFormats from "ajv-formats";
-import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {ValidationResult} from "./ValidationResult";
+import { ErrorObject } from "ajv";
+import validate, { StacValidationError, StacValidationReport } from "stac-node-validator";
+import { ValidationResult } from "./ValidationResult";
 
-const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
-addFormats(ajv);
+function toErrorObject(error: StacValidationError): ErrorObject {
+  return {
+    keyword: (error.keyword as string) ?? "",
+    instancePath: error.instancePath ?? "",
+    schemaPath: (error.schemaPath as string) ?? "",
+    params: (error.params as object) ?? {},
+    message: error.message,
+  } as ErrorObject;
+}
 
-try { ajv.addSchema(draft7MetaSchema, "http://json-schema.org/draft-07/schema"); } catch {}
+function collectErrors(report: StacValidationReport): ErrorObject[] {
+  if (report.children.length > 0) {
+    return report.children.flatMap(collectErrors);
+  }
 
-// Schema files are served from /schemas/ as static assets
-const BASE = process.env.PUBLIC_URL ?? "";
+  const errors = [
+    ...report.results.core,
+    ...Object.values(report.results.extensions).flat(),
+    ...report.results.custom,
+  ].map(toErrorObject);
 
-let mainSchema: any;
-const mainSchemaReady: Promise<void> = (async () => {
-    const VALIDATION_SCHEMA = `${BASE}/schemas/stac.json`;
-    const res = await fetch(VALIDATION_SCHEMA);
-    if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
-    mainSchema = await res.json();
-})();
+  if (errors.length === 0 && report.messages.length > 0) {
+    errors.push(...report.messages.map((message) => toErrorObject({ message })));
+  }
 
+  return errors;
+}
 
 export async function stacValidator(data: unknown): Promise<ValidationResult> {
-
-    await mainSchemaReady;
-
-    const validate = ajv.compile(mainSchema);
-    const valid = validate(data) as boolean;
-    return { valid, errors: validate.errors ?? null };
+  try {
+    const report = await validate(data, { strict: true });
+    const valid = report.valid === true;
+    const errors = valid ? [] : collectErrors(report);
+    return { valid, errors: errors.length > 0 ? errors : null };
+  } catch (error) {
+    return {
+      valid: false,
+      errors: [toErrorObject({ message: error instanceof Error ? error.message : String(error) })],
+    };
+  }
 }
