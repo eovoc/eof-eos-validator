@@ -32,7 +32,10 @@ function collectErrors(report: StacValidationReport): ErrorObject[] {
 
 export async function stacValidator(data: unknown): Promise<ValidationResult> {
   try {
-    const report = await validate(data, { strict: true });
+    // stac-node-validator treats a string input as a file path/URL to fetch,
+    // not as JSON text, so parse it ourselves first.
+    const parsed = typeof data === "string" ? JSON.parse(data) : data;
+    const report = await validate(parsed, { strict: true });
     const valid = report.valid === true;
     const errors = valid ? [] : collectErrors(report);
     return { valid, errors: errors.length > 0 ? errors : null };
