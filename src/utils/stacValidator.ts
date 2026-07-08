@@ -13,6 +13,7 @@ function toErrorObject(error: StacValidationError): ErrorObject {
 }
 
 function collectErrors(report: StacValidationReport): ErrorObject[] {
+  console.log("STAC Validation report: ",report);
   if (report.children.length > 0) {
     return report.children.flatMap(collectErrors);
   }
