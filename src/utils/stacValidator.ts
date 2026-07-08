@@ -27,6 +27,12 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
   if (report.children.length > 0) {
     results.push(...report.children.flatMap(collectResults));
   }
+  //
+  // if(report.messages.length > 0){
+  //   for (const message of report.messages) {
+  //     results.push({schema: "other", valid: false, errors: [{message: message}]});
+  //   }
+  // }
 
   console.log('results mapping:',results);
   return results;
@@ -37,7 +43,7 @@ export async function stacValidator(data: unknown): Promise<ValidationReport> {
     // stac-node-validator treats a string input as a file path/URL to fetch,
     // not as JSON text, so parse it ourselves first.
     const parsed = typeof data === "string" ? JSON.parse(data) : data;
-    const stacReport = await validate(parsed, { strict: false });
+    const stacReport = await validate(parsed, { strict: true });
     const valid = stacReport.valid === true;
     const results = collectResults(stacReport);
     return { valid, results:results };
