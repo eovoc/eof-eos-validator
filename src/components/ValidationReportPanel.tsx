@@ -1,14 +1,18 @@
 import {ValidationReport} from "../utils/ValidationResult";
 
 
-export default function ValidationReportPanel({report }:{report: ValidationReport} ){
+export default function ValidationReportPanel({report, validTitle, invalidTitle }:{
+    report: ValidationReport,
+    validTitle: string,
+    invalidTitle: string } )
+{
 
     return(
        <div className={`result ${report.valid ? "valid" : "invalid"}`}>
            {report.valid ? (
-               <p className="result-title">Valid STAC Item</p>
+               <p className="result-title">{validTitle}</p>
            ): (
-               <p className="result-title">Invalid STAC Item</p>
+               <p className="result-title">{invalidTitle}</p>
            )}
 
            {report.results!.map((item, i) => (

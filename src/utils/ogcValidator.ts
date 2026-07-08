@@ -1,7 +1,7 @@
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {ValidationResult} from "./ValidationResult";
+import {ValidationReport, ValidationResult} from "./ValidationResult";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -35,12 +35,14 @@ const mainSchemaReady: Promise<void> = (async () => {
   mainSchema = await res.json();
 })();
 
-export async function ogcValidator(data: unknown): Promise<ValidationResult> {
+export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
 
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
-  return { valid, schema: 'EOF-EOS Schema', errors: validate.errors ?? null };
+  const result = { valid, schema: 'EOF-EOS Schema', errors: validate.errors ?? null };
+  const report = { valid, results: [result]}
+  return report;
 }

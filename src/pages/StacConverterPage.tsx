@@ -104,7 +104,9 @@ export default function StacConverterPage() {
       {validationResult && (
           <>
             <h2>Validation Report</h2>
-            <ValidationReportPanel report={validationResult}></ValidationReportPanel>
+            <ValidationReportPanel report={validationResult}
+                                   validTitle="Valid STAC Item"
+                                   invalidTitle="Invalid STAC Item"/>
           </>
         )}
     </>

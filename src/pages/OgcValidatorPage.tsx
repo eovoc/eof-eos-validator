@@ -2,13 +2,14 @@ import {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router";
 import { ogcValidator } from "../utils/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
-import {ValidationResult} from "../utils/ValidationResult";
+import {ValidationReport} from "../utils/ValidationResult";
 import { JsonFileContext } from "../App";
 import DocumentationPanel from "../components/DocumenationPanel";
+import ValidationReportPanel from "../components/ValidationReportPanel";
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
-  const [result, setResult] = useState<ValidationResult | null>(null);
+  const [result, setResult] = useState<ValidationReport | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
@@ -73,24 +74,12 @@ export default function OgcValidatorPage() {
       {parseError && <div className="parse-error">⚠ {parseError}</div>}
 
       {(result && !parseError)&& (
-        <div className={`result ${result.valid ? "valid" : "invalid"}`}>
-          {result.valid ? (
-            <p className="result-title">Valid - the file conforms to the schema.</p>
-          ) : (
-            <>
-              <p className="result-title">Invalid — {result.errors!.length} error{result.errors!.length !== 1 ? "s" : ""} found.</p>
-              <a href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">See Validation Schema</a>
-              <ul className="error-list">
-                {result.errors!.map((err, i) => (
-                  <li key={i} className="error-item">
-                    <span className="error-path">{err.instancePath}</span>
-                    <span className="error-msg">{err.message}</span>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </div>
+              <>
+                <h2>Validation Report</h2>
+                <ValidationReportPanel report={result}
+                                       validTitle="Valid OGC Item"
+                                       invalidTitle="Invalid OGC Item"/>
+              </>
       )}
 
       <DocumentationPanel ></DocumentationPanel>
