@@ -18,7 +18,8 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
   const results = [];
 
   results.push({schema: 'core', valid: report.results.core!.length < 1, errors : report.results.core!.map(toErrorObject)});
-  results.push({schema: 'custom', valid: report.results.custom!.length < 1, errors : report.results.custom!.map(toErrorObject)});
+  //DO not list 'custom' as we do not use it.
+  // results.push({schema: 'custom', valid: report.results.custom!.length < 1, errors : report.results.custom!.map(toErrorObject)});
 
   for (const [extension, errors] of Object.entries(report.results.extensions ?? {})) {
     results.push({schema: extension, valid: errors.length < 1, errors: errors.map(toErrorObject)});
