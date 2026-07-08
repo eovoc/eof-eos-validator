@@ -37,9 +37,9 @@ export async function stacValidator(data: unknown): Promise<ValidationReport> {
     // stac-node-validator treats a string input as a file path/URL to fetch,
     // not as JSON text, so parse it ourselves first.
     const parsed = typeof data === "string" ? JSON.parse(data) : data;
-    const stacReport = await validate(parsed, { strict: true });
+    const stacReport = await validate(parsed, { strict: false });
     const valid = stacReport.valid === true;
-    const results = valid ? [] : collectResults(stacReport);
+    const results = collectResults(stacReport);
     return { valid, results:results };
   } catch (error) {
     const errors = [toErrorObject({ message: error instanceof Error ? error.message : String(error) })];

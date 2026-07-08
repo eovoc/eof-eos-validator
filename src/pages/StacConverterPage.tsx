@@ -102,7 +102,11 @@ export default function StacConverterPage() {
       {error && <div className="parse-error">⚠ {error}</div>}
 
       {validationResult && (
-          <ValidationReportPanel report={validationResult}></ValidationReportPanel>)}
+          <>
+            <h2>Validation Report</h2>
+            <ValidationReportPanel report={validationResult}></ValidationReportPanel>
+          </>
+        )}
     </>
   );
 }
