@@ -20,7 +20,8 @@ export default function DocumentationPanel(){
     const documentationResources = resources.map(resource =>
         <li>
             {resource.name && <>{resource.name}: </>}
-            {resource.links.map(link =><a title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>)}
+            {resource.links.map(link =>
+                <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>)}
         </li>
     );
 
