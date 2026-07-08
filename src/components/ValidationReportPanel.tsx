@@ -5,8 +5,10 @@ export default function ValidationReportPanel({report }:{report: ValidationRepor
 
     return(
        <div className={`result ${report.valid ? "valid" : "invalid"}`}>
-           {report.valid && (
-               <p className="result-title">Valid STAC</p>
+           {report.valid ? (
+               <p className="result-title">Valid STAC Item</p>
+           ): (
+               <p className="result-title">Invalid STAC Item</p>
            )}
 
            {report.results!.map((item, i) => (

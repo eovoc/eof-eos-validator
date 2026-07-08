@@ -15,8 +15,6 @@ export default function DocumentationPanel(){
     const mdjSchemaLink = {title: "MDJ Schema", href: `${process.env.PUBLIC_URL}/schemas/mdj.json`};
     resources.push({name: "ISO19115-4", links:[dqcSchemaLink,mdjSchemaLink]});
 
-
-
     const documentationResources = resources.map(resource =>
         <li>
             {resource.name && <>{resource.name}: </>}
