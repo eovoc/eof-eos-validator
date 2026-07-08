@@ -1,6 +1,6 @@
 import { ErrorObject } from "ajv";
 import validate, { StacValidationError, StacValidationReport } from "stac-node-validator";
-import { ValidationResult } from "./ValidationResult";
+import { ValidationReport,ValidationResult } from "./ValidationResult";
 
 function toErrorObject(error: StacValidationError): ErrorObject {
   return {
@@ -12,38 +12,40 @@ function toErrorObject(error: StacValidationError): ErrorObject {
   } as ErrorObject;
 }
 
-function collectErrors(report: StacValidationReport): ErrorObject[] {
+function collectResults(report: StacValidationReport): ValidationResult[] {
   console.log("STAC Validation report: ",report);
+
+  const results = [];
+
+  results.push({schema: 'core', valid: report.results.core!.length < 1, errors : report.results.core!.map(toErrorObject)});
+  results.push({schema: 'custom', valid: report.results.custom!.length < 1, errors : report.results.custom!.map(toErrorObject)});
+
+  for (const [extension, errors] of Object.entries(report.results.extensions ?? {})) {
+    results.push({schema: extension, valid: errors.length < 1, errors: errors.map(toErrorObject)});
+  }
+
   if (report.children.length > 0) {
-    return report.children.flatMap(collectErrors);
+    results.push(...report.children.flatMap(collectResults));
   }
 
-  const errors = [
-    ...report.results.core,
-    ...Object.values(report.results.extensions).flat(),
-    ...report.results.custom,
-  ].map(toErrorObject);
-
-  if (errors.length === 0 && report.messages.length > 0) {
-    errors.push(...report.messages.map((message) => toErrorObject({ message })));
-  }
-
-  return errors;
+  console.log('results mapping:',results);
+  return results;
 }
 
-export async function stacValidator(data: unknown): Promise<ValidationResult> {
+export async function stacValidator(data: unknown): Promise<ValidationReport> {
   try {
     // stac-node-validator treats a string input as a file path/URL to fetch,
     // not as JSON text, so parse it ourselves first.
     const parsed = typeof data === "string" ? JSON.parse(data) : data;
-    const report = await validate(parsed, { strict: true });
-    const valid = report.valid === true;
-    const errors = valid ? [] : collectErrors(report);
-    return { valid, errors: errors.length > 0 ? errors : null };
+    const stacReport = await validate(parsed, { strict: true });
+    const valid = stacReport.valid === true;
+    const results = valid ? [] : collectResults(stacReport);
+    return { valid, results:results };
   } catch (error) {
+    const errors = [toErrorObject({ message: error instanceof Error ? error.message : String(error) })];
     return {
       valid: false,
-      errors: [toErrorObject({ message: error instanceof Error ? error.message : String(error) })],
+      results: [{schema: "general error", valid : false, errors}]
     };
   }
 }

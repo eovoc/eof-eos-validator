@@ -42,5 +42,5 @@ export async function ogcValidator(data: unknown): Promise<ValidationResult> {
 
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
-  return { valid, errors: validate.errors ?? null };
+  return { valid, schema: 'EOF-EOS Schema', errors: validate.errors ?? null };
 }

@@ -3,14 +3,15 @@ import { JsonFileContext } from "../App";
 import Editor from "@monaco-editor/react";
 import {convert} from "../utils/stacConverter";
 import {stacValidator} from "../utils/stacValidator";
-import {ValidationResult} from "../utils/ValidationResult";
+import {ValidationReport} from "../utils/ValidationResult";
+import ValidationReportPanel from "../components/ValidationReportPanel";
 
 export default function StacConverterPage() {
   const { content } = useContext(JsonFileContext)!;
   const [stacContent, setStacContent] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<String | null>(null);
-  const [validationResult, setValidationResult] = useState<ValidationResult | null>(null);
+  const [validationResult, setValidationResult] = useState<ValidationReport | null>(null);
 
   useEffect(() => { handleConvert(); }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -101,26 +102,7 @@ export default function StacConverterPage() {
       {error && <div className="parse-error">⚠ {error}</div>}
 
       {validationResult && (
-          <div className={`result ${validationResult.valid ? "valid" : "invalid"}`}>
-            {validationResult.valid ? (
-                <p className="result-title">Valid — the file conforms to the schema.</p>
-            ) : (
-                <>
-                  <p className="result-title">Invalid — {validationResult.errors!.length} error{validationResult.errors!.length !== 1 ? "s" : ""} found.</p>
-
-                  <ul className="error-list">
-                    {validationResult.errors!.map((err, i) => (
-                        <li key={i} className="error-item">
-                          <span className="error-path">{err.instancePath}</span>
-                          <span className="error-msg">{err.message}</span>
-                        </li>
-                    ))}
-                  </ul>
-                </>
-            )}
-          </div>
-      )}
-
+          <ValidationReportPanel report={validationResult}></ValidationReportPanel>)}
     </>
   );
 }
