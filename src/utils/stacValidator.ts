@@ -45,7 +45,7 @@ export async function stacValidator(data: unknown): Promise<ValidationReport> {
     const errors = [toErrorObject({ message: error instanceof Error ? error.message : String(error) })];
     return {
       valid: false,
-      results: [{schema: "general error", valid : false, errors}]
+      results: [{schema: "Internal error - validation could not be executed.", valid : false, errors}]
     };
   }
 }
