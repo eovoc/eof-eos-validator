@@ -38,7 +38,7 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
   //
   // if(report.messages.length > 0){
   //   for (const message of report.messages) {
-  //     results.push({schema: "other", valid: false, errors: [{message: message}]});
+  //     results.push({schema: "other", valid: false, errors: report.messages.map(message => toErrorObject({ message }))});
   //   }
   // }
 
