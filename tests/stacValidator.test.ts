@@ -1,7 +1,7 @@
 import { stacValidator } from "../src/utils/stacValidator";
-import validStacItem from "./__fixtures__/valid-stac-item.json";
-import invalidStacItem from "./__fixtures__/invalid-stac-item.json";
-import noVersionStacItem from "./__fixtures__/no-version-stac-item.json";
+import validStacItem from "./__fixtures__/stac/valid-stac-item.json";
+import invalidStacItem from "./__fixtures__/stac/invalid-stac-item.json";
+import noVersionStacItem from "./__fixtures__/stac/no-version-stac-item.json";
 
 // These tests hit the real stac-node-validator, which fetches the official
 // STAC schemas over the network (https://schemas.stacspec.org). Allow extra
