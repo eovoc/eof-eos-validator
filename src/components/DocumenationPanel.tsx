@@ -13,7 +13,7 @@ export default function DocumentationPanel(){
 
                 {/*ISO19115-4 documentation*/}
                 <li>
-                    ISO19115-4: (
+                    ISO19115-4 (
                         <a className="documentation-link" title="dqc.json" href={`${process.env.PUBLIC_URL}/schemas/dqc.json`} target="_blank" rel="noreferrer">dqc.json</a>
                     and
                     <a className="documentation-link" style={{ marginLeft: "0.25em" }} title="mdj.json" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">mdj.json</a>
