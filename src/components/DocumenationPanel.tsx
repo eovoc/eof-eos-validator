@@ -1,64 +1,25 @@
 
 export default function DocumentationPanel(){
-
-    let resources : DocumentationResource[] = [];
-    //EO Metadata documentation
-    const metadataLink : Link = {title: "EO Metadata", href: `https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html`};
-    resources.push({links: [metadataLink]});
-
-    //EOF-EOS Schema documentation
-    const schemaLink = {title: "EOF-EOS Schema", href: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`};
-    resources.push({links: [schemaLink]});
-
-    //ISO19115-4 documentation
-    const dqcSchemaLink = {title: "[dqc.json]", href: `${process.env.PUBLIC_URL}/schemas/dqc.json`};
-    const mdjSchemaLink = {title: "[mdj.json]", href: `${process.env.PUBLIC_URL}/schemas/mdj.json`};
-    resources.push({name: "ISO19115-4", links:[dqcSchemaLink,mdjSchemaLink]});
-
-    const documentationResources = resources.map(resource =>
-        <li>
-            {resource.name ? (
-                <>{resource.name} :
-                    {resource.links.map(link =>
-                        <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>
-                    )}
-
-                </>
-            ):(
-                <>
-                    {resource.links.map(link =>
-                        <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>)}
-                </>
-
-            )}
-                   </li>
-    );
-
     return(
         <>
             <h2>Documentation</h2>
            {/*<ul>{documentationResources}</ul>*/}
             <ul>
+                {/*EO Metadata documentation*/}
                 <li> <a className="documentation-link" title="EO Metadata" href="https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html" target="_blank" rel="noreferrer">EO Metadata</a></li>
+
+                {/*EOF-EOS Schema documentation*/}
                 <li> <a className="documentation-link" title="EOF-EOS Schema" href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">EOF-EOS Schema</a></li>
+
+                {/*ISO19115-4 documentation*/}
                 <li>
-                        ISO19115-4: (
-                        <a className="multiple-documentation-link" title="[dqc.json]" href={`${process.env.PUBLIC_URL}/schemas/dqc.json`} target="_blank" rel="noreferrer">[dqc.json]</a>
+                    ISO19115-4: (
+                        <a className="documentation-link" title="dqc.json" href={`${process.env.PUBLIC_URL}/schemas/dqc.json`} target="_blank" rel="noreferrer">dqc.json</a>
                     and
-                    <a className="multiple-documentation-link" title="[mdj.json]" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">[mdj.json]</a>
-                    )
+                    <a className="documentation-link" style={{ marginLeft: "10px" }} title="mdj.json" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">mdj.json</a>
+                    schemas)
                 </li>
             </ul>
         </>
     );
-}
-
-export interface DocumentationResource {
-    name?: string;
-    links: Link[];
-}
-
-export interface Link {
-    title: string;
-    href: string;
 }
