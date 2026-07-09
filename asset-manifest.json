@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/eof-eos-validator/static/css/main.a9876230.css",
-    "main.js": "/eof-eos-validator/static/js/main.b356b6cb.js",
+    "main.css": "/eof-eos-validator/static/css/main.7d011bbb.css",
+    "main.js": "/eof-eos-validator/static/js/main.c56f8c3f.js",
     "static/js/453.c5a270ef.chunk.js": "/eof-eos-validator/static/js/453.c5a270ef.chunk.js",
     "index.html": "/eof-eos-validator/index.html",
-    "main.a9876230.css.map": "/eof-eos-validator/static/css/main.a9876230.css.map",
-    "main.b356b6cb.js.map": "/eof-eos-validator/static/js/main.b356b6cb.js.map",
+    "main.7d011bbb.css.map": "/eof-eos-validator/static/css/main.7d011bbb.css.map",
+    "main.c56f8c3f.js.map": "/eof-eos-validator/static/js/main.c56f8c3f.js.map",
     "453.c5a270ef.chunk.js.map": "/eof-eos-validator/static/js/453.c5a270ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9876230.css",
-    "static/js/main.b356b6cb.js"
+    "static/css/main.7d011bbb.css",
+    "static/js/main.c56f8c3f.js"
   ]
 }
