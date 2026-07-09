@@ -37,7 +37,18 @@ export default function DocumentationPanel(){
     return(
         <>
             <h2>Documentation</h2>
-           <ul>{documentationResources}</ul>
+           {/*<ul>{documentationResources}</ul>*/}
+            <ul>
+                <li> <a className="documentation-link" title="EO Metadata" href="https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html" target="_blank" rel="noreferrer">EO Metadata</a></li>
+                <li> <a className="documentation-link" title="EOF-EOS Schema" href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">EOF-EOS Schema</a></li>
+                <li>
+                        ISO19115-4: (
+                        <a className="multiple-documentation-link" title="[dqc.json]" href={`${process.env.PUBLIC_URL}/schemas/dqc.json`} target="_blank" rel="noreferrer">[dqc.json]</a>
+                    and
+                    <a className="multiple-documentation-link" title="[mdj.json]" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">[mdj.json]</a>
+                    )
+                </li>
+            </ul>
         </>
     );
 }
