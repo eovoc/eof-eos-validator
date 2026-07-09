@@ -11,16 +11,27 @@ export default function DocumentationPanel(){
     resources.push({links: [schemaLink]});
 
     //ISO19115-4 documentation
-    const dqcSchemaLink = {title: "DQC Schema", href: `${process.env.PUBLIC_URL}/schemas/dqc.json`};
-    const mdjSchemaLink = {title: "MDJ Schema", href: `${process.env.PUBLIC_URL}/schemas/mdj.json`};
+    const dqcSchemaLink = {title: "[dqc.json]", href: `${process.env.PUBLIC_URL}/schemas/dqc.json`};
+    const mdjSchemaLink = {title: "[mdj.json]", href: `${process.env.PUBLIC_URL}/schemas/mdj.json`};
     resources.push({name: "ISO19115-4", links:[dqcSchemaLink,mdjSchemaLink]});
 
     const documentationResources = resources.map(resource =>
         <li>
-            {resource.name && <>{resource.name}: </>}
-            {resource.links.map(link =>
-                <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>)}
-        </li>
+            {resource.name ? (
+                <>{resource.name} :
+                    {resource.links.map(link =>
+                        <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>
+                    )}
+
+                </>
+            ):(
+                <>
+                    {resource.links.map(link =>
+                        <a className="documentation-link" title={link.title} href={link.href} target="_blank" rel="noreferrer">{link.title}</a>)}
+                </>
+
+            )}
+                   </li>
     );
 
     return(
