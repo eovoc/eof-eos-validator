@@ -10,9 +10,9 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
     return(
        <>
            {report.valid ? (
-               <p className="result-title valid">Valid STAC Item</p>
+               <p className="result-title valid">{validTitle}</p>
            ): (
-               <p className="result-title invalid">Invalid STAC Item</p>
+               <p className="result-title invalid">{invalidTitle}</p>
            )}
 
            {report.results!.map((item, i) => (
