@@ -4,11 +4,11 @@ import {ValidationReport} from "../utils/ValidationResult";
 export default function ValidationReportPanel({report }:{report: ValidationReport} ){
 
     return(
-       <div className={`result ${report.valid ? "valid" : "invalid"}`}>
+       <>
            {report.valid ? (
-               <p className="result-title">Valid STAC Item</p>
+               <p className="result-title valid">Valid STAC Item</p>
            ): (
-               <p className="result-title">Invalid STAC Item</p>
+               <p className="result-title invalid">Invalid STAC Item</p>
            )}
 
            {report.results!.map((item, i) => (
@@ -32,6 +32,6 @@ export default function ValidationReportPanel({report }:{report: ValidationRepor
                </div>
 
            ))}
-       </div>
+       </>
     );
 }
