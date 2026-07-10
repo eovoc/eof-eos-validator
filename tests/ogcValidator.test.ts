@@ -36,13 +36,13 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     const result = await ogcValidator(validExample);
 
     expect(result.valid).toBe(true);
-    expect(result.errors).toBeNull();
+    expect(result.results[0].errors).toBeNull();
   });
 
   it("flags an example missing a required field (id) as invalid", async () => {
     const result = await ogcValidator(invalidExample);
 
     expect(result.valid).toBe(false);
-    expect(result.errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
+    expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
   });
 });
