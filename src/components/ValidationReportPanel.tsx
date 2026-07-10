@@ -1,5 +1,15 @@
 import {ValidationReport} from "../utils/ValidationResult";
 
+function SchemaLabel({schema}:{schema: string}) {
+    if (schema.startsWith("http") || schema.startsWith(process.env.PUBLIC_URL)) {
+        //If schema is hosted locally: the filename is used as the label. Otherwise: the full URL is used.
+        const label = schema.startsWith(process.env.PUBLIC_URL)
+            ? schema.split("/").filter(Boolean).pop()
+            : schema;
+        return <a href={schema} target="_blank" rel="noopener noreferrer">{label}</a>;
+    }
+    return <>{schema}</>;
+}
 
 export default function ValidationReportPanel({report, validTitle, invalidTitle }:{
     report: ValidationReport,
@@ -18,10 +28,10 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
            {report.results!.map((item, i) => (
                <div key={i} className={`result ${item.valid ? "valid" : "invalid"}`}>
                    {item.valid ? (
-                   <p className="result-title">Valid - {item.schema}</p>
+                   <p className="result-title">Valid - <SchemaLabel schema={item.schema} /></p>
                    ) : (
                    <>
-                   <p className="result-title">Invalid - {item.schema}</p>
+                   <p className="result-title">Invalid - <SchemaLabel schema={item.schema} /></p>
 
                    <ul className="error-list">
                        {item.errors!.map((error, j) => (

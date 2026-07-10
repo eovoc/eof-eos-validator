@@ -77,8 +77,8 @@ export default function OgcValidatorPage() {
               <>
                 <h2>Validation Report</h2>
                 <ValidationReportPanel report={result}
-                                       validTitle="Valid OGC Item"
-                                       invalidTitle="Invalid OGC Item"/>
+                                       validTitle="Valid EOF-EOS Metadata"
+                                       invalidTitle="Invalid EOF-EOS Metadata"/>
               </>
       )}
 
