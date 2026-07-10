@@ -237,11 +237,13 @@ h1 {
   margin: 0 0 8px;
 }
 
-.result.valid > .result-title {
+.result.valid > .result-title,
+.result-title.valid {
   color: #15803d;
 }
 
-.result.invalid > .result-title {
+.result.invalid > .result-title,
+.result-title.invalid {
   color: #b91c1c;
 }
 
@@ -288,6 +290,7 @@ h1 {
 }
 
 .documentation-link {
-  margin-right: 10px;
+  margin-right: 0.25em;
 }
+
 

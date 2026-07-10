@@ -1,4 +1,16 @@
 module.exports = {
+  jest: {
+    configure: (jestConfig) => {
+      // CRA/craco's default jest config only looks under src/. Tests live in
+      // a top-level tests/ folder instead, so add it to the search roots.
+      jestConfig.roots = [...jestConfig.roots, "<rootDir>/tests"];
+      jestConfig.testMatch = [
+        ...jestConfig.testMatch,
+        "<rootDir>/tests/**/*.{spec,test}.{js,jsx,ts,tsx}",
+      ];
+      return jestConfig;
+    },
+  },
   webpack: {
     configure: (webpackConfig) => {
       webpackConfig.resolve.fallback = {

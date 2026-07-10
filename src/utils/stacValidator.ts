@@ -17,6 +17,13 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
 
   const results = [];
 
+  if (report.skipped) {
+    // e.g. no/unsupported stac_version, or an unsupported type (ItemCollection) -
+    // core validation never ran, so report.results.core is empty and must not be read as "valid".
+    results.push({schema: 'core', valid: false, errors: report.messages.map(message => toErrorObject({ message }))});
+    return results;
+  }
+
   results.push({schema: 'core', valid: report.results.core!.length < 1, errors : report.results.core!.map(toErrorObject)});
   //DO not list 'custom' as we do not use it.
   // results.push({schema: 'custom', valid: report.results.custom!.length < 1, errors : report.results.custom!.map(toErrorObject)});
@@ -31,7 +38,7 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
   //
   // if(report.messages.length > 0){
   //   for (const message of report.messages) {
-  //     results.push({schema: "other", valid: false, errors: [{message: message}]});
+  //     results.push({schema: "other", valid: false, errors: report.messages.map(message => toErrorObject({ message }))});
   //   }
   // }
 
