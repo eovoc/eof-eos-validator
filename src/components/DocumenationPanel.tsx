@@ -31,7 +31,7 @@ export default function DocumentationPanel(){
                 {/*Thesaurus schemas*/}
                 <li> Thesaurus (
                 {thesaurusFiles.map((file) => (
-                     <a className="documentation-link" style={{ marginLeft: "0.25em" }}title={file} href={`${THESAURUS_DIR}/${file}`} target="_blank" rel="noreferrer">{file}</a>
+                     <a className="documentation-link" style={{ marginLeft: "0.25em" }} title={file} href={`${THESAURUS_DIR}/${file}`} target="_blank" rel="noreferrer">{file}</a>
                 ))}
                 )</li>
             </ul>

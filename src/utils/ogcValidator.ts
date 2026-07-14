@@ -1,7 +1,7 @@
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {ValidationReport, ValidationResult} from "./ValidationResult";
+import {ValidationReport} from "./ValidationResult";
 import {THESAURUS_DIR, loadThesaurusSchemaFiles} from "./thesaurusSchemas";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
@@ -47,6 +47,5 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   const valid = validate(data) as boolean;
   console.log("validation result:",validate);
   const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validate.errors ?? null };
-  const report = { valid, results: [result]}
-  return report;
+  return { valid, results: [result]};
 }
