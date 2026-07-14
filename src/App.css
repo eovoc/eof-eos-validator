@@ -279,6 +279,43 @@ h1 {
   color: #444;
 }
 
+.error-details {
+  margin-top: 6px;
+}
+
+.error-details > summary {
+  cursor: pointer;
+  color: #b91c1c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.error-detail-row {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.error-detail-label {
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.error-details code {
+  font-family: 'Courier New', monospace;
+}
+
+.error-details pre {
+  margin: 4px 0 0;
+  padding: 8px 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
 .parse-error {
   background: #fff5f5;
   border: 1.5px solid #fc8181;
