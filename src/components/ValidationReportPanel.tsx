@@ -35,23 +35,33 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
                    <p className="result-title">Invalid - <SchemaLabel schema={item.schema} /></p>
 
                    <ul className="error-list">
-                       {item.errors!.map((error, j) => (
+                       {item.errors!.map((error, j) => {
+                       const hasSchemaPath = !!error.schemaPath;
+                       const hasParams = !!error.params && Object.keys(error.params).length > 0;
+                       return (
                        <li key={j} className="error-item">
                            <span className="error-path">{error.instancePath}</span>
                            <span className="error-msg">{error.message}</span>
+                           {(hasSchemaPath || hasParams) && (
                            <details className="error-details">
                                <summary>Details</summary>
+                               {hasSchemaPath && (
                                <div className="error-detail-row">
                                    <span className="error-detail-label">schemaPath:</span>
                                    <code>{error.schemaPath}</code>
                                </div>
+                               )}
+                               {hasParams && (
                                <div className="error-detail-row">
                                    <span className="error-detail-label">params:</span>
                                    <pre>{prettyPrint(error.params)}</pre>
                                </div>
+                               )}
                            </details>
+                           )}
                        </li>
-                       ))}
+                       );
+                       })}
                    </ul>
                    </>
                    )}

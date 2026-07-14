@@ -52,6 +52,7 @@ export async function stacValidator(data: unknown): Promise<ValidationReport> {
     // not as JSON text, so parse it ourselves first.
     const parsed = typeof data === "string" ? JSON.parse(data) : data;
     const stacReport = await validate(parsed, { strict: true });
+    console.log("stac validation report: ",stacReport);
     const valid = stacReport.valid === true;
     const results = collectResults(stacReport);
     return { valid, results:results };
