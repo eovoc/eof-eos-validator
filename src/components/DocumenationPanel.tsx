@@ -1,5 +1,13 @@
+import { useEffect, useState } from "react";
+import { THESAURUS_DIR, loadThesaurusSchemaFiles } from "../utils/thesaurusSchemas";
 
 export default function DocumentationPanel(){
+    const [thesaurusFiles, setThesaurusFiles] = useState<string[]>([]);
+
+    useEffect(() => {
+        loadThesaurusSchemaFiles().then(setThesaurusFiles);
+    }, []);
+
     return(
         <>
             <h2>Documentation</h2>
@@ -19,6 +27,13 @@ export default function DocumentationPanel(){
                     <a className="documentation-link" style={{ marginLeft: "0.25em" }} title="mdj.json" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">mdj.json</a>
                     schemas)
                 </li>
+
+                {/*Thesaurus schemas*/}
+                <li> Thesaurus (
+                {thesaurusFiles.map((file) => (
+                     <a className="documentation-link" style={{ marginLeft: "0.25em" }}title={file} href={`${THESAURUS_DIR}/${file}`} target="_blank" rel="noreferrer">{file}</a>
+                ))}
+                )</li>
             </ul>
         </>
     );

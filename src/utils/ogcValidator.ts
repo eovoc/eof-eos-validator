@@ -2,6 +2,7 @@ import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {ValidationReport, ValidationResult} from "./ValidationResult";
+import {THESAURUS_DIR, loadThesaurusSchemaFiles} from "./thesaurusSchemas";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -14,12 +15,12 @@ const BASE = process.env.PUBLIC_URL ?? "";
 const STATIC_SCHEMAS = [
   `${BASE}/schemas/mdj.json`,
   `${BASE}/schemas/dqc.json`,
-  `${BASE}/schemas/thesaurus/acquisitionstation.json`,
-  `${BASE}/schemas/thesaurus/platforms.json`
 ];
 
 const schemasReady: Promise<void> = (async () => {
-  for (const path of STATIC_SCHEMAS) {
+  const thesaurusFiles = await loadThesaurusSchemaFiles();
+  const thesaurusSchemas = thesaurusFiles.map((file) => `${THESAURUS_DIR}/${file}`);
+  for (const path of [...STATIC_SCHEMAS, ...thesaurusSchemas]) {
     try {
       const res = await fetch(path);
       if (!res.ok) continue;

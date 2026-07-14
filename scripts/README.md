@@ -34,7 +34,12 @@ Produces two files named after the concept scheme's URI slug:
 ```
 
 This runs the converter for every `*.json` file in `scripts/skos/` and
-writes the generated schema/context files to `scripts/schema/`.
+writes the generated schema/context files to `public/schemas/thesaurus/`,
+which is where the app fetches them from at runtime. It also (re)writes
+`public/schemas/thesaurus/manifest.json`, a JSON array of every generated
+schema filename — `src/utils/ogcValidator.ts` fetches this manifest to
+know which thesaurus schemas to load, since a static SPA can't list a
+directory's contents on its own.
 
 To add a new thesaurus, drop its SKOS JSON-LD file into `scripts/skos/`
 and re-run `convert.sh`.
