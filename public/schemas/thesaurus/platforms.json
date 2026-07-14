@@ -1,573 +1,150 @@
 {
   "$schema": "https://json-schema.org/draft/07/schema",
-  "$id": "platforms.json",
+  "$id": "https://earth.esa.int/concepts/concept_scheme/platforms/schema.json",
   "title": "platforms",
   "description": "Enumération générée à partir du thésaurus SKOS 'platforms' (https://earth.esa.int/concepts/concept_scheme/platforms).",
   "type": "string",
-  "oneOf": [
-    {
-      "const": "NOAA-15",
-      "description": "https://earth.esa.int/concept/004f03c6-80d1-5726-8481-cb3933c6c1ba"
-    },
-    {
-      "const": "Aeolus",
-      "description": "https://earth.esa.int/concept/01d0faf3-e82a-587a-86c2-2b8d8bd52185"
-    },
-    {
-      "const": "Seasat",
-      "description": "https://earth.esa.int/concept/0552b02f-9c86-56e0-9800-7372890f00a8"
-    },
-    {
-      "const": "SAOCOM-1",
-      "description": "https://earth.esa.int/concept/057b840d-fa23-54d1-b722-c345eb3905a7"
-    },
-    {
-      "const": "Metop",
-      "description": "https://earth.esa.int/concept/05978483-178f-56a2-ad45-2d0d77860a9f"
-    },
-    {
-      "const": "NOAA-21",
-      "description": "https://earth.esa.int/concept/0613722e-8ee9-55e1-8882-ec0076ffb6c4"
-    },
-    {
-      "const": "FORUM",
-      "description": "https://earth.esa.int/concept/07603ff0-3940-5c7a-bf47-98c4974e637b"
-    },
-    {
-      "const": "HotSat-1",
-      "description": "https://earth.esa.int/concept/0a6d1fba-f786-5aa0-9b1a-7631184dd27a"
-    },
-    {
-      "const": "PlanetScope",
-      "description": "https://earth.esa.int/concept/0a967226-e516-417d-b079-8c24ff1b7387"
-    },
-    {
-      "const": "ICEYE",
-      "description": "https://earth.esa.int/concept/0b23cac7-35df-4985-b44b-0b085f6ba814"
-    },
-    {
-      "const": "Parasol-1",
-      "description": "https://earth.esa.int/concept/0ccd8752-3985-58aa-9781-6058c8eb4bbe"
-    },
-    {
-      "const": "FLEX",
-      "description": "https://earth.esa.int/concept/0d74ba05-9f2d-5dec-8e99-f756f7b06c56"
-    },
-    {
-      "const": "Envisat",
-      "description": "https://earth.esa.int/concept/11ea961b-1d0b-5d6d-a55a-b58aed01d430"
-    },
-    {
-      "const": "NovaSAR-1",
-      "description": "https://earth.esa.int/concept/1290e6ff-c317-5394-81b3-0e0ebfb818a9"
-    },
-    {
-      "const": "SPOT-4",
-      "description": "https://earth.esa.int/concept/15513272-71d8-53ef-a3c3-556d44388fce"
-    },
-    {
-      "const": "TanSat",
-      "description": "https://earth.esa.int/concept/155f604b-37cf-5d2d-8cf3-340f933c6ffc"
-    },
-    {
-      "const": "FSSCat-B",
-      "description": "https://earth.esa.int/concept/167543c2-9645-5673-a360-4ac68923b32f"
-    },
-    {
-      "const": "ALTIUS",
-      "description": "https://earth.esa.int/concept/192ce5dc-2e35-5393-a1c5-f275f0028f6e"
-    },
-    {
-      "const": "PROBA-V",
-      "description": "https://earth.esa.int/concept/1a303b3a-0758-56b5-8cdf-b5e44cee907e"
-    },
-    {
-      "const": "GOCE",
-      "description": "https://earth.esa.int/concept/1abfac39-23bf-561f-a765-76da42a79d44"
-    },
-    {
-      "const": "NOAA-14",
-      "description": "https://earth.esa.int/concept/20e46238-8a64-59d5-924d-a39cec89a750"
-    },
-    {
-      "const": "OrbView-2",
-      "description": "https://earth.esa.int/concept/224163a5-de65-5f83-b31b-22ac59e3453d"
-    },
-    {
-      "const": "Hydrognss",
-      "description": "https://earth.esa.int/concept/28177728-5c30-5919-87ad-3c241eb6f41a"
-    },
-    {
-      "const": "Vision-1",
-      "description": "https://earth.esa.int/concept/29210769-e87c-5450-be04-a999f187b9c4"
-    },
-    {
-      "const": "NOAA-6",
-      "description": "https://earth.esa.int/concept/2aba2536-1ecb-5c97-abcf-894475976287"
-    },
-    {
-      "const": "Spire",
-      "description": "https://earth.esa.int/concept/2ad310f4-958b-5333-853b-c095beb7e283"
-    },
-    {
-      "const": "Parasol",
-      "description": "https://earth.esa.int/concept/2ba75319-7d4c-58d8-a1fa-cee03964ae0f"
-    },
-    {
-      "const": "UK-DMC-1",
-      "description": "https://earth.esa.int/concept/2ca430d0-eb66-5d11-a420-7fc0e4fc795c"
-    },
-    {
-      "const": "Sentinel-6",
-      "description": "https://earth.esa.int/concept/2f75604a-d00f-4387-ba3c-19512992c05f"
-    },
-    {
-      "const": "HARMONY",
-      "description": "https://earth.esa.int/concept/2fba3b73-669d-56c3-8bbf-212f5eb749c7"
-    },
-    {
-      "const": "Landsat-1",
-      "description": "https://earth.esa.int/concept/3078b489-b049-5328-ad71-f3da264d7c2f"
-    },
-    {
-      "const": "WindSat",
-      "description": "https://earth.esa.int/concept/341cadb6-e48c-54df-a1c1-8b9c008e9d06"
-    },
-    {
-      "const": "Beijing-1",
-      "description": "https://earth.esa.int/concept/351bd289-0f54-5ba5-84ab-4156072d94b4"
-    },
-    {
-      "const": "SPOT-3",
-      "description": "https://earth.esa.int/concept/377c302c-4a08-5efc-98ba-8a1c56aa7e51"
-    },
-    {
-      "const": "IRS 1C-1D",
-      "description": "https://earth.esa.int/concept/3969a7fb-d94d-4657-98f5-258a9990bdd3"
-    },
-    {
-      "const": "NOAA-11",
-      "description": "https://earth.esa.int/concept/3d0c1b1b-9ee5-556d-b68d-aff231e8a806"
-    },
-    {
-      "const": "QuikSCAT",
-      "description": "https://earth.esa.int/concept/3d1e67cc-747b-568c-b20f-562dad1fb8f4"
-    },
-    {
-      "const": "IRS-P6",
-      "description": "https://earth.esa.int/concept/3ea37733-9202-52b1-9bb0-592e87cdacbc"
-    },
-    {
-      "const": "Sentinel-1",
-      "description": "https://earth.esa.int/concept/3f5f208d-5d56-563a-9005-d3667b1b66f7"
-    },
-    {
-      "const": "Electro-L",
-      "description": "https://earth.esa.int/concept/40d93ee8-ca67-5079-bd15-4ad9c9cb6674"
-    },
-    {
-      "const": "Aura",
-      "description": "https://earth.esa.int/concept/441bc6cc-f272-5920-8432-089bda2e5f76"
-    },
-    {
-      "const": "GeoEye-1",
-      "description": "https://earth.esa.int/concept/44446004-f93d-57a4-837d-a7776bb5a720"
-    },
-    {
-      "const": "GHGSat",
-      "description": "https://earth.esa.int/concept/4703b949-9788-5040-bbbd-a4c29009e858"
-    },
-    {
-      "const": "Sentinel-3",
-      "description": "https://earth.esa.int/concept/48a68d1f-63e0-563a-b94e-67fee77706bb"
-    },
-    {
-      "const": "GOSAT",
-      "description": "https://earth.esa.int/concept/4b28f873-b563-5f7d-982e-12c5597f0d90"
-    },
-    {
-      "const": "DMC",
-      "description": "https://earth.esa.int/concept/5000a03f-3f6e-51a6-8d48-a232d16e15e6"
-    },
-    {
-      "const": "GEOSAT",
-      "description": "https://earth.esa.int/concept/51080430-be96-5055-bdac-17b9ed04a9fd"
-    },
-    {
-      "const": "Metop-SG",
-      "description": "https://earth.esa.int/concept/55210487-53e2-5f2e-877f-71fd94761220"
-    },
-    {
-      "const": "INSAT",
-      "description": "https://earth.esa.int/concept/56406f12-a80e-5baf-8c92-cb8394a15676"
-    },
-    {
-      "const": "TERRA",
-      "description": "https://earth.esa.int/concept/5674cd3f-e6dc-5588-9062-7d993c1ec09d"
-    },
-    {
-      "const": "CryoSat",
-      "description": "https://earth.esa.int/concept/58fa3406-73c7-5e87-9701-6cade8ba2c2b"
-    },
-    {
-      "const": "WorldView",
-      "description": "https://earth.esa.int/concept/5c5e0c75-f931-553c-b44b-aceced616d25"
-    },
-    {
-      "const": "ADEOS-I",
-      "description": "https://earth.esa.int/concept/5cb5c431-f1f7-56ba-82e2-870ff1d4b110"
-    },
-    {
-      "const": "IRS-P3",
-      "description": "https://earth.esa.int/concept/5cbac7f2-c52c-5f09-853f-958f1fecbded"
-    },
-    {
-      "const": "Landsat-6",
-      "description": "https://earth.esa.int/concept/5df42a51-4dc6-538b-ac1e-e65392e727b8"
-    },
-    {
-      "const": "Meteor-M",
-      "description": "https://earth.esa.int/concept/61717cce-2d4b-56fd-bd0d-9208dbb382ad"
-    },
-    {
-      "const": "GeoEye-1",
-      "description": "https://earth.esa.int/concept/63182bb1-e682-5b93-936a-517522f56241"
-    },
-    {
-      "const": "ALOS-2",
-      "description": "https://earth.esa.int/concept/64eb9a55-5aab-5949-9dd4-d75665a32251"
-    },
-    {
-      "const": "NOAA-10",
-      "description": "https://earth.esa.int/concept/6693c4c4-29f3-56d4-a7b3-e5251e0f0c20"
-    },
-    {
-      "const": "NOAA-19",
-      "description": "https://earth.esa.int/concept/68c12d03-a3e8-56c0-94e7-2ad0b59542d3"
-    },
-    {
-      "const": "FORMOSAT-3",
-      "description": "https://earth.esa.int/concept/6919073f-0cd4-5f71-b4c5-5132bcfcec88"
-    },
-    {
-      "const": "ERS",
-      "description": "https://earth.esa.int/concept/6caeef70-6328-53c7-a13f-b0da23076e9f"
-    },
-    {
-      "const": "NOAA-12",
-      "description": "https://earth.esa.int/concept/6fc3498e-922b-5a78-8ac3-6ed275f8f20d"
-    },
-    {
-      "const": "Nimbus-7",
-      "description": "https://earth.esa.int/concept/7401c2e6-eeae-56cf-a993-5d4637f041f9"
-    },
-    {
-      "const": "RapidEye",
-      "description": "https://earth.esa.int/concept/74ab095e-f856-47e9-ad56-d5c1376494e4"
-    },
-    {
-      "const": "NOAA-9",
-      "description": "https://earth.esa.int/concept/7610b15d-ba52-578d-bb24-bdd180a1ca57"
-    },
-    {
-      "const": "IKONOS-2",
-      "description": "https://earth.esa.int/concept/77939037-2fc3-5126-b2a2-d4a6b8fdcec8"
-    },
-    {
-      "const": "NOAA-16",
-      "description": "https://earth.esa.int/concept/77aa9eb0-13d6-5ed2-a82a-10ac856dc8e2"
-    },
-    {
-      "const": "Landsat-9",
-      "description": "https://earth.esa.int/concept/791c6aaf-9b68-503b-ae93-73bac1c2729b"
-    },
-    {
-      "const": "Landsat-4",
-      "description": "https://earth.esa.int/concept/7d485bb5-252e-535f-acaa-5e07ed22fd8e"
-    },
-    {
-      "const": "IRS-P7",
-      "description": "https://earth.esa.int/concept/7e9c164d-6528-5e45-97d2-720de45f6b6e"
-    },
-    {
-      "const": "SMOS",
-      "description": "https://earth.esa.int/concept/7eb92e2a-7b12-56a7-be1a-a71c97778559"
-    },
-    {
-      "const": "QuickBird-2",
-      "description": "https://earth.esa.int/concept/7fb917bd-f1a7-5033-af70-8773bdc92891"
-    },
-    {
-      "const": "Sentinel-5P",
-      "description": "https://earth.esa.int/concept/811133ca-c658-5bcf-b1de-3bee525ae3d8"
-    },
-    {
-      "const": "RADARSAT-2",
-      "description": "https://earth.esa.int/concept/81df103e-3e8c-549f-bbad-c9ed9e119166"
-    },
-    {
-      "const": "Pleiades Neo",
-      "description": "https://earth.esa.int/concept/83140f75-7ba7-46ba-b9ca-61e3693ecfb0"
-    },
-    {
-      "const": "SkySat",
-      "description": "https://earth.esa.int/concept/83934b68-828e-5293-b6aa-bf7d7c428ec9"
-    },
-    {
-      "const": "HiVE",
-      "description": "https://earth.esa.int/concept/8fad1ace-be0f-4633-a8f8-c4a51b4992e3"
-    },
-    {
-      "const": "NOAA-18",
-      "description": "https://earth.esa.int/concept/90513a0c-cd2a-5b84-8b5e-e648aae325cf"
-    },
-    {
-      "const": "Landsat-8",
-      "description": "https://earth.esa.int/concept/90cc3f07-3601-5191-8af3-86cc314a353d"
-    },
-    {
-      "const": "SPOT-5",
-      "description": "https://earth.esa.int/concept/91d75764-3e85-53c7-8e4b-6b4d6d2ed8c9"
-    },
-    {
-      "const": "TerraSAR-X_TanDEM-X",
-      "description": "https://earth.esa.int/concept/92a0341d-74f0-4b2e-bb5f-b429d569630f"
-    },
-    {
-      "const": "Pleiades",
-      "description": "https://earth.esa.int/concept/92d6e739-e828-5fce-861a-8c51d1373a05"
-    },
-    {
-      "const": "Jason-1",
-      "description": "https://earth.esa.int/concept/994375c0-66cc-590b-9831-df1ad37e162f"
-    },
-    {
-      "const": "Jason-2",
-      "description": "https://earth.esa.int/concept/9b5df825-5aaf-507b-9da1-f3bd7376a01a"
-    },
-    {
-      "const": "GRACE-FO",
-      "description": "https://earth.esa.int/concept/9bc20e38-b798-4ed0-8aac-a8cc1ffe07b8"
-    },
-    {
-      "const": "NOAA-8",
-      "description": "https://earth.esa.int/concept/9d190405-dff1-5763-944c-658382b0c73a"
-    },
-    {
-      "const": "NOAA-7",
-      "description": "https://earth.esa.int/concept/9de82e76-df23-5b5f-ae4f-b0f4d4f8f941"
-    },
-    {
-      "const": "MOS",
-      "description": "https://earth.esa.int/concept/9fb28cdb-6f7a-5d32-800d-b05000140884"
-    },
-    {
-      "const": "Biomass",
-      "description": "https://earth.esa.int/concept/a25a98f2-c03a-51b7-be4a-afab0863186c"
-    },
-    {
-      "const": "IRS-P8",
-      "description": "https://earth.esa.int/concept/a2d6137d-420f-5978-a1ed-c1d2144fa1d9"
-    },
-    {
-      "const": "GOSAT-2",
-      "description": "https://earth.esa.int/concept/a4dbb7cf-f9d9-58f5-ada7-1e4d95d2f13e"
-    },
-    {
-      "const": "SPOT-2",
-      "description": "https://earth.esa.int/concept/a58d7f51-9786-5dcb-a100-2af51c5b2ac0"
-    },
-    {
-      "const": "Himawari",
-      "description": "https://earth.esa.int/concept/a6dc1e3f-4a9a-5b7a-a018-dccd68f13420"
-    },
-    {
-      "const": "FORMOSAT-2",
-      "description": "https://earth.esa.int/concept/a71f9674-0536-5012-ac98-1a1a03961aa4"
-    },
-    {
-      "const": "CASSIOPE",
-      "description": "https://earth.esa.int/concept/a7adccea-4a39-5ebf-afd3-9608cd100f74"
-    },
-    {
-      "const": "SWOT",
-      "description": "https://earth.esa.int/concept/a95a89a0-20da-5d8b-b6f6-39bab83ed703"
-    },
-    {
-      "const": "Haiyang-2",
-      "description": "https://earth.esa.int/concept/adb8f6b4-680e-55e5-89ad-18fee10abd77"
-    },
-    {
-      "const": "Landsat-7",
-      "description": "https://earth.esa.int/concept/b03977f9-db84-586a-8647-c9d9a29b1799"
-    },
-    {
-      "const": "OceanSat-2",
-      "description": "https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"
-    },
-    {
-      "const": "IRS-P5",
-      "description": "https://earth.esa.int/concept/b2827bd9-2027-534b-a350-4f4a1e62486f"
-    },
-    {
-      "const": "PROBA-1",
-      "description": "https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"
-    },
-    {
-      "const": "CryoSat-2",
-      "description": "https://earth.esa.int/concept/b687f88d-4407-5c43-8f6a-85a5ab84f0d4"
-    },
-    {
-      "const": "GRACE",
-      "description": "https://earth.esa.int/concept/b6d01cb5-a690-4ec8-8940-4b4d2aee1a9b"
-    },
-    {
-      "const": "ODIN",
-      "description": "https://earth.esa.int/concept/b805ce5d-1882-5916-8fad-400f5a14ff80"
-    },
-    {
-      "const": "COSMO-SkyMed Second Generation",
-      "description": "https://earth.esa.int/concept/bab08556-1baf-5845-a1fc-af8dfc8b8b18"
-    },
-    {
-      "const": "AQUA",
-      "description": "https://earth.esa.int/concept/bb996f88-8040-5849-9253-6a205afdd57a"
-    },
-    {
-      "const": "SPOT-7",
-      "description": "https://earth.esa.int/concept/bc17f16f-c253-52c6-b2d5-486984bf0c88"
-    },
-    {
-      "const": "JERS-1",
-      "description": "https://earth.esa.int/concept/bcb94c5e-a48b-5da3-be1e-820191132858"
-    },
-    {
-      "const": "Nimbus-4",
-      "description": "https://earth.esa.int/concept/bd15dccc-3615-59cb-bd2e-49612aa7e8b4"
-    },
-    {
-      "const": "NigeriaSat-1",
-      "description": "https://earth.esa.int/concept/bd59644c-3ad8-55b0-9288-62c091a4cd95"
-    },
-    {
-      "const": "RADARSAT-1",
-      "description": "https://earth.esa.int/concept/bef564af-366d-51a2-86a3-2dd854098be1"
-    },
-    {
-      "const": "Swarm",
-      "description": "https://earth.esa.int/concept/c146a188-953f-5492-ab15-2e83c545d5cb"
-    },
-    {
-      "const": "MicroCarb",
-      "description": "https://earth.esa.int/concept/c2dd233e-0176-56f4-b170-308d6971efdf"
-    },
-    {
-      "const": "SPOT-1",
-      "description": "https://earth.esa.int/concept/c3496470-830a-5d67-a28c-e3b812b79a38"
-    },
-    {
-      "const": "Earth Observation Satellite",
-      "description": "https://earth.esa.int/concept/c55d6941-023c-514c-a9c4-1693c053f861"
-    },
-    {
-      "const": "KOMPSAT-1",
-      "description": "https://earth.esa.int/concept/c6d38828-f71c-53be-8dc7-661a10998f08"
-    },
-    {
-      "const": "TIROS-N",
-      "description": "https://earth.esa.int/concept/c7717205-07de-515d-b3d8-689c504c8382"
-    },
-    {
-      "const": "NASA Earth System Science Pathfinder",
-      "description": "https://earth.esa.int/concept/c9175809-a85c-5d29-b1aa-47d42eb78d59"
-    },
-    {
-      "const": "COSMO-SkyMed",
-      "description": "https://earth.esa.int/concept/cad00cc2-3e4a-4a17-8736-2a6787bb4e13"
-    },
-    {
-      "const": "NOAA-1",
-      "description": "https://earth.esa.int/concept/cae8f257-62bd-5957-a670-e76b2bbce2f8"
-    },
-    {
-      "const": "Sentinel-4",
-      "description": "https://earth.esa.int/concept/cd28b71d-2e94-53a1-9296-6337be04803b"
-    },
-    {
-      "const": "KOMPSAT-2",
-      "description": "https://earth.esa.int/concept/cd9afdcb-b866-5f94-84d1-d1c73347d64c"
-    },
-    {
-      "const": "Landsat-2",
-      "description": "https://earth.esa.int/concept/d0920f88-c8d6-53c9-80dd-0e9226e84a71"
-    },
-    {
-      "const": "PAZ",
-      "description": "https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"
-    },
-    {
-      "const": "NOAA-17",
-      "description": "https://earth.esa.int/concept/d1a7b07d-fd27-54ef-9769-42ae64a3f675"
-    },
-    {
-      "const": "GOSAT-1",
-      "description": "https://earth.esa.int/concept/d1a82f20-68a9-5609-b261-123602bef1b0"
-    },
-    {
-      "const": "Space-based Platform",
-      "description": "https://earth.esa.int/concept/d3f1d937-ca2d-5e73-a1eb-f7b8b932f2ed"
-    },
-    {
-      "const": "NGGM",
-      "description": "https://earth.esa.int/concept/d48f4b35-452f-5fe1-9b46-853b6194111d"
-    },
-    {
-      "const": "Sentinel-2",
-      "description": "https://earth.esa.int/concept/d62a9b2d-feaa-5248-9d07-4042c7dd8988"
-    },
-    {
-      "const": "SCISAT-1",
-      "description": "https://earth.esa.int/concept/dabc9eeb-fe74-5e6a-8ef8-c8ec2ca0468f"
-    },
-    {
-      "const": "GPM",
-      "description": "https://earth.esa.int/concept/dd7e18bf-c8b9-5f00-acc7-a443c761e524"
-    },
-    {
-      "const": "OrbView-1",
-      "description": "https://earth.esa.int/concept/ddd646dc-7263-5638-8449-77d74770112a"
-    },
-    {
-      "const": "Landsat-3",
-      "description": "https://earth.esa.int/concept/de252973-e8f9-5b86-9957-1323f16c1e83"
-    },
-    {
-      "const": "IRS-R2",
-      "description": "https://earth.esa.int/concept/e11f3073-b183-5867-9354-dd9910ecf121"
-    },
-    {
-      "const": "SPOT-6",
-      "description": "https://earth.esa.int/concept/e428bd05-cac0-56ed-bf3c-3250717fe62b"
-    },
-    {
-      "const": "FOREST-2",
-      "description": "https://earth.esa.int/concept/f005f9db-82fe-5afd-81b7-1c0e3b977908"
-    },
-    {
-      "const": "ALOS-1",
-      "description": "https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"
-    },
-    {
-      "const": "EarthCARE",
-      "description": "https://earth.esa.int/concept/fc478009-7c76-54af-ba48-64c36705faef"
-    },
-    {
-      "const": "FSSCat-A",
-      "description": "https://earth.esa.int/concept/fe3511af-0268-5d10-999a-db274e1191fe"
-    },
-    {
-      "const": "Landsat-5",
-      "description": "https://earth.esa.int/concept/fee52d15-c827-563f-bd19-e3e3ca3d63a0"
-    }
+  "enum": [
+    "NOAA-15",
+    "Aeolus",
+    "Seasat",
+    "SAOCOM-1",
+    "Metop",
+    "NOAA-21",
+    "FORUM",
+    "HotSat-1",
+    "PlanetScope",
+    "ICEYE",
+    "Parasol-1",
+    "FLEX",
+    "Envisat",
+    "NovaSAR-1",
+    "SPOT-4",
+    "TanSat",
+    "FSSCat-B",
+    "ALTIUS",
+    "PROBA-V",
+    "GOCE",
+    "NOAA-14",
+    "OrbView-2",
+    "Hydrognss",
+    "Vision-1",
+    "NOAA-6",
+    "Spire",
+    "Parasol",
+    "UK-DMC-1",
+    "Sentinel-6",
+    "HARMONY",
+    "Landsat-1",
+    "WindSat",
+    "Beijing-1",
+    "SPOT-3",
+    "IRS 1C-1D",
+    "NOAA-11",
+    "QuikSCAT",
+    "IRS-P6",
+    "Sentinel-1",
+    "Electro-L",
+    "Aura",
+    "GeoEye-1",
+    "GHGSat",
+    "Sentinel-3",
+    "GOSAT",
+    "DMC",
+    "GEOSAT",
+    "Metop-SG",
+    "INSAT",
+    "TERRA",
+    "CryoSat",
+    "WorldView",
+    "ADEOS-I",
+    "IRS-P3",
+    "Landsat-6",
+    "Meteor-M",
+    "GeoEye-1",
+    "ALOS-2",
+    "NOAA-10",
+    "NOAA-19",
+    "FORMOSAT-3",
+    "ERS",
+    "NOAA-12",
+    "Nimbus-7",
+    "RapidEye",
+    "NOAA-9",
+    "IKONOS-2",
+    "NOAA-16",
+    "Landsat-9",
+    "Landsat-4",
+    "IRS-P7",
+    "SMOS",
+    "QuickBird-2",
+    "Sentinel-5P",
+    "RADARSAT-2",
+    "Pleiades Neo",
+    "SkySat",
+    "HiVE",
+    "NOAA-18",
+    "Landsat-8",
+    "SPOT-5",
+    "TerraSAR-X_TanDEM-X",
+    "Pleiades",
+    "Jason-1",
+    "Jason-2",
+    "GRACE-FO",
+    "NOAA-8",
+    "NOAA-7",
+    "MOS",
+    "Biomass",
+    "IRS-P8",
+    "GOSAT-2",
+    "SPOT-2",
+    "Himawari",
+    "FORMOSAT-2",
+    "CASSIOPE",
+    "SWOT",
+    "Haiyang-2",
+    "Landsat-7",
+    "OceanSat-2",
+    "IRS-P5",
+    "PROBA-1",
+    "CryoSat-2",
+    "GRACE",
+    "ODIN",
+    "COSMO-SkyMed Second Generation",
+    "AQUA",
+    "SPOT-7",
+    "JERS-1",
+    "Nimbus-4",
+    "NigeriaSat-1",
+    "RADARSAT-1",
+    "Swarm",
+    "MicroCarb",
+    "SPOT-1",
+    "Earth Observation Satellite",
+    "KOMPSAT-1",
+    "TIROS-N",
+    "NASA Earth System Science Pathfinder",
+    "COSMO-SkyMed",
+    "NOAA-1",
+    "Sentinel-4",
+    "KOMPSAT-2",
+    "Landsat-2",
+    "PAZ",
+    "NOAA-17",
+    "GOSAT-1",
+    "Space-based Platform",
+    "NGGM",
+    "Sentinel-2",
+    "SCISAT-1",
+    "GPM",
+    "OrbView-1",
+    "Landsat-3",
+    "IRS-R2",
+    "SPOT-6",
+    "FOREST-2",
+    "ALOS-1",
+    "EarthCARE",
+    "FSSCat-A",
+    "Landsat-5"
   ]
 }
