@@ -457,10 +457,10 @@
 			"minProperties": 1,
 			"properties": {
 				"platformShortName": {
-					"$ref": "https://earth.esa.int/concepts/concept_scheme/platforms/schema.json"
+					"$ref": "platforms.json"
 				},
 				"platformSerialIdentifier": {
-					"$ref": "https://earth.esa.int/concepts/concept_scheme/platforms/schema.json"
+					"$ref": "platforms.json"
 				},
 				"orbitType": {
 					"type": "string",
@@ -547,7 +547,7 @@
 							]
 						},
 						"acquisitionStation": {
-							"$ref": "https://earth.esa.int/concepts/concept_scheme/acquisitionstation/schema.json"
+							"$ref": "acquisitionstation.json"
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"

@@ -123,10 +123,10 @@ function convert(doc: SkosDocument): ConversionResult {
 
 // ---------- Génération des artefacts ----------
 
-function buildJsonSchema(result: ConversionResult): object {
+function buildJsonSchema(result: ConversionResult, filename: string): object {
   return {
     $schema: "https://json-schema.org/draft/07/schema",
-    $id: `${result.schemeUri}/schema.json`,
+    $id: filename,
     title: result.schemeTitle,
     description: `Enumération générée à partir du thésaurus SKOS '${result.schemeTitle}' (${result.schemeUri}).`,
     type: "string",
@@ -138,7 +138,7 @@ function buildJsonSchema(result: ConversionResult): object {
   };
 }
 
-function buildJsonLdContext(result: ConversionResult): object {
+function buildJsonLdContext(result: ConversionResult, filename: string): object {
   const termName = result.schemeTitle.replace(/[^a-zA-Z0-9]/g, "");
 
   const context: Record<string, unknown> = {
@@ -154,7 +154,7 @@ function buildJsonLdContext(result: ConversionResult): object {
     context[c.label] = c.uri;
   }
 
-  return { "@context": context };
+  return { $id: filename, "@context": context };
 }
 
 // ---------- Point d'entrée CLI ----------
@@ -173,16 +173,18 @@ function main() {
 
   const result = convert(doc);
   const slug = slugFromUri(result.schemeUri);
+  const schemaFilename = `${slug}.json`;
+  const contextFilename = `${slug}.context.jsonld`;
 
-  const schema = buildJsonSchema(result);
-  const context = buildJsonLdContext(result);
+  const schema = buildJsonSchema(result, schemaFilename);
+  const context = buildJsonLdContext(result, contextFilename);
 
   fs.mkdirSync(outputDir, { recursive: true });
 
-  const schemaPath = path.join(outputDir, `${slug}.json`);
+  const schemaPath = path.join(outputDir, schemaFilename);
   fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n", "utf-8");
 
-   const contextPath = path.join(outputDir, `${slug}.context.jsonld`);
+   const contextPath = path.join(outputDir, contextFilename);
    fs.writeFileSync(contextPath, JSON.stringify(context, null, 2) + "\n", "utf-8");
 
   console.log(`Concepts trouvés : ${result.concepts.map((c) => c.label).join(", ")}`);
