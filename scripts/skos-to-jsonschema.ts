@@ -130,11 +130,11 @@ function buildJsonSchema(result: ConversionResult): object {
     title: result.schemeTitle,
     description: `Enumération générée à partir du thésaurus SKOS '${result.schemeTitle}' (${result.schemeUri}).`,
     type: "string",
-    // enum: result.concepts.map((c) => c.label),
-    oneOf: result.concepts.map((c) => ({
-      const: c.label,
-      description: c.uri,
-    })),
+    enum: result.concepts.map((c) => c.label),
+    // oneOf: result.concepts.map((c) => ({
+    //   const: c.label,
+    //   description: c.uri,
+    // })),
   };
 }
 
@@ -182,12 +182,12 @@ function main() {
   const schemaPath = path.join(outputDir, `${slug}.json`);
   fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n", "utf-8");
 
-  // const contextPath = path.join(outputDir, `${slug}.context.jsonld`);
-  // fs.writeFileSync(contextPath, JSON.stringify(context, null, 2) + "\n", "utf-8");
+   const contextPath = path.join(outputDir, `${slug}.context.jsonld`);
+   fs.writeFileSync(contextPath, JSON.stringify(context, null, 2) + "\n", "utf-8");
 
   console.log(`Concepts trouvés : ${result.concepts.map((c) => c.label).join(", ")}`);
   console.log(`JSON Schema écrit : ${schemaPath}`);
-  // console.log(`Contexte JSON-LD écrit : ${contextPath}`);
+  console.log(`Contexte JSON-LD écrit : ${contextPath}`);
 }
 
 main();

@@ -457,10 +457,10 @@
 			"minProperties": 1,
 			"properties": {
 				"platformShortName": {
-					"type": "string"
+					"$ref": "platforms.json"
 				},
 				"platformSerialIdentifier": {
-					"type": "string"
+					"$ref": "platforms.json"
 				},
 				"orbitType": {
 					"type": "string",
@@ -547,7 +547,7 @@
 							]
 						},
 						"acquisitionStation": {
-							"type": "string"
+							"$ref": "acquisitionstation.json"
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"

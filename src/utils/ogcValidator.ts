@@ -14,6 +14,8 @@ const BASE = process.env.PUBLIC_URL ?? "";
 const STATIC_SCHEMAS = [
   `${BASE}/schemas/mdj.json`,
   `${BASE}/schemas/dqc.json`,
+  `${BASE}/schemas/thesaurus/acquisitionstation.json`,
+  `${BASE}/schemas/thesaurus/platforms.json`
 ];
 
 const schemasReady: Promise<void> = (async () => {
@@ -42,6 +44,7 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
+  console.log("validation result:",validate);
   const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validate.errors ?? null };
   const report = { valid, results: [result]}
   return report;
