@@ -38,6 +38,17 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
                        <li key={j} className="error-item">
                            <span className="error-path">{error.instancePath}</span>
                            <span className="error-msg">{error.message}</span>
+                           <details className="error-details">
+                               <summary>Details</summary>
+                               <div className="error-detail-row">
+                                   <span className="error-detail-label">schemaPath:</span>
+                                   <code>{error.schemaPath}</code>
+                               </div>
+                               <div className="error-detail-row">
+                                   <span className="error-detail-label">params:</span>
+                                   <pre>{JSON.stringify(error.params, null, 2)}</pre>
+                               </div>
+                           </details>
                        </li>
                        ))}
                    </ul>
