@@ -1,22 +1,20 @@
 /**
  * skos-to-jsonschema.js
  *
- * Convertit un thésaurus SKOS exporté en JSON-LD (un seul skos:ConceptScheme,
- * avec ses skos:Concept) en :
- *   1. un JSON Schema dont l'`enum` liste les prefLabel des concepts
- *   2. un contexte JSON-LD associant chaque label à l'URI complète du concept
- *
- * Usage :
- *   node skos-to-jsonschema.js <entree.jsonld> [dossier-sortie]
+ * Converts a SKOS thesaurus exported as JSON-LD (a single skos:ConceptScheme,
+ * with its skos:Concept nodes) into:
+ *   1. a JSON Schema whose `enum` lists the concepts' prefLabels
+ * Usage:
+ *   node skos-to-jsonschema.js <input.jsonld> [output-dir]
  */
 
 const fs = require("fs");
 const path = require("path");
 
-// ---------- Utilitaires ----------
+// ---------- Utilities ----------
 
-/** Extrait une chaîne lisible d'une valeur qui peut être une string,
- *  un objet {lang, value}, ou un tableau de ces deux formes (on privilégie 'en'). */
+/** Extracts a readable string from a value that can be a plain string,
+ *  a {lang, value} object, or an array of either form (prefers 'en'). */
 function extractLabel(value) {
   if (value === undefined) return undefined;
 
@@ -40,10 +38,19 @@ function hasNarrowerConcept(node){
   //return true if narrower is defined.
    return node.narrower !== undefined;
 }
-/** Nom de fichier "safe" dérivé du dernier segment de l'URI du concept scheme. */
+/** Safe filename derived from the last segment of the concept scheme's URI. */
 function slugFromUri(uri) {
   const last = uri.replace(/\/+$/, "").split("/").pop() ?? "thesaurus";
   return last.replace(/[^a-zA-Z0-9_-]/g, "-");
+}
+
+/** Safe filename derived from free text (e.g. the concept scheme's label). */
+function extractName(text) {
+  return text
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 // ---------- Core of the conversion ----------
@@ -56,7 +63,7 @@ function convert(doc) {
     throw new Error("NO skos:ConceptSchemefound in the JSON-LD graph.");
   }
 
-  const schemeTitle = extractLabel(scheme["dct:title"]) ?? slugFromUri(scheme.uri);
+  const schemeTitle = extractLabel(scheme["dct:title"]) ?? extractLabel(scheme.label) ?? slugFromUri(scheme.uri);
 
   // all skos:Concept from the graph that do not have narrower concept.
   const conceptNodesByUri = new Map(
@@ -83,7 +90,7 @@ function convert(doc) {
   return { schemeUri: scheme.uri, schemeTitle, concepts };
 }
 
-// ---------- Génération des artefacts ----------
+// ---------- Artifact generation ----------
 
 function buildJsonSchema(result, filename) {
   return {
@@ -96,7 +103,7 @@ function buildJsonSchema(result, filename) {
   };
 }
 
-// ---------- Point d'entrée CLI ----------
+// ---------- CLI entry point ----------
 
 function main() {
   const [, , inputPath, outputDirArg] = process.argv;
@@ -111,8 +118,8 @@ function main() {
   const doc = JSON.parse(raw);
 
   const result = convert(doc);
-  const slug = slugFromUri(result.schemeUri);
-  const schemaFilename = `${slug}.json`;
+  const safeName = extractName(result.schemeTitle);
+  const schemaFilename = `${safeName}.json`;
 
   const schema = buildJsonSchema(result, schemaFilename);
 

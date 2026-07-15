@@ -547,7 +547,7 @@
 							]
 						},
 						"acquisitionStation": {
-							"$ref": "acquisitionstation.json"
+							"$ref": "acquisition-station-types.json"
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"
