@@ -6,18 +6,13 @@ Converts SKOS thesauri (JSON-LD, one `skos:ConceptScheme` with its
 ## Requirements
 
 - Node.js (v16+; tested with v22)
-- Project dependencies installed at the repo root:
-  ```bash
-  npm install
-  ```
-  This provides `ts-node` and `typescript` (used via `npx`, no global install needed).
 
 ## Usage
 
 ### Convert a single file
 
 ```bash
-npx ts-node scripts/skos-to-jsonschema.ts <input.jsonld> [output-dir]
+node scripts/skos-to-jsonschema.js <input.jsonld> [output-dir]
 ```
 
 - `input.jsonld` — SKOS thesaurus in JSON-LD format.

@@ -2,11 +2,11 @@
   "$schema": "https://json-schema.org/draft/07/schema",
   "$id": "acquisitionstation.json",
   "title": "Acquisition Station Types",
-  "description": "Enumération générée à partir du thésaurus SKOS 'Acquisition Station Types' (https://earth.esa.int/concepts/concept_scheme/acquisitionstation).",
+  "description": "Enum generated from thesaurus SKOS 'Acquisition Station Types' (https://earth.esa.int/concepts/concept_scheme/acquisitionstation).",
   "type": "string",
   "enum": [
     "KRU",
-    "KIR-1",
-    "RED"
+    "RED",
+    "KIR-1"
   ]
 }

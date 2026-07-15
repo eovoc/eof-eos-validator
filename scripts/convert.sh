@@ -9,7 +9,7 @@ mkdir -p "$SCHEMA_DIR"
 
 for input in "$SKOS_DIR"/*.json; do
   echo "Converting $input"
-  npx ts-node "$SCRIPT_DIR/skos-to-jsonschema.ts" "$input" "$SCHEMA_DIR"
+  node "$SCRIPT_DIR/skos-to-jsonschema.js" "$input" "$SCHEMA_DIR"
 done
 
 # Regenerate the manifest listing every generated JSON Schema, so the app
