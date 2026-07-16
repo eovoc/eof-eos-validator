@@ -128,8 +128,8 @@ function main() {
   const schemaPath = path.join(outputDir, schemaFilename);
   fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n", "utf-8");
 
-  console.log(`Concepts trouvés : ${result.concepts.map((c) => c.label).join(", ")}`);
-  console.log(`JSON Schema écrit : ${schemaPath}`);
+  console.log(`Concepts found : ${result.concepts.map((c) => c.label).join(", ")}`);
+  console.log(`JSON Schema written : ${schemaPath}`);
 }
 
 main();
