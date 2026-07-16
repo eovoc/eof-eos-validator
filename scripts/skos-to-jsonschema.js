@@ -103,6 +103,14 @@ function buildJsonSchema(result, filename) {
   };
 }
 
+/** Merges the enum of a freshly built schema into an existing schema on disk,
+ *  keeping the existing enum values (in order) and appending any new ones. */
+function mergeEnums(existingSchema, newSchema) {
+  const existingEnum = Array.isArray(existingSchema.enum) ? existingSchema.enum : [];
+  const additions = newSchema.enum.filter((label) => !existingEnum.includes(label));
+  return { ...existingSchema, enum: [...existingEnum, ...additions] };
+}
+
 // ---------- CLI entry point ----------
 
 function main() {
@@ -126,7 +134,14 @@ function main() {
   fs.mkdirSync(outputDir, { recursive: true });
 
   const schemaPath = path.join(outputDir, schemaFilename);
-  fs.writeFileSync(schemaPath, JSON.stringify(schema, null, 2) + "\n", "utf-8");
+
+  let finalSchema = schema;
+  if (fs.existsSync(schemaPath)) {
+    const existingSchema = JSON.parse(fs.readFileSync(schemaPath, "utf-8"));
+    finalSchema = mergeEnums(existingSchema, schema);
+  }
+
+  fs.writeFileSync(schemaPath, JSON.stringify(finalSchema, null, 2) + "\n", "utf-8");
 
   console.log(`Concepts found : ${result.concepts.map((c) => c.label).join(", ")}`);
   console.log(`JSON Schema written : ${schemaPath}`);
