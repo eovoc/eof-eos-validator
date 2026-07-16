@@ -5,12 +5,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKOS_DIR="$SCRIPT_DIR/skos"
 SCHEMA_DIR="$SCRIPT_DIR/../public/schemas/thesaurus"
 
+rm -rf "$SCHEMA_DIR"
 mkdir -p "$SCHEMA_DIR"
 
-for input in "$SKOS_DIR"/*.json; do
+while IFS= read -r -d '' input; do
   echo "Converting $input"
   node "$SCRIPT_DIR/skos-to-jsonschema.js" "$input" "$SCHEMA_DIR"
-done
+done < <(find "$SKOS_DIR" -type f -name "*.json" -print0)
 
 # Regenerate the manifest listing every generated JSON Schema, so the app
 # can discover thesaurus schemas at runtime (a static SPA can't list a
