@@ -17,12 +17,14 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
     invalidTitle: string } )
 {
 
+    const totalErrors = report.results!.reduce((sum, item) => sum + (item.errors?.length ?? 0), 0);
+
     return(
        <>
            {report.valid ? (
                <p className="result-title valid">{validTitle}</p>
            ): (
-               <p className="result-title invalid">{invalidTitle}</p>
+               <p className="result-title invalid">{invalidTitle} ({totalErrors} error{totalErrors === 1 ? "" : "s"})</p>
            )}
 
            {report.results!.map((item, i) => (
