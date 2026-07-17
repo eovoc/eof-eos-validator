@@ -47,3 +47,44 @@ directory's contents on its own.
 
 To add a new thesaurus, drop its SKOS JSON-LD file into `scripts/skos/`
 and re-run `convert.sh`.
+
+## RDF/XML to JSON Schema conversion
+
+`rdf-to-jsonschema.js` converts a SKOS thesaurus exported as RDF/XML into
+JSON Schemas. Unlike `skos-to-jsonschema.js`, a single RDF/XML file may
+contain several `skos:ConceptScheme`s (e.g. an export covering many
+enumerated properties at once) — the script produces **one JSON Schema per
+concept scheme** found in the file.
+
+```bash
+node scripts/rdf-to-jsonschema.js <input.rdf> [output-dir]
+```
+
+- `input.rdf` — SKOS thesaurus in RDF/XML format.
+- `output-dir` — optional; defaults to the input file's directory.
+
+For each concept scheme, the enum is built by walking down from its
+`skos:hasTopConcept`s through `skos:narrower` to find every leaf concept
+(a concept with no `skos:narrower` children), and collecting their
+`skos:prefLabel`s, deduplicated. The output filename is derived from the
+scheme's title (`dct:title`), falling back to a slug of its URI, and — as
+with `skos-to-jsonschema.js` — an existing `<name>.json` in the output
+directory has its `enum` preserved and extended rather than overwritten.
+
+### Convert every RDF/XML thesaurus at once
+
+```bash
+./scripts/convert-rdf.sh
+```
+
+This runs `rdf-to-jsonschema.js` for every `*.rdf` file in `scripts/rdf/`
+and writes the generated schema files to `public/schemas/thesaurus-rdf/` —
+a directory kept separate from `public/schemas/thesaurus/` so this script
+and `convert.sh` never clobber each other's output. It clears and
+re-creates that directory each run, then (re)writes
+`public/schemas/thesaurus-rdf/manifest.json`, a JSON array of every
+generated schema filename, the same way `convert.sh` does for its own
+output directory.
+
+To add a new RDF/XML thesaurus export, drop it into `scripts/rdf/` and
+re-run `convert-rdf.sh`.

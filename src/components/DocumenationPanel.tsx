@@ -1,12 +1,4 @@
-import { useEffect, useState } from "react";
-import { THESAURUS_DIR, loadThesaurusSchemaFiles } from "../utils/thesaurusSchemas";
-
 export default function DocumentationPanel(){
-    const [thesaurusFiles, setThesaurusFiles] = useState<string[]>([]);
-
-    useEffect(() => {
-        loadThesaurusSchemaFiles().then(setThesaurusFiles);
-    }, []);
 
     return(
         <>
@@ -28,12 +20,6 @@ export default function DocumentationPanel(){
                     schemas)
                 </li>
 
-                {/*Thesaurus schemas*/}
-                <li> Thesaurus (
-                {thesaurusFiles.map((file) => (
-                     <a className="documentation-link" style={{ marginLeft: "0.25em" }} title={file} href={`${THESAURUS_DIR}/${file}`} target="_blank" rel="noreferrer">{file}</a>
-                ))}
-                )</li>
             </ul>
         </>
     );

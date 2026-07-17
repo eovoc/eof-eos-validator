@@ -1,5 +1,5 @@
 const BASE = process.env.PUBLIC_URL ?? "";
-export const THESAURUS_DIR = `${BASE}/schemas/thesaurus`;
+export const THESAURUS_DIR = `${BASE}/schemas/thesaurus-rdf`;
 
 // scripts/convert.sh writes manifest.json listing every generated schema
 // file, since a static SPA can't list a directory's contents on its own.
