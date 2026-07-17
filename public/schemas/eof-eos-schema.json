@@ -331,6 +331,50 @@
 			],
 			"additionalProperties": false
 		},
+		"GeometryCollection": {
+			"title": "GeoJSON GeometryCollection",
+			"type": "object",
+			"required": [
+				"type",
+				"geometries"
+			],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"GeometryCollection"
+					]
+				},
+				"geometries": {
+					"type": "array",
+					"items": {
+						"oneOf": [
+							{
+								"$ref": "#/definitions/Point"
+							},
+							{
+								"$ref": "#/definitions/LineString"
+							},
+							{
+								"$ref": "#/definitions/Polygon"
+							},
+							{
+								"$ref": "#/definitions/MultiPoint"
+							},
+							{
+								"$ref": "#/definitions/MultiLineString"
+							},
+							{
+								"$ref": "#/definitions/MultiPolygon"
+							}
+						]
+					}
+				},
+				"bbox": {
+					"$ref": "#/definitions/BoundingBox"
+				}
+			}
+		},
 		"Geometry": {
 			"title": "Geometry",
 			"type": "object",
@@ -352,6 +396,9 @@
 				},
 				{
 					"$ref": "#/definitions/MultiPolygon"
+				},
+				{
+					"$ref": "#/definitions/GeometryCollection"
 				}
 			]
 		},
