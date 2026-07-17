@@ -20,6 +20,14 @@ Open resources/example in a terminal and execute the following command:
 ajv validate -d "example-biomass.json" -s "eo-geojson-schema-standalone-flexible-draft07.json" --strict=false -r "dqc.json" -r "mdj.json"
 ```
 
+### Deploy to Github Pages
+To deploy the static website on github pages, execute the following command:
+```shell
+npm run build && npm run deploy
+```
+
+
+
 ## Web Application Scripts
 
 In the project directory, you can run:
