@@ -827,7 +827,7 @@
 							"type": "string",
 							"enum": [
 								"RADIOMETRY",
-								"GEOLACATION"
+								"GEOLOCATION"
 							]
 						},
 						"qualityDegradationQuotationMode": {
