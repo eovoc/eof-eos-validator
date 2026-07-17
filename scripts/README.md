@@ -63,10 +63,8 @@ node scripts/rdf-to-jsonschema.js <input.rdf> [output-dir]
 - `input.rdf` — SKOS thesaurus in RDF/XML format.
 - `output-dir` — optional; defaults to the input file's directory.
 
-For each concept scheme, the enum is built by walking down from its
-`skos:hasTopConcept`s through `skos:narrower` to find every leaf concept
-(a concept with no `skos:narrower` children), and collecting their
-`skos:prefLabel`s, deduplicated. The output filename is derived from the
+For each concept scheme, the enum lists the `skos:prefLabel`s of its
+`skos:hasTopConcept`s, deduplicated. The output filename is derived from the
 scheme's title (`dct:title`), falling back to a slug of its URI, and — as
 with `skos-to-jsonschema.js` — an existing `<name>.json` in the output
 directory has its `enum` preserved and extended rather than overwritten.

@@ -1,3 +1,24 @@
 [
-  "acquisition-station-types.json"
+  "acquisition-station-types.json",
+  "acquisition-subtypes.json",
+  "acquisition-types.json",
+  "antenna-look-direction-types.json",
+  "category-types.json",
+  "geometry-types.json",
+  "measurement-types.json",
+  "orbit-direction-types.json",
+  "orbit-types.json",
+  "polarisation-channels-types.json",
+  "polarisation-mode-types.json",
+  "processing-level-types.json",
+  "processing-mode-types.json",
+  "product-content-types.json",
+  "quality-degradation-quotation-mode-types.json",
+  "quality-degradation-tag-types.json",
+  "quality-status-types.json",
+  "sensor-types.json",
+  "spectral-range-types.json",
+  "status-types.json",
+  "swath-identifier-types.json",
+  "timeliness-types.json"
 ]

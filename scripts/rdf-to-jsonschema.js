@@ -2,9 +2,9 @@
  * rdf-to-jsonschema.js
  *
  * Converts a SKOS thesaurus exported as RDF/XML (one or more skos:ConceptScheme,
- * each with its own skos:Concept hierarchy) into one JSON Schema per concept
- * scheme, whose `enum` lists the prefLabels of that scheme's leaf concepts
- * (concepts with no skos:narrower).
+ * each with its own skos:Concept top concepts) into one JSON Schema per
+ * concept scheme, whose `enum` lists the prefLabels of that scheme's top
+ * concepts (skos:hasTopConcept).
  *
  * Usage:
  *   node rdf-to-jsonschema.js <input.rdf> [output-dir]
@@ -122,28 +122,6 @@ function extractName(text) {
 
 // ---------- Core of the conversion ----------
 
-/** Collects the prefLabels of every leaf concept (no skos:narrower) reachable
- *  from `uri`, walking down through skos:narrower. Concepts already visited
- *  are skipped, guarding against cycles in malformed data. */
-function collectLeafLabels(uri, nodesByUri, visited) {
-  if (visited.has(uri)) return [];
-  visited.add(uri);
-
-  const node = nodesByUri.get(uri);
-  if (!node) return [];
-
-  const narrowerUris = getResources(node, "skos:narrower");
-  if (narrowerUris.length === 0) {
-    const label = getLabel(node, "skos:prefLabel");
-    if (!label) {
-      throw new Error(`Concept without prefLabel: ${uri}`);
-    }
-    return [label];
-  }
-
-  return narrowerUris.flatMap((narrowerUri) => collectLeafLabels(narrowerUri, nodesByUri, visited));
-}
-
 function convertScheme(schemeNode, nodesByUri) {
   const schemeTitle = getLabel(schemeNode, "dct:title") ?? slugFromUri(schemeNode.uri);
 
@@ -158,18 +136,22 @@ function convertScheme(schemeNode, nodesByUri) {
 
   const labels = [];
   const seen = new Set();
-  const visited = new Set();
   for (const topUri of topConceptUris) {
-    for (const label of collectLeafLabels(topUri, nodesByUri, visited)) {
-      if (!seen.has(label)) {
-        seen.add(label);
-        labels.push(label);
-      }
+    const node = nodesByUri.get(topUri);
+    if (!node) continue;
+
+    const label = getLabel(node, "skos:prefLabel");
+    if (!label) {
+      throw new Error(`Concept without prefLabel: ${topUri}`);
+    }
+    if (!seen.has(label)) {
+      seen.add(label);
+      labels.push(label);
     }
   }
 
   if (labels.length === 0) {
-    throw new Error(`No leaf concepts found for concept scheme: ${schemeNode.uri}`);
+    throw new Error(`No top concepts found for concept scheme: ${schemeNode.uri}`);
   }
 
   return { schemeUri: schemeNode.uri, schemeTitle, labels };
@@ -188,14 +170,6 @@ function buildJsonSchema(result, filename) {
   };
 }
 
-/** Merges the enum of a freshly built schema into an existing schema on disk,
- *  keeping the existing enum values (in order) and appending any new ones. */
-function mergeEnums(existingSchema, newSchema) {
-  const existingEnum = Array.isArray(existingSchema.enum) ? existingSchema.enum : [];
-  const additions = newSchema.enum.filter((label) => !existingEnum.includes(label));
-  return { ...existingSchema, enum: [...existingEnum, ...additions] };
-}
-
 function writeSchema(result, outputDir) {
   const safeName = extractName(result.schemeTitle);
   const schemaFilename = `${safeName}.json`;
@@ -203,11 +177,6 @@ function writeSchema(result, outputDir) {
   const schemaPath = path.join(outputDir, schemaFilename);
 
   let finalSchema = schema;
-  if (fs.existsSync(schemaPath)) {
-    const existingSchema = JSON.parse(fs.readFileSync(schemaPath, "utf-8"));
-    finalSchema = mergeEnums(existingSchema, schema);
-  }
-
   fs.writeFileSync(schemaPath, JSON.stringify(finalSchema, null, 2) + "\n", "utf-8");
   return schemaPath;
 }
