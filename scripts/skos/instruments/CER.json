@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "isothes": "http://purl.org/iso25964/skos-thes#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "dct": "http://purl.org/dc/terms/",
+    "dc11": "http://purl.org/dc/elements/1.1/",
+    "uri": "@id",
+    "type": "@type",
+    "lang": "@language",
+    "value": "@value",
+    "graph": "@graph",
+    "label": "rdfs:label",
+    "prefLabel": "skos:prefLabel",
+    "altLabel": "skos:altLabel",
+    "hiddenLabel": "skos:hiddenLabel",
+    "broader": "skos:broader",
+    "narrower": "skos:narrower",
+    "related": "skos:related",
+    "inScheme": "skos:inScheme",
+    "exactMatch": "skos:exactMatch",
+    "closeMatch": "skos:closeMatch",
+    "broadMatch": "skos:broadMatch",
+    "narrowMatch": "skos:narrowMatch",
+    "relatedMatch": "skos:relatedMatch"
+  },
+  "graph": [
+    {
+      "uri": "http://www.w3.org/ns/sosa/isHostedBy",
+      "label": {
+        "lang": "en",
+        "value": "is hosted by"
+      }
+    },
+    {
+      "uri": "https://earth.esa.int/concept/a7adccea-4a39-5ebf-afd3-9608cd100f74",
+      "type": "skos:Concept",
+      "skos:notation": {
+        "lang": "en",
+        "value": "CA"
+      },
+      "prefLabel": {
+        "lang": "en",
+        "value": "CASSIOPE"
+      },
+      "http://www.w3.org/ns/sosa/hosts": {
+        "uri": "https://earth.esa.int/concept/fde5528c-ff3e-5aa1-8c98-eae6be5fdb85"
+      }
+    },
+    {
+      "uri": "https://earth.esa.int/concept/b65c4835-3a76-528b-b0c8-6f621d9d19ac",
+      "type": "skos:Concept",
+      "narrower": {
+        "uri": "https://earth.esa.int/concept/fde5528c-ff3e-5aa1-8c98-eae6be5fdb85"
+      },
+      "prefLabel": {
+        "lang": "en",
+        "value": "Magnetic Field/Electric Field Instruments"
+      }
+    },
+    {
+      "uri": "https://earth.esa.int/concept/fde5528c-ff3e-5aa1-8c98-eae6be5fdb85",
+      "type": "skos:Concept",
+      "rdfs:seeAlso": {
+        "uri": "https://directory.eoportal.org/web/eoportal/satellite-missions/c-missions/cassiope"
+      },
+      "broader": {
+        "uri": "https://earth.esa.int/concept/b65c4835-3a76-528b-b0c8-6f621d9d19ac"
+      },
+      "skos:definition": {
+        "lang": "en",
+        "value": "the CER (Coherent Electromagnetic Radiation) objective is to determine ionospheric total electron density (TEC) by using a three-frequency beacon; cooperative ionospheric observations with fixed ground receivers."
+      },
+      "exactMatch": {
+        "uri": "https://gcmd.earthdata.nasa.gov/kms/concept/1c03710e-1898-49ec-84bb-c064e7a358d0"
+      },
+      "inScheme": {
+        "uri": "https://earth.esa.int/concepts/concept_scheme/instruments"
+      },
+      "prefLabel": {
+        "lang": "en",
+        "value": "CER"
+      },
+      "http://www.w3.org/ns/sosa/isHostedBy": {
+        "uri": "https://earth.esa.int/concept/a7adccea-4a39-5ebf-afd3-9608cd100f74"
+      }
+    },
+    {
+      "uri": "https://earth.esa.int/concepts/concept_scheme/instruments",
+      "type": "skos:ConceptScheme",
+      "label": {
+        "lang": "en",
+        "value": "Instruments"
+      }
+    }
+  ]
+}

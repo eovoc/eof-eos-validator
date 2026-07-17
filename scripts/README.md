@@ -1,7 +1,10 @@
 # SKOS to JSON Schema conversion
 
 Converts SKOS thesauri (JSON-LD, one `skos:ConceptScheme` with its
-`skos:Concept`s) into a JSON Schema enum plus a matching JSON-LD context.
+`skos:Concept`s) into a JSON Schema enum.
+
+Only top-level concepts (those without a `skos:narrower`) are included in
+the enum — concepts that are narrower than another concept are skipped.
 
 ## Requirements
 
@@ -18,9 +21,14 @@ node scripts/skos-to-jsonschema.js <input.jsonld> [output-dir]
 - `input.jsonld` — SKOS thesaurus in JSON-LD format.
 - `output-dir` — optional; defaults to the input file's directory.
 
-Produces two files named after the concept scheme's URI slug:
-- `<slug>.json` — JSON Schema with an `enum` of the concepts' `prefLabel`s.
-- `<slug>.context.jsonld` — JSON-LD context mapping each label to its concept URI.
+Produces one file, `<name>.json` — a JSON Schema with an `enum` of the
+top-level concepts' `prefLabel`s. The name is derived from the concept
+scheme's title (`dct:title` or `label`), falling back to a slug of its URI
+if neither is present.
+
+If `<name>.json` already exists in the output directory, its existing
+`enum` values are preserved and any new labels are appended (no
+duplicates), rather than overwriting the file.
 
 ### Convert every thesaurus at once
 
@@ -28,9 +36,10 @@ Produces two files named after the concept scheme's URI slug:
 ./scripts/convert.sh
 ```
 
-This runs the converter for every `*.json` file in `scripts/skos/` and
-writes the generated schema/context files to `public/schemas/thesaurus/`,
-which is where the app fetches them from at runtime. It also (re)writes
+This clears and re-creates `public/schemas/thesaurus/`, then runs the
+converter for every `*.json` file in `scripts/skos/`, writing the generated
+schema files there — this is where the app fetches them from at runtime.
+It also (re)writes
 `public/schemas/thesaurus/manifest.json`, a JSON array of every generated
 schema filename — `src/utils/ogcValidator.ts` fetches this manifest to
 know which thesaurus schemas to load, since a static SPA can't list a

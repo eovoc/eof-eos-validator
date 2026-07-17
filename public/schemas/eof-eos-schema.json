@@ -457,10 +457,10 @@
 			"minProperties": 1,
 			"properties": {
 				"platformShortName": {
-					"$ref": "platforms.json"
+					"$ref": "eof-eos/platforms"
 				},
 				"platformSerialIdentifier": {
-					"$ref": "platforms.json"
+					"$ref": "eof-eos/platforms"
 				},
 				"orbitType": {
 					"type": "string",
@@ -483,7 +483,7 @@
 					"type": "string"
 				},
 				"instrumentShortName": {
-					"type": "string"
+					"$ref": "eof-eos/instruments"
 				},
 				"description": {
 					"type": "string"
@@ -547,7 +547,7 @@
 							]
 						},
 						"acquisitionStation": {
-							"$ref": "acquisition-station-types.json"
+							"$ref": "eof-eos/acquisition-station-types"
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"

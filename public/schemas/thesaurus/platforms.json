@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/07/schema",
-  "$id": "platforms.json",
+  "$id": "eof-eos/platforms",
   "title": "Platforms",
   "description": "Enum generated from thesaurus SKOS 'Platforms' (https://earth.esa.int/concepts/concept_scheme/platforms).",
   "type": "string",

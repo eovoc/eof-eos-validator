@@ -129,7 +129,7 @@ function main() {
   const safeName = extractName(result.schemeTitle);
   const schemaFilename = `${safeName}.json`;
 
-  const schema = buildJsonSchema(result, schemaFilename);
+  const schema = buildJsonSchema(result, `eof-eos/${safeName}`);
 
   fs.mkdirSync(outputDir, { recursive: true });
 

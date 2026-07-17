@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/instruments",
+  "title": "Instruments",
+  "description": "Enum generated from thesaurus SKOS 'Instruments' (https://earth.esa.int/concepts/concept_scheme/instruments).",
+  "type": "string",
+  "enum": [
+    "CASSIOPE",
+    "CER",
+    "Composition Analyzer"
+  ]
+}
