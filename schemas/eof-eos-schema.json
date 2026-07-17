@@ -64,9 +64,13 @@
 						"1A",
 						"1B",
 						"1C",
-						"2",
 						"2A",
-						"3"
+						"3",
+						"2B",
+						"2C",
+						"1",
+						"2",
+						"VAP (TBD)"
 					]
 				},
 				"processorName": {
@@ -83,7 +87,14 @@
 					"format": "date-time"
 				},
 				"processingMode": {
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"NRT",
+						"NOMINAL",
+						"BACKLOGGED",
+						"REPROCESSED",
+						"VALIDATE"
+					]
 				},
 				"compositeType": {
 					"type": "string"
@@ -92,7 +103,16 @@
 					"type": "string"
 				},
 				"productContentsType": {
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"COASTAL",
+						"CONTINENTAL",
+						"HYDROLOGY",
+						"ICE",
+						"OPEN_OCEAN",
+						"OTHER",
+						"REGIONAL"
+					]
 				},
 				"processingMethod": {
 					"type": "string"
@@ -379,7 +399,13 @@
 						"status": {
 							"type": "string",
 							"enum": [
+								"ARCHIVED",
 								"ACQUIRED",
+								"CANCELLED",
+								"FAILED",
+								"PLANNED",
+								"POTENTIAL",
+								"REJECTED",
 								"QUALITYDEGRADED"
 							]
 						},
@@ -466,7 +492,8 @@
 					"type": "string",
 					"enum": [
 						"GEO",
-						"LEO"
+						"LEO",
+						"MEO"
 					]
 				}
 			},
@@ -480,7 +507,14 @@
 			"type": "object",
 			"properties": {
 				"sensorType": {
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"OPTICAL",
+						"ALTIMETRIC",
+						"RADAR",
+						"ATMOSPHERIC",
+						"LIMB"
+					]
 				},
 				"instrumentShortName": {
 					"type": "string"
@@ -547,7 +581,12 @@
 							]
 						},
 						"acquisitionStation": {
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"RED",
+								"KIR-1",
+								"KRU"
+							]
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"
@@ -565,13 +604,28 @@
 								"S",
 								"D",
 								"T",
-								"Q",
-								"UNDEFINED"
+								"Q"
 							]
 						},
 						"polarisationChannels": {
 							"description": "Sar",
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"HH",
+								"HV",
+								"VH",
+								"VV",
+								"HH, VV",
+								"HH, VH",
+								"HH, HV",
+								"VH, VV",
+								"VH, HV",
+								"VV, HV",
+								"VV, VH",
+								"HV, VH",
+								"HH, HV, VH, VV",
+								"UNDEFINED"
+							]
 						},
 						"resolution": {
 							"type": "number"
@@ -644,12 +698,10 @@
 				"category": {
 					"type": "string",
 					"enum": [
-						"THUMBNAIL",
-						"QUICKLOOK",
-						"ALBUM",
-						"CLOUD",
-						"SNOW",
-						"QUALITY"
+						"THUMBNAILS",
+						"OVERVIEW",
+						"QUALITY",
+						"DATA"
 					]
 				}
 				
@@ -680,7 +732,13 @@
 							"type": "string"
 						},
 						"timeliness": {
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"NRT",
+								"NOMINAL",
+								"NTC",
+								"STC"
+							]
 						},
 						"referenceSystemIdentifier": {
 							"type": "string"
@@ -757,8 +815,8 @@
 						"qualityStatus": {
 							"type": "string",
 							"enum": [
-								"NOMINAL",
-								"DEGRADED"
+								"DEGRADED",
+								"NOMINAL"
 							]
 						},
 						"qualityDegradation": {
@@ -766,7 +824,11 @@
 							"type": "number"
 						},
 						"qualityDegradationTag": {
-							"type": "string"
+							"type": "string",
+							"enum": [
+								"RADIOMETRY",
+								"GEOLACATION"
+							]
 						},
 						"qualityDegradationQuotationMode": {
 							"type": "string",
@@ -843,16 +905,16 @@
 				"spectralRange": {
 					"type": "string",
 					"enum": [
-						"INFRARED",
+						"UV",
+						"VIS",
+						"IR",
 						"NIR",
 						"SWIR",
 						"MWIR",
-						"LWIR",
+						"TIR",
 						"FIR",
-						"UV",
-						"VISIBLE",
-						"MICROWAVE",
-						"OTHER"
+						"MW",
+						"RW"
 					]
 				},
 				"wavelengthResolution": {
