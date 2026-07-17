@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/polarisation-channels-types",
+  "title": "Polarisation Channels Types",
+  "description": "Enum generated from thesaurus SKOS 'Polarisation Channels Types' (https://earth.esa.int/concepts/concept_scheme/polarisationchannels).",
+  "type": "string",
+  "enum": [
+    "HH",
+    "HV",
+    "VH",
+    "VV",
+    "HH, VV",
+    "HH, VH",
+    "HH, HV",
+    "VH, VV",
+    "VH, HV",
+    "VV, HV",
+    "VV, VH",
+    "HV, VH",
+    "HH, HV, VH, VV",
+    "UNDEFINED"
+  ]
+}

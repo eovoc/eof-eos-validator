@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/status-types",
+  "title": "Status Types",
+  "description": "Enum generated from thesaurus SKOS 'Status Types' (https://earth.esa.int/concepts/concept_scheme/statustype).",
+  "type": "string",
+  "enum": [
+    "ARCHIVED",
+    "ACQUIRED",
+    "CANCELLED",
+    "FAILED",
+    "PLANNED",
+    "POTENTIAL",
+    "REJECTED",
+    "QUALITYDEGRADED"
+  ]
+}

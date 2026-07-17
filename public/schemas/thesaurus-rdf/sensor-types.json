@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/sensor-types",
+  "title": "Sensor Types",
+  "description": "Enum generated from thesaurus SKOS 'Sensor Types' (https://earth.esa.int/concepts/concept_scheme/sensortype).",
+  "type": "string",
+  "enum": [
+    "OPTICAL",
+    "ALTIMETRIC",
+    "RADAR",
+    "ATMOSPHERIC",
+    "LIMB"
+  ]
+}

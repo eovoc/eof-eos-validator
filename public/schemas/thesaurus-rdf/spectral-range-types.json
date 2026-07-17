@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/spectral-range-types",
+  "title": "Spectral Range Types",
+  "description": "Enum generated from thesaurus SKOS 'Spectral Range Types' (https://earth.esa.int/concepts/concept_scheme/spectralrangetype).",
+  "type": "string",
+  "enum": [
+    "UV",
+    "VIS",
+    "IR",
+    "NIR",
+    "SWIR",
+    "MWIR",
+    "TIR",
+    "FIR",
+    "MW",
+    "RW"
+  ]
+}

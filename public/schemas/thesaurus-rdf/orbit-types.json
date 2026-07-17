@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/orbit-types",
+  "title": "Orbit Types",
+  "description": "Enum generated from thesaurus SKOS 'Orbit Types' (https://earth.esa.int/concepts/concept_scheme/orbittype).",
+  "type": "string",
+  "enum": [
+    "GEO",
+    "LEO",
+    "MEO"
+  ]
+}

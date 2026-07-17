@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/timeliness-types",
+  "title": "Timeliness Types",
+  "description": "Enum generated from thesaurus SKOS 'Timeliness Types' (https://earth.esa.int/concepts/concept_scheme/timelinesstype).",
+  "type": "string",
+  "enum": [
+    "NRT",
+    "NOMINAL",
+    "NTC",
+    "STC"
+  ]
+}

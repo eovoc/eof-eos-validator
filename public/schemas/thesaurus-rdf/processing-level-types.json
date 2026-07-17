@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/07/schema",
+  "$id": "eof-eos/processing-level-types",
+  "title": "Processing Level Types",
+  "description": "Enum generated from thesaurus SKOS 'Processing Level Types' (https://earth.esa.int/concepts/concept_scheme/processingleveltype).",
+  "type": "string",
+  "enum": [
+    "1A",
+    "1B",
+    "1C",
+    "2A",
+    "3",
+    "2B",
+    "2C",
+    "1",
+    "2",
+    "VAP (TBD)"
+  ]
+}
