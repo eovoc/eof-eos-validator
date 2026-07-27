@@ -456,11 +456,7 @@
 					"type": "string"
 				},
 				"orbitType": {
-					"type": "string",
-					"enum": [
-						"GEO",
-						"LEO"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-types"
 				}
 			},
 			"required": [
