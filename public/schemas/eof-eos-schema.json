@@ -626,15 +626,7 @@
 					"minimum": 0
 				},
 				"category": {
-					"type": "string",
-					"enum": [
-						"THUMBNAIL",
-						"QUICKLOOK",
-						"ALBUM",
-						"CLOUD",
-						"SNOW",
-						"QUALITY"
-					]
+					"$ref": "#/definitions/thesaurus/category-types"
 				}
 			},
 			"required": [
