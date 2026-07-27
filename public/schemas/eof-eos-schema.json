@@ -550,8 +550,7 @@
 							]
 						},
 						"polarisationChannels": {
-							"description": "Sar",
-							"type": "string"
+							"$ref": "#/definitions/thesaurus/polarisation-channels-types"
 						},
 						"resolution": {
 							"type": "number"
