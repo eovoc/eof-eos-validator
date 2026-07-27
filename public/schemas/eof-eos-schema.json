@@ -528,11 +528,7 @@
 							"minimum": 0
 						},
 						"antennaLookDirection": {
-							"type": "string",
-							"enum": [
-								"LEFT",
-								"RIGHT"
-							]
+							"$ref": "#/definitions/thesaurus/antenna-look-direction-types"
 						},
 						"acquisitionStation": {
 							"$ref": "#/definitions/thesaurus/acquisition-station-types"
