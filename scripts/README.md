@@ -81,25 +81,41 @@ writing one JSON Schema per concept scheme to
 `public/schemas/thesaurus/` so this script and `convert.sh` never clobber
 each other's output. It clears and re-creates that directory each run.
 
-Unlike `convert.sh`, it doesn't stop there — two more steps follow:
+Unlike `convert.sh`, it doesn't stop there — two more scripts run in
+sequence afterwards:
 
-1. It merges every generated per-scheme schema into a single
-   `public/schemas/thesaurus-rdf/thesaurus.json` and deletes the per-scheme
-   files, since a static SPA has no way to discover how many thesaurus
-   files exist or what they're named without a fixed entry point to fetch.
-   Each scheme becomes a `definitions` entry keyed by its filename (sans
-   extension) — `title`, `description`, `type`, and `enum`.
-2. It then embeds that merged file's `definitions` into
-   `public/schemas/eof-eos-schema.json` itself, as a dedicated
+1. **`merge-thesaurus-schemas.js`** merges every generated per-scheme
+   schema into a single `public/schemas/thesaurus-rdf/thesaurus.json` and
+   deletes the per-scheme files, since a static SPA has no way to discover
+   how many thesaurus files exist or what they're named without a fixed
+   entry point to fetch.
+
+   ```bash
+   node scripts/merge-thesaurus-schemas.js <schema-dir>
+   ```
+
+   Each scheme becomes a `definitions` entry in the merged file, keyed by
+   its filename (sans extension) — `title`, `description`, `type`, and
+   `enum`.
+
+2. **`embed-thesaurus-schema.js`** embeds that merged file's `definitions`
+   into `public/schemas/eof-eos-schema.json` itself, as a dedicated
    `definitions.thesaurus` section (kept last among `definitions`, and
-   replaced in place on re-runs rather than duplicated). Each thesaurus
-   enum is then addressable as a local `$ref`, e.g.
+   replaced in place on re-runs rather than duplicated).
+
+   ```bash
+   node scripts/embed-thesaurus-schema.js <thesaurus.json> <eof-eos-schema.json>
+   ```
+
+   Each thesaurus enum is then addressable as a local `$ref`, e.g.
    `"$ref": "#/definitions/thesaurus/acquisition-station-types"` — no
    separate fetch needed at runtime, since `eof-eos-schema.json` is already
    loaded to validate against. (Nesting under `definitions` — rather than a
    bare top-level `thesaurus` key — matters: it's a real JSON Schema
    keyword, so Ajv's `strict: true` mode in `src/utils/ogcValidator.ts`
-   doesn't reject it as an unknown keyword.)
+   doesn't reject it as an unknown keyword. It also preserves
+   `eof-eos-schema.json`'s existing tab-indented, CRLF-terminated
+   formatting rather than rewriting the whole file in Node's defaults.)
 
 To add a new RDF/XML thesaurus export, drop it into `scripts/rdf/` and
 re-run `convert-rdf.sh` — this regenerates `thesaurus.json` and refreshes
