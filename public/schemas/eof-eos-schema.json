@@ -903,18 +903,10 @@
 			"type": "object",
 			"properties": {
 				"orbitDirection": {
-					"type": "string",
-					"enum": [
-						"ASCENDING",
-						"DESCENDING"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-direction-types"
 				},
 				"lastOrbitDirection": {
-					"type": "string",
-					"enum": [
-						"ASCENDING",
-						"DESCENDING"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-direction-types"
 				},
 				"orbitDuration": {
 					"type": "integer"
