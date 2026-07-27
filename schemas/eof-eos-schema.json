@@ -827,7 +827,7 @@
 							"type": "string",
 							"enum": [
 								"RADIOMETRY",
-								"GEOLACATION"
+								"GEOLOCATION"
 							]
 						},
 						"qualityDegradationQuotationMode": {
@@ -970,7 +970,10 @@
 					"$ref": "#/definitions/Instrument"
 				},
 				"acquisitionParameters": {
-					"$ref": "#/definitions/AcquisitionParameters"
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/AcquisitionParameters"
+					}
 				}
 			}
 		},
