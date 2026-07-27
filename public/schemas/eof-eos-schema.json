@@ -539,15 +539,7 @@
 							"type": "string"
 						},
 						"polarisationMode": {
-							"description": "Sar",
-							"type": "string",
-							"enum": [
-								"S",
-								"D",
-								"T",
-								"Q",
-								"UNDEFINED"
-							]
+							"$ref": "#/definitions/thesaurus/polarisation-mode-types"
 						},
 						"polarisationChannels": {
 							"$ref": "#/definitions/thesaurus/polarisation-channels-types"
