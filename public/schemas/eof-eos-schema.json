@@ -499,7 +499,7 @@
 					"type": "object",
 					"properties": {
 						"acquisitionType": {
-							"$ref": "#/definitions/thesaurus/acquisition-station-types"
+							"$ref": "#/definitions/thesaurus/acquisition-types"
 						},
 						"acquisitionSubType": {
 							"type": "string"
