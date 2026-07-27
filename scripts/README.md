@@ -75,14 +75,32 @@ directory has its `enum` preserved and extended rather than overwritten.
 ./scripts/convert-rdf.sh
 ```
 
-This runs `rdf-to-jsonschema.js` for every `*.rdf` file in `scripts/rdf/`
-and writes the generated schema files to `public/schemas/thesaurus-rdf/` —
-a directory kept separate from `public/schemas/thesaurus/` so this script
-and `convert.sh` never clobber each other's output. It clears and
-re-creates that directory each run, then (re)writes
-`public/schemas/thesaurus-rdf/manifest.json`, a JSON array of every
-generated schema filename, the same way `convert.sh` does for its own
-output directory.
+This runs `rdf-to-jsonschema.js` for every `*.rdf` file in `scripts/rdf/`,
+writing one JSON Schema per concept scheme to
+`public/schemas/thesaurus-rdf/` — a directory kept separate from
+`public/schemas/thesaurus/` so this script and `convert.sh` never clobber
+each other's output. It clears and re-creates that directory each run.
+
+Unlike `convert.sh`, it doesn't stop there — two more steps follow:
+
+1. It merges every generated per-scheme schema into a single
+   `public/schemas/thesaurus-rdf/thesaurus.json` and deletes the per-scheme
+   files, since a static SPA has no way to discover how many thesaurus
+   files exist or what they're named without a fixed entry point to fetch.
+   Each scheme becomes a `definitions` entry keyed by its filename (sans
+   extension) — `title`, `description`, `type`, and `enum`.
+2. It then embeds that merged file's `definitions` into
+   `public/schemas/eof-eos-schema.json` itself, as a dedicated
+   `definitions.thesaurus` section (kept last among `definitions`, and
+   replaced in place on re-runs rather than duplicated). Each thesaurus
+   enum is then addressable as a local `$ref`, e.g.
+   `"$ref": "#/definitions/thesaurus/acquisition-station-types"` — no
+   separate fetch needed at runtime, since `eof-eos-schema.json` is already
+   loaded to validate against. (Nesting under `definitions` — rather than a
+   bare top-level `thesaurus` key — matters: it's a real JSON Schema
+   keyword, so Ajv's `strict: true` mode in `src/utils/ogcValidator.ts`
+   doesn't reject it as an unknown keyword.)
 
 To add a new RDF/XML thesaurus export, drop it into `scripts/rdf/` and
-re-run `convert-rdf.sh`.
+re-run `convert-rdf.sh` — this regenerates `thesaurus.json` and refreshes
+the `definitions.thesaurus` section in `eof-eos-schema.json` to match.
