@@ -572,11 +572,7 @@
 							}
 						},
 						"measurementType": {
-							"type": "string",
-							"enum": [
-								"ABSORPTION",
-								"EMISSION"
-							]
+							"$ref": "#/definitions/thesaurus/measurement-types"
 						},
 						"dopplerFrequency": {
 							"description": "Sar",
