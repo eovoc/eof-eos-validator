@@ -375,11 +375,7 @@
 					"type": "object",
 					"properties": {
 						"status": {
-							"type": "string",
-							"enum": [
-								"ACQUIRED",
-								"QUALITYDEGRADED"
-							]
+							"$ref": "#/definitions/thesaurus/status-types"
 						},
 						"acquisitionInformation": {
 							"type": "array",
@@ -833,19 +829,7 @@
 					"exclusiveMinimum": 0
 				},
 				"spectralRange": {
-					"type": "string",
-					"enum": [
-						"INFRARED",
-						"NIR",
-						"SWIR",
-						"MWIR",
-						"LWIR",
-						"FIR",
-						"UV",
-						"VISIBLE",
-						"MICROWAVE",
-						"OTHER"
-					]
+					"$ref": "#/definitions/thesaurus/spectral-range-types"
 				},
 				"wavelengthResolution": {
 					"type": "number"
