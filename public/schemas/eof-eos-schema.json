@@ -76,7 +76,7 @@
 					"format": "date-time"
 				},
 				"processingMode": {
-					"type": "string"
+					"$ref": "#/definitions/thesaurus/processing-mode-types"
 				},
 				"compositeType": {
 					"type": "string"
