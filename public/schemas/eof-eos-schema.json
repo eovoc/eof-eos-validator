@@ -706,11 +706,7 @@
 					"type": "object",
 					"properties": {
 						"qualityStatus": {
-							"type": "string",
-							"enum": [
-								"NOMINAL",
-								"DEGRADED"
-							]
+							"$ref": "#/definitions/thesaurus/quality-status-types"
 						},
 						"qualityDegradation": {
 							"description": "Percentage",
