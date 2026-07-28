@@ -717,7 +717,7 @@
 							"type": "number"
 						},
 						"qualityDegradationTag": {
-							"type": "string"
+							"$ref": "#/definitions/thesaurus/quality-degradation-tag-types"
 						},
 						"qualityDegradationQuotationMode": {
 							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
