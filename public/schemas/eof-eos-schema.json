@@ -631,7 +631,7 @@
 							"type": "string"
 						},
 						"timeliness": {
-							"type": "string"
+							"$ref": "#/definitions/thesaurus/timeliness-types"
 						},
 						"referenceSystemIdentifier": {
 							"type": "string"
