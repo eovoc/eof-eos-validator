@@ -1123,7 +1123,7 @@
 				"type": "string",
 				"enum": [
 					"RADIOMETRY",
-					"GEOLACATION"
+					"GEOLOCATION"
 				]
 			},
 			"quality-status-types": {
