@@ -720,11 +720,7 @@
 							"type": "string"
 						},
 						"qualityDegradationQuotationMode": {
-							"type": "string",
-							"enum": [
-								"AUTOMATIC",
-								"MANUAL"
-							]
+							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 						}
 					}
 				}
