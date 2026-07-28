@@ -60,15 +60,7 @@
 					}
 				},
 				"processingLevel": {
-					"type": "string",
-					"enum": [
-						"1A",
-						"1B",
-						"1C",
-						"2",
-						"2A",
-						"3"
-					]
+					"$ref": "#/definitions/thesaurus/processing-level-types"
 				},
 				"processorName": {
 					"type": "string"
@@ -1091,7 +1083,7 @@
 					"2C",
 					"1",
 					"2",
-					"VAP (TBD)"
+					"VAP"
 				]
 			},
 			"processing-mode-types": {
