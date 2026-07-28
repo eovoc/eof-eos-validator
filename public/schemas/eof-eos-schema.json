@@ -85,7 +85,7 @@
 					"type": "string"
 				},
 				"productContentsType": {
-					"type": "string"
+					"$ref": "#/definitions/thesaurus/product-content-types"
 				},
 				"processingMethod": {
 					"type": "string"
