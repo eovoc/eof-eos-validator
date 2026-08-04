@@ -1,10 +1,11 @@
 /**
  * rdf-to-jsonschema.js
  *
- * Converts a SKOS thesaurus exported as RDF/XML (one or more skos:ConceptScheme,
- * each with its own skos:Concept top concepts) into one JSON Schema per
- * concept scheme, whose `enum` lists the prefLabels of that scheme's top
- * concepts (skos:hasTopConcept).
+ * Reads a thesaurus exported from SKOS as RDF/XML — one or more
+ * skos:ConceptScheme nodes, each grouping a set of skos:Concept top
+ * concepts — and emits a JSON Schema file per scheme. Each schema is a
+ * string `enum` built from that scheme's top concepts' skos:prefLabel
+ * values (found via skos:hasTopConcept, falling back to skos:topConceptOf if not available).
  *
  * Usage:
  *   node rdf-to-jsonschema.js <input.rdf> [output-dir]
@@ -24,6 +25,7 @@ const SKOS_CONCEPT_SCHEME = "http://www.w3.org/2004/02/skos/core#ConceptScheme";
 
 const XML_ENTITIES = { lt: "<", gt: ">", amp: "&", quot: '"', apos: "'" };
 
+/** Replaces numeric and named XML entities (e.g. `&amp;`, `&#39;`) with their characters. */
 function decodeEntities(text) {
   return text.replace(/&(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);/g, (match, ref) => {
     if (ref[0] === "#") {
@@ -34,6 +36,7 @@ function decodeEntities(text) {
   });
 }
 
+/** Parses a raw `name="value"` attribute string into a plain object, decoding entities. */
 function parseAttrs(attrString) {
   const attrs = {};
   const attrPattern = /([\w:-]+)="([^"]*)"/g;
@@ -94,6 +97,7 @@ function parseRdfXml(xml) {
 
 // ---------- Utilities ----------
 
+/** Collects a predicate's resource (URI) values, skipping literals. */
 function getResources(node, predicate) {
   return (node.props.get(predicate) ?? []).map((v) => v.resource).filter((r) => r !== undefined);
 }
@@ -122,9 +126,11 @@ function extractName(text) {
 
 // ---------- Core of the conversion ----------
 
+/** Resolves a concept scheme's top concepts to their prefLabels, deduped and in source order. */
 function convertScheme(schemeNode, nodesByUri) {
   const schemeTitle = getLabel(schemeNode, "dct:title") ?? slugFromUri(schemeNode.uri);
 
+  //Retrieve the scheme's own skos:hasTopConcept Uris
   let topConceptUris = getResources(schemeNode, "skos:hasTopConcept");
   if (topConceptUris.length === 0) {
     // Fall back to concepts pointing back at this scheme via skos:topConceptOf,
@@ -159,6 +165,7 @@ function convertScheme(schemeNode, nodesByUri) {
 
 // ---------- Artifact generation ----------
 
+/** Builds the draft-07 JSON Schema document (a string enum) for a converted scheme. */
 function buildJsonSchema(result, filename) {
   return {
     $schema: "https://json-schema.org/draft/07/schema",
@@ -170,6 +177,7 @@ function buildJsonSchema(result, filename) {
   };
 }
 
+/** Writes a scheme's JSON Schema to `<outputDir>/<slug>.json` and returns the file path. */
 function writeSchema(result, outputDir) {
   const safeName = extractName(result.schemeTitle);
   const schemaFilename = `${safeName}.json`;
@@ -183,6 +191,7 @@ function writeSchema(result, outputDir) {
 
 // ---------- CLI entry point ----------
 
+/** CLI entry point: reads the input RDF/XML file and writes one schema per concept scheme found. */
 function main() {
   const [, , inputPath, outputDirArg] = process.argv;
 
