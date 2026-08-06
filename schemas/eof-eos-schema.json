@@ -44,7 +44,8 @@
 			},
 			"required": [
 				"title",
-				"date", "created"
+				"date",
+				"created"
 			]
 		},
 		"ProcessingInformation": {
@@ -59,19 +60,7 @@
 					}
 				},
 				"processingLevel": {
-					"type": "string",
-					"enum": [
-						"1A",
-						"1B",
-						"1C",
-						"2A",
-						"3",
-						"2B",
-						"2C",
-						"1",
-						"2",
-						"VAP"
-					]
+					"$ref": "#/definitions/thesaurus/processing-level-types"
 				},
 				"processorName": {
 					"type": "string"
@@ -87,14 +76,7 @@
 					"format": "date-time"
 				},
 				"processingMode": {
-					"type": "string",
-					"enum": [
-						"NRT",
-						"NOMINAL",
-						"BACKLOGGED",
-						"REPROCESSED",
-						"VALIDATE"
-					]
+					"$ref": "#/definitions/thesaurus/processing-mode-types"
 				},
 				"compositeType": {
 					"type": "string"
@@ -103,16 +85,7 @@
 					"type": "string"
 				},
 				"productContentsType": {
-					"type": "string",
-					"enum": [
-						"COASTAL",
-						"CONTINENTAL",
-						"HYDROLOGY",
-						"ICE",
-						"OPEN_OCEAN",
-						"OTHER",
-						"REGIONAL"
-					]
+					"$ref": "#/definitions/thesaurus/product-content-types"
 				},
 				"processingMethod": {
 					"type": "string"
@@ -384,8 +357,6 @@
 						"$ref": "#/definitions/Link"
 					}
 				}
-				
-			
 			}
 		},
 		"Properties": {
@@ -395,19 +366,8 @@
 				{
 					"type": "object",
 					"properties": {
-						
 						"status": {
-							"type": "string",
-							"enum": [
-								"ARCHIVED",
-								"ACQUIRED",
-								"CANCELLED",
-								"FAILED",
-								"PLANNED",
-								"POTENTIAL",
-								"REJECTED",
-								"QUALITYDEGRADED"
-							]
+							"$ref": "#/definitions/thesaurus/status-types"
 						},
 						"acquisitionInformation": {
 							"type": "array",
@@ -437,7 +397,6 @@
 			"description": "GeoJSON Feature",
 			"type": "object",
 			"properties": {
-			
 				"type": {
 					"title": "type",
 					"type": "string",
@@ -489,12 +448,7 @@
 					"type": "string"
 				},
 				"orbitType": {
-					"type": "string",
-					"enum": [
-						"GEO",
-						"LEO",
-						"MEO"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-types"
 				}
 			},
 			"required": [
@@ -507,14 +461,7 @@
 			"type": "object",
 			"properties": {
 				"sensorType": {
-					"type": "string",
-					"enum": [
-						"OPTICAL",
-						"ALTIMETRIC",
-						"RADAR",
-						"ATMOSPHERIC",
-						"LIMB"
-					]
+					"$ref": "#/definitions/thesaurus/sensor-types"
 				},
 				"instrumentShortName": {
 					"type": "string"
@@ -536,12 +483,7 @@
 					"type": "object",
 					"properties": {
 						"acquisitionType": {
-							"type": "string",
-							"enum": [
-								"NOMINAL",
-								"CALIBRATION",
-								"OTHER"
-							]
+							"$ref": "#/definitions/thesaurus/acquisition-types"
 						},
 						"acquisitionSubType": {
 							"type": "string"
@@ -574,19 +516,10 @@
 							"minimum": 0
 						},
 						"antennaLookDirection": {
-							"type": "string",
-							"enum": [
-								"LEFT",
-								"RIGHT"
-							]
+							"$ref": "#/definitions/thesaurus/antenna-look-direction-types"
 						},
 						"acquisitionStation": {
-							"type": "string",
-							"enum": [
-								"RED",
-								"KIR-1",
-								"KRU"
-							]
+							"$ref": "#/definitions/thesaurus/acquisition-station-types"
 						},
 						"acquisitionAngles": {
 							"$ref": "#/definitions/AcquisitionAngles"
@@ -598,34 +531,10 @@
 							"type": "string"
 						},
 						"polarisationMode": {
-							"description": "Sar",
-							"type": "string",
-							"enum": [
-								"S",
-								"D",
-								"T",
-								"Q"
-							]
+							"$ref": "#/definitions/thesaurus/polarisation-mode-types"
 						},
 						"polarisationChannels": {
-							"description": "Sar",
-							"type": "string",
-							"enum": [
-								"HH",
-								"HV",
-								"VH",
-								"VV",
-								"HH, VV",
-								"HH, VH",
-								"HH, HV",
-								"VH, VV",
-								"VH, HV",
-								"VV, HV",
-								"VV, VH",
-								"HV, VH",
-								"HH, HV, VH, VV",
-								"UNDEFINED"
-							]
+							"$ref": "#/definitions/thesaurus/polarisation-channels-types"
 						},
 						"resolution": {
 							"type": "number"
@@ -642,11 +551,7 @@
 							}
 						},
 						"measurementType": {
-							"type": "string",
-							"enum": [
-								"ABSORPTION",
-								"EMISSION"
-							]
+							"$ref": "#/definitions/thesaurus/measurement-types"
 						},
 						"dopplerFrequency": {
 							"description": "Sar",
@@ -686,7 +591,7 @@
 					"type": "string"
 				},
 				"type": {
-					"type": "string"
+					"$ref": "#/definitions/thesaurus/link-types"
 				},
 				"title": {
 					"type": "string"
@@ -696,18 +601,14 @@
 					"minimum": 0
 				},
 				"category": {
-					"type": "string",
-					"enum": [
-						"THUMBNAILS",
-						"OVERVIEW",
-						"QUALITY",
-						"DATA"
-					]
+					"$ref": "#/definitions/thesaurus/category-types"
 				}
-				
 			},
 			"required": [
-				"href", "type", "title", "category"
+				"href",
+				"type",
+				"title",
+				"category"
 			],
 			"additionalProperties": false
 		},
@@ -717,14 +618,12 @@
 				{
 					"type": "object",
 					"properties": {
-						
 						"productType": {
 							"type": "string"
 						},
 						"size": {
 							"type": "integer"
 						},
-					
 						"qualityInformation": {
 							"$ref": "#/definitions/QualityInformation"
 						},
@@ -732,13 +631,7 @@
 							"type": "string"
 						},
 						"timeliness": {
-							"type": "string",
-							"enum": [
-								"NRT",
-								"NOMINAL",
-								"NTC",
-								"STC"
-							]
+							"$ref": "#/definitions/thesaurus/timeliness-types"
 						},
 						"referenceSystemIdentifier": {
 							"type": "string"
@@ -813,29 +706,17 @@
 					"type": "object",
 					"properties": {
 						"qualityStatus": {
-							"type": "string",
-							"enum": [
-								"DEGRADED",
-								"NOMINAL"
-							]
+							"$ref": "#/definitions/thesaurus/quality-status-types"
 						},
 						"qualityDegradation": {
 							"description": "Percentage",
 							"type": "number"
 						},
 						"qualityDegradationTag": {
-							"type": "string",
-							"enum": [
-								"RADIOMETRY",
-								"GEOLOCATION"
-							]
+							"$ref": "#/definitions/thesaurus/quality-degradation-tag-types"
 						},
 						"qualityDegradationQuotationMode": {
-							"type": "string",
-							"enum": [
-								"AUTOMATIC",
-								"MANUAL"
-							]
+							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 						}
 					}
 				}
@@ -903,19 +784,7 @@
 					"exclusiveMinimum": 0
 				},
 				"spectralRange": {
-					"type": "string",
-					"enum": [
-						"UV",
-						"VIS",
-						"IR",
-						"NIR",
-						"SWIR",
-						"MWIR",
-						"TIR",
-						"FIR",
-						"MW",
-						"RW"
-					]
+					"$ref": "#/definitions/thesaurus/spectral-range-types"
 				},
 				"wavelengthResolution": {
 					"type": "number"
@@ -1008,18 +877,10 @@
 			"type": "object",
 			"properties": {
 				"orbitDirection": {
-					"type": "string",
-					"enum": [
-						"ASCENDING",
-						"DESCENDING"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-direction-types"
 				},
 				"lastOrbitDirection": {
-					"type": "string",
-					"enum": [
-						"ASCENDING",
-						"DESCENDING"
-					]
+					"$ref": "#/definitions/thesaurus/orbit-direction-types"
 				},
 				"orbitDuration": {
 					"type": "integer"
@@ -1079,6 +940,314 @@
 				"method",
 				"href"
 			]
+		},
+		"thesaurus": {
+			"acquisition-station-types": {
+				"title": "Acquisition Station Types",
+				"description": "Enum generated from thesaurus SKOS 'Acquisition Station Types' (https://earth.esa.int/concepts/concept_scheme/acquisitionstation).",
+				"type": "string",
+				"enum": [
+					"RED",
+					"KIR-1",
+					"KRU"
+				]
+			},
+			"acquisition-subtypes": {
+				"title": "Acquisition Subtypes",
+				"description": "Enum generated from thesaurus SKOS 'Acquisition Subtypes' (https://earth.esa.int/concepts/concept_scheme/acquisitionsubtype).",
+				"type": "string",
+				"enum": [
+					"TBD"
+				]
+			},
+			"acquisition-types": {
+				"title": "Acquisition Types",
+				"description": "Enum generated from thesaurus SKOS 'Acquisition Types' (https://earth.esa.int/concepts/concept_scheme/acquisitiontype).",
+				"type": "string",
+				"enum": [
+					"NOMINAL",
+					"CALIBRATION",
+					"OTHER"
+				]
+			},
+			"antenna-look-direction-types": {
+				"title": "Antenna Look Direction Types",
+				"description": "Enum generated from thesaurus SKOS 'Antenna Look Direction Types' (https://earth.esa.int/concepts/concept_scheme/antennalookdirection).",
+				"type": "string",
+				"enum": [
+					"LEFT",
+					"RIGHT"
+				]
+			},
+			"category-types": {
+				"title": "Category Types",
+				"description": "Enum generated from thesaurus SKOS 'Category Types' (https://earth.esa.int/concepts/concept_scheme/category).",
+				"type": "string",
+				"enum": [
+					"THUMBNAILS",
+					"OVERVIEW",
+					"QUALITY",
+					"DATA"
+				]
+			},
+			"geometry-types": {
+				"title": "Geometry Types",
+				"description": "Enum generated from thesaurus SKOS 'Geometry Types' (https://earth.esa.int/concepts/concept_scheme/geometrytype).",
+				"type": "string",
+				"enum": [
+					"Point",
+					"MultiPoint",
+					"LineString",
+					"MultiLineString",
+					"Polygon",
+					"MultiPolygon",
+					"GeometryCollection"
+				]
+			},
+			"link-types": {
+				"title": "Link Types",
+				"description": "Enum generated from thesaurus SKOS 'Link Types' (https://earth.esa.int/concepts/concept_scheme/linktype).",
+				"type": "string",
+				"enum": [
+					"image/png",
+					"image/jpeg",
+					"image/tiff; application=geotiff; profile=cloud-optimized",
+					"text/csv",
+					"application/geo+json",
+					"image/tiff",
+					"application/vnd.hdfgroup.hdf4",
+					"application/vnd.hdfgroup.hdf5",
+					"application/vnd.google-earth.kml+xml",
+					"application/vnd.google-earth.kmz",
+					"application/netcdf",
+					"application/pdf",
+					"application/yaml",
+					"application/xml",
+					"application/vnd.zarr",
+					"application/zip",
+					"text/html",
+					"application/json",
+					"text/plain",
+					"application/octet-stream"
+				]
+			},
+			"measurement-types": {
+				"title": "Measurement Types",
+				"description": "Enum generated from thesaurus SKOS 'Measurement Types' (https://earth.esa.int/concepts/concept_scheme/measurementtype).",
+				"type": "string",
+				"enum": [
+					"ABSORPTION",
+					"EMISSION"
+				]
+			},
+			"operational-mode": {
+				"title": "Operational Mode",
+				"description": "Enum generated from thesaurus SKOS 'Operational Mode' (https://earth.esa.int/concepts/concept_scheme/operationalMode).",
+				"type": "string",
+				"enum": [
+					"IM",
+					"PAN",
+					"MS",
+					"HS",
+					"SL",
+					"SM",
+					"SC",
+					"SB",
+					"SCN",
+					"SCW",
+					"ST",
+					"FN",
+					"WD",
+					"EH",
+					"EL",
+					"HI",
+					"PP",
+					"SCWR",
+					"SCHR"
+				]
+			},
+			"orbit-direction-types": {
+				"title": "Orbit Direction Types",
+				"description": "Enum generated from thesaurus SKOS 'Orbit Direction Types' (https://earth.esa.int/concepts/concept_scheme/orbitdirectiontype).",
+				"type": "string",
+				"enum": [
+					"ASCENDING",
+					"DESCENDING"
+				]
+			},
+			"orbit-types": {
+				"title": "Orbit Types",
+				"description": "Enum generated from thesaurus SKOS 'Orbit Types' (https://earth.esa.int/concepts/concept_scheme/orbittype).",
+				"type": "string",
+				"enum": [
+					"GEO",
+					"LEO",
+					"MEO"
+				]
+			},
+			"polarisation-channels-types": {
+				"title": "Polarisation Channels Types",
+				"description": "Enum generated from thesaurus SKOS 'Polarisation Channels Types' (https://earth.esa.int/concepts/concept_scheme/polarisationchannels).",
+				"type": "string",
+				"enum": [
+					"HH",
+					"HV",
+					"VH",
+					"VV",
+					"HH, VV",
+					"HH, VH",
+					"HH, HV",
+					"VH, VV",
+					"VH, HV",
+					"VV, HV",
+					"VV, VH",
+					"HV, VH",
+					"HH, HV, VH, VV",
+					"UNDEFINED"
+				]
+			},
+			"polarisation-mode-types": {
+				"title": "Polarisation Mode Types",
+				"description": "Enum generated from thesaurus SKOS 'Polarisation Mode Types' (https://earth.esa.int/concepts/concept_scheme/polarisationmode).",
+				"type": "string",
+				"enum": [
+					"S",
+					"D",
+					"T",
+					"Q"
+				]
+			},
+			"processing-level-types": {
+				"title": "Processing Level Types",
+				"description": "Enum generated from thesaurus SKOS 'Processing Level Types' (https://earth.esa.int/concepts/concept_scheme/processingleveltype).",
+				"type": "string",
+				"enum": [
+					"1A",
+					"1B",
+					"1C",
+					"2A",
+					"3",
+					"2B",
+					"2C",
+					"1",
+					"2",
+					"VAP"
+				]
+			},
+			"processing-mode-types": {
+				"title": "Processing Mode Types",
+				"description": "Enum generated from thesaurus SKOS 'Processing Mode Types' (https://earth.esa.int/concepts/concept_scheme/processingmode).",
+				"type": "string",
+				"enum": [
+					"NRT",
+					"NOMINAL",
+					"BACKLOGGED",
+					"REPROCESSED",
+					"VALIDATE"
+				]
+			},
+			"product-content-types": {
+				"title": "Product Content Types",
+				"description": "Enum generated from thesaurus SKOS 'Product Content Types' (https://earth.esa.int/concepts/concept_scheme/productcontenttype).",
+				"type": "string",
+				"enum": [
+					"COASTAL",
+					"CONTINENTAL",
+					"HYDROLOGY",
+					"ICE",
+					"OPEN_OCEAN",
+					"OTHER",
+					"REGIONAL"
+				]
+			},
+			"quality-degradation-quotation-mode-types": {
+				"title": "Quality Degradation Quotation Mode Types",
+				"description": "Enum generated from thesaurus SKOS 'Quality Degradation Quotation Mode Types' (https://earth.esa.int/concepts/concept_scheme/qualitydegradationquotationmode).",
+				"type": "string",
+				"enum": [
+					"AUTOMATIC",
+					"MANUAL"
+				]
+			},
+			"quality-degradation-tag-types": {
+				"title": "Quality Degradation Tag Types",
+				"description": "Enum generated from thesaurus SKOS 'Quality Degradation Tag Types' (https://earth.esa.int/concepts/concept_scheme/qualitydegradationtag).",
+				"type": "string",
+				"enum": [
+					"RADIOMETRY",
+					"GEOLOCATION"
+				]
+			},
+			"quality-status-types": {
+				"title": "Quality Status Types",
+				"description": "Enum generated from thesaurus SKOS 'Quality Status Types' (https://earth.esa.int/concepts/concept_scheme/qualitystatus).",
+				"type": "string",
+				"enum": [
+					"DEGRADED",
+					"NOMINAL"
+				]
+			},
+			"sensor-types": {
+				"title": "Sensor Types",
+				"description": "Enum generated from thesaurus SKOS 'Sensor Types' (https://earth.esa.int/concepts/concept_scheme/sensortype).",
+				"type": "string",
+				"enum": [
+					"OPTICAL",
+					"ALTIMETRIC",
+					"RADAR",
+					"ATMOSPHERIC",
+					"LIMB"
+				]
+			},
+			"spectral-range-types": {
+				"title": "Spectral Range Types",
+				"description": "Enum generated from thesaurus SKOS 'Spectral Range Types' (https://earth.esa.int/concepts/concept_scheme/spectralrangetype).",
+				"type": "string",
+				"enum": [
+					"UV",
+					"VIS",
+					"IR",
+					"NIR",
+					"SWIR",
+					"MWIR",
+					"TIR",
+					"FIR",
+					"MW",
+					"RW"
+				]
+			},
+			"status-types": {
+				"title": "Status Types",
+				"description": "Enum generated from thesaurus SKOS 'Status Types' (https://earth.esa.int/concepts/concept_scheme/statustype).",
+				"type": "string",
+				"enum": [
+					"ACQUIRED",
+					"CANCELLED",
+					"FAILED",
+					"PLANNED",
+					"POTENTIAL",
+					"REJECTED"
+				]
+			},
+			"swath-identifier-types": {
+				"title": "Swath Identifier Types",
+				"description": "Enum generated from thesaurus SKOS 'Swath Identifier Types' (https://earth.esa.int/concepts/concept_scheme/swathidentifiertype).",
+				"type": "string",
+				"enum": [
+					"TBD1"
+				]
+			},
+			"timeliness-types": {
+				"title": "Timeliness Types",
+				"description": "Enum generated from thesaurus SKOS 'Timeliness Types' (https://earth.esa.int/concepts/concept_scheme/timelinesstype).",
+				"type": "string",
+				"enum": [
+					"NRT",
+					"NOMINAL",
+					"NTC",
+					"STC"
+				]
+			}
 		}
 	}
 }
