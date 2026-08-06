@@ -591,7 +591,7 @@
 					"type": "string"
 				},
 				"type": {
-					"type": "string"
+					"$ref": "#/definitions/thesaurus/link-types"
 				},
 				"title": {
 					"type": "string"
@@ -1001,6 +1001,33 @@
 					"GeometryCollection"
 				]
 			},
+			"link-types": {
+				"title": "Link Types",
+				"description": "Enum generated from thesaurus SKOS 'Link Types' (https://earth.esa.int/concepts/concept_scheme/linktype).",
+				"type": "string",
+				"enum": [
+					"image/png",
+					"image/jpeg",
+					"image/tiff; application=geotiff; profile=cloud-optimized",
+					"text/csv",
+					"application/geo+json",
+					"image/tiff",
+					"application/vnd.hdfgroup.hdf4",
+					"application/vnd.hdfgroup.hdf5",
+					"application/vnd.google-earth.kml+xml",
+					"application/vnd.google-earth.kmz",
+					"application/netcdf",
+					"application/pdf",
+					"application/yaml",
+					"application/xml",
+					"application/vnd.zarr",
+					"application/zip",
+					"text/html",
+					"application/json",
+					"text/plain",
+					"application/octet-stream"
+				]
+			},
 			"measurement-types": {
 				"title": "Measurement Types",
 				"description": "Enum generated from thesaurus SKOS 'Measurement Types' (https://earth.esa.int/concepts/concept_scheme/measurementtype).",
@@ -1008,6 +1035,32 @@
 				"enum": [
 					"ABSORPTION",
 					"EMISSION"
+				]
+			},
+			"operational-mode": {
+				"title": "Operational Mode",
+				"description": "Enum generated from thesaurus SKOS 'Operational Mode' (https://earth.esa.int/concepts/concept_scheme/operationalMode).",
+				"type": "string",
+				"enum": [
+					"IM",
+					"PAN",
+					"MS",
+					"HS",
+					"SL",
+					"SM",
+					"SC",
+					"SB",
+					"SCN",
+					"SCW",
+					"ST",
+					"FN",
+					"WD",
+					"EH",
+					"EL",
+					"HI",
+					"PP",
+					"SCWR",
+					"SCHR"
 				]
 			},
 			"orbit-direction-types": {
@@ -1165,14 +1218,12 @@
 				"description": "Enum generated from thesaurus SKOS 'Status Types' (https://earth.esa.int/concepts/concept_scheme/statustype).",
 				"type": "string",
 				"enum": [
-					"ARCHIVED",
 					"ACQUIRED",
 					"CANCELLED",
 					"FAILED",
 					"PLANNED",
 					"POTENTIAL",
-					"REJECTED",
-					"QUALITYDEGRADED"
+					"REJECTED"
 				]
 			},
 			"swath-identifier-types": {
@@ -1180,7 +1231,7 @@
 				"description": "Enum generated from thesaurus SKOS 'Swath Identifier Types' (https://earth.esa.int/concepts/concept_scheme/swathidentifiertype).",
 				"type": "string",
 				"enum": [
-					"TBD"
+					"TBD1"
 				]
 			},
 			"timeliness-types": {

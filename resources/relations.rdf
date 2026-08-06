@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:sosa="http://www.w3.org/ns/sosa/">
+
+	<rdf:Description rdf:about="https://earth.esa.int/eos/productClass">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Product Class</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#product-class"/>
+   </rdf:Description>
+   
+   <rdf:Description rdf:about="https://earth.esa.int/eos/productClassOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Product Class Of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#product-class"/>
+   </rdf:Description>
+   
+   <rdf:Description rdf:about="https://earth.esa.int/eos/filenameShape">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Filename Shape</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#instance-id"/>
+   </rdf:Description>
+   
+    <rdf:Description rdf:about="https://earth.esa.int/eos/filenameShapeOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Filename Shape Of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#instance-id"/>
+   </rdf:Description>
+   
+   <rdf:Description rdf:about="https://earth.esa.int/eos/productType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Product Type</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#product-type"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="https://earth.esa.int/eos/productTypeOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">Product Type Of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="https://eof-eos.io.esa.int/eopf-eos/data-model/8-naming-convention.html#product-type"/>
+   </rdf:Description>
+  
+</rdf:RDF>
+
