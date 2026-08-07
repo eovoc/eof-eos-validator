@@ -3,7 +3,7 @@ name: Convert RDF thesaurus
 on:
   push:
     branches:
-      - gh-pages
+      - main
     paths:
       - "scripts/rdf/DataModelEnumeratedProperties.rdf"
 
@@ -22,14 +22,25 @@ jobs:
       - name: Run convert-rdf.sh
         run: bash scripts/convert-rdf.sh
 
-      - name: Commit regenerated schema
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Copy regenerated schema to gh-pages
+        run: |
+          cp public/schemas/eof-eos-schema.json gh-pages/schemas/eof-eos-schema.json
+          cp public/schemas/thesaurus-rdf/thesaurus.json gh-pages/schemas/thesaurus-rdf/thesaurus.json
+
+      - name: Commit and push to gh-pages
+        working-directory: gh-pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/schemas/eof-eos-schema.json
+          git add schemas/eof-eos-schema.json schemas/thesaurus-rdf/thesaurus.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Regenerate eof-eos-schema.json from updated RDF thesaurus"
+            git commit -m "Regenerate eof-eos-schema.json from updated RDF thesaurus (${{ github.ref_name }})"
             git push
           fi
