@@ -75,3 +75,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Automation (GitHub Action)
+
+`.github/workflows/convert-rdf.yml` runs `convert-rdf.sh` automatically so
+`eof-eos-schema.json` never drifts from the checked-in RDF source.
+
+- **Trigger**: a push to `main` that touches
+  `scripts/rdf/DataModelEnumeratedProperties.rdf`.
+- **Regenerate**: runs `convert-rdf.sh` with its default paths, then
+  commits and pushes the updated `public/schemas/eof-eos-schema.json` back
+  to `main` (skipped if nothing changed).
+- **Sync to gh-pages**: checks out the `gh-pages` branch (which holds the
+  built site, with schemas at the top level rather than under `public/`),
+  copies the freshly regenerated `eof-eos-schema.json` over the `gh-pages` branch, and commits/pushes
+  that branch too — so the deployed site picks up the change without
+  waiting for the next full build/deploy.
