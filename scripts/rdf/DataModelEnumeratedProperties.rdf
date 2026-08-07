@@ -2954,7 +2954,7 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/bc6f33da-2a05-47ff-9e70-01606c036666">
-	<skos:prefLabel>TBD1</skos:prefLabel>
+	<skos:prefLabel>TBD</skos:prefLabel>
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/swathidentifiertype"/>
 </rdf:Description>
