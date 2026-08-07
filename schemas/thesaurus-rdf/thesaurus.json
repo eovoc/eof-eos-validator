@@ -25,7 +25,7 @@
       "description": "Enum generated from thesaurus SKOS 'Acquisition Types' (https://earth.esa.int/concepts/concept_scheme/acquisitiontype).",
       "type": "string",
       "enum": [
-        "NOMINAL",
+        "NOMINAL-1",
         "CALIBRATION",
         "OTHER"
       ]
