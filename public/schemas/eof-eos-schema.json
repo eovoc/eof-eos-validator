@@ -1234,7 +1234,7 @@
 				"description": "Enum generated from thesaurus SKOS 'Swath Identifier Types' (https://earth.esa.int/concepts/concept_scheme/swathidentifiertype).",
 				"type": "string",
 				"enum": [
-					"TBD1"
+					"TBD"
 				]
 			},
 			"timeliness-types": {
