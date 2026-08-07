@@ -1,4 +1,5 @@
 import {ValidationReport} from "../utils/ValidationResult";
+import {prettyPrint} from "../utils/jsonUtil";
 
 function SchemaLabel({schema}:{schema: string}) {
     if (schema.startsWith("http") || schema.startsWith(process.env.PUBLIC_URL)) {
@@ -55,7 +56,7 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
                                {hasParams && (
                                <div className="error-detail-row">
                                    <span className="error-detail-label">params:</span>
-                                   <pre>{JSON.stringify(error.params, null, 2)}</pre>
+                                   <pre>{prettyPrint(error.params)}</pre>
                                </div>
                                )}
                            </details>

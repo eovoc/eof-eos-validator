@@ -1,5 +1,5 @@
-
 export default function DocumentationPanel(){
+
     return(
         <>
             <h2>Documentation</h2>
@@ -19,6 +19,7 @@ export default function DocumentationPanel(){
                     <a className="documentation-link" style={{ marginLeft: "0.25em" }} title="mdj.json" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">mdj.json</a>
                     schemas)
                 </li>
+
             </ul>
         </>
     );
