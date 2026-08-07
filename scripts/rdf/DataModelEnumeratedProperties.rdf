@@ -101,7 +101,7 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/2ff41d20-a8c7-4f25-bab2-cbf575aab80e">
-	<skos:prefLabel>NOMINAL</skos:prefLabel>
+	<skos:prefLabel>NOMINAL-1</skos:prefLabel>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/592903dc-fb84-4ca9-992d-035c4f8d27cf">
