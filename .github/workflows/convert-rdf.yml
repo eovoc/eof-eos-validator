@@ -3,7 +3,7 @@ name: Convert RDF thesaurus
 on:
   push:
     branches:
-      - dev
+      - gh-pages
     paths:
       - "scripts/rdf/DataModelEnumeratedProperties.rdf"
 
