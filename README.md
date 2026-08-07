@@ -78,6 +78,13 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Automation (GitHub Action)
 
+### Deploy (gh-pages)
+
+Modifying a file of the gh-pages branch will trigger automatic re-deployment of the website.
+Modifying the eof-eos-schema.json will trigger the redeployment of the website with the new version of the eof-eos-schema.json
+
+### Convert RDF
+
 `.github/workflows/convert-rdf.yml` runs `convert-rdf.sh` automatically so
 `eof-eos-schema.json` never drifts from the checked-in RDF source.
 
