@@ -46,7 +46,7 @@ function main() {
   };
   const mergedPath = path.join(dir, "thesaurus.json");
   fs.writeFileSync(mergedPath, JSON.stringify(merged, null, 2) + "\n");
-  console.log("Merged schema written:", mergedPath);
+  console.log("Merged schema written into:", mergedPath);
 }
 
 main();

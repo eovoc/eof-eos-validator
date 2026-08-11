@@ -10,8 +10,11 @@ mkdir -p "$SCHEMA_DIR"
 
 # Convert every rdf file into jsonschema files (n jsonschema per rdf file).
 while IFS= read -r -d '' input; do
+  echo "#################"
   echo "Converting $input"
+  echo "#################"
   node "$SCRIPT_DIR/rdf-to-jsonschema.js" "$input" "$SCHEMA_DIR"
+  echo "-----------------"
 done < <(find "$RDF_DIR" -type f -name "*.rdf" -print0)
 
 # Merge all jsonschema files into a single one.
