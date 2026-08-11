@@ -1,0 +1,65 @@
+{
+	"type": "Feature",
+	"id": "THESAURUS_TEST_ID",
+	"geometry": {
+		"type": "Point",
+		"coordinates": [0, 0]
+	},
+	"properties": {
+		"title": "Thesaurus enum coverage fixture",
+		"date": "2025-01-01T00:00:00Z",
+		"created": "2025-01-01T00:00:00Z",
+		"status": "ACQUIRED",
+		"acquisitionInformation": [
+			{
+				"platform": {
+					"platformShortName": "Sat-1",
+					"orbitType": "LEO"
+				},
+				"instrument": {
+					"sensorType": "OPTICAL",
+					"instrumentShortName": "Cam-1"
+				},
+				"acquisitionParameters": [
+					{
+						"acquisitionType": "NOMINAL",
+						"beginningDateTime": "2025-01-01T00:00:00Z",
+						"endingDateTime": "2025-01-01T00:10:00Z",
+						"antennaLookDirection": "LEFT",
+						"acquisitionStation": "RED",
+						"polarisationMode": "S",
+						"polarisationChannels": "HH",
+						"measurementType": "ABSORPTION",
+						"orbitDirection": "ASCENDING",
+						"waveLengths": [
+							{
+								"spectralRange": "VIS"
+							}
+						]
+					}
+				]
+			}
+		],
+		"productInformation": {
+			"processingLevel": "1A",
+			"processingMode": "NOMINAL",
+			"productContentsType": "OTHER",
+			"timeliness": "NRT",
+			"qualityInformation": {
+				"qualityStatus": "NOMINAL",
+				"qualityDegradationTag": "RADIOMETRY",
+				"qualityDegradationQuotationMode": "AUTOMATIC"
+			}
+		},
+		"links": {
+			"measurements": [
+				{
+					"href": "https://example.org/data.tif",
+					"type": "image/tiff",
+					"title": "Data",
+					"category": "DATA"
+				}
+			]
+		}
+	}
+}
