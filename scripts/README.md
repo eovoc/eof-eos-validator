@@ -31,6 +31,34 @@ the scheme's title (`dct:title`), falling back to a slug of its URI. An
 existing `<name>.json` in the output directory has its `enum` preserved
 and extended rather than overwritten.
 
+### Convert a raw Skosmos export first (if needed)
+
+Some thesauri (e.g. `scripts/skosmos/platforms.rdf`) are raw Skosmos
+"concept neighbourhood" exports: they use typed elements (`<skos:Concept>`,
+`<skos:ConceptScheme>`) and express hierarchy only via
+`skos:broader`/`skos:narrower`, with no `skos:hasTopConcept`. These need
+converting to the generic `<rdf:Description>` form (with explicit
+`dct:title` and `skos:hasTopConcept`/`skos:topConceptOf`) before
+`rdf-to-jsonschema.js` can read them.
+
+```bash
+node scripts/skosmos-to-rdf.js <input.rdf> <output.rdf>
+```
+
+A scheme's top concepts are resolved as its own `skos:hasTopConcept` if
+present, otherwise via whichever concept(s) declare `skos:inScheme` pointing
+at the scheme (Skosmos marks only that one anchor concept as
+`skos:inScheme`): if the anchor has `skos:narrower` children, those are the
+thesaurus' real enum members (e.g. `platforms.rdf`, where the anchor is a
+broad category); otherwise the anchor itself is a single leaf concept and
+becomes the sole top concept (e.g. `instruments/ALT.rdf`, a Skosmos "concept
+neighbourhood" export centered on one instrument). If neither is found, the
+script errors out rather than guessing.
+
+Run this before `convert-rdf.sh`, writing the result into `scripts/rdf/`
+(e.g. `scripts/rdf/platforms-2026-08-11.rdf`) so it gets picked up by the
+next step.
+
 ### Convert every RDF/XML thesaurus at once
 
 ```bash

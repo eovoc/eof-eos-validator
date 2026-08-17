@@ -92,14 +92,52 @@ function parseChildren(blockContent) {
   return children;
 }
 
+/** Finds the index of the closing tag that matches an already-consumed opening tag of
+ *  `tagName`, correctly skipping over any same-named tags nested inside (e.g. a
+ *  <skos:Concept> inlined as the object of a property like sosa:isHostedBy, inside
+ *  another <skos:Concept>) by tracking nesting depth instead of matching the first
+ *  closing tag found. */
+function findMatchingCloseStart(xml, tagName, fromIndex) {
+  const tagPattern = new RegExp(`<${tagName}(?:\\s[^>]*)?(?<!/)>|<\\/${tagName}>`, "g");
+  tagPattern.lastIndex = fromIndex;
+  let depth = 1;
+  let match;
+  while ((match = tagPattern.exec(xml)) !== null) {
+    if (match[0].startsWith("</")) {
+      if (--depth === 0) return match.index;
+    } else {
+      depth++;
+    }
+  }
+  return -1;
+}
+
+/** Recursively collects every container block in [from, to) — both top-level nodes and
+ *  any inline nested resource descriptions inside them — as { tagName, attrString,
+ *  blockContent }, using findMatchingCloseStart so nesting doesn't truncate content. */
+function collectContainerBlocks(xml, from, to, blocks) {
+  const openPattern = /<(rdf:Description|skos:Concept|skos:ConceptScheme)(\s[^>]*)?(?<!\/)>/g;
+  openPattern.lastIndex = from;
+  let match;
+  while ((match = openPattern.exec(xml)) !== null) {
+    if (match.index >= to) break;
+    const [, tagName, attrPart] = match;
+    const contentStart = openPattern.lastIndex;
+    const closeStart = findMatchingCloseStart(xml, tagName, contentStart);
+    if (closeStart === -1 || closeStart > to) continue;
+    blocks.push({ tagName, attrString: attrPart ?? "", blockContent: xml.slice(contentStart, closeStart) });
+    collectContainerBlocks(xml, contentStart, closeStart, blocks);
+    openPattern.lastIndex = closeStart + `</${tagName}>`.length;
+  }
+}
+
 /** Parses the whole RDF/XML document into a Map<subjectUri, node>, merging every
  *  container block that shares the same rdf:about into a single node. */
 function parseRdfXml(xml) {
   const nodesByUri = new Map();
-  const blockPattern = /<(rdf:Description|skos:Concept|skos:ConceptScheme)\s+([^>]*)>([\s\S]*?)<\/\1>/g;
-  let match;
-  while ((match = blockPattern.exec(xml)) !== null) {
-    const [, tagName, attrString, blockContent] = match;
+  const blocks = [];
+  collectContainerBlocks(xml, 0, xml.length, blocks);
+  for (const { tagName, attrString, blockContent } of blocks) {
     const uri = parseAttrs(attrString)["rdf:about"];
     if (!uri) continue;
 
@@ -151,7 +189,10 @@ function slugFromUri(uri) {
 // ---------- Core of the conversion ----------
 
 /** Resolves a scheme's top concepts, preferring its own skos:hasTopConcept and
- *  falling back to the skos:narrower children of its skos:inScheme anchor concept(s). */
+ *  falling back to its skos:inScheme anchor concept(s): a category anchor's
+ *  skos:narrower children if it has any, otherwise the anchor itself (a "concept
+ *  neighbourhood" export centered on one leaf concept, e.g. instruments/ALT.rdf,
+ *  has no narrower children at all — the anchor IS the top concept). */
 function resolveTopConceptUris(schemeNode, nodesByUri) {
   const direct = getResources(schemeNode, "skos:hasTopConcept");
   if (direct.length > 0) return { topUris: direct, source: "skos:hasTopConcept" };
@@ -168,24 +209,21 @@ function resolveTopConceptUris(schemeNode, nodesByUri) {
 
   const topUris = [];
   const seen = new Set();
+  const sourceParts = [];
   for (const anchor of anchors) {
-    for (const narrowerUri of getResources(anchor, "skos:narrower")) {
-      if (!seen.has(narrowerUri)) {
-        seen.add(narrowerUri);
-        topUris.push(narrowerUri);
+    const anchorLabel = getLabel(anchor, "skos:prefLabel") ?? anchor.uri;
+    const narrower = getResources(anchor, "skos:narrower");
+    const resolvedUris = narrower.length > 0 ? narrower : [anchor.uri];
+    sourceParts.push(narrower.length > 0 ? `${anchorLabel} -> skos:narrower` : `${anchorLabel} (leaf)`);
+    for (const uri of resolvedUris) {
+      if (!seen.has(uri)) {
+        seen.add(uri);
+        topUris.push(uri);
       }
     }
   }
-  if (topUris.length === 0) {
-    const anchorLabels = anchors.map((a) => getLabel(a, "skos:prefLabel") ?? a.uri).join(", ");
-    throw new Error(
-      `Concept scheme <${schemeNode.uri}>: anchor concept(s) [${anchorLabels}] found via skos:inScheme ` +
-        `have no skos:narrower children — can't determine top concepts.`
-    );
-  }
 
-  const anchorLabels = anchors.map((a) => getLabel(a, "skos:prefLabel") ?? a.uri).join(", ");
-  return { topUris, source: `skos:inScheme anchor (${anchorLabels}) -> skos:narrower` };
+  return { topUris, source: `skos:inScheme anchor(s): ${sourceParts.join(", ")}` };
 }
 
 /** Converts one concept scheme into { schemeUri, title, titleLang, concepts }, where
