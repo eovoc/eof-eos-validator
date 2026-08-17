@@ -442,11 +442,7 @@
 			"minProperties": 1,
 			"properties": {
 				"platformShortName": {
-					"enum": [
-						"PLAT_A",
-						"PLAT_B",
-						"PLAT_C"
-					]
+					"$ref": "#/definitions/thesaurus/platforms"
 				},
 				"platformSerialIdentifier": {
 					"type": "string"
@@ -468,12 +464,7 @@
 					"$ref": "#/definitions/thesaurus/sensor-types"
 				},
 				"instrumentShortName": {
-					"enum": [
-						"INSTR_1",
-						"INSTR_2",
-						"INSTR_3",
-						"INSTR_4"
-					]
+					"type": "string"
 				},
 				"description": {
 					"type": "string"
