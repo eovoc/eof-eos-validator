@@ -8,8 +8,8 @@ STRICT_SCHEMA="${2:-$SCRIPT_DIR/../public/schemas/eof-eos-schema-strict.json}"
 
 node "$SCRIPT_DIR/build-platform-instruments-mapping.js" \
   "$SKOSMOS_FILE" \
-  "$RDF_DIR/platform-instruments-allof.json"
+  "$SCRIPT_DIR/mapping/platform-instruments-allof.json"
 
 node "$SCRIPT_DIR/embed-instruments-mapping.js" \
-  "$RDF_DIR/platform-instruments-allof.json" \
+  "$SCRIPT_DIR/mapping/platform-instruments-allof.json" \
   "$STRICT_SCHEMA"
