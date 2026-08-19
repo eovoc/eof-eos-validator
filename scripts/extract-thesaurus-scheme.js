@@ -9,7 +9,7 @@
  * explicit skos:hasTopConcept links, each top concept carrying
  * skos:topConceptOf back to the scheme.
  *
- * Unlike a Skosmos "concept neighbourhood" export (see skosmos-to-rdf.js),
+ * Unlike a Skosmos "concept neighbourhood" export (see old-skosmos-to-rdf.js),
  * every concept in this file already declares skos:inScheme, so there is
  * no single anchor to key off. Instead, the scheme's real top concept(s)
  * are found by starting at whichever concept(s) declare skos:topConceptOf

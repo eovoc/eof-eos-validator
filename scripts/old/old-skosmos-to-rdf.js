@@ -1,5 +1,5 @@
 /**
- * skosmos-to-rdf.js
+ * old-skosmos-to-rdf.js
  *
  * Converts a raw Skosmos-style SKOS export (RDF/XML using typed elements
  * like <skos:Concept> and <skos:ConceptScheme>, with hierarchy expressed
@@ -20,7 +20,7 @@
  *      actual platform names).
  *
  * Usage:
- *   node skosmos-to-rdf.js <input.rdf> <output.rdf>
+ *   node old-skosmos-to-rdf.js <input.rdf> <output.rdf>
  */
 
 const fs = require("fs");
@@ -321,7 +321,7 @@ function main() {
   const [, , inputPath, outputPath] = process.argv;
 
   if (!inputPath || !outputPath) {
-    console.error("Usage: skosmos-to-rdf.js <input.rdf> <output.rdf>");
+    console.error("Usage: old-skosmos-to-rdf.js <input.rdf> <output.rdf>");
     process.exit(1);
   }
 
