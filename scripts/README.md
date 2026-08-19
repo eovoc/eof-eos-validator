@@ -59,6 +59,61 @@ Run this before `convert-rdf.sh`, writing the result into `scripts/rdf/`
 (e.g. `scripts/rdf/platforms-2026-08-11.rdf`) so it gets picked up by the
 next step.
 
+### Extract one scheme out of a merged thesaurus export
+
+`scripts/skosmos/esa-thesauri.rdf` is a full ESA thesaurus export already in
+the generic `<rdf:Description>` form, but it bundles several concept
+schemes (platforms, instruments, earth-topics) into one graph, and every
+concept declares `skos:inScheme` — so there's no single Skosmos anchor to
+key off like `skosmos-to-rdf.js` uses. `extract-thesaurus-scheme.js` pulls
+one scheme back out, starting from whichever concept(s) declare
+`skos:topConceptOf` the scheme and descending through `skos:narrower` using
+one of two strategies:
+
+```bash
+node scripts/extract-thesaurus-scheme.js <input.rdf> <schemeUri> <output.rdf> [--mode=one-level|leaves]
+```
+
+- **`--mode=one-level`** (default): skip pure single-child pass-through
+  categories (e.g. for platforms: Platform -> Space-based Platform -> Earth
+  Observation Satellite) until reaching a concept whose narrower count is 0
+  (a leaf, itself the top concept) or >1 (a branching category, whose
+  direct children become the top concepts — one flattened level below the
+  anchor). Fits a scheme with family-grouping semantics, where e.g. the
+  satellite family "Metop" is itself one top concept even though it has
+  narrower individual satellites Metop-A/B/C.
+
+  ```bash
+  node scripts/extract-thesaurus-scheme.js \
+    scripts/skosmos/esa-thesauri.rdf \
+    "https://earth.esa.int/concepts/concept_scheme/platforms" \
+    scripts/rdf/platforms.rdf
+  ```
+
+- **`--mode=leaves`**: recursively collects every leaf concept (no
+  `skos:narrower` children at all) anywhere under the root, regardless of
+  how many branching levels deep. Fits a scheme that's a pure multi-level
+  classification with no family-grouping semantics, where real members only
+  ever appear as leaves (e.g. instruments: Instrument -> Earth Remote
+  Sensing Instrument -> Active/Passive Remote Sensing -> ... -> SAR, MODIS,
+  ...).
+
+  ```bash
+  node scripts/extract-thesaurus-scheme.js \
+    scripts/skosmos/esa-thesauri.rdf \
+    "https://earth.esa.int/concepts/concept_scheme/instruments" \
+    scripts/rdf/instruments.rdf \
+    --mode=leaves
+  ```
+
+The scheme's title is read from `rdfs:label`, falling back to `dct:title`
+— in `esa-thesauri.rdf` a few scheme nodes (instruments, earth-topics)
+carry a `dct:title` of "ESA Thesaurus" (the whole document's title, leaked
+onto the scheme node) while their `rdfs:label` is scheme-specific.
+
+The output is the same generic form `rdf-to-jsonschema.js` expects, so it
+can be dropped straight into `scripts/rdf/` for `convert-rdf.sh` to pick up.
+
 ### Convert every RDF/XML thesaurus at once
 
 ```bash
