@@ -848,93 +848,6 @@
 			"required": [
 				"platform",
 				"instrument"
-			],
-			"allOf": [
-				{
-					"if": {
-						"properties": {
-							"platform": {
-								"type": "object",
-								"properties": {
-									"platformShortName": {
-										"const": "PLAT_A"
-									}
-								}
-							}
-						}
-					},
-					"then": {
-						"properties": {
-							"instrument": {
-								"type": "object",
-								"properties": {
-									"instrumentShortName": {
-										"enum": [
-											"INSTR_1",
-											"INSTR_2"
-										]
-									}
-								}
-							}
-						}
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"platform": {
-								"type": "object",
-								"properties": {
-									"platformShortName": {
-										"const": "PLAT_B"
-									}
-								}
-							}
-						}
-					},
-					"then": {
-						"properties": {
-							"instrument": {
-								"type": "object",
-								"properties": {
-									"instrumentShortName": {
-										"enum": [
-											"INSTR_3"
-										]
-									}
-								}
-							}
-						}
-					}
-				},
-				{
-					"if": {
-						"properties": {
-							"platform": {
-								"type": "object",
-								"properties": {
-									"platformShortName": {
-										"const": "PLAT_C"
-									}
-								}
-							}
-						}
-					},
-					"then": {
-						"properties": {
-							"instrument": {
-								"type": "object",
-								"properties": {
-									"instrumentShortName": {
-										"enum": [
-											"INSTR_4"
-										]
-									}
-								}
-							}
-						}
-					}
-				}
 			]
 		},
 		"Offering": {
@@ -1464,7 +1377,9 @@
 				"description": "Enum generated from thesaurus SKOS 'Platforms' (https://earth.esa.int/concepts/concept_scheme/platforms).",
 				"type": "string",
 				"enum": [
-					"Metop",
+					"Metop-C",
+					"Metop-A",
+					"Metop-B",
 					"FSSCat-A",
 					"PROBA-1",
 					"IRS-P6",
@@ -1477,11 +1392,17 @@
 					"ALOS-1",
 					"CASSIOPE",
 					"OceanSat-2",
-					"WorldView",
+					"WorldView-1",
+					"WorldView-2",
+					"WorldView-3",
+					"WorldView-4",
+					"WorldView Legion",
 					"SkySat",
-					"MOS",
+					"MOS-1A",
+					"MOS-1B",
 					"Parasol-1",
-					"ERS",
+					"ERS-1",
+					"ERS-2",
 					"Seasat",
 					"ADEOS-I",
 					"Nimbus-7",
@@ -1491,7 +1412,9 @@
 					"FLEX",
 					"GOCE",
 					"SMOS",
-					"Swarm",
+					"Swarm-B",
+					"Swarm-C",
+					"Swarm-A",
 					"FORUM",
 					"Landsat-9",
 					"Landsat-4",
@@ -1500,13 +1423,18 @@
 					"CryoSat-2",
 					"FORMOSAT-2",
 					"QuickBird-2",
-					"Sentinel-3",
+					"Sentinel-3B",
+					"Sentinel-3A",
 					"Landsat-1",
 					"Landsat-2",
 					"Landsat-3",
 					"FORMOSAT-3",
-					"SAOCOM-1",
-					"Sentinel-1",
+					"SAOCOM-1A",
+					"SAOCOM-1B",
+					"Sentinel-1B",
+					"Sentinel-1C",
+					"Sentinel-1A",
+					"Sentinel-1D",
 					"Envisat",
 					"WindSat",
 					"OrbView-2",
@@ -1517,7 +1445,8 @@
 					"NOAA-16",
 					"NOAA-17",
 					"NOAA-18",
-					"Pleiades",
+					"Pleiades-1A",
+					"Pleiades-1B",
 					"GOSAT-2",
 					"IRS-P3",
 					"KOMPSAT-2",
@@ -1557,32 +1486,51 @@
 					"SPOT-7",
 					"PAZ",
 					"Vision-1",
-					"GEOSAT",
-					"GHGSat",
+					"GEOSAT-1",
+					"GEOSAT-2",
+					"GHGSat-D",
+					"GHGSat-C",
 					"NigeriaSat-1",
 					"NOAA-8",
 					"NOAA-13",
 					"Sentinel-5P",
 					"GPM",
-					"Sentinel-2",
+					"Sentinel-2C",
+					"Sentinel-2A",
+					"Sentinel-2B",
 					"ALTIUS",
 					"Electro-L",
 					"TIROS-N",
-					"GRACE-FO",
-					"GRACE",
-					"Sentinel-6",
-					"IRS 1C-1D",
-					"TerraSAR-X_TanDEM-X",
+					"GRACE-C",
+					"GRACE-D",
+					"GRACE-A",
+					"GRACE-B",
+					"Sentinel-6A",
+					"IRS-1C",
+					"IRS-1D",
+					"TerraSAR-X",
+					"TanDEM-X",
 					"PlanetScope",
-					"Pleiades Neo",
-					"COSMO-SkyMed",
+					"Pleiades Neo-3",
+					"Pleiades Neo-4",
+					"COSMO-SkyMed-1",
+					"COSMO-SkyMed-2",
+					"COSMO-SkyMed-4",
+					"COSMO-SkyMed-3",
 					"ICEYE",
-					"HiVE",
-					"RapidEye",
+					"SkyBee-1",
+					"SkyBee-2",
+					"RapidEye-1",
+					"RapidEye-2",
+					"RapidEye-3",
+					"RapidEye-4",
+					"RapidEye-5",
 					"FOREST-2",
 					"FSSCat-B",
-					"COSMO-SkyMed Second Generation",
-					"Hydrognss",
+					"COSMO-SkyMed Second Generation-1",
+					"COSMO-SkyMed Second Generation-2",
+					"Hydrognss-A",
+					"Hydrognss-B",
 					"NOAA-10",
 					"BRO"
 				]
