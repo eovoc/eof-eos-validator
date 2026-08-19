@@ -42,7 +42,7 @@ converting to the generic `<rdf:Description>` form (with explicit
 `rdf-to-jsonschema.js` can read them.
 
 ```bash
-node scripts/skosmos-to-rdf.js <input.rdf> <output.rdf>
+node scripts/old-skosmos-to-rdf.js <input.rdf> <output.rdf>
 ```
 
 A scheme's top concepts are resolved as its own `skos:hasTopConcept` if
@@ -65,7 +65,7 @@ next step.
 the generic `<rdf:Description>` form, but it bundles several concept
 schemes (platforms, instruments, earth-topics) into one graph, and every
 concept declares `skos:inScheme` — so there's no single Skosmos anchor to
-key off like `skosmos-to-rdf.js` uses. `extract-thesaurus-scheme.js` pulls
+key off like `old-skosmos-to-rdf.js` uses. `extract-thesaurus-scheme.js` pulls
 one scheme back out, starting from whichever concept(s) declare
 `skos:topConceptOf` the scheme and descending through `skos:narrower` using
 one of two strategies:
@@ -80,8 +80,8 @@ node scripts/extract-thesaurus-scheme.js <input.rdf> <schemeUri> <output.rdf> [-
   (a leaf, itself the top concept) or >1 (a branching category, whose
   direct children become the top concepts — one flattened level below the
   anchor). Fits a scheme with family-grouping semantics, where e.g. the
-  satellite family "Metop" is itself one top concept even though it has
-  narrower individual satellites Metop-A/B/C.
+  satellite family "Metop" would be one top concept covering its narrower
+  individual satellites Metop-A/B/C.
 
   ```bash
   node scripts/extract-thesaurus-scheme.js \
@@ -96,7 +96,10 @@ node scripts/extract-thesaurus-scheme.js <input.rdf> <schemeUri> <output.rdf> [-
   classification with no family-grouping semantics, where real members only
   ever appear as leaves (e.g. instruments: Instrument -> Earth Remote
   Sensing Instrument -> Active/Passive Remote Sensing -> ... -> SAR, MODIS,
-  ...).
+  ...) — and also how `scripts/rdf/platforms.rdf` is actually generated in
+  this repo (see below): individual satellites (Metop-A/B/C, not the
+  "Metop" family) are needed to line up with the `sosa:isHostedBy`
+  instance-level granularity used by the platform/instrument mapping.
 
   ```bash
   node scripts/extract-thesaurus-scheme.js \
@@ -113,6 +116,93 @@ onto the scheme node) while their `rdfs:label` is scheme-specific.
 
 The output is the same generic form `rdf-to-jsonschema.js` expects, so it
 can be dropped straight into `scripts/rdf/` for `convert-rdf.sh` to pick up.
+
+`extract-platforms-and-instruments.sh` runs both extractions in one go,
+regenerating `scripts/rdf/platforms.rdf` and `scripts/rdf/instruments.rdf`
+from `esa-thesauri.rdf` — both with `--mode=leaves`, so platforms come out
+at the same individual-satellite granularity as instruments:
+
+```bash
+./scripts/extract-platforms-and-instruments.sh [input.rdf]
+```
+
+`input.rdf` is optional; defaults to `scripts/skosmos/esa-thesauri.rdf`.
+
+### Generate the platform/instrument `allOf` constraint
+
+`build-platform-instruments-mapping.js` reads `esa-thesauri.rdf` and, for every
+platform, emits a JSON Schema `if`/`then` constraint restricting which
+instruments that platform may be paired with — derived from each
+instrument's `sosa:isHostedBy` link(s) back to the platform concept(s) it
+flies on. (The platform side carries the inverse `sosa:hosts`, but every
+`sosa:isHostedBy` triple has a matching `sosa:hosts` triple, so reading
+`isHostedBy` alone is enough.)
+
+```bash
+node scripts/build-platform-instruments-mapping.js [input.rdf] [output.json]
+```
+
+- `input.rdf` — optional; defaults to `scripts/skosmos/esa-thesauri.rdf`.
+- `output.json` — optional; if omitted, the schema prints to stdout.
+
+The output is `{ "allOf": [ { "if": ..., "then": ... }, ... ] }`, one entry
+per platform, sorted by `platformShortName`:
+
+```json
+{
+  "if": {
+    "properties": {
+      "platform": {
+        "type": "object",
+        "properties": { "platformShortName": { "const": "Metop-C" } }
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "instrument": {
+        "type": "object",
+        "properties": { "instrumentShortName": { "enum": ["AMSU-A", "ASCAT", "..."] } }
+      }
+    }
+  }
+}
+```
+
+This is the same shape as the placeholder `allOf` (made-up
+`PLAT_A`/`PLAT_B`/`PLAT_C`, `INSTR_1..4` values) inside the
+`AcquisitionInformation` definition in `public/schemas/eof-eos-schema.json`.
+`platformShortName`/`instrumentShortName` values are `skos:prefLabel`,
+matching the enums generated from `scripts/rdf/platforms.rdf` and
+`scripts/rdf/instruments.rdf`. Note `sosa:isHostedBy` links point at
+individual satellite instances (e.g. "Metop-C"), not a coarser
+satellite-family concept (e.g. "Metop") — this stays at that same
+fine-grained instance level, matching the source data as-is.
+
+`embed-instruments-mapping.js` embeds that `allOf` schema into
+`public/schemas/eof-eos-schema-strict.json` as
+`definitions.instruments-mapping` (kept last among definitions, and
+replaced in place on re-runs rather than duplicated — same pattern as
+`embed-thesaurus-schema.js`/`definitions.thesaurus`):
+
+```bash
+node scripts/embed-instruments-mapping.js <instruments-mapping.json> <eof-eos-schema-strict.json>
+```
+
+`update-instruments-mapping.sh` chains both steps — regenerate the mapping
+from `esa-thesauri.rdf` into `scripts/mapping/platform-instruments-allof.json`,
+then re-embed it into `eof-eos-schema-strict.json` — in one go:
+
+```bash
+./scripts/update-instruments-mapping.sh [input.rdf] [eof-eos-schema-strict.json]
+```
+
+Both arguments are optional, defaulting to `scripts/skosmos/esa-thesauri.rdf`
+and `public/schemas/eof-eos-schema-strict.json` respectively. The
+intermediate `scripts/mapping/platform-instruments-allof.json` is kept
+alongside the script output (rather than in `scripts/rdf/`, which holds
+the SKOS enum sources `convert-rdf.sh` consumes) since it's a derived
+cross-reference artifact, not a thesaurus enum source.
 
 ### Convert every RDF/XML thesaurus at once
 
