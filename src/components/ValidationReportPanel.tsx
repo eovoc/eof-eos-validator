@@ -1,4 +1,4 @@
-import {ValidationReport} from "../utils/ValidationResult";
+import {ValidationReport} from "../services/ValidationResult";
 import {prettyPrint} from "../utils/jsonUtil";
 
 function SchemaLabel({schema}:{schema: string}) {

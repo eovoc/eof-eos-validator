@@ -1,8 +1,8 @@
 import {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router";
-import { ogcValidator } from "../utils/ogcValidator";
+import { ogcValidator } from "../services/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
-import {ValidationReport} from "../utils/ValidationResult";
+import {ValidationReport} from "../services/ValidationResult";
 import { JsonFileContext } from "../App";
 import DocumentationPanel from "../components/DocumenationPanel";
 import ValidationReportPanel from "../components/ValidationReportPanel";
