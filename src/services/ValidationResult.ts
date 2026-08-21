@@ -4,7 +4,7 @@ export interface ValidationResult {
     valid: boolean;
     schema: string;
     errors: ErrorObject[] | null;
-    warnings?: ErrorObject[] | undefined;
+    warnings?: ErrorObject[] | null | undefined;
 }
 
 export interface ValidationReport {

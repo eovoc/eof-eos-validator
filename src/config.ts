@@ -1,5 +1,8 @@
 interface AppConfig {
   converterUrl: string;
+  ogcValidationSchema: string;
+  // StrictValidation property, when false: additionalRules error are moved to warnings.
+  strictValidation: boolean;
 }
 
 const configReady: Promise<AppConfig> = fetch(`${process.env.PUBLIC_URL}/config.json`)

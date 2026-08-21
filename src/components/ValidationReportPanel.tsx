@@ -35,9 +35,18 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
            {report.results!.map((item, i) => (
                <div>
                    {item.valid ? (
-                       <div className={`result valid`}>
-                        <p className="result-title valid">Valid - <SchemaLabel schema={item.schema} /></p>
-                       </div>
+                       <>
+                           <div className={`result valid`}>
+                            <p className="result-title valid">Valid - <SchemaLabel schema={item.schema} /></p>
+                           </div>
+
+                           {(item.warnings && item.warnings.length > 0) &&  (
+                               <div className={`result warning`}>
+                                   <p className="result-title">Warning - <SchemaLabel schema={item.schema} /></p>
+                                   <ErrorList errors={item.warnings} title="warnings" color="orange"></ErrorList>
+                               </div>
+                           )}
+                       </>
                    ) : (
                    <>
 

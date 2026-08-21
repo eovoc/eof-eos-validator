@@ -2,6 +2,7 @@ import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {ValidationReport} from "./ValidationResult";
+import {getConfig} from "../config";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -27,9 +28,11 @@ const schemasReady: Promise<void> = (async () => {
   }
 })();
 
+
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = `${BASE}/schemas/eof-eos-schema-strict.json`;
+  const { ogcValidationSchema } = await getConfig();
+  const VALIDATION_SCHEMA = `${BASE}/${ogcValidationSchema}`;
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();
@@ -62,6 +65,8 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   await schemasReady;
   await mainSchemaReady;
 
+  const { strictValidation } = await getConfig();
+
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
   console.log("validation result:",validate);
@@ -69,11 +74,14 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   //-> use warnings when strict mode is disabled.
   let errors;
   let warnings;
-  if(validate.errors){
+  if(validate.errors && !strictValidation){
     const errorsToExtract = '#/definitions/instruments-mapping';
     const partitionedErrors = partitionErrorsBySchemaPath(validate.errors,errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
+  }else{
+    errors = validate.errors;
+    warnings = null;
   }
 
 
