@@ -1,5 +1,5 @@
 interface AppConfig {
-  //converterUrl: url of the cstac converter service
+  //converterUrl: url of the stac converter service
   converterUrl: string;
   // ogcValidationSchema property, name of the jsonschema used for ogc valdiation..
   ogcValidationSchema: string;
