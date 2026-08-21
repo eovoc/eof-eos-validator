@@ -69,6 +69,7 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
+  let isValid: boolean = valid;
   console.log("validation result:",validate);
   //TODO: filter errors to be treated as warnings (todo: only apply if strict mode is disabled).
   //-> use warnings when strict mode is disabled.
@@ -79,6 +80,9 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
     const partitionedErrors = partitionErrorsBySchemaPath(validate.errors,errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
+    if(errors.length === 0){
+      isValid = true;
+    }
   }else{
     errors = validate.errors;
     warnings = null;
@@ -87,6 +91,6 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   console.log('Errors :', errors);
   console.log('Warning :', warnings);
-  const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: errors ?? null, warnings : warnings};
-  return { valid, results: [result]};
+  const result = { valid:isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: errors ?? null, warnings : warnings};
+  return { valid:isValid, results: [result]};
 }
