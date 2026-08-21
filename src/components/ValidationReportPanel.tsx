@@ -42,7 +42,11 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
 
                            {(item.warnings && item.warnings.length > 0) &&  (
                                <div className={`result warning`}>
-                                   <p className="result-title">Warning - <SchemaLabel schema={item.schema} /></p>
+                                   <p className="result-title">
+                                       <span title="🟨 Warning: minor error not preventing conversion">ⓘ </span>
+                                       Warning - <SchemaLabel schema={item.schema} />
+                                   </p>
+
                                    <ErrorList errors={item.warnings} title="warnings" color="orange"></ErrorList>
                                </div>
                            )}
@@ -52,14 +56,20 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
 
                        {(item.errors && item.errors.length > 0) &&  (
                        <div className={`result invalid`}>
-                           <p className="result-title">Errors - <SchemaLabel schema={item.schema} /></p>
+                           <p className="result-title">
+                               <span title="🟥 Error - preventing conversion">ⓘ </span>
+                               Errors - <SchemaLabel schema={item.schema} />
+                           </p>
                            <ErrorList errors={item.errors} title="errors" color="red"></ErrorList>
                        </div>
                        )}
 
                        {(item.warnings && item.warnings.length > 0) &&  (
                            <div className={`result warning`}>
-                               <p className="result-title">Warning - <SchemaLabel schema={item.schema} /></p>
+                               <p className="result-title">
+                                   <span title="🟨 Warning - minor error not preventing conversion">ⓘ </span>
+                                   Warning - <SchemaLabel schema={item.schema} />
+                               </p>
                                <ErrorList errors={item.warnings} title="warnings" color="orange"></ErrorList>
                            </div>
                        )}
