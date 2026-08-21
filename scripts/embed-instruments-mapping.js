@@ -27,8 +27,8 @@ function main() {
   const mapping = JSON.parse(fs.readFileSync(mappingPath, "utf-8"));
   const mainSchema = JSON.parse(fs.readFileSync(mainSchemaPath, "utf-8"));
 
-  const { "instruments-mapping": _dropped, ...restDefinitions } = mainSchema.definitions;
-  mainSchema.definitions = { ...restDefinitions, "instruments-mapping": mapping };
+  const { "instruments-mapping": _dropped, ...restDefinitions } = mainSchema.definitions['additional-rules'];
+  mainSchema.definitions['additional-rules'] = { ...restDefinitions, "instruments-mapping": mapping };
 
   const json = JSON.stringify(mainSchema, null, "\t").replace(/\n/g, "\r\n");
   fs.writeFileSync(mainSchemaPath, json + "\r\n");

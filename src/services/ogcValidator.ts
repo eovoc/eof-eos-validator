@@ -75,7 +75,7 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   let errors;
   let warnings;
   if(validate.errors && !strictValidation){
-    const errorsToExtract = '#/definitions/instruments-mapping';
+    const errorsToExtract = '#/definitions/additional-rules/';
     const partitionedErrors = partitionErrorsBySchemaPath(validate.errors,errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
