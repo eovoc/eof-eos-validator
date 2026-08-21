@@ -68,7 +68,7 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
                            <div className={`result warning`}>
                                <p className="result-title">
                                    <span title="🟨 Warning - minor error not preventing conversion">ⓘ </span>
-                                   Warning - <SchemaLabel schema={item.schema} />
+                                   Warnings - <SchemaLabel schema={item.schema} />
                                </p>
                                <ErrorList errors={item.warnings} title="warnings" color="orange"></ErrorList>
                            </div>
