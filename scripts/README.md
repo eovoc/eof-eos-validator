@@ -9,6 +9,18 @@ JSON Schema enums, then wires those enums into `eof-eos-schema.json` so
 
 - Node.js (v16+; tested with v22)
 
+## Conversion scripts structure
+
+3 convenience scripts are available for converting RDF files to jsonschema:
+- convert-rdf.sh: convert a rdf file to jsonschema
+- extract-platforms-and-instruments.sh: extract platforms and instruments from skosmos thesauri and prepare concepts for rdf conversion with 'convert-rdf.sh' script.
+- update-instruments-mapping.sh: extract relationship between platforms and instruments from thesauri skosmos file and add mapping rules in jsonschema.
+
+Those scripts should be used in the following order:
+1. extract-platforms-and-instruments.sh:
+2. convert-rdf.sh
+3. update-instruments-mapping.sh
+
 ## Usage
 
 ### Convert a single RDF/XML file
