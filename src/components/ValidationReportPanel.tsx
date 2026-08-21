@@ -1,5 +1,6 @@
 import {ValidationReport} from "../services/ValidationResult";
 import {prettyPrint} from "../utils/jsonUtil";
+import ErrorList from "./ErrorList";
 
 function SchemaLabel({schema}:{schema: string}) {
     if (schema.startsWith("http") || schema.startsWith(process.env.PUBLIC_URL)) {
@@ -19,55 +20,44 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
 {
 
     const totalErrors = report.results!.reduce((sum, item) => sum + (item.errors?.length ?? 0), 0);
+    const totalWarnings = report.results!.reduce((sum, item) => sum + (item.warnings?.length ?? 0), 0);
 
     return(
        <>
            {report.valid ? (
                <p className="result-title valid">{validTitle}</p>
            ): (
-               <p className="result-title invalid">{invalidTitle} ({totalErrors} error{totalErrors === 1 ? "" : "s"})</p>
+               <p className="result-title invalid">{invalidTitle}
+                   ({totalErrors} error{totalErrors === 1 ? "" : "s"})
+                   ({totalWarnings} warning{totalWarnings === 1 ? "" : "s"})</p>
            )}
 
            {report.results!.map((item, i) => (
-               <div key={i} className={`result ${item.valid ? "valid" : "invalid"}`}>
+               <div>
                    {item.valid ? (
                    <p className="result-title">Valid - <SchemaLabel schema={item.schema} /></p>
                    ) : (
                    <>
-                   <p className="result-title">Invalid - <SchemaLabel schema={item.schema} /></p>
 
-                   <ul className="error-list">
-                       {item.errors!.map((error, j) => {
-                       const hasSchemaPath = !!error.schemaPath;
-                       const hasParams = !!error.params && Object.keys(error.params).length > 0;
-                       return (
-                       <li key={j} className="error-item">
-                           <span className="error-path">{error.instancePath}</span>
-                           <span className="error-msg">{error.message}</span>
-                           {(hasSchemaPath || hasParams) && (
-                           <details className="error-details">
-                               <summary>Details</summary>
-                               {hasSchemaPath && (
-                               <div className="error-detail-row">
-                                   <span className="error-detail-label">schemaPath:</span>
-                                   <code>{error.schemaPath}</code>
-                               </div>
-                               )}
-                               {hasParams && (
-                               <div className="error-detail-row">
-                                   <span className="error-detail-label">params:</span>
-                                   <pre>{prettyPrint(error.params)}</pre>
-                               </div>
-                               )}
-                           </details>
-                           )}
-                       </li>
-                       );
-                       })}
-                   </ul>
+                       {(item.errors && item.errors.length > 0) &&  (
+                       <div className={`result invalid`}>
+                           <p className="result-title">Errors - <SchemaLabel schema={item.schema} /></p>
+                           <ErrorList errors={item.errors} title="errors" color="red"></ErrorList>
+                       </div>
+                       )}
+
+                       {(item.warnings && item.warnings.length > 0) &&  (
+                           <div className={`result warning`}>
+                               <p className="result-title">Warning - <SchemaLabel schema={item.schema} /></p>
+                               <ErrorList errors={item.warnings} title="warnings" color="orange"></ErrorList>
+                           </div>
+                       )}
+
+
                    </>
                    )}
                </div>
+
 
            ))}
        </>

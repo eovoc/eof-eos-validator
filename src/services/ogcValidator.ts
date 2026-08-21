@@ -1,4 +1,4 @@
-import Ajv from "ajv";
+import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {ValidationReport} from "./ValidationResult";
@@ -29,11 +29,33 @@ const schemasReady: Promise<void> = (async () => {
 
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = `${BASE}/schemas/eof-eos-schema.json`;
+  const VALIDATION_SCHEMA = `${BASE}/schemas/eof-eos-schema-strict.json`;
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();
 })();
+
+type Partition = {
+  kept: ErrorObject[];
+  removed: ErrorObject[];
+};
+
+function partitionErrorsBySchemaPath(
+    errors: ErrorObject[],
+    schemaPathsToExtract: string
+): Partition {
+
+  const initial: Partition = { kept: [], removed: [] };
+  return errors.reduce((acc, err) => {
+
+    if (err.schemaPath.startsWith(schemaPathsToExtract)) {
+      acc.removed.push(err);
+    } else {
+      acc.kept.push(err);
+    }
+    return acc;
+  }, initial);
+}
 
 export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
@@ -43,6 +65,20 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   const validate = ajv.compile(mainSchema);
   const valid = validate(data) as boolean;
   console.log("validation result:",validate);
-  const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validate.errors ?? null };
+  //TODO: filter errors to be treated as warnings (todo: only apply if strict mode is disabled).
+  //-> use warnings when strict mode is disabled.
+  let errors;
+  let warnings;
+  if(validate.errors){
+    const errorsToExtract = '#/definitions/instruments-mapping';
+    const partitionedErrors = partitionErrorsBySchemaPath(validate.errors,errorsToExtract);
+    errors = partitionedErrors.kept;
+    warnings = partitionedErrors.removed;
+  }
+
+
+  console.log('Errors :', errors);
+  console.log('Warning :', warnings);
+  const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: errors ?? null, warnings : warnings};
   return { valid, results: [result]};
 }
