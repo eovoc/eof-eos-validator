@@ -2,7 +2,7 @@ import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {ValidationReport} from "./ValidationResult";
-import {getConfig} from "../config";
+import {getConfig, OgcValidationMode} from "../config";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -60,37 +60,64 @@ function partitionErrorsBySchemaPath(
   }, initial);
 }
 
+type OgcValidationReport = {
+  isValid: boolean
+  errors : ErrorObject[],
+  warnings : ErrorObject[]
+}
+
+function filterErrors(allErrors: null | undefined | ErrorObject[], validationMode : OgcValidationMode): OgcValidationReport{
+  //TODO: filter errors to be treated as warnings (todo: only apply if strict mode is disabled).
+  //-> use warnings when strict mode is disabled.
+  let isValid = false;
+  let errors: ErrorObject[] = [];
+  let warnings : ErrorObject[] = [];
+
+  if(allErrors && validationMode === OgcValidationMode.Strict){
+    //No filtering: all errors are considered as errors. No warnings.
+    errors = allErrors;
+
+  } else if(allErrors && validationMode === OgcValidationMode.Normal) {
+    //Treat errors that  match additionalRules as warnings
+    const errorsToExtract = '#/definitions/additional-rules/';
+    const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
+    errors = partitionedErrors.kept;
+    warnings = partitionedErrors.removed;
+
+  }else if(allErrors && validationMode === OgcValidationMode.Soft){
+    //Only keep errors that do not match additionalRules
+    const errorsToExtract = '#/definitions/additional-rules/';
+    const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
+    errors = partitionedErrors.kept;
+
+  }else{
+    if(allErrors){
+      errors = allErrors;
+    }
+    warnings = [];
+  }
+
+  if(errors === null || errors === undefined || errors?.length === 0){
+    isValid = true;
+  }
+
+  return { isValid: isValid,errors: errors, warnings: warnings};
+}
+
 export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
-
-  const { strictValidation } = await getConfig();
+  const { ogcValidationMode } = await getConfig();
 
   const validate = ajv.compile(mainSchema);
-  const valid = validate(data) as boolean;
-  let isValid: boolean = valid;
-  console.log("validation result:",validate);
-  //TODO: filter errors to be treated as warnings (todo: only apply if strict mode is disabled).
-  //-> use warnings when strict mode is disabled.
-  let errors;
-  let warnings;
-  if(validate.errors && !strictValidation){
-    const errorsToExtract = '#/definitions/additional-rules/';
-    const partitionedErrors = partitionErrorsBySchemaPath(validate.errors,errorsToExtract);
-    errors = partitionedErrors.kept;
-    warnings = partitionedErrors.removed;
-    if(errors.length === 0){
-      isValid = true;
-    }
-  }else{
-    errors = validate.errors;
-    warnings = null;
-  }
+  validate(data);
 
+  console.log("Validation Mode:",ogcValidationMode);
+  const validationReport = filterErrors(validate.errors,ogcValidationMode);
 
-  console.log('Errors :', errors);
-  console.log('Warning :', warnings);
-  const result = { valid:isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: errors ?? null, warnings : warnings};
-  return { valid:isValid, results: [result]};
+  console.log('Errors :', validationReport.errors);
+  console.log('Warning :', validationReport.warnings);
+  const result = { valid: validationReport.isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
+  return { valid:validationReport.isValid, results: [result]};
 }

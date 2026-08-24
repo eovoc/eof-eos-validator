@@ -1,5 +1,6 @@
 {
   "converterUrl": "https://kbs.spacebel.be/catalogue/stac-converter",
   "ogcValidationSchema":"schemas/eof-eos-schema-strict.json",
-  "strictValidation": false
+  "strictValidation": false,
+  "ogcValidationMode": "strict"
 }
