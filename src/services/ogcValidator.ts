@@ -47,6 +47,7 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
   let isValid = false;
   let errors: ErrorObject[] = [];
   let warnings : ErrorObject[] = [];
+  const errorsToExtract = '#/definitions/additional-rules/';
 
   if(allErrors && validationMode === OgcValidationMode.Strict){
     //No filtering: all errors are considered as errors. No warnings.
@@ -54,14 +55,12 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
 
   } else if(allErrors && validationMode === OgcValidationMode.Normal) {
     //Treat errors that  match additionalRules as warnings
-    const errorsToExtract = '#/definitions/additional-rules/';
     const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
 
   }else if(allErrors && validationMode === OgcValidationMode.Soft){
     //Only keep errors that do not match additionalRules
-    const errorsToExtract = '#/definitions/additional-rules/';
     const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
     errors = partitionedErrors.kept;
 
@@ -69,13 +68,15 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
     if(allErrors){
       errors = allErrors;
     }
-    warnings = [];
   }
 
   if(errors === null || errors === undefined || errors?.length === 0){
     isValid = true;
   }
 
+  console.log("Is Valid:",isValid);
+  console.log('Errors :', errors);
+  console.log('Warnings :', warnings);
   return { isValid: isValid,errors: errors, warnings: warnings};
 }
 
@@ -91,8 +92,6 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   console.log("Validation Mode:",ogcValidationMode);
   const validationReport = filterErrors(validate.errors,ogcValidationMode);
 
-  console.log('Errors :', validationReport.errors);
-  console.log('Warning :', validationReport.warnings);
   const result = { valid: validationReport.isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
   return { valid:validationReport.isValid, results: [result]};
 }
