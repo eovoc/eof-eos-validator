@@ -1,7 +1,7 @@
 import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {ValidationReport} from "./ValidationResult";
+import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
@@ -28,7 +28,6 @@ const schemasReady: Promise<void> = (async () => {
   }
 })();
 
-
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
   const { ogcValidationSchema } = await getConfig();
@@ -38,28 +37,6 @@ const mainSchemaReady: Promise<void> = (async () => {
   mainSchema = await res.json();
 })();
 
-type Partition = {
-  kept: ErrorObject[];
-  removed: ErrorObject[];
-};
-
-function partitionErrorsBySchemaPath(
-    errors: ErrorObject[],
-    schemaPathsToExtract: string
-): Partition {
-
-  const initial: Partition = { kept: [], removed: [] };
-  return errors.reduce((acc, err) => {
-
-    if (err.schemaPath.startsWith(schemaPathsToExtract)) {
-      acc.removed.push(err);
-    } else {
-      acc.kept.push(err);
-    }
-    return acc;
-  }, initial);
-}
-
 type OgcValidationReport = {
   isValid: boolean
   errors : ErrorObject[],
@@ -67,8 +44,6 @@ type OgcValidationReport = {
 }
 
 function filterErrors(allErrors: null | undefined | ErrorObject[], validationMode : OgcValidationMode): OgcValidationReport{
-  //TODO: filter errors to be treated as warnings (todo: only apply if strict mode is disabled).
-  //-> use warnings when strict mode is disabled.
   let isValid = false;
   let errors: ErrorObject[] = [];
   let warnings : ErrorObject[] = [];
