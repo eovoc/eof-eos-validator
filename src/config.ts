@@ -5,6 +5,8 @@ interface AppConfig {
   ogcValidationSchema: string;
   // StrictValidation property, when false: additionalRules error are moved to warnings.
   strictValidation: boolean;
+    // ogcValidationMode property, strict: additional rules as errors, normal: additional rules as warning: relaxed: additional rules ignroed.
+   ogcValidationMode: string;
 }
 
 const configReady: Promise<AppConfig> = fetch(`${process.env.PUBLIC_URL}/config.json`)
