@@ -11,10 +11,9 @@ export enum OgcValidationMode {
 interface AppConfig {
   //converterUrl: url of the stac converter service
   converterUrl: string;
-  // ogcValidationSchema property, name of the jsonschema used for ogc valdiation..
+  // ogcValidationSchema property, name of the jsonschema used for ogc validation.
   ogcValidationSchema: string;
-  // StrictValidation property, when false: additionalRules error are moved to warnings.
-  strictValidation: boolean;
+  // ogcValidationMode property: determine strictness level of the OGC validation.
   ogcValidationMode: OgcValidationMode;
 }
 
