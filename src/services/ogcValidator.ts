@@ -50,21 +50,22 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
   const errorsToExtract = '#/definitions/additional-rules/';
 
   if(allErrors && validationMode === OgcValidationMode.Strict){
-    //No filtering: all errors are considered as errors. No warnings.
+    console.log("No filtering: all errors are considered as errors. No warnings.");
     errors = allErrors;
 
   } else if(allErrors && validationMode === OgcValidationMode.Normal) {
-    //Treat errors that  match additionalRules as warnings
+    console.log("Treat errors that  match additionalRules as warnings");
     const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
 
   }else if(allErrors && validationMode === OgcValidationMode.Soft){
-    //Only keep errors that do not match additionalRules
+    console.log("Only keep errors that do not match additionalRules");
     const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
     errors = partitionedErrors.kept;
 
   }else{
+    console.log("bypass");
     if(allErrors){
       errors = allErrors;
     }
@@ -84,7 +85,7 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
-  const { ogcValidationMode } = await getConfig();
+  const { ogcValidationMode, ogcValidationSchema } = await getConfig();
 
   const validate = ajv.compile(mainSchema);
   validate(data);
@@ -92,6 +93,6 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   console.log("Validation Mode:",ogcValidationMode);
   const validationReport = filterErrors(validate.errors,ogcValidationMode);
 
-  const result = { valid: validationReport.isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
+  const result = { valid: validationReport.isValid, schema: `${BASE}/${ogcValidationSchema}`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
   return { valid:validationReport.isValid, results: [result]};
 }
