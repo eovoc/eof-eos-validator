@@ -83,6 +83,7 @@
       "enum": [
         "AMI/SAR",
         "SAR",
+        "SAR-test-2",
         "P-SAR",
         "C-SAR",
         "PALSAR",
