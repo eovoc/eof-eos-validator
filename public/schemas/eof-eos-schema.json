@@ -848,6 +848,11 @@
 			"required": [
 				"platform",
 				"instrument"
+			],
+			"allOf": [
+				{
+					"$ref": "#/definitions/additional-rules/instruments-mapping"
+				}
 			]
 		},
 		"Offering": {
@@ -2078,6 +2083,9 @@
 					"STC"
 				]
 			}
+		},
+		"additional-rules": {
+			"instruments-mapping": {}
 		}
 	}
 }
