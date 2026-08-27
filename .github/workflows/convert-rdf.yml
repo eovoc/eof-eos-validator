@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - "scripts/rdf/DataModelEnumeratedProperties.rdf"
+      - "scripts/rdf/producttypes.rdf"
+      - "scripts/rdf/instruments.rdf"
+      - "scripts/rdf/platforms.rdf"
 
 jobs:
   convert:
