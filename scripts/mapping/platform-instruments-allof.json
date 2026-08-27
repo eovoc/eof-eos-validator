@@ -3568,7 +3568,7 @@
             "properties": {
               "instrumentShortName": {
                 "enum": [
-                  "SAR-test-3"
+                  "SAR"
                 ]
               }
             }
@@ -3598,7 +3598,7 @@
             "properties": {
               "instrumentShortName": {
                 "enum": [
-                  "SAR-test-3"
+                  "SAR"
                 ]
               }
             }
