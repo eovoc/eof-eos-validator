@@ -6932,6 +6932,9 @@
 					"STC"
 				]
 			}
+		},
+		"additional-rules": {
+			"instruments-mapping": {}
 		}
 	}
 }
