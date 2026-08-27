@@ -4521,7 +4521,7 @@
 									"properties": {
 										"instrumentShortName": {
 											"enum": [
-												"SAR-test-2"
+												"SAR-test-3"
 											]
 										}
 									}
@@ -4551,7 +4551,7 @@
 									"properties": {
 										"instrumentShortName": {
 											"enum": [
-												"SAR-test-2"
+												"SAR-test-3"
 											]
 										}
 									}
@@ -5880,7 +5880,7 @@
 				"enum": [
 					"AMI/SAR",
 					"SAR",
-					"SAR-test-2",
+					"SAR-test-3",
 					"P-SAR",
 					"C-SAR",
 					"PALSAR",
@@ -6932,9 +6932,6 @@
 					"STC"
 				]
 			}
-		},
-		"additional-rules": {
-			"instruments-mapping": {}
 		}
 	}
 }

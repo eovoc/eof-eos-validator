@@ -289,7 +289,7 @@
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a0042d58-dc4b-5cca-ab2a-d849b4db3e73">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-	<skos:prefLabel xml:lang="en">SAR-test-2</skos:prefLabel>
+	<skos:prefLabel xml:lang="en">SAR-test-3</skos:prefLabel>
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
 </rdf:Description>
 
