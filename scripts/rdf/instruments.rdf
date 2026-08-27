@@ -10,6 +10,7 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/72aad1c4-ff46-535c-9256-cc0bf9d004f1"/>
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/102651e0-25c8-5f48-af0a-1c10d11be181"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/a0042d58-dc4b-5cca-ab2a-d849b4db3e73"/>
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1dacc3db-07df-5d93-869a-6bb256f01e51"/>
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/a2cb7dbe-6433-5737-9d3c-b974e6f643b2"/>
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/7bffde6b-41f6-5d56-9826-caf9178a988b"/>
@@ -283,6 +284,12 @@
 <rdf:Description rdf:about="https://earth.esa.int/concept/102651e0-25c8-5f48-af0a-1c10d11be181">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">SAR</skos:prefLabel>
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/a0042d58-dc4b-5cca-ab2a-d849b4db3e73">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">SAR-test-2</skos:prefLabel>
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
 </rdf:Description>
 

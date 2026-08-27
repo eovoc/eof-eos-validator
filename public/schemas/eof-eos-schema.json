@@ -950,6 +950,4854 @@
 				"href"
 			]
 		},
+		"additional-rules": {
+			"instruments-mapping": {
+				"allOf": [
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ADEOS-I"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVNIR",
+												"ILAS",
+												"IMG",
+												"NSCAT",
+												"OCTS",
+												"POLDER",
+												"RIS",
+												"TOMS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Aeolus"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ALADIN"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ALOS-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVNIR-2",
+												"PALSAR",
+												"PRISM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ALOS-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CIRC",
+												"PALSAR-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ALTIUS"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ALTIUS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "AQUA"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AIRS",
+												"AMSR-E",
+												"AMSU-A",
+												"CERES",
+												"HSB",
+												"MODIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Aura"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HiRDLS",
+												"MLS",
+												"OMI",
+												"TES"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Beijing-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HRPAN",
+												"SLIM6"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Biomass"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"P-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "BRO"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"Electromagnetic Tracker"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "CASSIOPE"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CER",
+												"FAI",
+												"GAP",
+												"IRM",
+												"MGF",
+												"NMS",
+												"RRI",
+												"SEI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed Second Generation-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CSG-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed Second Generation-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CSG-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-2000"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-2000"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-2000"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "COSMO-SkyMed-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-2000"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "CryoSat-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"LRR CryoSat",
+												"SIRAL",
+												"Star Tracker"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "EarthCARE"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ATLID",
+												"BBR",
+												"CPR",
+												"MSI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Envisat"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AATSR",
+												"ASAR",
+												"DORIS",
+												"GOMOS",
+												"LRR",
+												"MERIS",
+												"MIPAS",
+												"MWR",
+												"RA-2",
+												"SCIAMACHY"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ERS-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AMI/SAR",
+												"AMI/Scatterometer",
+												"ATSR-1",
+												"LRR ERS",
+												"MWR",
+												"PRARE",
+												"RA"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ERS-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AMI/SAR",
+												"AMI/Scatterometer",
+												"ATSR-2",
+												"GOME",
+												"LRR ERS",
+												"MWR",
+												"PRARE",
+												"RA"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "FLEX"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"FLORIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "FOREST-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAFIRE Gen 2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "FORMOSAT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MS",
+												"RSI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "FSSCat-A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"FMPL-2",
+												"HyperScout-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "FSSCat-B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"FMPL-2",
+												"HyperScout-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GeoEye-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"GIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GEOSAT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SLIM6"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GEOSAT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HiRAIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GHGSat-C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"C&A-1",
+												"VIS-1",
+												"WAF-P"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GHGSat-D"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"C&A-1",
+												"VIS-1",
+												"WAF-P"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GOCE"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"EGG",
+												"LRR",
+												"MGM",
+												"SSTI",
+												"STR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GOSAT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"TANSO-CAI",
+												"TANSO-FTS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GOSAT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"TANSO-CAI-2",
+												"TANSO-FTS-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GPM"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DPR",
+												"GMI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GRACE-A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"BLACKJACK",
+												"GRACE ACC",
+												"GRACE HAIRS",
+												"GRACE INTERFEROMETER",
+												"GRACE LRR",
+												"GRACE SCA",
+												"KBR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GRACE-B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"BLACKJACK",
+												"GRACE ACC",
+												"GRACE HAIRS",
+												"GRACE INTERFEROMETER",
+												"GRACE LRR",
+												"GRACE SCA",
+												"KBR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GRACE-C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"GRACE-FO ACC",
+												"GRACE-FO LRI",
+												"GRACE-FO LRR",
+												"GRACE-FO MWI",
+												"GRACE-FO SCA",
+												"GRACE-FO TriG"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "GRACE-D"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"GRACE-FO ACC",
+												"GRACE-FO LRI",
+												"GRACE-FO LRR",
+												"GRACE-FO MWI",
+												"GRACE-FO SCA",
+												"GRACE-FO TriG"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "HotSat-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MWIR Imager"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Hydrognss-A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SGR-ReSI-Z"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Hydrognss-B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SGR-ReSI-Z"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ICEYE"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"X-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IKONOS-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OSA"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-1C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"LISS-3",
+												"PAN",
+												"WiFS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-1D"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"LISS-3",
+												"PAN",
+												"WiFS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-P3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MOS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-P5"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PAN"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-P6"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AwiFS",
+												"LISS-3",
+												"LISS-4"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-P7"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"LISS-3"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-P8"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AwiFS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "IRS-R2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AwiFS",
+												"LISS-3",
+												"LISS-4"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Jason-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"JMR",
+												"LRA",
+												"POSEIDON-2",
+												"TRSR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Jason-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"POSEIDON-3"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "JERS-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OPS",
+												"SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "KOMPSAT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"EOC",
+												"OSMI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "KOMPSAT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSC"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSS",
+												"RBV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSS",
+												"RBV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSS",
+												"RBV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSS",
+												"TM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-5"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSS",
+												"TM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-7"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ETM+"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-8"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OLI",
+												"TIRS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Landsat-9"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OLI-2",
+												"TIRS-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Metop-A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"ASCAT",
+												"AVHRR-3",
+												"GOME-2",
+												"GRAS",
+												"HIRS/4",
+												"IASI",
+												"MHS",
+												"SARSAT",
+												"SEM-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Metop-B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"ASCAT",
+												"AVHRR-3",
+												"GOME-2",
+												"GRAS",
+												"HIRS/4",
+												"IASI",
+												"MHS",
+												"SARSAT"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Metop-C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"ASCAT",
+												"AVHRR-3",
+												"GOME-2",
+												"GRAS",
+												"HIRS/4",
+												"IASI",
+												"MHS",
+												"SARSAT",
+												"SEM-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "MOS-1A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MESSR",
+												"MSR",
+												"VTIR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "MOS-1B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MESSR",
+												"MSR",
+												"VTIR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NigeriaSat-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SLIM6"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Nimbus-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"BUV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Nimbus-7"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CZCS",
+												"LIMS",
+												"SBUV",
+												"SMMR",
+												"TOMS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-10"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"Argos",
+												"AVHRR-1",
+												"ERBE",
+												"HIRS/2",
+												"MSU",
+												"SARSAT",
+												"SEM",
+												"TOVS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-11"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AVHRR-2",
+												"HIRS/2",
+												"MSU",
+												"SARSAT",
+												"SBUV/2",
+												"SSU",
+												"TOVS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-12"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AVHRR-2",
+												"HIRS/2",
+												"MSU",
+												"SEM",
+												"SSU"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-13"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVHRR-2",
+												"HIRS/2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-14"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AVHRR-1",
+												"HIRS/2",
+												"MSU",
+												"SARSAT",
+												"SBUV/2",
+												"SEM",
+												"SSU",
+												"TOVS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-15"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"AMSU-B",
+												"ATOVS",
+												"AVHRR-3",
+												"HIRS/3",
+												"SARSAT"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-16"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"AMSU-B",
+												"AVHRR-3",
+												"HIRS/3",
+												"SARSAT",
+												"SBUV/2",
+												"SEM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-17"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"AMSU-B",
+												"AVHRR-3",
+												"HIRS/3",
+												"SARSAT",
+												"SBUV/2",
+												"SEM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-18"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"AVHRR-3",
+												"HIRS/4",
+												"MHS",
+												"SARSAT",
+												"SBUV/2",
+												"SEM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-19"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"AMSU-A",
+												"AVHRR-3",
+												"HIRS/4",
+												"MHS",
+												"SARSAT",
+												"SBUV/2",
+												"SEM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-6"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVHRR-1",
+												"HIRS/2",
+												"MSU",
+												"SEM/MEPED",
+												"SEM/TED",
+												"SSU"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-7"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVHRR-2",
+												"HIRS/2",
+												"MSU",
+												"SEM/MEPED",
+												"SEM/TED",
+												"SSU"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-8"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AVHRR-1",
+												"HIRS/2",
+												"MSU",
+												"SARSAT",
+												"SEM/MEPED",
+												"SEM/TED",
+												"SSU"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NOAA-9"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"A-DCS3",
+												"Argos",
+												"AVHRR-2",
+												"ERBE",
+												"HIRS/2",
+												"MSU",
+												"SARSAT",
+												"SBUV/2",
+												"SEM",
+												"SEM/MEPED",
+												"SEM/TED",
+												"SSU",
+												"TOVS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "NovaSAR-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AIS",
+												"S-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "OceanSat-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OCM-2",
+												"OSCAT",
+												"ROSA"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "ODIN"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"OSIRIS",
+												"SMR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "OrbView-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SeaWiFS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Parasol-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"POLDER"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "PAZ"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PAZ-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "PlanetScope"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PlanetScope Camera",
+												"PS2",
+												"PS2.SD"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Pleiades Neo-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PNEO"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Pleiades Neo-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PNEO"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Pleiades-1A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HiRI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Pleiades-1B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HiRI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "PROBA-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"CHRIS",
+												"HRC"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "PROBA-V"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"VGT"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "QuickBird-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"BGI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "QuikSCAT"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SeaWinds"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RADARSAT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RADARSAT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RapidEye-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"REIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RapidEye-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"REIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RapidEye-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"REIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RapidEye-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"REIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "RapidEye-5"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"REIS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SAOCOM-1A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-test-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SAOCOM-1B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SAR-test-2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SCISAT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ACE-FTS",
+												"MAESTRO"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Seasat"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ALT",
+												"LT",
+												"SAR",
+												"SASS",
+												"SMMR",
+												"VIRR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-1A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"C-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-1B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"C-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-1C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AIS",
+												"C-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-1D"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AIS",
+												"C-SAR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-2A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-2B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-2C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MSI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-3A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"GNSS",
+												"LRR",
+												"OLCI",
+												"S3 MWR",
+												"SLSTR",
+												"SRAL"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-3B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"GNSS",
+												"LRR",
+												"OLCI",
+												"S3 MWR",
+												"SLSTR",
+												"SRAL"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-5P"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"TROPOMI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Sentinel-6A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AMR-C",
+												"GNSS POD Receiver",
+												"GNSS-RO Receiver",
+												"LRA",
+												"POSEIDON-4",
+												"REM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SkySat"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SkySat Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SMOS"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"MIRAS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Spire"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"AIRSAFE",
+												"SENSE",
+												"STRATOS"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"HRV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"HRV"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"HRV",
+												"POAM-II"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"HRVIR",
+												"POAM-III",
+												"VG1"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-5"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"DORIS",
+												"HRG",
+												"HRS",
+												"VG2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-6"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"NAOMI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "SPOT-7"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"NAOMI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Swarm-A"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ACC",
+												"ASM",
+												"EFI",
+												"GPSR",
+												"LRR",
+												"STR",
+												"VFM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Swarm-B"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ACC",
+												"ASM",
+												"EFI",
+												"GPSR",
+												"LRR",
+												"STR",
+												"VFM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Swarm-C"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ACC",
+												"ASM",
+												"EFI",
+												"GPSR",
+												"LRR",
+												"STR",
+												"VFM"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "TanDEM-X"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"TDX-1",
+												"TOR"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "TanSat"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ACGS",
+												"CAPI"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "TERRA"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"ASTER",
+												"CERES",
+												"MISR",
+												"MODIS",
+												"MOPITT"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "TerraSAR-X"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"GPSRO",
+												"TSX-1"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "TIROS-N"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"Argos",
+												"AVHRR-1",
+												"HIRS/2",
+												"MSU",
+												"SEM",
+												"SSU"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "UK-DMC-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SLIM6"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Vision-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"Vision-1 Imagery Instrument"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WindSat"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"WINDSAT"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WorldView Legion"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"WorldView Legion Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WorldView-1"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"WorldView-60 Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WorldView-2"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"WorldView-110 Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WorldView-3"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"WorldView-110 Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "WorldView-4"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"SpaceView-110 Camera"
+											]
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		},
 		"thesaurus": {
 			"acquisition-station-types": {
 				"title": "Acquisition Station Types",
@@ -1032,6 +5880,7 @@
 				"enum": [
 					"AMI/SAR",
 					"SAR",
+					"SAR-test-2",
 					"P-SAR",
 					"C-SAR",
 					"PALSAR",
@@ -2083,9 +6932,6 @@
 					"STC"
 				]
 			}
-		},
-		"additional-rules": {
-			"instruments-mapping": {}
 		}
 	}
 }
