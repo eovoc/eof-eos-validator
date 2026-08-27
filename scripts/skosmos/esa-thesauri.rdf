@@ -1110,7 +1110,7 @@
     </rdf:Description>
     <rdf:Description rdf:about="https://earth.esa.int/concept/a0042d58-dc4b-5cca-ab2a-d849b4db3e73">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <skos:prefLabel xml:lang="en">SAR-test-2</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">SAR-test-3</skos:prefLabel>
         <skos:altLabel xml:lang="en">SAOCOM-SAR</skos:altLabel>
         <skos:exactMatch rdf:resource="https://gcmd.earthdata.nasa.gov/kms/concept/cd232e58-5c61-4d07-becf-2f2fb5af1001"/>
         <skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
