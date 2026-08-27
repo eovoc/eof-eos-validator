@@ -1,7 +1,8 @@
-import Ajv from "ajv";
+import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {ValidationReport} from "./ValidationResult";
+import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
+import {getConfig, OgcValidationMode} from "../config";
 
 const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -29,20 +30,68 @@ const schemasReady: Promise<void> = (async () => {
 
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = `${BASE}/schemas/eof-eos-schema.json`;
+  const { ogcValidationSchema } = await getConfig();
+  const VALIDATION_SCHEMA = `${BASE}/${ogcValidationSchema}`;
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();
 })();
 
+type OgcValidationReport = {
+  isValid: boolean
+  errors : ErrorObject[],
+  warnings : ErrorObject[]
+}
+
+function filterErrors(allErrors: null | undefined | ErrorObject[], validationMode : OgcValidationMode): OgcValidationReport{
+  let isValid = false;
+  let errors: ErrorObject[] = [];
+  let warnings : ErrorObject[] = [];
+  const errorsToExtract = '#/definitions/additional-rules/';
+
+  if(allErrors && validationMode === OgcValidationMode.Strict){
+    //No filtering: all errors are considered as errors. No warnings.
+    errors = allErrors;
+
+  } else if(allErrors && validationMode === OgcValidationMode.Normal) {
+    //Treat errors that  match additionalRules as warnings
+    const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
+    errors = partitionedErrors.kept;
+    warnings = partitionedErrors.removed;
+
+  }else if(allErrors && validationMode === OgcValidationMode.Soft){
+    //Only keep errors that do not match additionalRules
+    const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
+    errors = partitionedErrors.kept;
+
+  }else{
+    if(allErrors){
+      errors = allErrors;
+    }
+  }
+
+  if(errors === null || errors === undefined || errors?.length === 0){
+    isValid = true;
+  }
+
+  console.log("Is Valid:",isValid);
+  console.log('Errors :', errors);
+  console.log('Warnings :', warnings);
+  return { isValid: isValid,errors: errors, warnings: warnings};
+}
+
 export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
+  const { ogcValidationMode } = await getConfig();
 
   const validate = ajv.compile(mainSchema);
-  const valid = validate(data) as boolean;
-  console.log("validation result:",validate);
-  const result = { valid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validate.errors ?? null };
-  return { valid, results: [result]};
+  validate(data);
+
+  console.log("Validation Mode:",ogcValidationMode);
+  const validationReport = filterErrors(validate.errors,ogcValidationMode);
+
+  const result = { valid: validationReport.isValid, schema: `${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
+  return { valid:validationReport.isValid, results: [result]};
 }

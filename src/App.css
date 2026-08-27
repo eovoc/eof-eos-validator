@@ -231,6 +231,11 @@ h1 {
   border: 1.5px solid #fc8181;
 }
 
+.result.warning {
+  background: #fff7ed;
+  border: 1.5px solid #ff900d;
+}
+
 .result-title {
   font-size: 1.05rem;
   font-weight: 700;
@@ -247,6 +252,11 @@ h1 {
   color: #b91c1c;
 }
 
+.result.warning > .result-title,
+.result-title.warning {
+  color: #ff900d;
+}
+
 .error-list {
   margin: 0;
   padding: 0;
@@ -257,11 +267,19 @@ h1 {
 }
 
 .error-item {
-  background: #fff;
-  border: 1px solid #fecaca;
   border-radius: 6px;
   padding: 10px 14px;
   font-size: 0.875rem;
+}
+
+.error-item-red {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.error-item-orange {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
 }
 
 .error-path {

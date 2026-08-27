@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>edu.uoc.som</groupId>
+	<artifactId>jsonschema-to-uml-cli</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- EMF / UML2, repackaged as plain (non-OSGi) Maven jars by the anaptecs JEAF project.
+		     The generator only calls the public UML2/EMF Java API directly (no OSGi services
+		     required), so these standalone jars are enough - no Eclipse installation needed. -->
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.emf.common</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.emf.ecore</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.uml2.common</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.uml2.uml</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.owalibs</groupId>
+			<artifactId>org.eclipse.uml2.uml.resources</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
+		<!-- Same JSON Schema syntax validator version the upstream tool bundles -->
+		<dependency>
+			<groupId>com.github.fge</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>2.2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.plantuml</groupId>
+			<artifactId>plantuml</artifactId>
+			<version>1.2024.7</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>jsonschema-to-uml</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.5.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals><goal>shade</goal></goals>
+						<configuration>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>edu.uoc.som.jsonschematouml.cli.Main</mainClass>
+								</transformer>
+							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

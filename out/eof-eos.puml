@@ -1,0 +1,301 @@
+@startuml
+hide empty members
+skinparam classAttributeIconSize 0
+
+enum "typeEnum" {
+  Point
+}
+
+enum "typeEnum_2" {
+  MultiPoint
+}
+
+enum "typeEnum_3" {
+  LineString
+}
+
+enum "typeEnum_4" {
+  MultiLineString
+}
+
+enum "typeEnum_5" {
+  Polygon
+}
+
+enum "typeEnum_6" {
+  MultiPolygon
+}
+
+enum "typeEnum_7" {
+  Feature
+}
+
+enum "typeEnum_8" {
+  FeatureCollection
+}
+
+enum "locationUnitEnum" {
+  bar
+  m
+}
+
+enum "methodEnum" {
+  GET
+  POST
+  PUT
+  HEAD
+  PATCH
+  DELETE
+}
+
+class "Unknown" {
+}
+
+class "MetadataInformation" {
+  lang : String
+  creationDate : Date
+}
+
+class "DataIdentification" {
+  doi : String
+  title : String
+  date : String
+  created : Date
+}
+
+class "AdditionalAttributes" {
+}
+
+class "ProcessingInformation" {
+  processorName : String
+  processorVersion : String
+  processingCenter : String
+  processingDate : Date
+  compositeType : String
+  format : String
+  processingMethod : String
+  processingMethodVersion : String
+}
+
+class "Point" {
+  coordinates : Integer "2..2"
+  type : typeEnum
+}
+
+class "MultiPoint" {
+  type : typeEnum_2
+}
+
+class "LineString" {
+  type : typeEnum_3
+}
+
+class "MultiLineString" {
+  type : typeEnum_4
+}
+
+class "Polygon" {
+  type : typeEnum_5
+}
+
+class "MultiPolygon" {
+  type : typeEnum_6
+}
+
+class "Geometry" {
+}
+
+class "GeometryOptionA" {
+}
+
+class "GeometryOptionB" {
+}
+
+class "GeometryOptionC" {
+}
+
+class "GeometryOptionD" {
+}
+
+class "GeometryOptionE" {
+}
+
+class "GeometryOptionF" {
+}
+
+class "Links" {
+}
+
+class "Properties" {
+}
+
+class "EarthObservation" {
+  type : typeEnum_7
+  id : String
+  bbox : Integer "4..4"
+}
+
+abstract class "GeometryOption" {
+}
+
+class "EarthObservationOptionA" {
+}
+
+class "EarthObservationOptionB" {
+}
+
+class "Platform" {
+  platformSerialIdentifier : String
+}
+
+class "Instrument" {
+  description : String
+}
+
+class "AcquisitionParameters" {
+  acquisitionSubType : String
+  startTimeFromAscendingNode : Integer
+  completionTimeFromAscendingNode : Integer
+  relativeOrbitNumber : Integer
+  wrsLongitude : String
+  wrsLatitude : String
+  tileId : String
+  groundTrackUncertainty : Integer
+  cycleNumber : Integer
+  operationalMode : String
+  swathIdentifier : String
+  resolution : Integer
+  verticalResolution : Integer
+  dopplerFrequency : Integer
+  samplingRates : Integer "1..*"
+}
+
+class "Link" {
+  href : String
+  title : String
+  length : Integer
+}
+
+class "ProductInformation" {
+  productType : String
+  size : Integer
+  statusDetail : String
+  referenceSystemIdentifier : String
+}
+
+class "AcquisitionAngles" {
+  illuminationAzimuthAngle : Integer
+  illuminationZenithAngle : Integer
+  illuminationElevationAngle : Integer
+  incidenceAngle : Integer
+  minimumIncidenceAngle : Integer
+  maximumIncidenceAngle : Integer
+  incidenceAngleVariation : Integer
+  acrossTrackIncidenceAngle : Integer
+  alongTrackIncidenceAngle : Integer
+  instrumentAzimuthAngle : Integer
+  instrumentZenithAngle : Integer
+  instrumentElevationAngle : Integer
+  pitch : Integer
+  roll : Integer
+  yaw : Integer
+}
+
+class "CoverageDescription" {
+  cloudCover : Integer
+  snowCover : Integer
+}
+
+class "FeatureCollection" {
+  type : typeEnum_8
+}
+
+class "WavelengthInformation" {
+  discreteWavelengths : Integer "1..*"
+  startWavelength : Integer
+  endWavelength : Integer
+  wavelengthResolution : Integer
+}
+
+class "VerticalSpatialDomain" {
+  highestLocation : String
+  lowestLocation : String
+  locationUnit : locationUnitEnum
+}
+
+class "TemporalInformation" {
+  beginningDateTime : Date
+  endingDateTime : Date
+}
+
+class "AcquisitionInformation" {
+}
+
+class "Offering" {
+  code : String
+}
+
+class "OrbitParameters" {
+  orbitDuration : Integer
+  ascendingNodeDate : Date
+  ascendingNodeLongitude : Integer
+  orbitNumber : Integer
+  lastOrbitNumber : Integer
+}
+
+class "Operation" {
+  code : String
+  method : methodEnum
+  type : String
+  href : String
+}
+
+class "Request" {
+}
+
+class "Result" {
+}
+
+"Geometry" <|-- "GeometryOptionA"
+"Geometry" <|-- "GeometryOptionB"
+"Geometry" <|-- "GeometryOptionC"
+"Geometry" <|-- "GeometryOptionD"
+"Geometry" <|-- "GeometryOptionE"
+"Geometry" <|-- "GeometryOptionF"
+"DataIdentification" <|-- "Properties"
+"GeometryOption" <|-- "EarthObservationOptionA"
+"GeometryOption" <|-- "EarthObservationOptionB"
+"VerticalSpatialDomain" <|-- "AcquisitionParameters"
+"TemporalInformation" <|-- "AcquisitionParameters"
+"OrbitParameters" <|-- "AcquisitionParameters"
+"CoverageDescription" <|-- "ProductInformation"
+"ProcessingInformation" <|-- "ProductInformation"
+
+
+"AdditionalAttributes" "0..1" -->  "DataIdentification" : DataIdentification
+"Point" "0..1" -->  "GeometryOptionA" : Point
+"MultiPoint" "0..1" -->  "GeometryOptionB" : MultiPoint
+"LineString" "0..1" -->  "GeometryOptionC" : LineString
+"MultiLineString" "0..1" -->  "GeometryOptionD" : MultiLineString
+"Polygon" "0..1" -->  "GeometryOptionE" : Polygon
+"MultiPolygon" "0..1" -->  "GeometryOptionF" : MultiPolygon
+"Geometry" "0..1" -->  "EarthObservationOptionA" : Geometry
+"Link" "0..1" -->  "Links" : Link
+"Link" "0..1" -->  "Links" : Link
+"Link" "0..1" -->  "Links" : Link
+"Link" "0..1" -->  "Links" : Link
+"Links" "0..1" -->  "Properties" : Links
+"AcquisitionInformation" "0..1" -->  "Properties" : AcquisitionInformation
+"ProductInformation" "0..1" -->  "Properties" : ProductInformation
+"Properties" "0..1" -->  "EarthObservation" : Properties
+"GeometryOption"  -->  "EarthObservation" : EarthObservation
+"EarthObservation" "0..1" -->  "FeatureCollection" : EarthObservation
+"Platform" "0..1" -->  "AcquisitionInformation" : Platform
+"Instrument" "0..1" -->  "AcquisitionInformation" : Instrument
+"AcquisitionAngles" "0..1" -->  "AcquisitionParameters" : AcquisitionAngles
+"WavelengthInformation" "0..1" -->  "AcquisitionParameters" : WavelengthInformation
+"AcquisitionParameters" "0..1" -->  "AcquisitionInformation" : AcquisitionParameters
+"Operation" "0..1" -->  "Offering" : Operation
+"Request" "0..1" -->  "Operation" : Operation
+"Result" "0..1" -->  "Operation" : Operation
+@enduml

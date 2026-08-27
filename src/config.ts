@@ -1,5 +1,20 @@
+// ogcValidationMode property
+// - 'strict': additional rules processed as errors
+// - 'normal': additional rules processed as warnings
+// - 'soft': additional rules ignored.
+export enum OgcValidationMode {
+  Strict = 'strict',
+  Normal = 'normal',
+  Soft = 'soft',
+}
+
 interface AppConfig {
+  //converterUrl: url of the stac converter service
   converterUrl: string;
+  // ogcValidationSchema property, name of the jsonschema used for ogc validation.
+  ogcValidationSchema: string;
+  // ogcValidationMode property: determine strictness level of the OGC validation.
+  ogcValidationMode: OgcValidationMode;
 }
 
 const configReady: Promise<AppConfig> = fetch(`${process.env.PUBLIC_URL}/config.json`)
