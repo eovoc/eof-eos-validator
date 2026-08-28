@@ -619,7 +619,7 @@
 					"type": "object",
 					"properties": {
 						"productType": {
-							"type": "string"
+							"$ref": "#/definitions/thesaurus/product-types"
 						},
 						"size": {
 							"type": "integer"
