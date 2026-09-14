@@ -478,6 +478,7 @@
 		},
 		"AcquisitionParameters": {
 			"type": "object",
+			"unevaluatedProperties": false,
 			"allOf": [
 				{
 					"type": "object",
