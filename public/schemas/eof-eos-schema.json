@@ -499,10 +499,10 @@
 						"relativeOrbitNumber": {
 							"type": "integer"
 						},
-						"wrsLongitude": {
+						"wrsLongitudeGrid": {
 							"type": "string"
 						},
-						"wrsLatitude": {
+						"wrsLatitudeGrid": {
 							"type": "string"
 						},
 						"tileId": {
