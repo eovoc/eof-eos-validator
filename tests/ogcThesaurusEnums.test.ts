@@ -37,6 +37,8 @@ type PathSegment = string | number;
 const ENUM_FIELDS: { name: string; path: PathSegment[]; thesaurusKey: string }[] = [
   { name: "properties.status", path: ["properties", "status"], thesaurusKey: "status-types" },
   { name: "platform.orbitType", path: ["properties", "acquisitionInformation", 0, "platform", "orbitType"], thesaurusKey: "orbit-types" },
+  { name: "platform.platformShortName", path: ["properties", "acquisitionInformation", 0, "platform", "platformShortName"], thesaurusKey: "platforms" },
+  { name: "instrument.instrumentShortName", path: ["properties", "acquisitionInformation", 0, "instrument", "instrumentShortName"], thesaurusKey: "instruments" },
   { name: "instrument.sensorType", path: ["properties", "acquisitionInformation", 0, "instrument", "sensorType"], thesaurusKey: "sensor-types" },
   { name: "acquisitionParameters.acquisitionType", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "acquisitionType"], thesaurusKey: "acquisition-types" },
   { name: "acquisitionParameters.antennaLookDirection", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "antennaLookDirection"], thesaurusKey: "antenna-look-direction-types" },
