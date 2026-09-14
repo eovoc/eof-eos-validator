@@ -1,13 +1,15 @@
 import Ajv, {ErrorObject} from "ajv";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
+import Ajv2019 from "ajv/dist/2019"
 import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
 
-const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
+//const ajv = new Ajv({ allErrors: true, validateSchema: true, strict: true });
+const ajv = new Ajv2019({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
 
-try { ajv.addSchema(draft7MetaSchema, "http://json-schema.org/draft-07/schema"); } catch {}
+//try { ajv.addSchema(draft7MetaSchema, "http://json-schema.org/draft-07/schema"); } catch {}
 
 // Schema files are served from /schemas/ as static assets
 const BASE = process.env.PUBLIC_URL ?? "";

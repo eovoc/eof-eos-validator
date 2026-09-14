@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import validExample from "./__fixtures__/ogc/valid-eof-eos-example.json";
 import invalidExample from "./__fixtures__/ogc/invalid-eof-eos-example.json";
-import validExampleWithAdditionalProperties from "./__fixtures__/ogc/valid-example-with-additional-properties.json";
+import acquisitionParametersWithAdditionalProperties from "./__fixtures__/ogc/acquisition-parameters-with-additional-properties.json";
 
 // ogcValidator fetches its schemas (eof-eos-schema.json, plus the referenced
 // mdj.json/dqc.json) from `${PUBLIC_URL}/schemas/...` at module load time, the
@@ -48,8 +48,9 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
   });
 
   it("acquisitionParameters allow additional properties", async () => {
-    const result = await ogcValidator(validExampleWithAdditionalProperties);
+    const result = await ogcValidator(acquisitionParametersWithAdditionalProperties);
 
     expect(result.valid).toBe(true);
-      });
+  });
+
 });

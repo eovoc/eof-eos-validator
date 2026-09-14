@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2019-09/schema#",
   "$id": "dqc.json",
   "definitions": {
     "AbsolutePositionalAccuracy": {
@@ -1083,7 +1083,7 @@
           "items": {}
         },
         "valueUnit": {"type": "string"},
-        "valueRecordType": {"$ref": "http://json-schema.org/draft-07/schema"}
+        "valueRecordType": {"$ref": "https://json-schema.org/draft/2019-09/schema"}
       },
       "required": [
         "type",
