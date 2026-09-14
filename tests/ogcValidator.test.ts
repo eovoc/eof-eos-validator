@@ -47,7 +47,7 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
   });
 
-  it("acquisitionParameters allow additional properties ", async () => {
+  it("acquisitionParameters allow additional properties", async () => {
     const result = await ogcValidator(validExampleWithAdditionalProperties);
 
     expect(result.valid).toBe(true);
