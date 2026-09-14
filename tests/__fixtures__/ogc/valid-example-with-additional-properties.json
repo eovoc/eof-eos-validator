@@ -1,0 +1,120 @@
+{
+	"type": "Feature",
+	"id": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001",
+	"geometry": {
+		"type": "Polygon",
+		"coordinates": [
+			[
+				[
+					13.07668457,
+					42.86038349
+				],
+				[
+					13.07922117,
+					42.77851676
+				],
+				[
+					13.12188714,
+					42.77922468
+				],
+				[
+					13.1194068,
+					42.86109342
+				],
+				[
+					13.07668457,
+					42.86038349
+				]
+			]
+		]
+	},
+	"properties": {
+		"status": "ACQUIRED",
+		"title": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001",
+		"date": "2016-10-31T09:55:40.898Z/2016-10-31T09:55:40.898Z",
+		"created": "2025-09-16T19:37:24.000Z",
+		"acquisitionInformation": [{
+			"platform": {
+				"platformShortName": "GeoEye-1",
+				"orbitType": "LEO"
+			},
+			"instrument": {
+				"instrumentShortName": "GIS",
+				"sensorType": "OPTICAL"
+			},
+			"acquisitionParameters": [{
+				"beginningDateTime": "2016-10-31T09:55:40.898Z",
+				"endingDateTime": "2016-10-31T09:55:40.898Z",
+				"operationalMode": "PM",
+				"resolution": 2,
+				"acquisitionType": "NOMINAL",
+				"new-property": "test",
+				"wavelengths": {
+					"spectralRange": "VIS"
+				},
+				"acquisitionAngles": {
+					"illuminationAzimuthAngle": 164.2,
+					"illuminationElevationAngle": 31.7
+				}
+			}]
+		}],
+		"productInformation": {
+			"size": 167254052,
+			"cloudCover": 0,
+			"productType": "GIS_4B__2A",
+			"processingLevel": "2A",
+			"resourceLineage": [{
+				"processStep": [{
+					"description": "EOPF-EOS Converter for GeoEye-1",
+					"stepDateTime": {
+						"created": "2026-01-15T15:32:49.000Z"
+					},
+					"processor": [{
+						"role": "processor",
+						"party": [{
+							"name": "EOF-EOS External Data Handling",
+							"type": "CI_Organisation"
+						}]
+					}],
+					"reference": [{
+						"title": "EOPF-EOS Specialization for GeoEye-1 products",
+						"edition": "1.0"
+					}],
+					"source": [{
+						"citation": "050372013030_01_README.XML",
+						"processedLevel": {"code":"LV2A"}
+					}],
+					"processingInformation": {
+						"softwareReference": {
+							"title": "EOPF-EOS Converter for GeoEye-1",
+							"edition": "1.0.0"
+						}
+					},
+					"output": [{
+						"sourceCitation": {
+							"title": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001.ZIP"
+						}
+					}]
+				}]
+			}]
+		},
+		"links": {
+			"measurements": [
+				{
+					"href": "/measurements/050372013030_01_README.XML",
+					"type": "application/vnd.hdfgroup.hdf5",
+					"title": "Native File",
+					"category": "DATA"
+				}
+			],
+			"preview": [
+				{
+					"href": "preview/GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001.PNG",
+					"type": "image/png",
+					"title": "Product browse",
+					"category": "overview (TBD as above)"
+				}
+			]
+		}
+	}
+}

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import validExample from "./__fixtures__/ogc/valid-eof-eos-example.json";
 import invalidExample from "./__fixtures__/ogc/invalid-eof-eos-example.json";
+import validExampleWithAdditionalProperties from "./__fixtures__/ogc/valid-example-with-additional-properties.json";
 
 // ogcValidator fetches its schemas (eof-eos-schema.json, plus the referenced
 // mdj.json/dqc.json) from `${PUBLIC_URL}/schemas/...` at module load time, the
@@ -24,11 +25,11 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/utils/ogcValidator")["ogcValidator"];
+let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
 
 beforeAll(async () => {
   (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
-  ({ ogcValidator } = await import("../src/utils/ogcValidator"));
+  ({ ogcValidator } = await import("../src/services/ogcValidator"));
 });
 
 describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
@@ -36,7 +37,7 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     const result = await ogcValidator(validExample);
 
     expect(result.valid).toBe(true);
-    expect(result.results[0].errors).toBeNull();
+    expect(result.results[0].errors!.length).toBe(0);
   });
 
   it("flags an example missing a required field (id) as invalid", async () => {
@@ -45,4 +46,10 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     expect(result.valid).toBe(false);
     expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
   });
+
+  it("acquisitionParameters allow additional properties ", async () => {
+    const result = await ogcValidator(validExampleWithAdditionalProperties);
+
+    expect(result.valid).toBe(true);
+      });
 });

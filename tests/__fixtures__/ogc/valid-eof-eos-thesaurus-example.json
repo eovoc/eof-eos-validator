@@ -13,12 +13,12 @@
 		"acquisitionInformation": [
 			{
 				"platform": {
-					"platformShortName": "Sat-1",
+					"platformShortName": "GeoEye-1",
 					"orbitType": "LEO"
 				},
 				"instrument": {
 					"sensorType": "OPTICAL",
-					"instrumentShortName": "Cam-1"
+					"instrumentShortName": "GIS"
 				},
 				"acquisitionParameters": [
 					{

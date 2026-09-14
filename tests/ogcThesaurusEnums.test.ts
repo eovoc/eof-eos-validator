@@ -21,11 +21,11 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/utils/ogcValidator")["ogcValidator"];
+let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
 
 beforeAll(async () => {
   (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
-  ({ ogcValidator } = await import("../src/utils/ogcValidator"));
+  ({ ogcValidator } = await import("../src/services/ogcValidator"));
 });
 
 const thesaurus = schema.definitions.thesaurus as Record<string, { enum: string[] }>;
@@ -81,7 +81,7 @@ describe("ogcValidator enforces thesaurus enum constraints (real EOF-EOS schema,
   it("accepts the fully populated baseline fixture as-is", async () => {
     const result = await ogcValidator(cloneFixture());
 
-    expect(result.results[0].errors).toBeNull();
+    expect(result.results[0].errors!.length).toBe(0);
     expect(result.valid).toBe(true);
   });
 
@@ -107,7 +107,7 @@ describe("ogcValidator enforces thesaurus enum constraints (real EOF-EOS schema,
 
     const result = await ogcValidator(doc);
 
-    expect(result.results[0].errors).toBeNull();
+    expect(result.results[0].errors!.length).toBe(0);
     expect(result.valid).toBe(true);
   });
 });
