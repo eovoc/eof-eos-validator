@@ -332,6 +332,7 @@
 			"title": "Links",
 			"description": "Objects with Links grouped by \"relation\".",
 			"type": "object",
+			"unevaluatedProperties": false,
 			"properties": {
 				"measurements": {
 					"type": "array",
@@ -615,6 +616,7 @@
 		},
 		"ProductInformation": {
 			"type": "object",
+			"unevaluatedProperties": false,
 			"allOf": [
 				{
 					"type": "object",
