@@ -362,6 +362,7 @@
 		},
 		"Properties": {
 			"title": "Properties",
+			"unevaluatedProperties": false,
 			"type": "object",
 			"allOf": [
 				{
@@ -834,6 +835,7 @@
 		},
 		"AcquisitionInformation": {
 			"type": "object",
+			"unevaluatedProperties": false,
 			"properties": {
 				"platform": {
 					"$ref": "#/definitions/Platform"
