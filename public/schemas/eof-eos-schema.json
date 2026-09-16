@@ -123,7 +123,7 @@
 			"additionalProperties": false
 		},
 		"MultiPoint": {
-			"title": "point",
+			"title": "MultiPoint",
 			"type": "object",
 			"properties": {
 				"coordinates": {
@@ -851,6 +851,7 @@
 			],
 			"allOf": [
 				{
+					"$comment": "Rules defining platform/instruments relationship",
 					"$ref": "#/definitions/additional-rules/instruments-mapping"
 				}
 			]
