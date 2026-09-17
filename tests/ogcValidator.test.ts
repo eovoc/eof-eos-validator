@@ -47,9 +47,35 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
   });
 
-  it("acquisitionParameters allow additional properties", async () => {
-    const result = await ogcValidator(validExampleWithAdditionalProperties);
+  it("acquisitionParameters forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters.newProperty = "new value";
 
-    expect(result.valid).toBe(true);
-      });
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  it("root properties forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.newProperty = modifiedExample.properties.status;
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    console.log(result);
+    expect(result.valid).toBe(false);
+    expect(
+      result.results[0].errors?.some(
+        (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+      )
+    ).toBe(true);
+  });
+
 });
