@@ -10,7 +10,7 @@ const OLD_SCHEMA_PATH = path.resolve(
   "..",
   "public",
   "schemas",
-  "thesaurus-rdf",
+  "backup",
   "old-thesaurus.json"
 );
 

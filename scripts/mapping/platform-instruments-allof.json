@@ -577,6 +577,66 @@
             "type": "object",
             "properties": {
               "platformShortName": {
+                "const": "Dove"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "instrument": {
+            "type": "object",
+            "properties": {
+              "instrumentShortName": {
+                "enum": [
+                  "PS2"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "object",
+            "properties": {
+              "platformShortName": {
+                "const": "Dove-R"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "instrument": {
+            "type": "object",
+            "properties": {
+              "instrumentShortName": {
+                "enum": [
+                  "PS2.SD"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "object",
+            "properties": {
+              "platformShortName": {
                 "const": "EarthCARE"
               }
             }
@@ -2162,7 +2222,8 @@
                   "HIRS/4",
                   "IASI",
                   "MHS",
-                  "SARSAT"
+                  "SARSAT",
+                  "SEM-2"
                 ]
               }
             }
@@ -3056,38 +3117,6 @@
               "instrumentShortName": {
                 "enum": [
                   "PAZ-SAR"
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "if": {
-        "type": "object",
-        "properties": {
-          "platform": {
-            "type": "object",
-            "properties": {
-              "platformShortName": {
-                "const": "PlanetScope"
-              }
-            }
-          }
-        }
-      },
-      "then": {
-        "type": "object",
-        "properties": {
-          "instrument": {
-            "type": "object",
-            "properties": {
-              "instrumentShortName": {
-                "enum": [
-                  "PlanetScope Camera",
-                  "PS2",
-                  "PS2.SD"
                 ]
               }
             }
@@ -4325,6 +4354,36 @@
               "instrumentShortName": {
                 "enum": [
                   "NAOMI"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "object",
+            "properties": {
+              "platformShortName": {
+                "const": "SuperDove"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "instrument": {
+            "type": "object",
+            "properties": {
+              "instrumentShortName": {
+                "enum": [
+                  "PSB.SD"
                 ]
               }
             }
