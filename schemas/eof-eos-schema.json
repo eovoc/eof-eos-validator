@@ -123,7 +123,7 @@
 			"additionalProperties": false
 		},
 		"MultiPoint": {
-			"title": "point",
+			"title": "MultiPoint",
 			"type": "object",
 			"properties": {
 				"coordinates": {
@@ -734,32 +734,6 @@
 				}
 			}
 		},
-		"FeatureCollection": {
-			"description": "GeoJSON FeatureCollection",
-			"type": "object",
-			"properties": {
-				"type": {
-					"type": "string",
-					"enum": [
-						"FeatureCollection"
-					]
-				},
-				"bbox": {
-					"type": "array"
-				},
-				"features": {
-					"type": "array",
-					"minItems": 0,
-					"items": {
-						"$ref": "#/definitions/EarthObservation"
-					}
-				}
-			},
-			"required": [
-				"type",
-				"features"
-			]
-		},
 		"WavelengthInformation": {
 			"type": "object",
 			"minProperties": 1,
@@ -851,6 +825,7 @@
 			],
 			"allOf": [
 				{
+					"$comment": "Rules defining platform/instruments relationship",
 					"$ref": "#/definitions/additional-rules/instruments-mapping"
 				}
 			]
@@ -1515,6 +1490,66 @@
 												"LRR CryoSat",
 												"SIRAL",
 												"Star Tracker"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Dove"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PS2"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
+											"const": "Dove-R"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PS2.SD"
 											]
 										}
 									}
@@ -3115,7 +3150,8 @@
 												"HIRS/4",
 												"IASI",
 												"MHS",
-												"SARSAT"
+												"SARSAT",
+												"SEM-2"
 											]
 										}
 									}
@@ -4009,38 +4045,6 @@
 										"instrumentShortName": {
 											"enum": [
 												"PAZ-SAR"
-											]
-										}
-									}
-								}
-							}
-						}
-					},
-					{
-						"if": {
-							"type": "object",
-							"properties": {
-								"platform": {
-									"type": "object",
-									"properties": {
-										"platformShortName": {
-											"const": "PlanetScope"
-										}
-									}
-								}
-							}
-						},
-						"then": {
-							"type": "object",
-							"properties": {
-								"instrument": {
-									"type": "object",
-									"properties": {
-										"instrumentShortName": {
-											"enum": [
-												"PlanetScope Camera",
-												"PS2",
-												"PS2.SD"
 											]
 										}
 									}
@@ -5293,6 +5297,36 @@
 									"type": "object",
 									"properties": {
 										"platformShortName": {
+											"const": "SuperDove"
+										}
+									}
+								}
+							}
+						},
+						"then": {
+							"type": "object",
+							"properties": {
+								"instrument": {
+									"type": "object",
+									"properties": {
+										"instrumentShortName": {
+											"enum": [
+												"PSB.SD"
+											]
+										}
+									}
+								}
+							}
+						}
+					},
+					{
+						"if": {
+							"type": "object",
+							"properties": {
+								"platform": {
+									"type": "object",
+									"properties": {
+										"platformShortName": {
 											"const": "Swarm-A"
 										}
 									}
@@ -5927,10 +5961,10 @@
 					"PRARE",
 					"GRAS",
 					"GAP",
-					"BLACKJACK",
 					"GPSR",
 					"SSTI",
 					"TRSR",
+					"BLACKJACK",
 					"GRACE-FO TriG",
 					"GRACE-FO MWI",
 					"DORIS",
@@ -5950,8 +5984,8 @@
 					"Radar",
 					"SBAS",
 					"GNSS",
-					"A-DCS3",
 					"SGR-ReSI-Z",
+					"A-DCS3",
 					"SARSAT",
 					"Argos",
 					"GNSS POD Receiver",
@@ -5996,10 +6030,10 @@
 					"HIRS/2",
 					"OSIRIS",
 					"HIRS/3",
-					"AMSU-A",
 					"MSU",
 					"TOVS",
 					"SSU",
+					"AMSU-A",
 					"ATOVS",
 					"ROSA",
 					"GNSS-RO Receiver",
@@ -6010,7 +6044,6 @@
 					"PlanetScope Camera",
 					"ATSR-1",
 					"VTIR",
-					"POLDER",
 					"MWR",
 					"ATSR-2",
 					"OLI-2",
@@ -6026,7 +6059,6 @@
 					"PRISM",
 					"HiRI",
 					"CZCS",
-					"SMMR",
 					"AVNIR",
 					"OCTS",
 					"OMI",
@@ -6048,10 +6080,10 @@
 					"LISS-4",
 					"TMI",
 					"HRVIR",
-					"MSI",
 					"PNEO",
 					"OLI",
 					"HiRAIS",
+					"MSI",
 					"AATSR",
 					"MERIS",
 					"GMI",
@@ -6063,7 +6095,9 @@
 					"VIRS",
 					"ASTER",
 					"AVHRR-1",
+					"POLDER",
 					"MWIR Imager",
+					"SMMR",
 					"VIRR",
 					"MISR",
 					"PS2",
@@ -6078,15 +6112,14 @@
 					"JMR",
 					"WINDSAT",
 					"WAF-P",
-					"MS",
-					"CERES",
 					"HSB",
 					"SAFIRE Gen 2",
+					"MS",
 					"ERBE",
 					"AIS",
+					"CERES",
 					"GOME-2",
 					"GOME",
-					"TOMS",
 					"TANSO-CAI-2",
 					"TANSO-FTS-2",
 					"SAGE-I",
@@ -6103,6 +6136,7 @@
 					"SCIAMACHY",
 					"ILAS",
 					"IMG",
+					"TOMS",
 					"HiRDLS",
 					"MLS",
 					"TES",
@@ -6233,18 +6267,12 @@
 					"Metop-C",
 					"Metop-A",
 					"Metop-B",
-					"FSSCat-A",
 					"PROBA-1",
 					"IRS-P6",
-					"IRS-R2",
-					"IRS-P8",
-					"IRS-P7",
 					"RADARSAT-2",
 					"RADARSAT-1",
-					"NOAA-12",
 					"ALOS-1",
 					"CASSIOPE",
-					"OceanSat-2",
 					"WorldView-1",
 					"WorldView-2",
 					"WorldView-3",
@@ -6254,10 +6282,6 @@
 					"MOS-1A",
 					"MOS-1B",
 					"Parasol-1",
-					"ERS-1",
-					"ERS-2",
-					"Seasat",
-					"ADEOS-I",
 					"Nimbus-7",
 					"Aeolus",
 					"Biomass",
@@ -6268,92 +6292,58 @@
 					"Swarm-B",
 					"Swarm-C",
 					"Swarm-A",
-					"FORUM",
 					"Landsat-9",
 					"Landsat-4",
 					"Landsat-5",
-					"NOAA-9",
-					"CryoSat-2",
-					"FORMOSAT-2",
 					"QuickBird-2",
 					"Sentinel-3B",
 					"Sentinel-3A",
 					"Landsat-1",
 					"Landsat-2",
 					"Landsat-3",
-					"FORMOSAT-3",
 					"SAOCOM-1A",
 					"SAOCOM-1B",
-					"Sentinel-1B",
 					"Sentinel-1C",
-					"Sentinel-1A",
 					"Sentinel-1D",
+					"Sentinel-1A",
+					"Sentinel-1B",
 					"Envisat",
 					"WindSat",
 					"OrbView-2",
 					"ODIN",
-					"NOAA-19",
 					"KOMPSAT-1",
-					"NOAA-15",
-					"NOAA-16",
-					"NOAA-17",
-					"NOAA-18",
 					"Pleiades-1A",
 					"Pleiades-1B",
 					"GOSAT-2",
 					"IRS-P3",
 					"KOMPSAT-2",
-					"Aura",
 					"QuikSCAT",
 					"UK-DMC-1",
-					"NOAA-11",
 					"SCISAT-1",
 					"Landsat-8",
 					"ALOS-2",
 					"Nimbus-4",
-					"HotSat-1",
 					"IRS-P5",
 					"Beijing-1",
-					"NovaSAR-1",
 					"SPOT-1",
-					"SPOT-2",
-					"SPOT-3",
-					"NOAA-7",
 					"IKONOS-2",
 					"Landsat-7",
 					"PROBA-V",
-					"TERRA",
-					"SPOT-5",
-					"NOAA-14",
-					"Jason-2",
 					"TanSat",
 					"GOSAT-1",
-					"AQUA",
-					"NOAA-6",
-					"Jason-1",
 					"JERS-1",
 					"GeoEye-1",
 					"Spire",
-					"SPOT-4",
 					"SPOT-6",
 					"SPOT-7",
 					"PAZ",
 					"Vision-1",
-					"GEOSAT-1",
-					"GEOSAT-2",
-					"GHGSat-D",
-					"GHGSat-C",
 					"NigeriaSat-1",
-					"NOAA-8",
-					"NOAA-13",
-					"Sentinel-5P",
 					"GPM",
 					"Sentinel-2C",
 					"Sentinel-2A",
 					"Sentinel-2B",
 					"ALTIUS",
-					"Electro-L",
-					"TIROS-N",
 					"GRACE-C",
 					"GRACE-D",
 					"GRACE-A",
@@ -6363,29 +6353,72 @@
 					"IRS-1D",
 					"TerraSAR-X",
 					"TanDEM-X",
-					"PlanetScope",
-					"Pleiades Neo-3",
+					"Dove",
+					"Dove-R",
+					"SuperDove",
 					"Pleiades Neo-4",
-					"COSMO-SkyMed-1",
+					"Pleiades Neo-3",
 					"COSMO-SkyMed-2",
 					"COSMO-SkyMed-4",
 					"COSMO-SkyMed-3",
+					"COSMO-SkyMed-1",
 					"ICEYE",
-					"SkyBee-1",
-					"SkyBee-2",
 					"RapidEye-1",
 					"RapidEye-2",
 					"RapidEye-3",
 					"RapidEye-4",
 					"RapidEye-5",
+					"ADEOS-I",
+					"Aura",
 					"FOREST-2",
-					"FSSCat-B",
-					"COSMO-SkyMed Second Generation-1",
-					"COSMO-SkyMed Second Generation-2",
+					"FORMOSAT-2",
 					"Hydrognss-A",
 					"Hydrognss-B",
+					"AQUA",
+					"NOAA-6",
+					"NOAA-8",
+					"NOAA-9",
+					"NovaSAR-1",
+					"OceanSat-2",
+					"SPOT-2",
+					"SPOT-3",
+					"SPOT-4",
+					"SPOT-5",
+					"TERRA",
+					"Sentinel-5P",
+					"HotSat-1",
 					"NOAA-10",
-					"BRO"
+					"NOAA-14",
+					"NOAA-15",
+					"NOAA-16",
+					"NOAA-17",
+					"NOAA-18",
+					"NOAA-7",
+					"TIROS-N",
+					"CryoSat-2",
+					"BRO",
+					"NOAA-11",
+					"NOAA-12",
+					"NOAA-19",
+					"NOAA-13",
+					"COSMO-SkyMed Second Generation-1",
+					"COSMO-SkyMed Second Generation-2",
+					"GEOSAT-1",
+					"GEOSAT-2",
+					"ERS-1",
+					"ERS-2",
+					"GHGSat-C",
+					"GHGSat-D",
+					"Seasat",
+					"SkyBee-1",
+					"SkyBee-2",
+					"FSSCat-A",
+					"FSSCat-B",
+					"IRS-P7",
+					"IRS-R2",
+					"Jason-1",
+					"Jason-2",
+					"IRS-P8"
 				]
 			},
 			"polarisation-channels-types": {
