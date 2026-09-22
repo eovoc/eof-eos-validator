@@ -808,32 +808,6 @@
 				"instrument"
 			]
 		},
-		"Offering": {
-			"title": "Offering",
-			"description": "Offering as defined in OGC 14-055r2",
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "string",
-					"format": "uri"
-				},
-				"operations": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Operation"
-					}
-				},
-				"contents": {
-					"type": "array"
-				},
-				"styles": {
-					"type": "array"
-				}
-			},
-			"required": [
-				"code"
-			]
-		},
 		"OrbitParameters": {
 			"description": "Subset of AcquisitionParameters",
 			"type": "object",
