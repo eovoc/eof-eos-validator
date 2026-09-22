@@ -843,46 +843,6 @@
 				}
 			}
 		},
-		"Operation": {
-			"description": "OGC 14-055r2",
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "string",
-					"format": "uri"
-				},
-				"method": {
-					"type": "string",
-					"enum": [
-						"GET",
-						"POST",
-						"PUT",
-						"HEAD",
-						"PATCH",
-						"DELETE"
-					]
-				},
-				"type": {
-					"description": "Media type",
-					"type": "string"
-				},
-				"href": {
-					"type": "string",
-					"format": "uri"
-				},
-				"request": {
-					"type": "object"
-				},
-				"result": {
-					"type": "object"
-				}
-			},
-			"required": [
-				"code",
-				"method",
-				"href"
-			]
-		},
 		"additional-rules": {
 			"instruments-mapping": {
 				"allOf": [
