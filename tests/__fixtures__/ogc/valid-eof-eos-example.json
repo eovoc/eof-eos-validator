@@ -48,7 +48,7 @@
 				"operationalMode": "PM",
 				"resolution": 2,
 				"acquisitionType": "NOMINAL",
-				"wavelengths": {
+				"waveLengths": {
 					"spectralRange": "VIS"
 				},
 				"acquisitionAngles": {
