@@ -10,7 +10,7 @@ export default function DocumentationPanel(){
 
                 {/*EOF-EOS Schema Documentation*/}
                 <li> <a className="documentation-link" title="EOF-EOS Schema Documentation"
-                        href="https://json-schema.app/view/%23?url=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema.json"
+                        href="https://json-schema.app/view/%23?url=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"
                         target="_blank" rel="noreferrer">EOF-EOS Schema Documentation</a>
                 </li>
             </ul>
