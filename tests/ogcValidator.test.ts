@@ -47,21 +47,7 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
     expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
   });
 
-  it("acquisitionParameters forbid additional properties", async () => {
-    const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters.newProperty = "new value";
-
-    const result = await ogcValidator(modifiedExample);
-
-    //properties.newProperty should not be accepted.
-    expect(result.valid).toBe(false);
-    expect(
-        result.results[0].errors?.some(
-            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
-        )
-    ).toBe(true);
-  });
-
+  //ADDITIONAL Properties - root
   it("root properties forbid additional properties", async () => {
     const modifiedExample = JSON.parse(JSON.stringify(validExample));
     modifiedExample.properties.newProperty = modifiedExample.properties.status;
@@ -75,6 +61,150 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
       result.results[0].errors?.some(
         (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
       )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - ProductInformation
+  it("ProductInformation forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.productInformation.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - Links
+  it("Links forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.links.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - Link
+  it("Link forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.links.measurements.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - AcquisitionInformation
+  it("AcquisitionInformation forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - Platform
+  it("Platform forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].platform.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - Instrument
+  it("Instrument forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].instrument.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - AcquisitionParameters
+  it("AcquisitionParameters forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters[0].newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - AcquisitionAngles
+  it("AcquisitionAngles forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters[0].acquisitionAngles.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
+    ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - WavelengthInformation
+  it("WavelengthInformation forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters[0].waveLengths.newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should not be accepted.
+    expect(result.valid).toBe(false);
+    expect(
+        result.results[0].errors?.some(
+            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
+        )
     ).toBe(true);
   });
 
