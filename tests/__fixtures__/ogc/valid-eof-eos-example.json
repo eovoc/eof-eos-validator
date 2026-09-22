@@ -106,12 +106,12 @@
 					"category": "DATA"
 				}
 			],
-			"preview": [
+			"previews": [
 				{
 					"href": "preview/GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001.PNG",
 					"type": "image/png",
 					"title": "Product browse",
-					"category": "overview (TBD as above)"
+					"category": "OVERVIEW"
 				}
 			]
 		}
