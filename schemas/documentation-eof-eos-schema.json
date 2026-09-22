@@ -1,9 +1,26 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://eovoc.github.io/eof-eos-validator/schemas/eof-eos-schema-soft.json",
 	"title": "GeoJSON encoding of OGC 17-003 Earth Observation Metadata",
 	"description": "Definition of EOF-EOS Metadata model derived from OGC 17-003r2.",
 	"$ref": "#/definitions/EarthObservation",
 	"definitions": {
+		"MetadataInformation": {
+			"description": "Subset of Properties",
+			"type": "object",
+			"properties": {
+				"lang": {
+					"description": "RFC3066",
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 3
+				},
+				"creationDate": {
+					"type": "string",
+					"format": "date-time"
+				}
+			}
+		},
 		"DataIdentification": {
 			"description": "Subset of Properties",
 			"type": "object",
@@ -40,7 +57,7 @@
 					"type": "array",
 					"uniqueItems": true,
 					"items": {
-						"$ref": "mdj.json#/definitions/LI_Lineage"
+						"$ref": "https://eovoc.github.io/eof-eos-validator/schemas/mdj.json#/definitions/LI_Lineage"
 					}
 				},
 				"processingLevel": {
@@ -684,7 +701,7 @@
 		"QualityInformation": {
 			"anyOf": [
 				{
-					"$ref": "dqc.json#/definitions/DataQuality"
+					"$ref": "https://eovoc.github.io/eof-eos-validator/schemas/dqc.json#/definitions/DataQuality"
 				},
 				{
 					"type": "object",
@@ -808,6 +825,32 @@
 				"instrument"
 			]
 		},
+		"Offering": {
+			"title": "Offering",
+			"description": "Offering as defined in OGC 14-055r2",
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string",
+					"format": "uri"
+				},
+				"operations": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Operation"
+					}
+				},
+				"contents": {
+					"type": "array"
+				},
+				"styles": {
+					"type": "array"
+				}
+			},
+			"required": [
+				"code"
+			]
+		},
 		"OrbitParameters": {
 			"description": "Subset of AcquisitionParameters",
 			"type": "object",
@@ -836,6 +879,46 @@
 					"type": "number"
 				}
 			}
+		},
+		"Operation": {
+			"description": "OGC 14-055r2",
+			"type": "object",
+			"properties": {
+				"code": {
+					"type": "string",
+					"format": "uri"
+				},
+				"method": {
+					"type": "string",
+					"enum": [
+						"GET",
+						"POST",
+						"PUT",
+						"HEAD",
+						"PATCH",
+						"DELETE"
+					]
+				},
+				"type": {
+					"description": "Media type",
+					"type": "string"
+				},
+				"href": {
+					"type": "string",
+					"format": "uri"
+				},
+				"request": {
+					"type": "object"
+				},
+				"result": {
+					"type": "object"
+				}
+			},
+			"required": [
+				"code",
+				"method",
+				"href"
+			]
 		},
 		"thesaurus": {
 			"acquisition-station-types": {
