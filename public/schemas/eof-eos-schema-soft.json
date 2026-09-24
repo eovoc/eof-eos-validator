@@ -523,6 +523,12 @@
 						"resolution": {
 							"type": "number"
 						},
+						"azimuthResolution": {
+							"type": "number"
+						},
+						"rangeResolution": {
+							"type": "number"
+						},
 						"verticalResolution": {
 							"description": "Atm, Lmb",
 							"type": "number"
