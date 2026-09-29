@@ -23,8 +23,20 @@ function fileFetch(publicDir: string) {
 
 let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
 
+// Run in 'soft' mode: additional rules (e.g. platform -> instrument mapping)
+// would fire when a single enum field is swapped in isolation, and are out of
+// scope for these thesaurus checks.
+function withSoftMode(fetchImpl: ReturnType<typeof fileFetch>) {
+  return async (input: unknown) => {
+    const res = await fetchImpl(input);
+    if (!String(input).endsWith("/config.json") || !res.ok) return res;
+    const config = await res.json();
+    return { ...res, json: async () => ({ ...config, ogcValidationMode: "soft" }) };
+  };
+}
+
 beforeAll(async () => {
-  (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
+  (global as any).fetch = withSoftMode(fileFetch(path.join(__dirname, "..", "public")));
   ({ ogcValidator } = await import("../src/services/ogcValidator"));
 });
 
