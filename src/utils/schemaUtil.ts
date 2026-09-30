@@ -31,7 +31,7 @@ export async function getValidationSchemaPath(): Promise<string> {
             schemaPath = ogcSoftValidationSchema;
             break;
         default:
-            console.log(`Invalid ogcValidationMode: ${ogcValidationMode}, loaing schema default to NORMAL schema.`);
+            console.log(`Invalid ogcValidationMode: ${ogcValidationMode}, loading schema default to NORMAL schema.`);
             schemaPath = ogcValidationSchema;
     }
     return `${BASE}/${schemaPath}`;
