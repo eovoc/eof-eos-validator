@@ -21,6 +21,13 @@ Those scripts should be used in the following order:
 2. convert-rdf.sh
 3. update-instruments-mapping.sh
 
+2 more scripts derive the validation-mode variants of `eof-eos-schema.json`
+(see [Generate the strict and soft schema variants](#generate-the-strict-and-soft-schema-variants)):
+- generate-strict-schema.sh: generate `eof-eos-schema-strict.json`, forbidding unknown properties.
+- generate-soft-schema.sh: generate `eof-eos-schema-soft.json`, without the additional rules.
+
+Run them after the 3 scripts above (and after any manual edit of `eof-eos-schema.json`).
+
 ## Usage
 
 ### Convert a single RDF/XML file
@@ -181,9 +188,10 @@ per platform, sorted by `platformShortName`:
 }
 ```
 
-This is the same shape as the placeholder `allOf` (made-up
-`PLAT_A`/`PLAT_B`/`PLAT_C`, `INSTR_1..4` values) inside the
-`AcquisitionInformation` definition in `public/schemas/eof-eos-schema.json`.
+This is the shape of `definitions.additional-rules.instruments-mapping` in
+`public/schemas/eof-eos-schema.json`, which the `AcquisitionInformation`
+definition applies through
+`"allOf": [{ "$ref": "#/definitions/additional-rules/instruments-mapping" }]`.
 `platformShortName`/`instrumentShortName` values are `skos:prefLabel`,
 matching the enums generated from `scripts/rdf/platforms.rdf` and
 `scripts/rdf/instruments.rdf`. Note `sosa:isHostedBy` links point at
@@ -192,29 +200,36 @@ satellite-family concept (e.g. "Metop") — this stays at that same
 fine-grained instance level, matching the source data as-is.
 
 `embed-instruments-mapping.js` embeds that `allOf` schema into
-`public/schemas/eof-eos-schema-strict.json` as
-`definitions.instruments-mapping` (kept last among definitions, and
-replaced in place on re-runs rather than duplicated — same pattern as
-`embed-thesaurus-schema.js`/`definitions.thesaurus`):
+`public/schemas/eof-eos-schema.json` as
+`definitions.additional-rules.instruments-mapping`, replacing any previous
+mapping on re-runs rather than duplicating it (other entries of
+`definitions.additional-rules` are kept). `definitions.additional-rules`
+must already exist in the target schema:
 
 ```bash
-node scripts/embed-instruments-mapping.js <instruments-mapping.json> <eof-eos-schema-strict.json>
+node scripts/embed-instruments-mapping.js <instruments-mapping.json> <eof-eos-schema.json>
 ```
 
 `update-instruments-mapping.sh` chains both steps — regenerate the mapping
 from `esa-thesauri.rdf` into `scripts/mapping/platform-instruments-allof.json`,
-then re-embed it into `eof-eos-schema-strict.json` — in one go:
+then re-embed it into `eof-eos-schema.json` — in one go:
 
 ```bash
-./scripts/update-instruments-mapping.sh [input.rdf] [eof-eos-schema-strict.json]
+./scripts/update-instruments-mapping.sh [input.rdf] [eof-eos-schema.json]
 ```
 
 Both arguments are optional, defaulting to `scripts/skosmos/esa-thesauri.rdf`
-and `public/schemas/eof-eos-schema-strict.json` respectively. The
+and `public/schemas/eof-eos-schema.json` respectively. The
 intermediate `scripts/mapping/platform-instruments-allof.json` is kept
 alongside the script output (rather than in `scripts/rdf/`, which holds
 the SKOS enum sources `convert-rdf.sh` consumes) since it's a derived
 cross-reference artifact, not a thesaurus enum source.
+
+The mapping is not embedded into `eof-eos-schema-strict.json` directly:
+regenerate the strict and soft variants afterwards (see
+[Generate the strict and soft schema variants](#generate-the-strict-and-soft-schema-variants)),
+so the strict schema picks up the new mapping and the soft schema keeps
+leaving it out.
 
 ### Convert every RDF/XML thesaurus at once
 
@@ -263,3 +278,77 @@ sequence:
 To add a new RDF/XML thesaurus export, drop it into `scripts/rdf/` and
 re-run `convert-rdf.sh` this regenerates `thesaurus.json` and refreshes
 the `definitions.thesaurus` section in `eof-eos-schema.json` to match.
+
+### Generate the strict and soft schema variants
+
+The app validates OGC records against one of three schemas, picked by
+`ogcValidationMode` in `public/config.json` (see
+`getValidationSchemaPath()` in `src/utils/schemaUtil.ts`):
+
+| Mode     | Config key                  | Schema                     |
+|----------|-----------------------------|----------------------------|
+| `strict` | `ogcStrictValidationSchema` | `eof-eos-schema-strict.json` |
+| `normal` | `ogcValidationSchema`       | `eof-eos-schema.json`        |
+| `soft`   | `ogcSoftValidationSchema`   | `eof-eos-schema-soft.json`   |
+
+An unknown mode falls back to `normal`. `eof-eos-schema.json` is the source
+of truth: the strict and soft variants are generated from it and must not
+be edited by hand. Re-generate both whenever `eof-eos-schema.json` changes
+— including after `convert-rdf.sh` or `update-instruments-mapping.sh`.
+
+Both scripts write their output with the same formatting as
+`eof-eos-schema.json` (tab indentation, CRLF line endings), and leave the
+input file untouched.
+
+#### `generate-strict-schema.js` — forbid unknown properties
+
+Adds `"unevaluatedProperties": false` to every object definition in
+`definitions`, so properties the schema doesn't declare are reported as
+errors. Two kinds of definitions are left as they are:
+
+- definitions that already set `additionalProperties` or
+  `unevaluatedProperties` themselves;
+- "fragment" definitions, i.e. those referenced as
+  `"$ref": "#/definitions/X"` from an in-place applicator (`allOf`,
+  `anyOf`, `oneOf`, `not`, `if`, `then`, `else`). They are merged with
+  sibling schemas describing the same object, so closing them would reject
+  the properties those siblings declare. The enclosing definition's
+  `unevaluatedProperties` still covers them.
+
+```bash
+./scripts/generate-strict-schema.sh [input.json] [output.json]
+# or
+node scripts/generate-strict-schema.js [input.json] [output.json]
+```
+
+- `input.json` — optional; defaults to `public/schemas/eof-eos-schema.json`.
+- `output.json` — optional; defaults to `public/schemas/eof-eos-schema-strict.json`.
+
+The script prints the names of the definitions it closed.
+
+#### `generate-soft-schema.js` — drop the additional rules
+
+Removes the checks that go beyond the record's structure — currently the
+platform/instrument mapping (see
+[Generate the platform/instrument `allOf` constraint](#generate-the-platforminstrument-allof-constraint)):
+
+- deletes `definitions.additional-rules`;
+- removes the `allOf` entries of `definitions.AcquisitionInformation` that
+  reference `#/definitions/additional-rules/...`, and the `allOf` itself
+  once empty (leaving the reference would break schema compilation).
+
+Everything else, including any `unevaluatedProperties` already in
+`eof-eos-schema.json`, is kept as is.
+
+```bash
+./scripts/generate-soft-schema.sh [input.json] [output.json]
+# or
+node scripts/generate-soft-schema.js [input.json] [output.json]
+```
+
+- `input.json` — optional; defaults to `public/schemas/eof-eos-schema.json`.
+- `output.json` — optional; defaults to `public/schemas/eof-eos-schema-soft.json`.
+
+If new additional rules are added under `definitions.additional-rules` and
+referenced outside `AcquisitionInformation`, update this script to remove
+those references too.
