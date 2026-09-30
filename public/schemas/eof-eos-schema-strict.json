@@ -341,7 +341,8 @@
 						"$ref": "#/definitions/Link"
 					}
 				}
-			}
+			},
+			"unevaluatedProperties": false
 		},
 		"Properties": {
 			"title": "Properties",
@@ -375,7 +376,8 @@
 				{
 					"$ref": "#/definitions/DataIdentification"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"EarthObservation": {
 			"description": "GeoJSON Feature",
@@ -566,7 +568,8 @@
 				{
 					"$ref": "#/definitions/OrbitParameters"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"Link": {
 			"type": "object",
@@ -628,7 +631,8 @@
 				{
 					"$ref": "#/definitions/CoverageDescription"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"AcquisitionAngles": {
 			"type": "object",
@@ -812,7 +816,8 @@
 					"$comment": "Rules defining platform/instruments relationship",
 					"$ref": "#/definitions/additional-rules/instruments-mapping"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"OrbitParameters": {
 			"description": "Subset of AcquisitionParameters",
