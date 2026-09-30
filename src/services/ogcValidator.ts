@@ -3,6 +3,7 @@ import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
+import {getValidationSchemaPath, STATIC_SCHEMAS} from "../utils/schemaUtil";
 
 const ajv = new Ajv2019({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -11,14 +12,7 @@ addFormats(ajv);
 // but only knows the 2019-09 meta-schema: register draft-07 so "$schema": draft-07 schemas resolve.
 ajv.addMetaSchema(draft7MetaSchema);
 
-// Schema files are served from /schemas/ as static assets
-const BASE = process.env.PUBLIC_URL ?? "";
-
-const STATIC_SCHEMAS = [
-  `${BASE}/schemas/mdj.json`,
-  `${BASE}/schemas/dqc.json`,
-];
-
+//Add schemas required by the main schema
 const schemasReady: Promise<void> = (async () => {
   for (const path of STATIC_SCHEMAS) {
     try {
@@ -30,10 +24,11 @@ const schemasReady: Promise<void> = (async () => {
   }
 })();
 
+//Load the main schema.
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const { ogcValidationSchema } = await getConfig();
-  const VALIDATION_SCHEMA = `${BASE}/${ogcValidationSchema}`;
+  const { ogcValidationMode } = await getConfig();
+  const VALIDATION_SCHEMA = await getValidationSchemaPath();
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
   mainSchema = await res.json();
@@ -87,7 +82,7 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
-  const { ogcValidationMode, ogcValidationSchema } = await getConfig();
+  const { ogcValidationMode } = await getConfig();
 
   const validate = ajv.compile(mainSchema);
   validate(data);
@@ -95,6 +90,6 @@ export async function ogcValidator(data: unknown): Promise<ValidationReport> {
   console.log("Validation Mode:",ogcValidationMode);
   const validationReport = filterErrors(validate.errors,ogcValidationMode);
 
-  const result = { valid: validationReport.isValid, schema: `${BASE}/${ogcValidationSchema}`, errors: validationReport.errors ?? null, warnings : validationReport.warnings};
+  const result = { valid: validationReport.isValid, schema: await getValidationSchemaPath(), errors: validationReport.errors ?? null, warnings : validationReport.warnings};
   return { valid:validationReport.isValid, results: [result]};
 }

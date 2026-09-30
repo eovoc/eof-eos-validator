@@ -69,7 +69,7 @@ describe("ogcValidator tests for additional properties", () => {
   //ADDITIONAL Properties - Link
   it("Link allows additional properties", async () => {
     const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.links.measurements.newProperty = "new value";
+    modifiedExample.properties.links.measurements[0].newProperty = "new value";
 
     const result = await ogcValidator(modifiedExample);
 

@@ -13,6 +13,10 @@ interface AppConfig {
   converterUrl: string;
   // ogcValidationSchema property, name of the jsonschema used for ogc validation.
   ogcValidationSchema: string;
+  // ogcStrictValidationSchema property, name of the jsonschema used for ogc validation in 'strict' mode
+  // (generated from ogcValidationSchema by scripts/generate-strict-schema.sh).
+  ogcStrictValidationSchema: string;
+  ogcSoftValidationSchema: string;
   // ogcValidationMode property: determine strictness level of the OGC validation.
   ogcValidationMode: OgcValidationMode;
 }
