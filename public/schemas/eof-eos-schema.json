@@ -375,8 +375,7 @@
 				{
 					"$ref": "#/definitions/DataIdentification"
 				}
-			],
-			"unevaluatedProperties": false
+			]
 		},
 		"EarthObservation": {
 			"description": "GeoJSON Feature",
