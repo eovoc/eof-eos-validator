@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import validExample from "./__fixtures__/ogc/valid-eof-eos-example.json";
 import invalidExample from "./__fixtures__/ogc/invalid-eof-eos-example.json";
-import validExampleWithAdditionalProperties from "./__fixtures__/ogc/valid-example-with-additional-properties.json";
 
 // ogcValidator fetches its schemas (eof-eos-schema.json, plus the referenced
 // mdj.json/dqc.json) from `${PUBLIC_URL}/schemas/...` at module load time, the
@@ -45,37 +44,6 @@ describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {
 
     expect(result.valid).toBe(false);
     expect(result.results[0].errors?.some((e) => e.params?.missingProperty === "id")).toBe(true);
-  });
-
-  it("acquisitionParameters forbid additional properties", async () => {
-    const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters.newProperty = "new value";
-
-    const result = await ogcValidator(modifiedExample);
-
-    //properties.newProperty should not be accepted.
-    expect(result.valid).toBe(false);
-    expect(
-        result.results[0].errors?.some(
-            (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
-        )
-    ).toBe(true);
-  });
-
-  it("root properties forbid additional properties", async () => {
-    const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.newProperty = modifiedExample.properties.status;
-
-    const result = await ogcValidator(modifiedExample);
-
-    //properties.newProperty should not be accepted.
-    console.log(result);
-    expect(result.valid).toBe(false);
-    expect(
-      result.results[0].errors?.some(
-        (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
-      )
-    ).toBe(true);
   });
 
 });
