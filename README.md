@@ -17,7 +17,7 @@ npm install ajv ajv-cli
 ### Execution
 Open resources/example in a terminal and execute the following command:
 ```shell
-ajv validate -d "example-biomass.json" -s "eo-geojson-schema-standalone-flexible-draft07.json" --strict=false -r "dqc.json" -r "mdj.json"
+ajv validate --spec=draft2019 -c ajv-formats     -m "public/schemas/json-schema-draft-07.json"     -s "public/schemas/eof-eos-schema-strict.json"     -r "public/schemas/dqc.json" -r "public/schemas/mdj.json"     -d "resources/example/Example_Wrong.json" --all-errors
 ```
 
 ## Web application
