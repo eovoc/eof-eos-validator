@@ -712,7 +712,9 @@
 						"qualityDegradationQuotationMode": {
 							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 						}
-					}
+					},
+					"minProperties": 1,
+					"additionalProperties": false
 				}
 			]
 		},
