@@ -18,7 +18,7 @@ export default function DocumentationPanel(){
             <h2>Schemas</h2>
             <ul>
                 {/*EOF-EOS Schema*/}
-                <li> <a className="documentation-link" title="EOF-EOS Schema" href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema.json`} target="_blank" rel="noreferrer">EOF-EOS Schema</a></li>
+                <li> <a className="documentation-link" title="EOF-EOS Schema" href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`} target="_blank" rel="noreferrer">EOF-EOS Schema</a></li>
 
                 {/*ISO19115-4 Schemas*/}
                 <li>
