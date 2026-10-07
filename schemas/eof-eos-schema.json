@@ -533,7 +533,7 @@
 							"description": "Atm, Lmb",
 							"type": "number"
 						},
-						"waveLengths": {
+						"wavelengths": {
 							"type": "array",
 							"minItems": 1,
 							"items": {
