@@ -335,7 +335,7 @@
 						"$ref": "#/definitions/Link"
 					}
 				},
-				"condition": {
+				"conditions": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Link"
