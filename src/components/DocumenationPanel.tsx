@@ -30,6 +30,13 @@ export default function DocumentationPanel(){
                 </li>
 
             </ul>
+
+            <h2>CLI Documentation</h2>
+            <ul>
+                <li>
+                    <a className="documentation-link" title="CLI Documentation" href={`#/cli`} target="_blank" rel="noreferrer">CLI Documentation</a>
+                </li>
+            </ul>
         </>
     );
 }

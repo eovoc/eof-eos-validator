@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import OgcValidatorPage from "./pages/OgcValidatorPage";
 import StacConverterPage from "./pages/StacConverterPage";
+import CliDocumentationPage from "./pages/CliDocumentationPage";
 
 export type JsonFileContextType = { content: unknown; setContent: (c: unknown) => void };
 
@@ -20,6 +21,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<OgcValidatorPage />} />
             <Route path="/converter" element={<StacConverterPage />} />
+            <Route path="/cli" element={<CliDocumentationPage />} />
           </Routes>
         </div>
       </HashRouter>
