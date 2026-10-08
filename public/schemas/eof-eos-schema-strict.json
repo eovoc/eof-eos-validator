@@ -581,7 +581,8 @@
 			"type": "object",
 			"properties": {
 				"href": {
-					"type": "string"
+					"type": "string",
+					"pattern": "^.+$"
 				},
 				"type": {
 					"$ref": "#/definitions/thesaurus/link-types"
