@@ -9,6 +9,14 @@ JSON Schema enums, then wires those enums into `eof-eos-schema.json` so
 
 - Node.js (v16+; tested with v22)
 
+## Structure
+
+The script folder contains sub-folders, each dedicated to one purpose:
+- additional-rules: script used to add additional rules to the validation schem (instruments/platform relationship enforcement)
+- convert: scripts used to convert rdf files to the json schema
+- diff: script used to list differences between the schema and the old one.
+- schema-variations: script used to generate schema variants (strict and soft variations of the json schema).
+
 ## Conversion scripts structure
 
 3 convenience scripts are available for converting RDF files to jsonschema:
@@ -21,7 +29,7 @@ Those scripts should be used in the following order:
 2. convert-rdf.sh
 3. update-instruments-mapping.sh
 
-2 more scripts derive the validation-mode variants of `eof-eos-schema.json`
+2 more scripts derive the validation-mode variants of `eof-eos-schema.json` 
 (see [Generate the strict and soft schema variants](#generate-the-strict-and-soft-schema-variants)):
 - generate-strict-schema.sh: generate `eof-eos-schema-strict.json`, forbidding unknown properties.
 - generate-soft-schema.sh: generate `eof-eos-schema-soft.json`, without the additional rules.
@@ -29,6 +37,10 @@ Those scripts should be used in the following order:
 Run them after the 3 scripts above (and after any manual edit of `eof-eos-schema.json`).
 
 ## Usage
+
+TODO
+
+## Details
 
 ### Convert a single RDF/XML file
 
