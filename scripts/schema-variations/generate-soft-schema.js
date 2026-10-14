@@ -20,7 +20,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SCHEMAS_DIR = path.resolve(__dirname, "..", "public", "schemas");
+const SCHEMAS_DIR = path.resolve(__dirname, "..","..", "public", "schemas");
 
 function main() {
   const [, , inputArg, outputArg] = process.argv;

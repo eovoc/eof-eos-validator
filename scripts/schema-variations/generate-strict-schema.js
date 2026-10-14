@@ -19,7 +19,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SCHEMAS_DIR = path.resolve(__dirname, "..", "public", "schemas");
+const SCHEMAS_DIR = path.resolve(__dirname, "..","..", "public", "schemas");
 
 const IN_PLACE_APPLICATORS = ["allOf", "anyOf", "oneOf", "not", "if", "then", "else"];
 

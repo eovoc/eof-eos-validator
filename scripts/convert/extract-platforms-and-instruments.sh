@@ -2,8 +2,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RDF_DIR="$SCRIPT_DIR/rdf"
-SKOSMOS_FILE="${1:-$SCRIPT_DIR/skosmos/esa-thesauri.rdf}"
+RDF_DIR="$SCRIPT_DIR/../../resources/rdf"
+SKOSMOS_FILE="${1:-$SCRIPT_DIR/../../resources/skosmos/esa-thesauri.rdf}"
 
 node "$SCRIPT_DIR/extract-thesaurus-scheme.js" \
   "$SKOSMOS_FILE" \

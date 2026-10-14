@@ -8,6 +8,7 @@ const path = require("path");
 const OLD_SCHEMA_PATH = path.resolve(
   __dirname,
   "..",
+  "..",
   "public",
   "schemas",
   "backup",
@@ -16,6 +17,7 @@ const OLD_SCHEMA_PATH = path.resolve(
 
 const SCHEMA_PATH = path.resolve(
   __dirname,
+  "..",
   "..",
   "public",
   "schemas",
