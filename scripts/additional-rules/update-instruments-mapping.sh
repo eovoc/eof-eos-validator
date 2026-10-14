@@ -3,8 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RESOURCES_DIR="$SCRIPT_DIR/../../resources"
-SKOSMOS_FILE="${1:-$SCRIPT_DIR/skosmos/esa-thesauri.rdf}"
-STRICT_SCHEMA="${2:-$SCRIPT_DIR/../../public/schemas/eof-eos-schema.json}"
+SKOSMOS_FILE="${1:-$RESOURCES_DIR/skosmos/esa-thesauri.rdf}"
+STRICT_SCHEMA="${2:-$SCRIPT_DIR/../../public/schemas/eof-eos-schema-strict-additional-rules.json}"
 
 node "$SCRIPT_DIR/build-platform-instruments-mapping.js" \
   "$SKOSMOS_FILE" \
