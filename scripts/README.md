@@ -17,7 +17,11 @@ The script folder contains sub-folders, each dedicated to one purpose:
 - diff: script used to list differences between the schema and the old one.
 - schema-variations: script used to generate schema variants (strict and soft variations of the json schema).
 
-## Conversion scripts structure
+## Usage 
+
+### Conversion scripts structure
+
+**NB: Please refer to the  [Diff checker script](#Diff-checker-script) section before executing the conversion script.**
 
 3 convenience scripts are available for converting RDF files to jsonschema:
 - convert/convert-rdf.sh: convert a rdf file to jsonschema
@@ -29,16 +33,21 @@ Those scripts should be used in the following order:
 2. convert-rdf.sh
 3. update-instruments-mapping.sh
 
+### Schema variation scripts
 2 more scripts derive the validation-mode variants of `eof-eos-schema.json` 
 (see [Generate the strict and soft schema variants](#generate-the-strict-and-soft-schema-variants)):
 - generate-strict-schema.sh: generate `eof-eos-schema-strict.json`, forbidding unknown properties.
 - generate-soft-schema.sh: generate `eof-eos-schema-soft.json`, without the additional rules.
 
-Run them after the 3 scripts above (and after any manual edit of `eof-eos-schema.json`).
+Run them after the conversion scripts above (and after any manual edit of `eof-eos-schema.json`).
 
-## Usage
+### Diff checker script
 
-TODO
+The script `diff/print-thesaurus-enums.sh` can generate the difference (addition/removal) between an old thesaurus and a newer one:
+- The old thesaurus must be located at `public/schemas/backup/old-thesaurus.json`
+- The new thesaurus must be located at `public/schemas/thesaurus-rdf/thesaurus.json`
+
+This script should be used by replacing the old thesaurus with the current one `public/schemas/thesaurus-rdf/thesaurus.json`, before executing the conversion scripts.
 
 ## Details
 
