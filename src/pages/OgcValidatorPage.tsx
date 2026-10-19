@@ -3,12 +3,14 @@ import { useNavigate } from "react-router";
 import { ogcValidator } from "../services/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import {ValidationReport} from "../services/ValidationResult";
-import { JsonFileContext } from "../App";
+import {JsonFileContext, SettingsFileContext} from "../App";
 import DocumentationPanel from "../components/DocumenationPanel";
 import ValidationReportPanel from "../components/ValidationReportPanel";
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
+  const { settings } = useContext(SettingsFileContext)!;
+
   const [result, setResult] = useState<ValidationReport | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
