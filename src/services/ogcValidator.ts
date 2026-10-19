@@ -27,7 +27,6 @@ const schemasReady: Promise<void> = (async () => {
 //Load the main schema.
 let mainSchema: any;
 const mainSchemaReady: Promise<void> = (async () => {
-  const { ogcValidationMode } = await getConfig();
   const VALIDATION_SCHEMA = await getValidationSchemaPath();
   const res = await fetch(VALIDATION_SCHEMA);
   if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
