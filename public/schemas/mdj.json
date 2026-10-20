@@ -1257,7 +1257,7 @@
 				"dataQualityInfo": {
 					"type": "array",
 					"items": {
-						"$ref": "dqc.json#definitions/DataQuality"
+						"$ref": "dqc.json#/definitions/DataQuality"
 					},
 					"uniqueItems": true
 				},
