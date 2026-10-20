@@ -815,7 +815,7 @@
 			"required": [
 				"platform",
 				"instrument"
-			],
+			]
 		},
 		"OrbitParameters": {
 			"description": "Subset of AcquisitionParameters",
