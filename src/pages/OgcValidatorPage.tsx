@@ -22,7 +22,7 @@ export default function OgcValidatorPage() {
   //Reset validation result when content has changed.
   useEffect(() => {
     setResult(null);
-  }, [content]);
+  }, [content, settings]);
 
 
   async function handleValidate() {
@@ -32,7 +32,7 @@ export default function OgcValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await ogcValidator(content);
+      const result = await ogcValidator(content, settings?.mandatoryProperties ?? []);
       console.log("[validator] done", result);
       setResult(result);
 

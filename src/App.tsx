@@ -5,16 +5,17 @@ import NavBar from "./components/NavBar";
 import OgcValidatorPage from "./pages/OgcValidatorPage";
 import StacConverterPage from "./pages/StacConverterPage";
 import SettingsPage from "./pages/SettingsPage";
+import { Settings } from "./types/Settings";
 
 export type JsonFileContextType = { content: unknown; setContent: (c: unknown) => void };
-export type SettingsContextType = { settings: unknown; setSettings: (c: unknown) => void };
+export type SettingsContextType = { settings: Settings | null; setSettings: (s: Settings | null) => void };
 
 export const JsonFileContext = createContext<JsonFileContextType | null>(null);
 export const SettingsFileContext = createContext<SettingsContextType | null>(null);
 
 export default function App() {
   const [content, setContent] = useState<unknown>(null);
-  const [settingsContent, setSettingsContent] = useState<unknown>(null);
+  const [settingsContent, setSettingsContent] = useState<Settings | null>(null);
 
   return (
     <JsonFileContext.Provider value={{ content, setContent }}>

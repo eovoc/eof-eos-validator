@@ -3,7 +3,7 @@ import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
-import {getValidationSchemaPath, STATIC_SCHEMAS} from "../utils/schemaUtil";
+import {enforcePropertyAsMandatory, getValidationSchemaPath, STATIC_SCHEMAS} from "../utils/schemaUtil";
 
 const ajv = new Ajv2019({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -77,14 +77,20 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
   return { isValid: isValid,errors: errors, warnings: warnings};
 }
 
-export async function ogcValidator(data: unknown): Promise<ValidationReport> {
+export async function ogcValidator(data: unknown, mandatoryProperties: string[] = []): Promise<ValidationReport> {
 
   await schemasReady;
   await mainSchemaReady;
   const { ogcValidationMode } = await getConfig();
 
-  const validate = ajv.compile(mainSchema);
+  //Use a schema with the user-defined mandatory properties added as required, if any.
+  const customSchema = mandatoryProperties.length > 0 ? await enforcePropertyAsMandatory(mandatoryProperties) : null;
+  console.log("Mandatory properties:", mandatoryProperties);
+
+  const validate = ajv.compile(customSchema ?? mainSchema);
   validate(data);
+  //The custom schema is rebuilt on each validation: drop it from the ajv cache.
+  if (customSchema) ajv.removeSchema(customSchema);
 
   console.log("Validation Mode:",ogcValidationMode);
   const validationReport = filterErrors(validate.errors,ogcValidationMode);
