@@ -4,22 +4,6 @@
 	"description": "Definition of EOF-EOS Metadata model derived from OGC 17-003r2.",
 	"$ref": "#/definitions/EarthObservation",
 	"definitions": {
-		"MetadataInformation": {
-			"description": "Subset of Properties",
-			"type": "object",
-			"properties": {
-				"lang": {
-					"description": "RFC3066",
-					"type": "string",
-					"minLength": 2,
-					"maxLength": 3
-				},
-				"creationDate": {
-					"type": "string",
-					"format": "date-time"
-				}
-			}
-		},
 		"DataIdentification": {
 			"description": "Subset of Properties",
 			"type": "object",
@@ -123,7 +107,7 @@
 			"additionalProperties": false
 		},
 		"MultiPoint": {
-			"title": "point",
+			"title": "MultiPoint",
 			"type": "object",
 			"properties": {
 				"coordinates": {
@@ -351,13 +335,14 @@
 						"$ref": "#/definitions/Link"
 					}
 				},
-				"condition": {
+				"conditions": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Link"
 					}
 				}
-			}
+			},
+			"unevaluatedProperties": false
 		},
 		"Properties": {
 			"title": "Properties",
@@ -391,7 +376,8 @@
 				{
 					"$ref": "#/definitions/DataIdentification"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"EarthObservation": {
 			"description": "GeoJSON Feature",
@@ -499,10 +485,10 @@
 						"relativeOrbitNumber": {
 							"type": "integer"
 						},
-						"wrsLongitude": {
+						"wrsLongitudeGrid": {
 							"type": "string"
 						},
-						"wrsLatitude": {
+						"wrsLatitudeGrid": {
 							"type": "string"
 						},
 						"tileId": {
@@ -539,11 +525,17 @@
 						"resolution": {
 							"type": "number"
 						},
+						"azimuthResolution": {
+							"type": "number"
+						},
+						"rangeResolution": {
+							"type": "number"
+						},
 						"verticalResolution": {
 							"description": "Atm, Lmb",
 							"type": "number"
 						},
-						"waveLengths": {
+						"wavelengths": {
 							"type": "array",
 							"minItems": 1,
 							"items": {
@@ -582,13 +574,15 @@
 				{
 					"$ref": "#/definitions/OrbitParameters"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"Link": {
 			"type": "object",
 			"properties": {
 				"href": {
-					"type": "string"
+					"type": "string",
+					"pattern": "^.+$"
 				},
 				"type": {
 					"$ref": "#/definitions/thesaurus/link-types"
@@ -644,7 +638,8 @@
 				{
 					"$ref": "#/definitions/CoverageDescription"
 				}
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"AcquisitionAngles": {
 			"type": "object",
@@ -718,7 +713,9 @@
 						"qualityDegradationQuotationMode": {
 							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 						}
-					}
+					},
+					"minProperties": 1,
+					"additionalProperties": false
 				}
 			]
 		},
@@ -733,32 +730,6 @@
 					"type": "number"
 				}
 			}
-		},
-		"FeatureCollection": {
-			"description": "GeoJSON FeatureCollection",
-			"type": "object",
-			"properties": {
-				"type": {
-					"type": "string",
-					"enum": [
-						"FeatureCollection"
-					]
-				},
-				"bbox": {
-					"type": "array"
-				},
-				"features": {
-					"type": "array",
-					"minItems": 0,
-					"items": {
-						"$ref": "#/definitions/EarthObservation"
-					}
-				}
-			},
-			"required": [
-				"type",
-				"features"
-			]
 		},
 		"WavelengthInformation": {
 			"type": "object",
@@ -848,33 +819,8 @@
 			"required": [
 				"platform",
 				"instrument"
-			]
-		},
-		"Offering": {
-			"title": "Offering",
-			"description": "Offering as defined in OGC 14-055r2",
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "string",
-					"format": "uri"
-				},
-				"operations": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Operation"
-					}
-				},
-				"contents": {
-					"type": "array"
-				},
-				"styles": {
-					"type": "array"
-				}
-			},
-			"required": [
-				"code"
-			]
+			],
+			"unevaluatedProperties": false
 		},
 		"OrbitParameters": {
 			"description": "Subset of AcquisitionParameters",
@@ -904,46 +850,6 @@
 					"type": "number"
 				}
 			}
-		},
-		"Operation": {
-			"description": "OGC 14-055r2",
-			"type": "object",
-			"properties": {
-				"code": {
-					"type": "string",
-					"format": "uri"
-				},
-				"method": {
-					"type": "string",
-					"enum": [
-						"GET",
-						"POST",
-						"PUT",
-						"HEAD",
-						"PATCH",
-						"DELETE"
-					]
-				},
-				"type": {
-					"description": "Media type",
-					"type": "string"
-				},
-				"href": {
-					"type": "string",
-					"format": "uri"
-				},
-				"request": {
-					"type": "object"
-				},
-				"result": {
-					"type": "object"
-				}
-			},
-			"required": [
-				"code",
-				"method",
-				"href"
-			]
 		},
 		"thesaurus": {
 			"acquisition-station-types": {
@@ -1074,10 +980,10 @@
 					"PRARE",
 					"GRAS",
 					"GAP",
-					"BLACKJACK",
 					"GPSR",
 					"SSTI",
 					"TRSR",
+					"BLACKJACK",
 					"GRACE-FO TriG",
 					"GRACE-FO MWI",
 					"DORIS",
@@ -1097,8 +1003,8 @@
 					"Radar",
 					"SBAS",
 					"GNSS",
-					"A-DCS3",
 					"SGR-ReSI-Z",
+					"A-DCS3",
 					"SARSAT",
 					"Argos",
 					"GNSS POD Receiver",
@@ -1143,10 +1049,10 @@
 					"HIRS/2",
 					"OSIRIS",
 					"HIRS/3",
-					"AMSU-A",
 					"MSU",
 					"TOVS",
 					"SSU",
+					"AMSU-A",
 					"ATOVS",
 					"ROSA",
 					"GNSS-RO Receiver",
@@ -1157,7 +1063,6 @@
 					"PlanetScope Camera",
 					"ATSR-1",
 					"VTIR",
-					"POLDER",
 					"MWR",
 					"ATSR-2",
 					"OLI-2",
@@ -1173,7 +1078,6 @@
 					"PRISM",
 					"HiRI",
 					"CZCS",
-					"SMMR",
 					"AVNIR",
 					"OCTS",
 					"OMI",
@@ -1195,10 +1099,10 @@
 					"LISS-4",
 					"TMI",
 					"HRVIR",
-					"MSI",
 					"PNEO",
 					"OLI",
 					"HiRAIS",
+					"MSI",
 					"AATSR",
 					"MERIS",
 					"GMI",
@@ -1210,7 +1114,9 @@
 					"VIRS",
 					"ASTER",
 					"AVHRR-1",
+					"POLDER",
 					"MWIR Imager",
+					"SMMR",
 					"VIRR",
 					"MISR",
 					"PS2",
@@ -1225,15 +1131,14 @@
 					"JMR",
 					"WINDSAT",
 					"WAF-P",
-					"MS",
-					"CERES",
 					"HSB",
 					"SAFIRE Gen 2",
+					"MS",
 					"ERBE",
 					"AIS",
+					"CERES",
 					"GOME-2",
 					"GOME",
-					"TOMS",
 					"TANSO-CAI-2",
 					"TANSO-FTS-2",
 					"SAGE-I",
@@ -1250,6 +1155,7 @@
 					"SCIAMACHY",
 					"ILAS",
 					"IMG",
+					"TOMS",
 					"HiRDLS",
 					"MLS",
 					"TES",
@@ -1339,18 +1245,23 @@
 					"SL",
 					"SM",
 					"SC",
-					"SB",
+					"BS",
 					"SCN",
 					"SCW",
-					"ST",
-					"FN",
-					"WD",
-					"EH",
-					"EL",
+					"BSWF",
+					"BSF",
+					"BSW",
 					"HI",
 					"PP",
-					"SCWR",
-					"SCHR"
+					"SCH",
+					"MS3B",
+					"MS4B",
+					"MS8B",
+					"STB",
+					"BM",
+					"BMF",
+					"BMW",
+					"BMWS"
 				]
 			},
 			"orbit-direction-types": {
@@ -1380,18 +1291,12 @@
 					"Metop-C",
 					"Metop-A",
 					"Metop-B",
-					"FSSCat-A",
 					"PROBA-1",
 					"IRS-P6",
-					"IRS-R2",
-					"IRS-P8",
-					"IRS-P7",
 					"RADARSAT-2",
 					"RADARSAT-1",
-					"NOAA-12",
 					"ALOS-1",
 					"CASSIOPE",
-					"OceanSat-2",
 					"WorldView-1",
 					"WorldView-2",
 					"WorldView-3",
@@ -1401,10 +1306,6 @@
 					"MOS-1A",
 					"MOS-1B",
 					"Parasol-1",
-					"ERS-1",
-					"ERS-2",
-					"Seasat",
-					"ADEOS-I",
 					"Nimbus-7",
 					"Aeolus",
 					"Biomass",
@@ -1415,92 +1316,58 @@
 					"Swarm-B",
 					"Swarm-C",
 					"Swarm-A",
-					"FORUM",
 					"Landsat-9",
 					"Landsat-4",
 					"Landsat-5",
-					"NOAA-9",
-					"CryoSat-2",
-					"FORMOSAT-2",
 					"QuickBird-2",
 					"Sentinel-3B",
 					"Sentinel-3A",
 					"Landsat-1",
 					"Landsat-2",
 					"Landsat-3",
-					"FORMOSAT-3",
 					"SAOCOM-1A",
 					"SAOCOM-1B",
-					"Sentinel-1B",
 					"Sentinel-1C",
-					"Sentinel-1A",
 					"Sentinel-1D",
+					"Sentinel-1A",
+					"Sentinel-1B",
 					"Envisat",
 					"WindSat",
 					"OrbView-2",
 					"ODIN",
-					"NOAA-19",
 					"KOMPSAT-1",
-					"NOAA-15",
-					"NOAA-16",
-					"NOAA-17",
-					"NOAA-18",
 					"Pleiades-1A",
 					"Pleiades-1B",
 					"GOSAT-2",
 					"IRS-P3",
 					"KOMPSAT-2",
-					"Aura",
 					"QuikSCAT",
 					"UK-DMC-1",
-					"NOAA-11",
 					"SCISAT-1",
 					"Landsat-8",
 					"ALOS-2",
 					"Nimbus-4",
-					"HotSat-1",
 					"IRS-P5",
 					"Beijing-1",
-					"NovaSAR-1",
 					"SPOT-1",
-					"SPOT-2",
-					"SPOT-3",
-					"NOAA-7",
 					"IKONOS-2",
 					"Landsat-7",
 					"PROBA-V",
-					"TERRA",
-					"SPOT-5",
-					"NOAA-14",
-					"Jason-2",
 					"TanSat",
 					"GOSAT-1",
-					"AQUA",
-					"NOAA-6",
-					"Jason-1",
 					"JERS-1",
 					"GeoEye-1",
 					"Spire",
-					"SPOT-4",
 					"SPOT-6",
 					"SPOT-7",
 					"PAZ",
 					"Vision-1",
-					"GEOSAT-1",
-					"GEOSAT-2",
-					"GHGSat-D",
-					"GHGSat-C",
 					"NigeriaSat-1",
-					"NOAA-8",
-					"NOAA-13",
-					"Sentinel-5P",
 					"GPM",
 					"Sentinel-2C",
 					"Sentinel-2A",
 					"Sentinel-2B",
 					"ALTIUS",
-					"Electro-L",
-					"TIROS-N",
 					"GRACE-C",
 					"GRACE-D",
 					"GRACE-A",
@@ -1510,29 +1377,72 @@
 					"IRS-1D",
 					"TerraSAR-X",
 					"TanDEM-X",
-					"PlanetScope",
-					"Pleiades Neo-3",
+					"Dove",
+					"Dove-R",
+					"SuperDove",
 					"Pleiades Neo-4",
-					"COSMO-SkyMed-1",
+					"Pleiades Neo-3",
 					"COSMO-SkyMed-2",
 					"COSMO-SkyMed-4",
 					"COSMO-SkyMed-3",
+					"COSMO-SkyMed-1",
 					"ICEYE",
-					"SkyBee-1",
-					"SkyBee-2",
 					"RapidEye-1",
 					"RapidEye-2",
 					"RapidEye-3",
 					"RapidEye-4",
 					"RapidEye-5",
+					"ADEOS-I",
+					"Aura",
 					"FOREST-2",
-					"FSSCat-B",
-					"COSMO-SkyMed Second Generation-1",
-					"COSMO-SkyMed Second Generation-2",
+					"FORMOSAT-2",
 					"Hydrognss-A",
 					"Hydrognss-B",
+					"AQUA",
+					"NOAA-6",
+					"NOAA-8",
+					"NOAA-9",
+					"NovaSAR-1",
+					"OceanSat-2",
+					"SPOT-2",
+					"SPOT-3",
+					"SPOT-4",
+					"SPOT-5",
+					"TERRA",
+					"Sentinel-5P",
+					"HotSat-1",
 					"NOAA-10",
-					"BRO"
+					"NOAA-14",
+					"NOAA-15",
+					"NOAA-16",
+					"NOAA-17",
+					"NOAA-18",
+					"NOAA-7",
+					"TIROS-N",
+					"CryoSat-2",
+					"BRO",
+					"NOAA-11",
+					"NOAA-12",
+					"NOAA-19",
+					"NOAA-13",
+					"COSMO-SkyMed Second Generation-1",
+					"COSMO-SkyMed Second Generation-2",
+					"GEOSAT-1",
+					"GEOSAT-2",
+					"ERS-1",
+					"ERS-2",
+					"GHGSat-C",
+					"GHGSat-D",
+					"Seasat",
+					"SkyBee-1",
+					"SkyBee-2",
+					"FSSCat-A",
+					"FSSCat-B",
+					"IRS-P7",
+					"IRS-R2",
+					"Jason-1",
+					"Jason-2",
+					"IRS-P8"
 				]
 			},
 			"polarisation-channels-types": {
@@ -1572,16 +1482,17 @@
 				"description": "Enum generated from thesaurus SKOS 'Processing Level Types' (https://earth.esa.int/concepts/concept_scheme/processingleveltype).",
 				"type": "string",
 				"enum": [
+					"1",
 					"1A",
 					"1B",
 					"1C",
+					"1D",
+					"2",
 					"2A",
-					"3",
 					"2B",
 					"2C",
-					"1",
-					"2",
-					"VAP"
+					"3",
+					"SYN"
 				]
 			},
 			"processing-mode-types": {
@@ -1641,62 +1552,65 @@
 					"OCM2_LA_1B",
 					"OCM2_LA_2B",
 					"OCM2_LA_2C",
-					"SSC_DEF_SC",
-					"SSC_DEF_CO",
-					"WV6_PAN_2A",
-					"WV6_PAN_OR",
-					"WV6_PAN_MP",
-					"WV1_PAN_2A",
-					"WV1_PAN_OR",
-					"WV1_PAN_MP",
-					"WV_110__2A",
-					"WV1_4B__2A",
-					"WV1_4B__OR",
-					"WV1_4B__MP",
-					"WV1_8B__2A",
-					"WV1_8B__OR",
-					"WV1_8B__MP",
-					"WV1_S8B_2A",
-					"WV1_S8B_MP",
+					"L1ABDN_PAN",
+					"L1BBDN_MS_",
+					"L1BBDN_MSP",
+					"L3_ORTVMS_",
+					"L3_ORT_PSH",
+					"L3_ORT_MS_",
+					"L3_ORT_PAN",
+					"SYNORT_BDL",
+					"L2AVRS_PAN",
+					"L2AVRR_PAN",
+					"L2ASTB_PAN",
+					"L2ASTR_PAN",
+					"L3_MRO_PAN",
+					"L2AVRS_MS_",
+					"L2AVRR_MS_",
+					"L2ASTB_MS_",
+					"L2ASTR_MS_",
+					"L3_MRP_MS_",
 					"DE1_SL6_2F",
 					"AL1_AV2_2F",
 					"KO2_MSC_2F",
-					"SAR_HS_EEC",
-					"SAR_HS_GEC",
-					"SAR_HS_MGD",
-					"SAR_HS_SSC",
-					"SAR_SC_EEC",
-					"SAR_SC_GEC",
-					"SAR_SC_MGD",
-					"SAR_SC_SSC",
-					"SAR_SL_SSC",
-					"SAR_SM_EEC",
-					"SAR_SM_GEC",
-					"SAR_SM_MGD",
-					"SAR_SM_SSC",
-					"SAR_ST_EEC",
-					"SAR_ST_GEC",
-					"SAR_ST_MGD",
-					"SAR_ST_SSC",
-					"SAR_WS_EEC",
-					"SAR_WS_GEC",
-					"SAR_WS_MGD",
-					"SAR_WS_SSC",
+					"L1BSL__SLC",
+					"L1BSL__MGC",
+					"L1BSL__GEC",
+					"L1BSL__EEC",
+					"L1BSM__GEC",
+					"L1BSM__SLC",
+					"L1BSM__MGD",
+					"L1BSM__EEC",
+					"L1BSC__SLC",
+					"L1BSC__MGD",
+					"L1BSC__GEC",
+					"L1BSC__EEC",
+					"L1BSCW_SLC",
+					"L1BSCW_MGD",
+					"L1BSCW_GEC",
+					"L1BSCW_EEC",
+					"L1_BM__SLC",
+					"L1_BM__SGF",
+					"L2_BM__SSG",
+					"L1_BSW_SLC",
+					"L1_BSW_SGF",
+					"L1_BMF_SLC",
+					"L1_BMF_SGF",
+					"L1_BS__SGF",
+					"L1_SCW____",
+					"L1_SCN____",
 					"SAR_SX_SLC",
 					"SAR_SX_SGF",
+					"SAR_SX_SGX",
 					"SAR_SX_SSG",
+					"SAR_SX_SPG",
 					"SAR_WX_SLC",
 					"SAR_WX_SGF",
-					"SAR_FX_SLC",
-					"SAR_FX_SGF",
-					"SAR_EL_SGF",
-					"SAR_SW_SCW",
-					"SAR_SN_SCN",
-					"SAR_SX_SGX",
-					"SAR_SX_SPG",
 					"SAR_WX_SGX",
 					"SAR_WX_SSG",
 					"SAR_WX_SPG",
+					"SAR_FX_SLC",
+					"SAR_FX_SGF",
 					"SAR_FX_SGX",
 					"SAR_FX_SSG",
 					"SAR_FX_SPG",
@@ -1736,6 +1650,7 @@
 					"SAR_EH_SSG",
 					"SAR_EH_SPG",
 					"SAR_EL_SLC",
+					"SAR_EL_SGF",
 					"SAR_EL_SGX",
 					"SAR_EL_SSG",
 					"SAR_EL_SPG",
@@ -1755,8 +1670,10 @@
 					"SAR_QF_SGX",
 					"SAR_QF_SSG",
 					"SAR_QF_SPG",
+					"SAR_SN_SCN",
 					"SAR_SN_SCF",
 					"SAR_SN_SCS",
+					"SAR_SW_SCW",
 					"SAR_SW_SCF",
 					"SAR_SW_SCS",
 					"SAR_SL_SLC",
@@ -1764,12 +1681,6 @@
 					"SAR_SL_SGX",
 					"SAR_SL_SSG",
 					"SAR_SL_SPG",
-					"BGI_PAN_2A",
-					"BGI_PAN_OR",
-					"BGI_PAN_MP",
-					"BGI_4B__2A",
-					"BGI_4B__OR",
-					"BGI_4B__MP",
 					"CHR_MO1_1P",
 					"CHR_MO2_1P",
 					"CHR_MO3_1P",
@@ -1804,75 +1715,46 @@
 					"PSM_OB2_0P",
 					"PSM_OB2_11",
 					"PSM_OB2_1C",
-					"GIS_PAN_2A",
-					"GIS_PAN_OR",
-					"GIS_PAN_MP",
-					"GIS_4B__2A",
-					"GIS_4B__OR",
-					"GIS_4B__MP",
-					"SL6_22P_1R",
-					"SL6_22P_1T",
-					"SL6_22P_2T",
-					"SL6_22S_1R",
-					"SL6_22S_1T",
-					"SL6_22S_2T",
-					"SL6_22T_1R",
-					"SL6_22T_1T",
-					"SL6_22T_2T",
-					"HRA_PAN_1B",
-					"HRA_PAN_1C",
-					"HRA_PS3_1B",
-					"HRA_PS3_1C",
-					"HRA_PS4_1B",
-					"HRA_PS4_1C",
-					"HRA_PSH_1B",
-					"HRA_PSH_1C",
-					"HRA_MS4_1B",
-					"HRA_MS4_1C",
-					"HRA_PM4_1B",
-					"HRA_PM4_1C",
-					"HRA_STP_1B",
-					"HRA_STP_1C",
-					"XN_SM__SLC",
-					"XN_SM__GRD",
-					"XN_SL__SLC",
-					"XN_SL__GRD",
-					"XN_SR__GRD",
+					"L1_GEO_MS_",
+					"L1_ORT_MS_",
+					"L2_ORT_MS_",
+					"L1BORTRPAN",
+					"L1CORT_PAN",
+					"L1BORTRMS_",
+					"L1CORT_MS_",
+					"L1BORTRPSH",
+					"L1CRPC_PSH",
+					"L1DORT_PSH",
+					"L1BORTRBDL",
+					"L1CORT_BDL",
+					"L1DORTEBDL",
+					"SYNSTERPAN",
+					"SYNSTERPSH",
+					"L1_SM__SLC",
+					"L1_SM__GRD",
+					"L1_SL__SLC",
+					"L1_SL__GRD",
+					"L1_SC__GRD",
 					"OSA_GEO_1P",
 					"EOC_PAN_1P",
 					"MSCMUL_1R",
 					"MSCMUL_1G",
-					"MSI_IMG_1B",
-					"MSI_IMG_3A",
-					"HIR_P___1A",
-					"HIR_P___3_",
-					"HIR_MS__1A",
-					"HIR_MS__3_",
-					"HIR_PMS_1A",
-					"HIR_PMS_2_",
-					"HIR_PMS_3_",
-					"HIR_P_S_1A",
-					"HIR_P_S_2_",
-					"HIR_P_S_3_",
-					"NEO_P___1A",
-					"NEO_P___2_",
-					"NEO_P___3_",
-					"NEO_MS__1A",
-					"NEO_MS__2_",
-					"NEO_PMS_2_",
-					"NEO_PMS_3_",
-					"NEO_P_S_1A",
-					"NEO_P_S_2_",
-					"NEO_P_S_3_",
-					"PSC_8AO_3B",
-					"PSC_8SR_3B",
-					"PSC_8AB_1B",
-					"PSC_4AO_3B",
-					"PSC_4SR_3B",
-					"PSC_4AB_1B",
-					"PSC_3VO_3B",
-					"PSC_3AO_3B",
-					"PSC_4OT_3A",
+					"L1BOPT_MS_",
+					"L1APRI_PAN",
+					"L1APRI_MS_",
+					"L1APRI_PSH",
+					"L2_PRO_PSH",
+					"L1APRI_BDL",
+					"L2_PRO_BDL",
+					"L3_ORT_BDL",
+					"L2_PRO_PAN",
+					"L2_PRO_MS_",
+					"L3_AO__MS_",
+					"L3_SRO_MS_",
+					"L1AAB__MS_",
+					"L1BAB__MS_",
+					"L3_VO__MS_",
+					"L3_OT__MS_",
 					"PSP_SM_SSC",
 					"PSP_SM_MGD",
 					"PSP_SM_GEC",
@@ -1907,26 +1789,18 @@
 					"LI3_XB__1O",
 					"PAN_PAM_3O",
 					"PAN_DEM_3D",
-					"SAR_HIM_AU",
-					"SAR_HIM_AB",
-					"SAR_HIM_1B",
-					"SAR_HIM_1C",
-					"SAR_HIM_1D",
-					"SAR_SPP_AU",
-					"SAR_SPP_AB",
-					"SAR_SPP_1B",
-					"SAR_SPP_1C",
-					"SAR_SPP_1D",
-					"SAR_SCW_AU",
-					"SAR_SCW_AB",
-					"SAR_SCW_1B",
-					"SAR_SCW_1C",
-					"SAR_SCW_1D",
-					"SAR_SCH_AU",
-					"SAR_SCH_AB",
-					"SAR_SCH_1B",
-					"SAR_SCH_1C",
-					"SAR_SCH_1D",
+					"SL6_L1R_1P",
+					"SL6_L1T_1P",
+					"L1ASMU_SCS",
+					"L1ASMB_SCS",
+					"L1BSM__DGM",
+					"L1CSM__GEC",
+					"L1DSM__GTC",
+					"L1ASCU_SCS",
+					"L1ASCB_SCS",
+					"L1BSC__DGM",
+					"L1CSC__GEC",
+					"L1DSC__GTC",
 					"HRV__P__1A",
 					"HRV__P__1B",
 					"HRV__P__2A",
@@ -2026,7 +1900,8 @@
 					"ALTIMETRIC",
 					"RADAR",
 					"ATMOSPHERIC",
-					"LIMB"
+					"LIMB",
+					"LIDAR"
 				]
 			},
 			"spectral-range-types": {
@@ -2036,6 +1911,7 @@
 				"enum": [
 					"UV",
 					"VIS",
+					"VNIR",
 					"IR",
 					"NIR",
 					"SWIR",
@@ -2043,6 +1919,14 @@
 					"TIR",
 					"FIR",
 					"MW",
+					"Ka",
+					"K",
+					"Ku",
+					"X",
+					"C",
+					"S",
+					"L",
+					"P",
 					"RW"
 				]
 			},
