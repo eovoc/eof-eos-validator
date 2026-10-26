@@ -46,6 +46,11 @@
 	<skos:definition>Kourou (French Guyana)</skos:definition>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://earth.esa.int/concept/4e2b71af-6d8a-49f6-b6d4-bdfa854683ff">
+	<skos:prefLabel>MPS</skos:prefLabel>
+	<skos:definition>Maspalomas (Gran Canaria - Spain)</skos:definition>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://earth.esa.int/concept/a5fe7ba6-364e-4a79-a4dd-6e64d8d9b9d2">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
@@ -58,6 +63,10 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://earth.esa.int/concept/4e2b71af-6d8a-49f6-b6d4-bdfa854683ff">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://earth.esa.int/concept/a5fe7ba6-364e-4a79-a4dd-6e64d8d9b9d2">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/acquisitionstation"/>
 </rdf:Description>
@@ -67,6 +76,10 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1745a7f7-15f0-4e97-b3ff-98ae98c000ff">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/acquisitionstation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/4e2b71af-6d8a-49f6-b6d4-bdfa854683ff">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/acquisitionstation"/>
 </rdf:Description>
 
@@ -92,6 +105,14 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1745a7f7-15f0-4e97-b3ff-98ae98c000ff">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/acquisitionstation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/acquisitionstation">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/4e2b71af-6d8a-49f6-b6d4-bdfa854683ff"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/4e2b71af-6d8a-49f6-b6d4-bdfa854683ff">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/acquisitionstation"/>
 </rdf:Description>
 
@@ -984,106 +1005,6 @@
 	<skos:changeNote>2026/06/04 - Initial version</skos:changeNote>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
-	<skos:prefLabel>IM</skos:prefLabel>
-	<skos:definition>Image Mode</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
-	<skos:prefLabel>PAN</skos:prefLabel>
-	<skos:definition>Panchromatic</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
-	<skos:prefLabel>MS</skos:prefLabel>
-	<skos:definition>Multispectral</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
-	<skos:prefLabel>HS</skos:prefLabel>
-	<skos:definition>Hyperspectral</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
-	<skos:prefLabel>SL</skos:prefLabel>
-	<skos:definition>Spotlight</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
-	<skos:prefLabel>SM</skos:prefLabel>
-	<skos:definition>Stripmap</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
-	<skos:prefLabel>SC</skos:prefLabel>
-	<skos:definition>ScanSAR</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
-	<skos:prefLabel>BS</skos:prefLabel>
-	<skos:definition>Beam Single</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
-	<skos:prefLabel>SCN</skos:prefLabel>
-	<skos:definition>ScanSAR Narrow</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
-	<skos:prefLabel>SCW</skos:prefLabel>
-	<skos:definition>ScanSAR Wide</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
-	<skos:prefLabel>BSWF</skos:prefLabel>
-	<skos:definition>Beam Single Wide Fine</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
-	<skos:prefLabel>BSF</skos:prefLabel>
-	<skos:definition>Beam Single Fine</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
-	<skos:prefLabel>BSW</skos:prefLabel>
-	<skos:definition>Beam Single Wide</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
-	<skos:prefLabel>HI</skos:prefLabel>
-	<skos:definition>Himage Mode</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
-	<skos:prefLabel>PP</skos:prefLabel>
-	<skos:definition>PingPong Mode</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
-	<skos:prefLabel>SCH</skos:prefLabel>
-	<skos:definition>ScanSAR Huge</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
-	<skos:prefLabel>MS3B</skos:prefLabel>
-	<skos:definition>Multispectral 3 Bands</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
-	<skos:prefLabel>MS4B</skos:prefLabel>
-	<skos:definition>Multispectral 4 Bands</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
-	<skos:prefLabel>MS8B</skos:prefLabel>
-	<skos:definition>Multispectral 8 Bands</skos:definition>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
-	<skos:prefLabel>STB</skos:prefLabel>
-	<skos:definition>Standard Beam</skos:definition>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/6e331e28-a382-4bc0-b82e-9e6152d206d3">
 	<skos:prefLabel>BM</skos:prefLabel>
 	<skos:definition>Beam Multi</skos:definition>
@@ -1104,84 +1025,109 @@
 	<skos:definition>Beam Multi Wide Fine</skos:definition>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>BS</skos:prefLabel>
+	<skos:definition>Beam Single</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>BSF</skos:prefLabel>
+	<skos:definition>Beam Single Fine</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>BSW</skos:prefLabel>
+	<skos:definition>Beam Single Wide</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
+	<skos:prefLabel>BSWF</skos:prefLabel>
+	<skos:definition>Beam Single Wide Fine</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>HI</skos:prefLabel>
+	<skos:definition>Himage Mode</skos:definition>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
+	<skos:prefLabel>HS</skos:prefLabel>
+	<skos:definition>Hyperspectral</skos:definition>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
+	<skos:prefLabel>IM</skos:prefLabel>
+	<skos:definition>Image Mode</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
+	<skos:prefLabel>MS</skos:prefLabel>
+	<skos:definition>Multispectral</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>MS3B</skos:prefLabel>
+	<skos:definition>Multispectral 3 Bands</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>MS4B</skos:prefLabel>
+	<skos:definition>Multispectral 4 Bands</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/eaba8cfb-feb8-4a18-ba9f-de7899fbb81c">
+	<skos:prefLabel>MS7B</skos:prefLabel>
+	<skos:definition>Multispectral 7 Bands</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>MS8B</skos:prefLabel>
+	<skos:definition>Multispectral 8 Bands</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
+	<skos:prefLabel>PAN</skos:prefLabel>
+	<skos:definition>Panchromatic</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
+	<skos:prefLabel>PP</skos:prefLabel>
+	<skos:definition>PingPong Mode</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
+	<skos:prefLabel>SC</skos:prefLabel>
+	<skos:definition>ScanSAR</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
+	<skos:prefLabel>SCH</skos:prefLabel>
+	<skos:definition>ScanSAR Huge</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
+	<skos:prefLabel>SCN</skos:prefLabel>
+	<skos:definition>ScanSAR Narrow</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
+	<skos:prefLabel>SCW</skos:prefLabel>
+	<skos:definition>ScanSAR Wide</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
+	<skos:prefLabel>SL</skos:prefLabel>
+	<skos:definition>Spotlight</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
+	<skos:prefLabel>SM</skos:prefLabel>
+	<skos:definition>Stripmap</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel>STB</skos:prefLabel>
+	<skos:definition>Standard Beam</skos:definition>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/6e331e28-a382-4bc0-b82e-9e6152d206d3">
@@ -1200,84 +1146,88 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/eaba8cfb-feb8-4a18-ba9f-de7899fbb81c">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/6e331e28-a382-4bc0-b82e-9e6152d206d3">
@@ -1293,171 +1243,95 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f9dd3d4e-b2a4-4f4d-b4dd-1a48273719ab">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/eaba8cfb-feb8-4a18-ba9f-de7899fbb81c">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6e331e28-a382-4bc0-b82e-9e6152d206d3"/>
 </rdf:Description>
 
@@ -1486,6 +1360,174 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f9dd3d4e-b2a4-4f4d-b4dd-1a48273719ab">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/33ccd075-dbbe-4020-a6cf-ecdf327da524">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/7aca6685-ad91-4e97-aa8c-63e03607938c">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/337b8e76-4a4f-4057-8021-c102182c5d4d">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/1ba1f52f-6825-4fd0-92aa-15e9c0d90c61">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/94b313f2-da4a-428f-87a1-c5b99e63f11b">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/8223e731-810f-47bf-acff-425e849d4e88">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6fd15cf6-0790-4e1c-bcb3-5d6fb7119a26">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/cc442e51-a016-482f-9e19-64bb3e736abd">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2891075e-e072-48cf-a15c-c5e875b96feb">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/d1880bd4-44bb-4b47-8c09-bf6be97043ee">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/eaba8cfb-feb8-4a18-ba9f-de7899fbb81c"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/eaba8cfb-feb8-4a18-ba9f-de7899fbb81c">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/3ed3cccf-6e6a-47e2-aca9-3a38bf621a7b">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/74002b16-a4c8-4c27-817d-21623eb9afc0">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/12e93fa3-3e28-47c5-b170-e06bcd0314c1">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/e8fc43b2-5068-4872-8877-5957c9450bce">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/38dc2661-c265-4815-b09d-1d26aa3d49d7">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/6e7f5ffa-193e-41d6-a928-1faf8b7df2f8">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/2b987bb1-782b-4ca4-9f4b-e8e356d2bb19">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/b7a75cb2-4525-4008-ad4a-76e5bca14030">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/5fd9f234-8e3d-405e-908d-54fb2c74be3b">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/operationalMode">
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/67a4600f-5691-44cf-aa6c-43d70776dab6">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/operationalMode"/>
 </rdf:Description>
 
@@ -1990,6 +2032,10 @@
 	<skos:changeNote>2026/06/12 - Initial version</skos:changeNote>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://earth.esa.int/concept/da94b885-9fc8-4116-8fba-e2c35ddd7ede">
+	<skos:prefLabel>0</skos:prefLabel>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://earth.esa.int/concept/797a0cfa-1c98-4ede-be3f-1e2d0d64642c">
 	<skos:prefLabel>1</skos:prefLabel>
 </rdf:Description>
@@ -2035,6 +2081,10 @@
 	<skos:definition>Synergetic Products</skos:definition>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://earth.esa.int/concept/da94b885-9fc8-4116-8fba-e2c35ddd7ede">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://earth.esa.int/concept/797a0cfa-1c98-4ede-be3f-1e2d0d64642c">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
@@ -2077,6 +2127,10 @@
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/14847ef3-3c74-447c-a1e4-d2396db9c116">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/da94b885-9fc8-4116-8fba-e2c35ddd7ede">
+	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/processingleveltype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/797a0cfa-1c98-4ede-be3f-1e2d0d64642c">
@@ -2125,6 +2179,14 @@
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/processingleveltype">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/da94b885-9fc8-4116-8fba-e2c35ddd7ede"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concept/da94b885-9fc8-4116-8fba-e2c35ddd7ede">
+	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/processingleveltype"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/processingleveltype">
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/797a0cfa-1c98-4ede-be3f-1e2d0d64642c"/>
 </rdf:Description>
 
