@@ -857,10 +857,19 @@
 				"description": "Enum generated from thesaurus SKOS 'Acquisition Station Types' (https://earth.esa.int/concepts/concept_scheme/acquisitionstation).",
 				"type": "string",
 				"enum": [
-					"RED",
-					"KIR-1",
+					"BSK",
+					"FUI",
 					"KRU",
-					"MPS"
+					"KSE",
+					"KSS",
+					"LBG",
+					"MLD",
+					"MPS",
+					"MTI",
+					"NSG",
+					"OHG",
+					"RED",
+					"TRS"
 				]
 			},
 			"acquisition-subtypes": {
@@ -1429,7 +1438,6 @@
 					"NOAA-13",
 					"COSMO-SkyMed Second Generation-1",
 					"COSMO-SkyMed Second Generation-2",
-					"COSMO-SkyMed Second Generation-3",
 					"GEOSAT-1",
 					"GEOSAT-2",
 					"ERS-1",
@@ -1517,16 +1525,12 @@
 				"type": "string",
 				"enum": [
 					"OPER",
-					"OTPF",
 					"OESR",
 					"RERS",
 					"NERS",
 					"OESA",
 					"RESA",
-					"NESA",
-					"TEST",
-					"RPRO",
-					"RKSE"
+					"NESA"
 				]
 			},
 			"product-content-types": {
@@ -1639,8 +1643,10 @@
 					"L1_OPT_BDL",
 					"L0_____MS_",
 					"L1_OPT_PAN",
-					"L1_GTC_BDL",
-					"L2_SYN_BDL",
+					"L0_____MSP",
+					"L1_GEO_MSP",
+					"L1_ORT_MSP",
+					"L2_SP__MSP",
 					"OCM2_LA__0",
 					"OCM2_LA_1B",
 					"OCM2_LA_2B",
