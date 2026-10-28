@@ -69,30 +69,34 @@ export default function SettingsPage() {
       {error && <div className="parse-error">{error}</div>}
 
       <div className="property-list">
-        <div className="property-list-title">Mandatory properties ({settings?.requiredProperties.length})</div>
-        {settings?.requiredProperties.map((property, index) => (
-          <div className="property-row" key={index}>
-            <input
-                type="text"
-                className="property-input"
-                value={property}
-                disabled={true}
-            />
-          </div>
-        ))}
+        <details className="property-section" open>
+          <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
+          {settings?.requiredProperties.map((property, index) => (
+            <div className="property-row" key={index}>
+              <input
+                  type="text"
+                  className="property-input"
+                  value={property}
+                  disabled={true}
+              />
+            </div>
+          ))}
+        </details>
 
-      <div className="property-list-title">Optional properties ({settings?.optionalProperties.length})</div>
-      {settings?.optionalProperties.map((property, index) => (
-          <div className="property-row" key={index}>
-            <input
-                type="text"
-                className="property-input"
-                value={property}
-                disabled={true}
-            />
-          </div>
-      ))}
-    </div>
+        <details className="property-section" open>
+          <summary className="property-list-title">Optional properties ({settings?.optionalProperties.length})</summary>
+          {settings?.optionalProperties.map((property) => (
+            <div className="property-row" key={property}>
+              <input
+                  type="text"
+                  className="property-input"
+                  value={property}
+                  disabled={true}
+              />
+            </div>
+          ))}
+        </details>
+      </div>
 
     </>
   );
