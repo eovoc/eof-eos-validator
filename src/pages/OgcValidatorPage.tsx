@@ -32,7 +32,7 @@ export default function OgcValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await ogcValidator(content, settings?.mandatoryProperties ?? []);
+      const result = await ogcValidator(content, settings?.requiredProperties ?? []);
       console.log("[validator] done", result);
       setResult(result);
 
