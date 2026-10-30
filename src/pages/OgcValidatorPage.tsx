@@ -3,12 +3,14 @@ import { useNavigate } from "react-router";
 import { ogcValidator } from "../services/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import {ValidationReport} from "../services/ValidationResult";
-import { JsonFileContext } from "../App";
+import {JsonFileContext, SettingsFileContext} from "../App";
 import DocumentationPanel from "../components/DocumenationPanel";
 import ValidationReportPanel from "../components/ValidationReportPanel";
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
+  const { settings } = useContext(SettingsFileContext)!;
+
   const [result, setResult] = useState<ValidationReport | null>(null);
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
@@ -20,7 +22,7 @@ export default function OgcValidatorPage() {
   //Reset validation result when content has changed.
   useEffect(() => {
     setResult(null);
-  }, [content]);
+  }, [content, settings]);
 
 
   async function handleValidate() {
@@ -30,7 +32,7 @@ export default function OgcValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await ogcValidator(content);
+      const result = await ogcValidator(content, settings?.requiredProperties ?? []);
       console.log("[validator] done", result);
       setResult(result);
 
