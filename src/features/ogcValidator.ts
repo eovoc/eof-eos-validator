@@ -1,7 +1,7 @@
 import Ajv2019, {ErrorObject} from "ajv/dist/2019";
 import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
-import {partitionErrorsBySchemaPath, ValidationReport} from "./ValidationResult";
+import {partitionErrorsBySchemaPath, ValidationReport} from "../types/ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
 import {enforcePropertyAsMandatory, getValidationSchemaPath, STATIC_SCHEMAS} from "../utils/schemaUtil";
 
