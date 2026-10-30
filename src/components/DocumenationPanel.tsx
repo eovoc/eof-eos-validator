@@ -1,35 +1,30 @@
-export default function DocumentationPanel(){
+import {DocumentationSection} from "../types/DocumentationSection";
+
+interface DocumentationPanelProps {
+    sections: DocumentationSection[];
+}
+
+export default function DocumentationPanel(documentation: DocumentationPanelProps){
 
     return(
         <>
-            <h2>Documentation</h2>
-           {/*<ul>{documentationResources}</ul>*/}
-            <ul>
-                {/*EO Metadata documentation*/}
-                <li> <a className="documentation-link" title="EO Metadata" href="https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html" target="_blank" rel="noreferrer">EO Metadata</a></li>
-
-                {/*EOF-EOS Schema Documentation*/}
-                <li> <a className="documentation-link" title="EOF-EOS Schema Documentation"
-                        href="https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"
-                        target="_blank" rel="noreferrer">EOF-EOS Schema Documentation</a>
-                </li>
-            </ul>
-
-            <h2>Schemas</h2>
-            <ul>
-                {/*EOF-EOS Schema*/}
-                <li> <a className="documentation-link" title="EOF-EOS Schema" href={`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`} target="_blank" rel="noreferrer">EOF-EOS Schema</a></li>
-
-                {/*ISO19115-4 Schemas*/}
-                <li>
-                    ISO19115-4 (
-                        <a className="documentation-link" title="dqc.json" href={`${process.env.PUBLIC_URL}/schemas/dqc.json`} target="_blank" rel="noreferrer">dqc.json</a>
-                    and
-                    <a className="documentation-link" style={{ marginLeft: "0.25em" }} title="mdj.json" href={`${process.env.PUBLIC_URL}/schemas/mdj.json`} target="_blank" rel="noreferrer">mdj.json</a>
-                    schemas)
-                </li>
-
-            </ul>
+            {documentation!.sections.map((section, i) => (
+                <div key={i}>
+                    <h2>{section.title}</h2>
+                    <ul>
+                        {section.links!.map((link, j) => (
+                            <li key={j}>
+                                <a className="documentation-link"
+                                   title={link.name}
+                                   href={link.href}
+                                   target="_blank"
+                                   rel="noreferrer">{link.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </>
     );
 }
