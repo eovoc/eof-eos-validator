@@ -349,3 +349,137 @@ h1 {
 }
 
 
+
+/* STAC validation report (StacValidationReport), laid out like STAC Browser */
+
+.stac-report {
+  padding-bottom: 48px;
+}
+
+.stac-report-notice {
+  background: #fff3cd;
+  border: 1px solid #ffe69c;
+  border-radius: 6px;
+  color: #664d03;
+  padding: 12px 16px;
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.stac-report-summary {
+  display: grid;
+  grid-template-columns: minmax(80px, 1fr) 2fr;
+  row-gap: 4px;
+  margin: 0 0 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+.stac-report-summary dt {
+  font-weight: 500;
+}
+
+.stac-report-summary dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.stac-report-summary code,
+code.stac-card-name {
+  font-family: 'Courier New', monospace;
+  color: #d63384;
+}
+
+.stac-report-summary dd.valid {
+  color: #198754;
+}
+
+.stac-report-summary dd.invalid {
+  color: #dc3545;
+}
+
+.stac-report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1100px) {
+  .stac-report-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .stac-report-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.stac-card {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+  align-self: start;
+}
+
+.stac-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+.stac-card-name {
+  word-break: break-all;
+}
+
+.stac-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.stac-badge-version {
+  background: #17808f;
+}
+
+.stac-badge-extension {
+  background: #343a40;
+}
+
+.stac-card-body {
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+
+.stac-card-body.valid {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.stac-card-body.invalid {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.stac-card-status {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.stac-card-body .error-item {
+  background: #fff;
+}
