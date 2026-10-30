@@ -2,8 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { JsonFileContext } from "../App";
 import Editor from "@monaco-editor/react";
 import {convert} from "../services/stacConverter";
-import {stacValidator} from "../services/stacValidator";
-import {ValidationReport} from "../services/ValidationResult";
+import {stacValidator} from "../features/stacValidator";
+import {ValidationReport} from "../types/ValidationResult";
 import ValidationReportPanel from "../components/ValidationReportPanel";
 
 export default function StacConverterPage() {
