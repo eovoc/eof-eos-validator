@@ -2,16 +2,15 @@ import { useContext, useState, useEffect } from "react";
 import { JsonFileContext } from "../App";
 import Editor from "@monaco-editor/react";
 import {convert} from "../services/stacConverter";
-import {stacValidator} from "../services/stacValidator";
-import {ValidationReport} from "../services/ValidationResult";
-import ValidationReportPanel from "../components/ValidationReportPanel";
+import {StacReport, stacValidator} from "../services/stacValidator";
+import StacValidationReport from "../components/StacValidationReport";
 
 export default function StacConverterPage() {
   const { content } = useContext(JsonFileContext)!;
   const [stacContent, setStacContent] = useState<string | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<String | null>(null);
-  const [validationResult, setValidationResult] = useState<ValidationReport | null>(null);
+  const [validationResult, setValidationResult] = useState<StacReport | null>(null);
 
   useEffect(() => { handleConvert(); }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -104,9 +103,7 @@ export default function StacConverterPage() {
       {validationResult && (
           <>
             <h2>Validation Report</h2>
-            <ValidationReportPanel report={validationResult}
-                                   validTitle="Valid STAC Item"
-                                   invalidTitle="Invalid STAC Item"/>
+            <StacValidationReport report={validationResult} />
           </>
         )}
     </>
