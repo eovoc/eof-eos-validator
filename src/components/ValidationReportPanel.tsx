@@ -1,4 +1,4 @@
-import {ValidationReport} from "../services/ValidationResult";
+import {ValidationReport} from "../types/ValidationResult";
 import {prettyPrint} from "../utils/jsonUtil";
 import ErrorList from "./ErrorList";
 
