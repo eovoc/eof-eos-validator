@@ -2,6 +2,14 @@ import { ErrorObject } from "ajv";
 import validate, { StacValidationError, StacValidationReport } from "stac-node-validator";
 import { ValidationReport,ValidationResult } from "./ValidationResult";
 
+// The report shown on the STAC page also identifies the validated object,
+// like STAC Browser does: its id, its type and its STAC version.
+export interface StacReport extends ValidationReport {
+  id: string | null;
+  type: string | null;
+  stacVersion: string | null;
+}
+
 function toErrorObject(error: StacValidationError): ErrorObject {
   return {
     keyword: (error.keyword as string) ?? "",
@@ -46,7 +54,7 @@ function collectResults(report: StacValidationReport): ValidationResult[] {
   return results;
 }
 
-export async function stacValidator(data: unknown): Promise<ValidationReport> {
+export async function stacValidator(data: unknown): Promise<StacReport> {
   try {
     // stac-node-validator treats a string input as a file path/URL to fetch,
     // not as JSON text, so parse it ourselves first.
@@ -55,12 +63,15 @@ export async function stacValidator(data: unknown): Promise<ValidationReport> {
     console.log("stac validation report: ",stacReport);
     const valid = stacReport.valid === true;
     const results = collectResults(stacReport);
-    return { valid, results:results };
+    return { valid, results:results, id: stacReport.id, type: stacReport.type, stacVersion: stacReport.version };
   } catch (error) {
     const errors = [toErrorObject({ message: error instanceof Error ? error.message : String(error) })];
     return {
       valid: false,
-      results: [{schema: "Internal error - validation could not be executed.", valid : false, errors}]
+      results: [{schema: "Internal error - validation could not be executed.", valid : false, errors}],
+      id: null,
+      type: null,
+      stacVersion: null,
     };
   }
 }
