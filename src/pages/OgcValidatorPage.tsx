@@ -6,6 +6,7 @@ import {ValidationReport} from "../types/ValidationResult";
 import {JsonFileContext, SettingsFileContext} from "../App";
 import DocumentationPanel from "../components/DocumenationPanel";
 import ValidationReportPanel from "../components/ValidationReportPanel";
+import ExampleSelector from "../components/ExampleSelector";
 import {DocumentationSection} from "../types/DocumentationSection";
 
 export default function OgcValidatorPage() {
@@ -16,6 +17,9 @@ export default function OgcValidatorPage() {
   const [loading, setLoading] = useState(false);
   const [runtimeError, setRuntimeError] = useState<string | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
+  // FileUploadCard reads the content only when it is created: a new key
+  // recreates it, so that a loaded example replaces the text of the editor.
+  const [editorKey, setEditorKey] = useState(0);
 
   const sections: DocumentationSection[] =[
       {title:"Documentation", links: [
@@ -40,6 +44,12 @@ export default function OgcValidatorPage() {
   }, [content, settings]);
 
 
+  function handleExample(example: unknown) {
+    setParseError(null);
+    setContent(example);
+    setEditorKey((key) => key + 1);
+  }
+
   async function handleValidate() {
     if (!ready) return;
     setLoading(true);
@@ -61,8 +71,11 @@ export default function OgcValidatorPage() {
 
   return (
     <>
+      <ExampleSelector onLoad={handleExample} />
+
       <div className="upload-grid">
         <FileUploadCard
+          key={editorKey}
           label=""
           hint="The file to validate"
           icon="📄"

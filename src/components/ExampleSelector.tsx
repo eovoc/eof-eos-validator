@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
+import { fetchJson} from "../utils/jsonUtil";
 
 // Drop-down list of the EOF-EOS examples of public/examples/. The list itself
 // is public/examples/index.json (maintained by hand: a static site cannot list
@@ -13,14 +14,6 @@ const EXAMPLES_URL = `${process.env.PUBLIC_URL}/examples`;
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
-}
-
-async function fetchJson(url: string): Promise<unknown> {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`${res.status} ${res.statusText}`);
-  }
-  return res.json();
 }
 
 export default function ExampleSelector({ onLoad }: Readonly<{ onLoad: (content: unknown) => void }>) {
