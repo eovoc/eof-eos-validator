@@ -11,6 +11,9 @@ export default function NavBar() {
         <NavLink to="/converter" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
           STAC
         </NavLink>
+        <NavLink to="/settings" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+          Settings
+        </NavLink>
       </div>
     </nav>
   );
