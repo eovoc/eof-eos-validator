@@ -349,3 +349,41 @@ h1 {
 }
 
 
+
+/* Example selector (ExampleSelector), above the editor of the EOF-EOS page */
+
+.example-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.example-selector label {
+  font-weight: 600;
+}
+
+.example-selector select {
+  min-width: 260px;
+  padding: 6px 10px;
+  border: 1px solid #c9cdd4;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.example-selector select:focus {
+  outline: 2px solid #4f6ef7;
+  outline-offset: 1px;
+}
+
+.example-selector select:disabled {
+  cursor: wait;
+}
+
+.example-selector-error {
+  color: #b91c1c;
+}
