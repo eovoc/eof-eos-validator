@@ -1,6 +1,6 @@
 import { ErrorObject } from "ajv";
 import validate, { StacValidationError, StacValidationReport } from "stac-node-validator";
-import { ValidationReport,ValidationResult } from "./ValidationResult";
+import { ValidationReport,ValidationResult } from "../types/ValidationResult";
 
 function toErrorObject(error: StacValidationError): ErrorObject {
   return {
