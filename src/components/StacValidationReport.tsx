@@ -1,5 +1,5 @@
-import { StacReport } from "../services/stacValidator";
-import { ValidationResult } from "../services/ValidationResult";
+import { StacReport } from "../features/stacValidator";
+import { ValidationResult } from "../types/ValidationResult";
 import { schemaLabel } from "../utils/stacSchemaLabel";
 import ErrorList from "./ErrorList";
 
