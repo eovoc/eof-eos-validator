@@ -1,6 +1,10 @@
 [
   {
-    "file": "Example-Valid-Worldview2.json",
-    "label": "WorldView-2 - PAN product, level 2A (valid)"
+    "file": "Example-Normal-Valid.json",
+    "label": "Normal Valid Example"
+  },
+  {
+    "file": "Example-Minimum-Valid.json",
+    "label": "Minimum Valid Example"
   }
 ]
