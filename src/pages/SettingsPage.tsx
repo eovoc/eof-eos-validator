@@ -1,6 +1,15 @@
 import {useContext, useRef, useState} from "react";
+import type {JSX} from "react";
+import type {IconBaseProps} from "react-icons";
+import {FiDownload, FiUpload} from "react-icons/fi";
 import {SettingsFileContext} from "../App";
 import {Settings, validateSettings} from "../types/Settings";
+
+// TS 4.9 rejects components typed as returning ReactNode (react-icons + @types/react 19),
+// so narrow the icon types to return JSX.Element.
+type Icon = (props: IconBaseProps) => JSX.Element;
+const ImportIcon = FiDownload as Icon;
+const ExportIcon = FiUpload as Icon;
 
 export default function SettingsPage() {
 
@@ -18,13 +27,15 @@ export default function SettingsPage() {
       let parsed: unknown;
       try {
         parsed = JSON.parse(e.target!.result as string);
-      } catch {
-        setError(`"${f.name}" is not a valid JSON file.`);
+      } catch(error) {
+        setError(`"${f.name}" is not a valid JSON file. `+error);
+        console.log(error);
         return;
       }
       const validationError = validateSettings(parsed);
       if (validationError) {
         setError(`"${f.name}" is not a valid settings file: ${validationError}.`);
+        console.log(validationError);
         return;
       }
       setFile(f);
@@ -48,9 +59,11 @@ export default function SettingsPage() {
     <>
       <div className="button-grid">
         <button className="primary-btn" onClick={() => fileInputRef.current?.click()}>
+          <ImportIcon className="btn-icon" aria-hidden="true" />
           Import
         </button>
         <button className="primary-btn" onClick={handleExport} disabled={!settings}>
+          <ExportIcon className="btn-icon" aria-hidden="true" />
           Export
         </button>
       </div>
@@ -64,7 +77,7 @@ export default function SettingsPage() {
             e.target.value = "";
           }}
       />
-      {file && <div className="file-name">Imported: {file.name}</div>}
+      {file && <div className="file-name centered">Imported: {file.name}</div>}
 
       {error && <div className="parse-error">{error}</div>}
 

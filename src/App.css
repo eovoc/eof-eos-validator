@@ -185,6 +185,10 @@ h1 {
   word-break: break-all;
 }
 
+.file-name.centered {
+  text-align: center;
+}
+
 .button-grid {
     display: grid;
     grid-template-columns: 12.5% 12.5%;
@@ -204,6 +208,11 @@ h1 {
   transition: background 0.15s;
   margin-top: 12px;
   margin-bottom: 12px;
+}
+
+.btn-icon {
+  vertical-align: -0.2em;
+  margin-right: 8px;
 }
 
 .primary-btn:hover:not(:disabled) {
@@ -345,8 +354,18 @@ h1 {
 }
 
 .property-list {
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 1200px;
   margin: 16px auto;
+}
+
+@media (max-width: 768px) {
+  .property-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .property-list-title {
@@ -358,7 +377,11 @@ h1 {
 }
 
 .property-section {
-  margin-bottom: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .property-row {

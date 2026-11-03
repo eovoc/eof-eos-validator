@@ -4,7 +4,7 @@ const BASE = process.env.PUBLIC_URL ?? "";
 
 export async function getDefaultSettings(): Promise<Settings>{
 
-    const settingsFilePath = BASE+"/settings.json"
+    const settingsFilePath = BASE+"/settings/default.json"
 
     const res = await fetch(settingsFilePath);
     if (!res.ok) throw new Error(`Failed to load settings.json: ${res.status}`);
