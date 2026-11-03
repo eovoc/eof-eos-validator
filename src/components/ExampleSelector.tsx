@@ -11,6 +11,7 @@ export interface ExampleEntry {
 }
 
 const EXAMPLES_URL = `${process.env.PUBLIC_URL}/examples`;
+const MANIFEST_URL = `${EXAMPLES_URL}/index.json`;
 
 function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
@@ -23,7 +24,7 @@ export default function ExampleSelector({ onLoad }: Readonly<{ onLoad: (content:
 
   useEffect(() => {
     let cancelled = false;
-    fetchJson(`${EXAMPLES_URL}/index.json`)
+    fetchJson(MANIFEST_URL)
       .then((list) => {
         if (!Array.isArray(list)) {
           throw new Error("index.json must contain a list");
