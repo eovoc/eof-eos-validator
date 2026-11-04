@@ -27,6 +27,19 @@ ajv validate --spec=draft2019 -c ajv-formats     -m "public/schemas/json-schema-
 2. NPM should be installed on the host.
 3. ajv and ajv-cli packages should be installed
 
+## Examples
+
+The EOF-EOS page has an "Examples" list above the editor. Selecting an example replaces the content of the editor.
+
+The examples are the JSON files of `public/examples/`. The list is `public/examples/index.json`, maintained by hand.
+To add an example, copy its file into `public/examples/` and add an entry:
+
+```json
+{ "file": "my-example.json", "label": "Text shown in the list" }
+```
+
+Remove the entry when you remove the file.
+
 ## Deploy to Github Pages
 To deploy the static website on github pages, execute the following command:
 ```shell
