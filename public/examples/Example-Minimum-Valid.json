@@ -52,16 +52,6 @@
         ]
       }
     ],
-    "productInformation": {},
-    "links": {
-      "measurements": [
-        {
-          "href": "/measurements/<native_product>",
-          "type": "application/vnd.hdfgroup.hdf5",
-          "title": "Native File",
-          "category": "DATA"
-        }
-      ]
-    }
+    "productInformation": {}
   }
 }
