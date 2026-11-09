@@ -1,0 +1,10 @@
+[
+  {
+    "file": "Example-Normal-Valid.json",
+    "label": "Normal Valid Example"
+  },
+  {
+    "file": "Example-Minimum-Valid.json",
+    "label": "Minimum Valid Example"
+  }
+]

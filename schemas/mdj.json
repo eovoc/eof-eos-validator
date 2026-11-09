@@ -1562,7 +1562,7 @@
 				"usageDateTime": {
 					"type": "array",
 					"items": {
-						"$ref": "#InstantOrInterval"
+						"$ref": "#/definitions/InstantOrInterval"
 					},
 					"uniqueItems": true
 				},
@@ -1605,7 +1605,7 @@
 					"$ref": "#/definitions/DateOrDateTime"
 				},
 				{
-					"$ref": "#Interval"
+					"$ref": "#/definitions/Interval"
 				}
 			]
 		},
@@ -1630,10 +1630,10 @@
 			"type": "object",
 			"properties": {
 				"language": {
-					"$ref": "#LanguageCode"
+					"$ref": "#/definitions/LanguageCode"
 				},
 				"country": {
-					"$ref": "#CountryCode"
+					"$ref": "#/definitions/CountryCode"
 				},
 				"characterEncoding": {
 					"$ref": "#/definitions/MD_CharacterSetCode"
@@ -1677,7 +1677,7 @@
 				"hierarchialClass": {
 					"type": "array",
 					"items": {
-						"$ref": "#TaxonomicClassification"
+						"$ref": "#/definitions/TaxonomicClassification"
 					},
 					"uniqueItems": true
 				}
@@ -1719,12 +1719,12 @@
 				"theVouchers": {
 					"type": "array",
 					"items": {
-						"$ref": "#Vouchers"
+						"$ref": "#/definitions/Vouchers"
 					},
 					"uniqueItems": true
 				},
 				"theTaxonomicClassification": {
-					"$ref": "#TaxonomicClassification"
+					"$ref": "#/definitions/TaxonomicClassification"
 				}
 			},
 			"required": [
