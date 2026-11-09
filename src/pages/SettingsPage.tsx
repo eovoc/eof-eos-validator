@@ -82,24 +82,25 @@ export default function SettingsPage() {
       {error && <div className="parse-error">{error}</div>}
 
       <div className="property-list">
-        <details className="property-section" open>
-          <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
-          {settings?.requiredProperties.map((property, index) => (
-            <div className="property-row" key={index}>
-              <input
-                  type="text"
-                  className="property-input"
-                  value={property}
-                  disabled={true}
-              />
-            </div>
-          ))}
-        </details>
 
         <details className="property-section" open>
           <summary className="property-list-title">Optional properties ({settings?.optionalProperties.length})</summary>
           {settings?.optionalProperties.map((property) => (
-            <div className="property-row" key={property}>
+              <div className="property-row" key={property}>
+                <input
+                    type="text"
+                    className="property-input"
+                    value={property}
+                    disabled={true}
+                />
+              </div>
+          ))}
+        </details>
+
+        <details className="property-section" open>
+          <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
+          {settings?.requiredProperties.map((property, index) => (
+            <div className="property-row" key={index}>
               <input
                   type="text"
                   className="property-input"
