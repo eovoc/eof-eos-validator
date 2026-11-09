@@ -31,6 +31,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "examples:index": "node scripts/examples/generate-examples-index.js",
+    "prebuild": "npm run examples:index",
     "build": "craco build",
     "test": "craco test",
     "validate": "ts-node --project tsconfig.cli.json cli.ts",
