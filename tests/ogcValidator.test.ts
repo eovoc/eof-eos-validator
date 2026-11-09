@@ -24,11 +24,11 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
+let ogcValidator: typeof import("../src/features/ogcValidator")["ogcValidator"];
 
 beforeAll(async () => {
   (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
-  ({ ogcValidator } = await import("../src/services/ogcValidator"));
+  ({ ogcValidator } = await import("../src/features/ogcValidator"));
 });
 
 describe("ogcValidator (real EOF-EOS schema, no mocking)", () => {

@@ -31,7 +31,7 @@
 						"polarisationChannels": "HH",
 						"measurementType": "ABSORPTION",
 						"orbitDirection": "ASCENDING",
-						"waveLengths": [
+						"wavelengths": [
 							{
 								"spectralRange": "VIS"
 							}

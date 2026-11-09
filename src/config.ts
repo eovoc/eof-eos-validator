@@ -1,11 +1,9 @@
 // ogcValidationMode property
 // - 'strict': additional rules processed as errors
 // - 'normal': additional rules processed as warnings
-// - 'soft': additional rules ignored.
 export enum OgcValidationMode {
   Strict = 'strict',
   Normal = 'normal',
-  Soft = 'soft',
 }
 
 interface AppConfig {

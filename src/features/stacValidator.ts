@@ -59,7 +59,7 @@ export async function stacValidator(data: unknown): Promise<StacReport> {
     // stac-node-validator treats a string input as a file path/URL to fetch,
     // not as JSON text, so parse it ourselves first.
     const parsed = typeof data === "string" ? JSON.parse(data) : data;
-    const stacReport = await validate(parsed, { strict: true });
+    const stacReport = await validate(parsed, { strict: false });
     console.log("stac validation report: ",stacReport);
     const valid = stacReport.valid === true;
     const results = collectResults(stacReport);

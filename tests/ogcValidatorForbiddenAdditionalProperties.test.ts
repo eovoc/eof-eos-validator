@@ -23,11 +23,11 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
+let ogcValidator: typeof import("../src/features/ogcValidator")["ogcValidator"];
 
 beforeAll(async () => {
   (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
-  ({ ogcValidator } = await import("../src/services/ogcValidator"));
+  ({ ogcValidator } = await import("../src/features/ogcValidator"));
 });
 
 describe("ogcValidator tests for additional properties", () => {
@@ -84,7 +84,7 @@ describe("ogcValidator tests for additional properties", () => {
   //ADDITIONAL Properties - WavelengthInformation
   it("WavelengthInformation forbid additional properties", async () => {
     const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters[0].waveLengths[0].newProperty = "new value";
+    modifiedExample.properties.acquisitionInformation[0].acquisitionParameters[0].wavelengths[0].newProperty = "new value";
 
     const result = await ogcValidator(modifiedExample);
 
@@ -95,6 +95,17 @@ describe("ogcValidator tests for additional properties", () => {
             (e) => e.keyword === "additionalProperties" && e.params?.additionalProperty === "newProperty"
         )
     ).toBe(true);
+  });
+
+  //ADDITIONAL Properties - Link
+  it("Link forbid additional properties", async () => {
+    const modifiedExample = JSON.parse(JSON.stringify(validExample));
+    modifiedExample.properties.links.measurements[0].newProperty = "new value";
+
+    const result = await ogcValidator(modifiedExample);
+
+    //properties.newProperty should be allowed.
+    expect(result.valid).toBe(false);
   });
 
 });

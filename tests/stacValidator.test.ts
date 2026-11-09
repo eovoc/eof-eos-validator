@@ -1,4 +1,4 @@
-import { stacValidator } from "../src/services/stacValidator";
+import { stacValidator } from "../src/features/stacValidator";
 import validStacItem from "./__fixtures__/stac/valid-stac-item.json";
 import invalidStacItem from "./__fixtures__/stac/invalid-stac-item.json";
 import noVersionStacItem from "./__fixtures__/stac/no-version-stac-item.json";
