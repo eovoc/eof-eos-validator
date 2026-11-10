@@ -11,10 +11,9 @@ export const STATIC_SCHEMAS = [
 // Select schema based on ogcValidationMode
 // STRICT -> ogcStrictValidationSchema
 // NORMAL -> ogcValidationSchema
-// SOFT -> ogcSoftValidationSchema
 //Schema locations are defined in public/config.json
 export async function getValidationSchemaPath(): Promise<string> {
-    const { ogcValidationSchema, ogcStrictValidationSchema, ogcSoftValidationSchema, ogcValidationMode } = await getConfig();
+    const { ogcValidationSchema, ogcStrictValidationSchema, ogcValidationMode } = await getConfig();
 
     let schemaPath;
     switch (ogcValidationMode) {
@@ -25,10 +24,6 @@ export async function getValidationSchemaPath(): Promise<string> {
         case OgcValidationMode.Normal:
             console.log("Loading NORMAL Schema");
             schemaPath = ogcValidationSchema;
-            break;
-        case OgcValidationMode.Soft:
-            console.log("Loading SOFT Schema");
-            schemaPath = ogcSoftValidationSchema;
             break;
         default:
             console.log(`Invalid ogcValidationMode: ${ogcValidationMode}, loading schema default to NORMAL schema.`);

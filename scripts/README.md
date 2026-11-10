@@ -15,7 +15,7 @@ The script folder contains sub-folders, each dedicated to one purpose:
 - additional-rules: script used to add additional rules to the validation schem (instruments/platform relationship enforcement)
 - convert: scripts used to convert rdf files to the json schema
 - diff: script used to list differences between the schema and the old one.
-- schema-variations: script used to generate schema variants (strict and soft variations of the json schema).
+- schema-variations: script used to generate schema variants (strict variation of the json schema).
 
 ## Usage 
 

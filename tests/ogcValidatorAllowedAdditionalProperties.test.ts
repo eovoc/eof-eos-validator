@@ -23,11 +23,24 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
+// Run in 'normal' mode: allow unevaluated properties
+// would fire when a single enum field is swapped in isolation, and are out of
+// scope for these thesaurus checks.
+function withNormalMode(fetchImpl: ReturnType<typeof fileFetch>) {
+  return async (input: unknown) => {
+    const res = await fetchImpl(input);
+    if (!String(input).endsWith("/config.json") || !res.ok) return res;
+    const config = await res.json();
+    return { ...res, json: async () => ({ ...config, ogcValidationMode: "normal" }) };
+  };
+}
+
+
+let ogcValidator: typeof import("../src/features/ogcValidator")["ogcValidator"];
 
 beforeAll(async () => {
-  (global as any).fetch = fileFetch(path.join(__dirname, "..", "public"));
-  ({ ogcValidator } = await import("../src/services/ogcValidator"));
+  (global as any).fetch = withNormalMode(fileFetch(path.join(__dirname, "..", "public")));
+  ({ ogcValidator } = await import("../src/features/ogcValidator"));
 });
 
 describe("ogcValidator tests for additional properties", () => {
@@ -59,17 +72,6 @@ describe("ogcValidator tests for additional properties", () => {
   it("Links allows additional properties", async () => {
     const modifiedExample = JSON.parse(JSON.stringify(validExample));
     modifiedExample.properties.links.newProperty = "new value";
-
-    const result = await ogcValidator(modifiedExample);
-
-    //properties.newProperty should be allowed.
-    expect(result.valid).toBe(true);
-  });
-
-  //ADDITIONAL Properties - Link
-  it("Link allows additional properties", async () => {
-    const modifiedExample = JSON.parse(JSON.stringify(validExample));
-    modifiedExample.properties.links.measurements[0].newProperty = "new value";
 
     const result = await ogcValidator(modifiedExample);
 

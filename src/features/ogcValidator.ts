@@ -39,6 +39,7 @@ type OgcValidationReport = {
   warnings : ErrorObject[]
 }
 
+//Function used to filter erros based on validation mode. The goal is to show additional-rules errors as warnings or not show those errors at all.
 function filterErrors(allErrors: null | undefined | ErrorObject[], validationMode : OgcValidationMode): OgcValidationReport{
   let isValid = false;
   let errors: ErrorObject[] = [];
@@ -54,11 +55,6 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
     const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
     errors = partitionedErrors.kept;
     warnings = partitionedErrors.removed;
-
-  }else if(allErrors && validationMode === OgcValidationMode.Soft){
-    console.log("Only keep errors that do not match additionalRules");
-    const partitionedErrors = partitionErrorsBySchemaPath(allErrors, errorsToExtract);
-    errors = partitionedErrors.kept;
 
   }else{
     console.log("bypass");
@@ -77,6 +73,17 @@ function filterErrors(allErrors: null | undefined | ErrorObject[], validationMod
   return { isValid: isValid,errors: errors, warnings: warnings};
 }
 
+function buildValidationReport(errors: null | undefined | ErrorObject[]){
+
+  let isValid = false;
+  if(errors === null || errors === undefined || errors?.length === 0){
+    isValid = true;
+    errors = [];
+  }
+
+  return { isValid: isValid,errors: errors, warnings: []};
+}
+
 export async function ogcValidator(data: unknown, mandatoryProperties: string[] = []): Promise<ValidationReport> {
 
   await schemasReady;
@@ -93,7 +100,8 @@ export async function ogcValidator(data: unknown, mandatoryProperties: string[] 
   if (customSchema) ajv.removeSchema(customSchema);
 
   console.log("Validation Mode:",ogcValidationMode);
-  const validationReport = filterErrors(validate.errors,ogcValidationMode);
+  //const validationReport = filterErrors(validate.errors,ogcValidationMode);
+  const validationReport = buildValidationReport(validate.errors);
 
   const result = { valid: validationReport.isValid, schema: await getValidationSchemaPath(), errors: validationReport.errors ?? null, warnings : validationReport.warnings};
   return { valid:validationReport.isValid, results: [result]};

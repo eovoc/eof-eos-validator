@@ -21,23 +21,23 @@ function fileFetch(publicDir: string) {
   };
 }
 
-let ogcValidator: typeof import("../src/services/ogcValidator")["ogcValidator"];
+let ogcValidator: typeof import("../src/features/ogcValidator")["ogcValidator"];
 
-// Run in 'soft' mode: additional rules (e.g. platform -> instrument mapping)
+// Run in 'normal' mode: allow unevaluated properties
 // would fire when a single enum field is swapped in isolation, and are out of
 // scope for these thesaurus checks.
-function withSoftMode(fetchImpl: ReturnType<typeof fileFetch>) {
+function withNormalMode(fetchImpl: ReturnType<typeof fileFetch>) {
   return async (input: unknown) => {
     const res = await fetchImpl(input);
     if (!String(input).endsWith("/config.json") || !res.ok) return res;
     const config = await res.json();
-    return { ...res, json: async () => ({ ...config, ogcValidationMode: "soft" }) };
+    return { ...res, json: async () => ({ ...config, ogcValidationMode: "normal" }) };
   };
 }
 
 beforeAll(async () => {
-  (global as any).fetch = withSoftMode(fileFetch(path.join(__dirname, "..", "public")));
-  ({ ogcValidator } = await import("../src/services/ogcValidator"));
+  (global as any).fetch = withNormalMode(fileFetch(path.join(__dirname, "..", "public")));
+  ({ ogcValidator } = await import("../src/features/ogcValidator"));
 });
 
 const thesaurus = schema.definitions.thesaurus as Record<string, { enum: string[] }>;
@@ -59,7 +59,7 @@ const ENUM_FIELDS: { name: string; path: PathSegment[]; thesaurusKey: string }[]
   { name: "acquisitionParameters.polarisationChannels", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "polarisationChannels"], thesaurusKey: "polarisation-channels-types" },
   { name: "acquisitionParameters.measurementType", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "measurementType"], thesaurusKey: "measurement-types" },
   { name: "acquisitionParameters.orbitDirection", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "orbitDirection"], thesaurusKey: "orbit-direction-types" },
-  { name: "waveLengths.spectralRange", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "waveLengths", 0, "spectralRange"], thesaurusKey: "spectral-range-types" },
+  { name: "wavelengths.spectralRange", path: ["properties", "acquisitionInformation", 0, "acquisitionParameters", 0, "wavelengths", 0, "spectralRange"], thesaurusKey: "spectral-range-types" },
   { name: "productInformation.processingLevel", path: ["properties", "productInformation", "processingLevel"], thesaurusKey: "processing-level-types" },
   { name: "productInformation.processingMode", path: ["properties", "productInformation", "processingMode"], thesaurusKey: "processing-mode-types" },
   { name: "productInformation.productContentsType", path: ["properties", "productInformation", "productContentsType"], thesaurusKey: "product-content-types" },

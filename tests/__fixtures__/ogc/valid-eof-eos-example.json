@@ -1,78 +1,95 @@
 {
 	"type": "Feature",
-	"id": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001",
+	"id": "WV2_OPER_L2ASTB_PAN_20160501T144606_S24-190_W066-403_0001",
 	"geometry": {
 		"type": "Polygon",
 		"coordinates": [
 			[
 				[
-					13.07668457,
-					42.86038349
+					-66.44291264,
+					-24.15261009
 				],
 				[
-					13.07922117,
-					42.77851676
+					-66.44136086,
+					-24.23036597
 				],
 				[
-					13.12188714,
-					42.77922468
+					-66.36391186,
+					-24.22904374
 				],
 				[
-					13.1194068,
-					42.86109342
+					-66.36551048,
+					-24.15129263
 				],
 				[
-					13.07668457,
-					42.86038349
+					-66.44291264,
+					-24.15261009
 				]
 			]
 		]
 	},
 	"properties": {
 		"status": "ACQUIRED",
-		"title": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001",
-		"date": "2016-10-31T09:55:40.898Z/2016-10-31T09:55:40.898Z",
-		"created": "2025-09-16T19:37:24.000Z",
+		"title": "WV2_OPER_L2ASTB_PAN_20160501T144606_S24-190_W066-403_0001",
+		"date": "2016-05-01T14:46:06.806Z/2016-05-01T14:46:06.806Z",
+		"created": "2021-02-01T15:30:23.000Z",
 		"acquisitionInformation": [
 			{
 				"platform": {
-					"platformShortName": "GeoEye-1",
+					"platformShortName": "WorldView-2",
 					"orbitType": "LEO"
 				},
 				"instrument": {
-					"instrumentShortName": "GIS",
+					"instrumentShortName": "WorldView-110 Camera",
 					"sensorType": "OPTICAL"
 				},
 				"acquisitionParameters": [
 					{
-						"beginningDateTime": "2016-10-31T09:55:40.898Z",
-						"endingDateTime": "2016-10-31T09:55:40.898Z",
-						"operationalMode": "PM",
-						"resolution": 2,
+						"beginningDateTime": "2016-05-01T14:46:06.806Z",
+						"endingDateTime": "2016-05-01T14:46:06.806Z",
+						"operationalMode": "STEREO",
+						"resolution": 0.5,
 						"acquisitionType": "NOMINAL",
-						"waveLengths": [{
-							"spectralRange": "VIS"
-						}],
+						"wavelengths": [
+							{
+								"spectralRange": "VIS",
+								"startWavelength": 400E-09,
+								"endWavelength": 690E-09,
+								"discreteWavelengths": [
+									425E-09,
+									480E-09,
+									620E-09
+								]
+							},
+							{
+								"spectralRange": "NIR",
+								"startWavelength": 750E-09,
+								"endWavelength": 800E-09,
+								"discreteWavelengths": [
+									775E-09
+								]
+							}
+						],
 						"acquisitionAngles": {
-							"illuminationAzimuthAngle": 164.2,
-							"illuminationElevationAngle": 31.7
+							"illuminationAzimuthAngle": 33.3,
+							"illuminationElevationAngle": 44.1
 						}
 					}
 				]
 			}
 		],
 		"productInformation": {
-			"size": 167254052,
+			"size": 627642676,
 			"cloudCover": 0,
-			"productType": "SEA_PRI_1P",
+			"productType": "L2ASTB_PAN",
 			"processingLevel": "2A",
 			"resourceLineage": [
 				{
 					"processStep": [
 						{
-							"description": "EOPF-EOS Converter for GeoEye-1",
+							"description": "EOPF-EOS Converter for WorldView",
 							"stepDateTime": {
-								"created": "2026-01-15T15:32:49.000Z"
+								"created": "2021-02-01T15:30:23.000Z"
 							},
 							"processor": [
 								{
@@ -87,28 +104,28 @@
 							],
 							"reference": [
 								{
-									"title": "EOPF-EOS Specialization for GeoEye-1 products",
+									"title": "EOPF-EOS Specialization for WorldView products",
 									"edition": "1.0"
 								}
 							],
 							"source": [
 								{
-									"citation": "050372013030_01_README.XML",
+									"citation": "<Native product name>",
 									"processedLevel": {
-										"code": "LV2A"
+										"code": "Stereo2A"
 									}
 								}
 							],
 							"processingInformation": {
 								"softwareReference": {
-									"title": "EOPF-EOS Converter for GeoEye-1",
-									"edition": "1.0.0"
+									"title": "<EOPF-EOS Converter name>",
+									"edition": "<EOPF-EOSConverter version>"
 								}
 							},
 							"output": [
 								{
 									"sourceCitation": {
-										"title": "GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001.ZIP"
+										"title": "WV1_OPER_L2ASTB_PAN_20100527T231608_N13-756_W100-000_0001.ZIP"
 									}
 								}
 							]
@@ -120,7 +137,7 @@
 		"links": {
 			"measurements": [
 				{
-					"href": "/measurements/050372013030_01_README.XML",
+					"href": "/measurements/<native_product>",
 					"type": "application/vnd.hdfgroup.hdf5",
 					"title": "Native File",
 					"category": "DATA"
@@ -128,7 +145,7 @@
 			],
 			"previews": [
 				{
-					"href": "preview/GE1_OPER_GIS_4B__2A_20161031T095540_N42-819_E013-099_0001.PNG",
+					"href": "/preview/overviews/WV1_OPER_L2ASTB_PAN_20100527T231608_N13-756_W100-000_0001.PNG",
 					"type": "image/png",
 					"title": "Product browse",
 					"category": "OVERVIEW"

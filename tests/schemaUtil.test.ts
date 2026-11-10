@@ -16,7 +16,6 @@ function mockConfig(ogcValidationMode: OgcValidationMode) {
     converterUrl: "http://converter",
     ogcValidationSchema: "schemas/eof-eos-schema.json",
     ogcStrictValidationSchema: "schemas/eof-eos-schema-strict.json",
-    ogcSoftValidationSchema: "schemas/eof-eos-schema-soft.json",
     ogcValidationMode,
   });
 }
@@ -39,11 +38,6 @@ describe("getValidationSchemaPath", () => {
   it("returns the normal schema in NORMAL mode", async () => {
     mockConfig(OgcValidationMode.Normal);
     await expect(getValidationSchemaPath()).resolves.toBe(`${BASE}/schemas/eof-eos-schema.json`);
-  });
-
-  it("returns the soft schema in SOFT mode", async () => {
-    mockConfig(OgcValidationMode.Soft);
-    await expect(getValidationSchemaPath()).resolves.toBe(`${BASE}/schemas/eof-eos-schema-soft.json`);
   });
 
   it("falls back to the normal schema for an invalid mode", async () => {

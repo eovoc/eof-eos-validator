@@ -258,7 +258,7 @@ h1 {
 
 .result.invalid > .result-title,
 .result-title.invalid {
-  color: #b91c1c;
+  color: #b91c12;
 }
 
 .result.warning > .result-title,

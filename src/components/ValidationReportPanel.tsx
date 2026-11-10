@@ -20,16 +20,17 @@ export default function ValidationReportPanel({report, validTitle, invalidTitle 
 {
 
     const totalErrors = report.results!.reduce((sum, item) => sum + (item.errors?.length ?? 0), 0);
-    const totalWarnings = report.results!.reduce((sum, item) => sum + (item.warnings?.length ?? 0), 0);
+    // const totalWarnings = report.results!.reduce((sum, item) => sum + (item.warnings?.length ?? 0), 0);
 
     return(
        <>
            {report.valid ? (
                <p className="result-title valid">{validTitle}</p>
            ): (
-               <p className="result-title invalid">{invalidTitle}
+               <p className="result-title invalid">{invalidTitle}&nbsp;
                    ({totalErrors} error{totalErrors === 1 ? "" : "s"})
-                   ({totalWarnings} warning{totalWarnings === 1 ? "" : "s"})</p>
+                   {/*({totalWarnings} warning{totalWarnings === 1 ? "" : "s"})*/}
+               </p>
            )}
 
            {report.results!.map((item, i) => (
