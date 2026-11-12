@@ -84,7 +84,7 @@ export default function StacConverterPage() {
             />
           </div>
         ) : (
-          <p>No JSON loaded yet. Upload or paste an EOF-EOS metadata file first.</p>
+          <p>No JSON loaded yet. Upload or paste an EOPF-EOS metadata file first.</p>
         )}
       </div>
 
