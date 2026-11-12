@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router";
-import { ogcValidator } from "../features/ogcValidator";
+import { buildCustomSchema, ogcValidator } from "../features/ogcValidator";
 import FileUploadCard from "../components/FileUploadCard";
 import {ValidationReport} from "../types/ValidationResult";
 import {JsonFileContext, SettingsFileContext} from "../App";
@@ -20,6 +20,26 @@ export default function OgcValidatorPage() {
   // FileUploadCard reads the content only when it is created: a new key
   // recreates it, so that a loaded example replaces the text of the editor.
   const [editorKey, setEditorKey] = useState(0);
+  // Object URL of the custom schema (main schema + user-defined mandatory properties), if any.
+  const [customSchemaUrl, setCustomSchemaUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let url: string | null = null;
+    buildCustomSchema(settings?.requiredProperties ?? [])
+      .then((schema:any) => {
+        if (cancelled || !schema) return;
+        const blob = new Blob([JSON.stringify(schema, null, 2)], { type: "application/json" });
+        url = URL.createObjectURL(blob);
+        setCustomSchemaUrl(url);
+      })
+      .catch((e:any) => console.error("[validator] failed to build custom schema", e));
+    return () => {
+      cancelled = true;
+      if (url) URL.revokeObjectURL(url);
+      setCustomSchemaUrl(null);
+    };
+  }, [settings]);
 
   const sections: DocumentationSection[] =[
       {title:"Documentation", links: [
@@ -28,6 +48,7 @@ export default function OgcValidatorPage() {
         ]},
     {title:"EOF EOS Schema", links: [
         {name:"Schema", href:`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`},
+        ...(customSchemaUrl ? [{name:"Custom Schema (with mandatory properties)", href: customSchemaUrl}] : []),
         ]},
     {title:"ISO19115-4 Schemas", links: [
         {name:"DQC Schema", href:`${process.env.PUBLIC_URL}/schemas/dqc.json`},

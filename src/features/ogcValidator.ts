@@ -3,7 +3,7 @@ import addFormats from "ajv-formats";
 import draft7MetaSchema from "ajv/dist/refs/json-schema-draft-07.json";
 import {partitionErrorsBySchemaPath, ValidationReport} from "../types/ValidationResult";
 import {getConfig, OgcValidationMode} from "../config";
-import {enforcePropertyAsMandatory, getValidationSchemaPath, STATIC_SCHEMAS} from "../utils/schemaUtil";
+import {enforcePropertyAsMandatory, getValidationSchemaPath, JsonSchema, STATIC_SCHEMAS} from "../utils/schemaUtil";
 
 const ajv = new Ajv2019({ allErrors: true, validateSchema: true, strict: true });
 addFormats(ajv);
@@ -84,6 +84,12 @@ function buildValidationReport(errors: null | undefined | ErrorObject[]){
   return { isValid: isValid,errors: errors, warnings: []};
 }
 
+//Build the schema used for validation when user-defined mandatory properties are set: the main schema
+//with those properties added as required. Returns null when there is no mandatory property.
+export async function buildCustomSchema(mandatoryProperties: string[] = []): Promise<JsonSchema | null> {
+  return mandatoryProperties.length > 0 ? enforcePropertyAsMandatory(mandatoryProperties) : null;
+}
+
 export async function ogcValidator(data: unknown, mandatoryProperties: string[] = []): Promise<ValidationReport> {
 
   await schemasReady;
@@ -91,7 +97,7 @@ export async function ogcValidator(data: unknown, mandatoryProperties: string[] 
   const { ogcValidationMode } = await getConfig();
 
   //Use a schema with the user-defined mandatory properties added as required, if any.
-  const customSchema = mandatoryProperties.length > 0 ? await enforcePropertyAsMandatory(mandatoryProperties) : null;
+  const customSchema = await buildCustomSchema(mandatoryProperties);
   console.log("Mandatory properties:", mandatoryProperties);
 
   const validate = ajv.compile(customSchema ?? mainSchema);
