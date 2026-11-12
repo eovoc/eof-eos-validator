@@ -22,17 +22,14 @@ export default function OgcValidatorPage() {
   const [editorKey, setEditorKey] = useState(0);
 
   const sections: DocumentationSection[] =[
-      {title:"Documentation", links: [
+      {title:"References", links: [
           {name:"EO Metadata", href:"https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html"},
-          {name:"EOF-EOS Metadata Schema Viewer", href:"https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"}
-        ]},
-    {title:"EOF EOS Schema", links: [
-        {name:"Schema", href:`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`},
-        ]},
-    {title:"ISO19115-4 Schemas", links: [
-        {name:"DQC Schema", href:`${process.env.PUBLIC_URL}/schemas/dqc.json`},
-        {name:"MDJ Schema", href:`${process.env.PUBLIC_URL}/schemas/mdj.json`}
-      ]},
+          {name:"EOF-EOS Metadata Schema Viewer", href:"https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"},
+          {name:"EOF-EOS Schema", href:`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`},
+          {name:"ISO 19115-4 Data Quality Metadata Schema - (DQC )", href:`${process.env.PUBLIC_URL}/schemas/dqc.json`},
+          {name:"ISO 19115-4 Resource Lineage Metadata Schema - (MDJ)", href:`${process.env.PUBLIC_URL}/schemas/mdj.json`},
+          ]},
+
   ];
 
   const ready = content !== null && !parseError;
