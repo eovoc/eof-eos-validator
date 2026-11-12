@@ -226,13 +226,10 @@ h1 {
 
 .result {
   border-radius: 10px;
-  padding: 20px 24px;
   margin-top: 4px;
 }
 
 .result.valid {
-  background: #f0fdf4;
-  border: 1.5px solid #4ade80;
 }
 
 .result.invalid {
