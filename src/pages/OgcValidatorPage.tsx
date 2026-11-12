@@ -9,6 +9,16 @@ import ValidationReportPanel from "../components/ValidationReportPanel";
 import ExampleSelector from "../components/ExampleSelector";
 import {DocumentationSection} from "../types/DocumentationSection";
 
+const documentation: string ="## References\n" +
+    "\n" +
+    "- [EO Metadata](https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html)\n" +
+    "- [EOF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
+    "- [EOF-EOS Metadata Schema](${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json)\n" +
+    "- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n" +
+    "- [ISO 19115-4 Resource Lineage Metadata Schema (mdj.json)](${process.env.PUBLIC_URL}/schemas/mdj.json)";
+
+
+
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
   const { settings } = useContext(SettingsFileContext)!;
