@@ -447,7 +447,7 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1c52bb25-106c-41f4-a0ea-0e8c218b0b83">
-	<skos:prefLabel>THUMBNAILS</skos:prefLabel>
+	<skos:prefLabel>THUMBNAIL</skos:prefLabel>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ca401c00-bee9-47e1-ba23-1523756f593d">

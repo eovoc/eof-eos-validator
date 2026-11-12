@@ -899,7 +899,7 @@
 				"description": "Enum generated from thesaurus SKOS 'Category Types' (https://earth.esa.int/concepts/concept_scheme/category).",
 				"type": "string",
 				"enum": [
-					"THUMBNAILS",
+					"THUMBNAIL",
 					"OVERVIEW",
 					"QUALITY",
 					"DATA"
