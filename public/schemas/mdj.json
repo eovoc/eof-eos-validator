@@ -633,7 +633,11 @@
 					"$ref": "#/definitions/MD_Identifier"
 				},
 				"softwareReference": {
-					"$ref": "#/definitions/CI_Citation"
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CI_Citation"
+					},
+					"uniqueItems": true
 				},
 				"procedureDescription": {
 					"type": "string"
