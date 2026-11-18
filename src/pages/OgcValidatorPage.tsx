@@ -7,6 +7,13 @@ import {JsonFileContext, SettingsFileContext} from "../App";
 import ValidationReportPanel from "../components/ValidationReportPanel";
 import ExampleSelector from "../components/ExampleSelector";
 import MarkdownDocumentationPanel from "../components/MarkdownDocumentationPanel";
+import {toJsonDataUrl} from "../utils/jsonUtil";
+import {loadSchema} from "../utils/schemaUtil";
+
+let defaultSchemaUrl: string;
+loadSchema().then((schema) =>{
+  defaultSchemaUrl = toJsonDataUrl(schema);
+});
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
@@ -19,23 +26,19 @@ export default function OgcValidatorPage() {
   // FileUploadCard reads the content only when it is created: a new key
   // recreates it, so that a loaded example replaces the text of the editor.
   const [editorKey, setEditorKey] = useState(0);
-  // Object URL of the custom schema (main schema + user-defined mandatory properties), if any.
+  // data: URL of the custom schema (main schema + user-defined mandatory properties), if any.
   const [customSchemaUrl, setCustomSchemaUrl] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    let url: string | null = null;
     buildCustomSchema(settings?.requiredProperties ?? [])
-      .then((schema:any) => {
+      .then((schema) => {
         if (cancelled || !schema) return;
-        const blob = new Blob([JSON.stringify(schema, null, 2)], { type: "application/json" });
-        url = URL.createObjectURL(blob);
-        setCustomSchemaUrl(url);
+        setCustomSchemaUrl(toJsonDataUrl(schema));
       })
-      .catch((e:any) => console.error("[validator] failed to build custom schema", e));
+      .catch((e: unknown) => console.error("[validator] failed to build custom schema", e));
     return () => {
       cancelled = true;
-      if (url) URL.revokeObjectURL(url);
       setCustomSchemaUrl(null);
     };
   }, [settings]);
@@ -46,7 +49,7 @@ export default function OgcValidatorPage() {
       "\n" +
       "- [EO Metadata](https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html)\n" +
       "- [EOF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
-      `- [EOF-EOS Metadata Schema](${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json)\n` +
+      `- [EOF-EOS Metadata Schema](${defaultSchemaUrl})\n` +
       // The custom schema is built asynchronously: its link appears once it is ready.
       (customSchemaUrl ? `- [EOF-EOS Metadata Schema Modified](${customSchemaUrl})\n` : "") +
       `- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n` +
