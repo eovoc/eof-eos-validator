@@ -16,7 +16,6 @@ function mockConfig(ogcValidationMode: OgcValidationMode) {
     converterUrl: "http://converter",
     ogcValidationSchema: "schemas/eof-eos-schema.json",
     ogcStrictValidationSchema: "schemas/eof-eos-schema-strict.json",
-    ogcValidationMode,
   });
 }
 

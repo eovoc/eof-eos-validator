@@ -1,22 +1,31 @@
+import Ajv, { JSONSchemaType } from "ajv";
+
 export type Settings = {
+  name: string,
+  version: string,
   /** Property names that must be enforced as required in the validation schema. */
   requiredProperties: string[];
   optionalProperties: string[];
 };
 
-function isStringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((v) => typeof v === "string");
-}
+const settingsSchema: JSONSchemaType<Settings> = {
+  type: "object",
+  properties: {
+    name: {type: "string"},
+    version: {type: "string"},
+    requiredProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
+    optionalProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
+  },
+  required: ["requiredProperties", "optionalProperties"],
+  additionalProperties: false, // rejects extra keys
+};
 
-/** Returns an error message if the value is not a valid Settings object, or null if it is. */
-export function validateSettings(value: unknown): string | null {
-  if (typeof value !== "object" || value === null || Array.isArray(value)) {
-    return "expected a JSON object";
+const ajv = new Ajv({ allErrors: true }); // report every error, not just the first
+const validateSettings = ajv.compile(settingsSchema); // compile once, reuse
+
+export function validate(input: unknown): Settings {
+  if (!validateSettings(input)) {
+    throw new Error(ajv.errorsText(validateSettings.errors));
   }
-  const obj = value as Record<string, unknown>;
-  for (const key of ["requiredProperties", "optionalProperties"]) {
-    if (!(key in obj)) return `missing "${key}"`;
-    if (!isStringArray(obj[key])) return `"${key}" must be an array of strings`;
-  }
-  return null;
+  return input; // narrowed to Settings by the type guard
 }

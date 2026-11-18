@@ -87,14 +87,14 @@ function FileUploadCard({
           onClick={() => switchMode("file")}
           type="button"
         >
-          Upload EOF-EOS metadata file
+          Upload EOPF-EOS metadata file
         </button>
         <button
           className={`upload-tab ${mode === "paste" ? "active" : ""}`}
           onClick={() => switchMode("paste")}
           type="button"
         >
-          Edit EOF-EOS metadata (JSON)
+          Edit EOPF-EOS metadata (JSON)
         </button>
       </div>
 

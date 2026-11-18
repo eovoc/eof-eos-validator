@@ -52,18 +52,14 @@ export default function OgcValidatorPage() {
   }, [settings]);
 
   const sections: DocumentationSection[] =[
-      {title:"Documentation", links: [
-          {name:"EO Metadata", href:"https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html"},
-          {name:"EOF-EOS Schema Documentation", href:"https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"}
-        ]},
-    {title:"EOF EOS Schema", links: [
-        {name:"Schema", href:`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`},
-        ...(customSchemaUrl ? [{name:"Custom Schema (with mandatory properties)", href: customSchemaUrl}] : []),
-        ]},
-    {title:"ISO19115-4 Schemas", links: [
-        {name:"DQC Schema", href:`${process.env.PUBLIC_URL}/schemas/dqc.json`},
-        {name:"MDJ Schema", href:`${process.env.PUBLIC_URL}/schemas/mdj.json`}
-      ]},
+      {title:"References", links: [
+          {name:"EOPF-EOS Metadata Specification", href:"https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html"},
+          {name:"EOPF-EOS Metadata Schema Viewer", href:"https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json"},
+          {name:"EOPF-EOS Metadata Schema", href:`${process.env.PUBLIC_URL}/schemas/eof-eos-schema-strict.json`},
+          {name:"ISO 19115-4 Data Quality Metadata Schema (dqc.json)", href:`${process.env.PUBLIC_URL}/schemas/dqc.json`},
+          {name:"ISO 19115-4 Resource Lineage Metadata Schema (mdj.json)", href:`${process.env.PUBLIC_URL}/schemas/mdj.json`},
+          ]},
+
   ];
 
   const ready = content !== null && !parseError;
@@ -102,7 +98,11 @@ export default function OgcValidatorPage() {
 
   return (
     <>
-      <ExampleSelector onLoad={handleExample} />
+        <div className="toolbar">
+            <ExampleSelector onLoad={handleExample} />
+            <div className="toolbar-settings">{settings?.name} {settings?.version}</div>
+        </div>
+
 
       <div className="upload-grid">
         <FileUploadCard
@@ -138,8 +138,8 @@ export default function OgcValidatorPage() {
               <>
                 <h2>Validation Report</h2>
                 <ValidationReportPanel report={result}
-                                       validTitle="Valid EOF-EOS Metadata"
-                                       invalidTitle="Invalid EOF-EOS Metadata"/>
+                                       validTitle="Valid EOPF-EOS Metadata"
+                                       invalidTitle="Invalid EOPF-EOS Metadata"/>
               </>
       )}
 
