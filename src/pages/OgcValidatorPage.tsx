@@ -48,8 +48,8 @@ export default function OgcValidatorPage() {
       "## References\n" +
       "\n" +
       "- [EO Metadata](https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html)\n" +
-      "- [EOF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
-      `- [EOF-EOS Metadata Schema](${defaultSchemaUrl})\n` +
+      "- [EOPF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
+      `- [EOPF-EOS Metadata Schema](${defaultSchemaUrl})\n` +
       // The custom schema is built asynchronously: its link appears once it is ready.
       (customSchemaUrl ? `- [EOF-EOS Metadata Schema Modified](${customSchemaUrl})\n` : "") +
       `- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n` +
