@@ -8,7 +8,7 @@ function urlTransform(url: string): string {
 }
 
 const components: Components = {
-    // Open links in a new tab, consistent with DocumentationPanel
+    // Open links in a new tab
     a: ({node, ...props}) => (
         <a {...props} className="documentation-link" target="_blank" rel="noreferrer"/>
     ),
