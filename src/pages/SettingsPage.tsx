@@ -3,7 +3,7 @@ import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
 import {FiDownload, FiUpload} from "react-icons/fi";
 import {SettingsFileContext} from "../App";
-import {Settings, validateSettings} from "../types/Settings";
+import {Settings, validate} from "../types/Settings";
 
 // TS 4.9 rejects components typed as returning ReactNode (react-icons + @types/react 19),
 // so narrow the icon types to return JSX.Element.
@@ -32,14 +32,18 @@ export default function SettingsPage() {
         console.log(error);
         return;
       }
-      const validationError = validateSettings(parsed);
-      if (validationError) {
-        setError(`"${f.name}" is not a valid settings file: ${validationError}.`);
-        console.log(validationError);
-        return;
+
+      try{
+        validate(parsed);
+        setFile(f);
+        setSettings(parsed as Settings);
+      }catch(error){
+          setError(`"${f.name}" is not a valid settings file: ${error}.`);
+          console.log(error);
+          return;
       }
-      setFile(f);
-      setSettings(parsed as Settings);
+
+
     };
     reader.readAsText(f);
   }

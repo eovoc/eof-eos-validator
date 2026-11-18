@@ -1,16 +1,22 @@
-import {validateSettings} from "../src/types/Settings";
+import {validate} from "../src/types/Settings";
 
-describe("validateSettings", () => {
+describe("validate", () => {
   it("accepts a valid settings object", () => {
-    expect(validateSettings({requiredProperties: ["id"], optionalProperties: ["title"]})).toBeNull();
+    expect( ()=>
+        validate({requiredProperties: ["id"], optionalProperties: ["title"]})
+    ).not.toBeNull();
   });
 
   it("accepts empty property lists", () => {
-    expect(validateSettings({requiredProperties: [], optionalProperties: []})).toBeNull();
+    expect( () =>
+        validate({requiredProperties: [], optionalProperties: []})
+    ).not.toBeNull();
   });
 
-  it("accepts extra keys", () => {
-    expect(validateSettings({requiredProperties: [], optionalProperties: [], extra: 1})).toBeNull();
+  it("reject extra keys", () => {
+    expect( ()=>
+        validate({requiredProperties: [], optionalProperties: [], extra: 1})
+    ).toThrow(/additional properties/);
   });
 
   it.each([
@@ -19,29 +25,56 @@ describe("validateSettings", () => {
     ["a string", "settings"],
     ["a number", 42],
   ])("rejects %s", (_, value) => {
-    expect(validateSettings(value)).toBe("expected a JSON object");
+    expect( () =>
+        validate(value)
+    ).toThrow(/data must be object/);
   });
 
   it("rejects a missing requiredProperties", () => {
-    expect(validateSettings({optionalProperties: []})).toBe('missing "requiredProperties"');
+    expect( () =>
+        validate({optionalProperties: []})
+    ).toThrow(/requiredProperties/);
   });
 
   it("rejects a missing optionalProperties", () => {
-    expect(validateSettings({requiredProperties: []})).toBe('missing "optionalProperties"');
+    expect( () =>
+        validate({requiredProperties: []})
+    ).toThrow(/optionalProperties/);
   });
 
   it.each([
     ["a string", "id"],
     ["null", null],
     ["an object", {id: true}],
-    ["an array with non-strings", ["id", 1]],
   ])("rejects requiredProperties that is %s", (_, value) => {
-    expect(validateSettings({requiredProperties: value, optionalProperties: []}))
-      .toBe('"requiredProperties" must be an array of strings');
+    expect(
+        () => validate({requiredProperties: value, optionalProperties: []})
+    ).toThrow(/requiredProperties must be array/);
   });
 
-  it("rejects optionalProperties that is not an array of strings", () => {
-    expect(validateSettings({requiredProperties: [], optionalProperties: [null]}))
-      .toBe('"optionalProperties" must be an array of strings');
+  it.each([
+    ["an array with non-strings", ["id", 1]],
+  ])("rejects requiredProperties that is not an array of strings", (_, value) => {
+    expect(
+        () => validate({requiredProperties: value, optionalProperties: []})
+    ).toThrow(/requiredProperties\/1 must be string/);
+  });
+
+  it.each([
+      ["a string", "id"],
+      ["null", null],
+      ["an object", {id: true}],])
+  ("rejects optionalProperties that is %s", (_, value) => {
+    expect(
+        () => validate({requiredProperties: [], optionalProperties: value})
+    ).toThrow(/optionalProperties must be array/);
+  });
+
+  it.each([
+    ["an array with non-strings", ["id", 1]],
+  ])("rejects optionalProperties that is not an array of strings", (_, value) => {
+    expect(
+        () => validate({requiredProperties: [], optionalProperties: value})
+    ).toThrow(/optionalProperties\/1 must be string/);
   });
 });
