@@ -68,7 +68,11 @@ export default function OgcValidatorPage() {
 
   return (
     <>
-      <ExampleSelector onLoad={handleExample} />
+        <div className="toolbar">
+            <ExampleSelector onLoad={handleExample} />
+            <div className="toolbar-settings">{settings?.name} {settings?.version}</div>
+        </div>
+
 
       <div className="upload-grid">
         <FileUploadCard

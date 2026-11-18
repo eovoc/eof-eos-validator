@@ -1,6 +1,8 @@
 import Ajv, { JSONSchemaType } from "ajv";
 
 export type Settings = {
+  name: string,
+  version: string,
   /** Property names that must be enforced as required in the validation schema. */
   requiredProperties: string[];
   optionalProperties: string[];
@@ -9,6 +11,8 @@ export type Settings = {
 const settingsSchema: JSONSchemaType<Settings> = {
   type: "object",
   properties: {
+    name: {type: "string"},
+    version: {type: "string"},
     requiredProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
     optionalProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
   },

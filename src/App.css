@@ -572,3 +572,22 @@ code.stac-card-name {
 .example-selector-error {
   color: #b91c1c;
 }
+
+/* Example selector and the name/version of the loaded settings, on one line */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.toolbar .example-selector {
+  margin-bottom: 0;
+}
+
+.toolbar-settings {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
