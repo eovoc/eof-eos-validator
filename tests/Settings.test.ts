@@ -13,7 +13,7 @@ describe("validate", () => {
     ).not.toBeNull();
   });
 
-  it("reject extra keys", () => {
+  it("rejects extra keys", () => {
     expect( ()=>
         validate({requiredProperties: [], optionalProperties: [], extra: 1})
     ).toThrow(/additional properties/);
