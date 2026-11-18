@@ -10,10 +10,9 @@ import MarkdownDocumentationPanel from "../components/MarkdownDocumentationPanel
 import {toJsonDataUrl} from "../utils/jsonUtil";
 import {loadSchema} from "../utils/schemaUtil";
 
-let defaultSchemaUrl: string;
-loadSchema().then((schema) =>{
-  defaultSchemaUrl = toJsonDataUrl(schema);
-});
+// data: URL of the default schema. Loaded once for the whole application: the page
+// reads it in a state (see below), because assigning a module variable does not re-render.
+const defaultSchemaUrlReady: Promise<string> = loadSchema().then(toJsonDataUrl);
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
@@ -28,6 +27,19 @@ export default function OgcValidatorPage() {
   const [editorKey, setEditorKey] = useState(0);
   // data: URL of the custom schema (main schema + user-defined mandatory properties), if any.
   const [customSchemaUrl, setCustomSchemaUrl] = useState<string | null>(null);
+  const [defaultSchemaUrl, setDefaultSchemaUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    defaultSchemaUrlReady
+      .then((url) => {
+        if (!cancelled) setDefaultSchemaUrl(url);
+      })
+      .catch((e: unknown) => console.error("[validator] failed to load the default schema", e));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -43,18 +55,18 @@ export default function OgcValidatorPage() {
     };
   }, [settings]);
 
-  // Rebuilt only when the custom schema URL changes (it is the only variable part).
+  // Rebuilt only when a schema URL changes (they are the only variable parts).
   const documentation = useMemo(() =>
       "## References\n" +
       "\n" +
       "- [EO Metadata](https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html)\n" +
       "- [EOPF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
-      `- [EOPF-EOS Metadata Schema](${defaultSchemaUrl})\n` +
-      // The custom schema is built asynchronously: its link appears once it is ready.
+      // The schemas are loaded/built asynchronously: their links appear once they are ready.
+      (defaultSchemaUrl ? `- [EOPF-EOS Metadata Schema](${defaultSchemaUrl})\n` : "") +
       (customSchemaUrl ? `- [EOF-EOS Metadata Schema Modified](${customSchemaUrl})\n` : "") +
       `- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n` +
       `- [ISO 19115-4 Resource Lineage Metadata Schema (mdj.json)](${process.env.PUBLIC_URL}/schemas/mdj.json)`,
-    [customSchemaUrl]);
+    [customSchemaUrl,defaultSchemaUrl]);
 
   const ready = content !== null && !parseError;
   let navigate = useNavigate();
