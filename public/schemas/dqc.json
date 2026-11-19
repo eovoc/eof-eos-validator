@@ -348,7 +348,8 @@
       },
       "required": [
         "scope"
-      ]
+      ],
+      "additionalProperties": false
     },
     "DescriptiveResult": {
       "$comment": "DescriptiveResult",
@@ -931,7 +932,8 @@
       "required": [
         "abstract",
         "reportReference"
-      ]
+      ],
+      "additionalProperties": false
     },
     "QualityMeasure": {
       "$comment": "QualityMeasure",

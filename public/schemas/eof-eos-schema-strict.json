@@ -715,7 +715,7 @@
 					"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 				}
 			},
-			"minProperties": 1,
+			"minProperties": 0,
 			"additionalProperties": false
 		},
 		"CoverageDescription": {
