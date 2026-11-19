@@ -110,7 +110,9 @@
               ],
               "source": [
                 {
-                  "citation": "<Native product name>",
+                  "sourceCitation": {
+                    "title": "<Native product name>"
+                  },
                   "processedLevel": {
                     "code": "Stereo2A"
                   }
