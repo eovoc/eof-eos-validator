@@ -744,7 +744,8 @@
         "measureDescription": {
           "type": "string"
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Metaquality": {
       "$comment": "Metaquality",
