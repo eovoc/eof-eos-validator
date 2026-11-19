@@ -154,7 +154,8 @@
 			},
 			"required": [
 				"title"
-			]
+			],
+			"additionalProperties": false
 		},
 		"CI_Contact": {
 			"$comment": "CI_Contact",
@@ -583,7 +584,8 @@
 					},
 					"uniqueItems": true
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"LE_ProcessStepReport": {
 			"$comment": "LE_ProcessStepReport (added)",
