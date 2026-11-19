@@ -691,11 +691,14 @@
 		"QualityInformation": {
 			"anyOf": [
 				{
-					"$ref": "dqc.json#/definitions/DataQuality"
-				},
-				{
 					"type": "object",
 					"properties": {
+						"dataQualityInfo": {
+							"type": "array",
+							"items": {
+								"$ref": "dqc.json#/definitions/DataQuality"
+							}
+						},
 						"qualityStatus": {
 							"$ref": "#/definitions/thesaurus/quality-status-types"
 						},
