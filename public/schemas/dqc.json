@@ -117,7 +117,8 @@
       },
       "required": [
         "type"
-      ]
+      ],
+      "additionalProperties": false
     },
     "BasicMeasure": {
       "$comment": "BasicMeasure",
@@ -545,7 +546,8 @@
       },
       "required": [
         "type"
-      ]
+      ],
+      "additionalProperties": false
     },
     "GriddedDataPositionalAccuracy": {
       "$comment": "GriddedDataPositionalAccuracy",
@@ -665,7 +667,8 @@
       },
       "required": [
         "type"
-      ]
+      ],
+      "additionalProperties": false
     },
     "LogicalConsistencyUnion": {
       "$comment": "LogicalConsistencyUnion",
@@ -1239,7 +1242,8 @@
         "lotDescription",
         "samplingRatio",
         "samplingScheme"
-      ]
+      ],
+      "additionalProperties": false
     },
     "SourceReference": {
       "$comment": "SourceReference",
