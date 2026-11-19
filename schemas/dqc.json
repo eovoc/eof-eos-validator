@@ -37,7 +37,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "AccuracyOfATimeMeasurement": {
       "$comment": "AccuracyOfATimeMeasurement",
@@ -74,7 +75,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "AggregationDerivation": {
       "$comment": "AggregationDerivation",
@@ -173,7 +175,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "CompletenessUnion": {
       "$comment": "CompletenessUnion",
@@ -221,7 +224,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Confidence": {
       "$comment": "Confidence",
@@ -261,7 +265,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "ConformanceResult": {
       "$comment": "ConformanceResult",
@@ -290,7 +295,8 @@
         "type",
         "pass",
         "specification"
-      ]
+      ],
+      "additionalProperties": false
     },
     "CoverageResult": {
       "$comment": "CoverageResult",
@@ -312,7 +318,8 @@
       "required": [
         "type",
         "spatialRepresentationType"
-      ]
+      ],
+      "additionalProperties": false
     },
     "DataEvaluationUnion": {
       "$comment": "DataEvaluationUnion",
@@ -348,7 +355,8 @@
       },
       "required": [
         "scope"
-      ]
+      ],
+      "additionalProperties": false
     },
     "DescriptiveResult": {
       "$comment": "DescriptiveResult",
@@ -370,7 +378,8 @@
       "required": [
         "type",
         "statement"
-      ]
+      ],
+      "additionalProperties": false
     },
     "DomainConsistency": {
       "$comment": "DomainConsistency",
@@ -407,7 +416,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "EvaluationMethodTypeCode": {
       "$comment": "EvaluationMethodTypeCode",
@@ -465,7 +475,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "FormulaLanguage": {
       "$comment": "FormulaLanguage",
@@ -571,7 +582,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Homogeneity": {
       "$comment": "Homogeneity",
@@ -611,7 +623,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "IndirectEvaluation": {
       "$comment": "IndirectEvaluation",
@@ -795,7 +808,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Omission": {
       "$comment": "Omission",
@@ -832,7 +846,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "PositionalAccuracyUnion": {
       "$comment": "PositionalAccuracyUnion",
@@ -931,7 +946,8 @@
       "required": [
         "abstract",
         "reportReference"
-      ]
+      ],
+      "additionalProperties": false
     },
     "QualityMeasure": {
       "$comment": "QualityMeasure",
@@ -1061,7 +1077,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "QuantitativeResult": {
       "$comment": "QuantitativeResult",
@@ -1088,7 +1105,8 @@
       "required": [
         "type",
         "value"
-      ]
+      ],
+      "additionalProperties": false
     },
     "RelativePositionalAccuracy": {
       "$comment": "RelativePositionalAccuracy",
@@ -1125,7 +1143,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "Representativity": {
       "$comment": "Representativity",
@@ -1165,7 +1184,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "SampleBasedInspection": {
       "$comment": "SampleBasedInspection",
@@ -1267,7 +1287,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "TemporalQualityUnion": {
       "$comment": "TemporalQualityUnion",
@@ -1318,7 +1339,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "ThematicClassificationCorrectness": {
       "$comment": "ThematicClassificationCorrectness",
@@ -1355,7 +1377,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "ThematicQualityUnion": {
       "$comment": "ThematicQualityUnion",
@@ -1406,7 +1429,8 @@
       "required": [
         "type",
         "measure"
-      ]
+      ],
+      "additionalProperties": false
     },
     "ValueStructure": {
       "$comment": "ValueStructure",
