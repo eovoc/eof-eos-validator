@@ -693,31 +693,30 @@
 			"additionalProperties": false
 		},
 		"QualityInformation": {
-			"anyOf": [
-				{
-					"$ref": "dqc.json#/definitions/DataQuality"
+			"type": "object",
+			"properties": {
+				"dataQualityInfo": {
+					"type": "array",
+					"items": {
+						"$ref": "dqc.json#/definitions/DataQuality"
+					}
 				},
-				{
-					"type": "object",
-					"properties": {
-						"qualityStatus": {
-							"$ref": "#/definitions/thesaurus/quality-status-types"
-						},
-						"qualityDegradation": {
-							"description": "Percentage",
-							"type": "number"
-						},
-						"qualityDegradationTag": {
-							"$ref": "#/definitions/thesaurus/quality-degradation-tag-types"
-						},
-						"qualityDegradationQuotationMode": {
-							"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
-						}
-					},
-					"minProperties": 1,
-					"additionalProperties": false
+				"qualityStatus": {
+					"$ref": "#/definitions/thesaurus/quality-status-types"
+				},
+				"qualityDegradation": {
+					"description": "Percentage",
+					"type": "number"
+				},
+				"qualityDegradationTag": {
+					"$ref": "#/definitions/thesaurus/quality-degradation-tag-types"
+				},
+				"qualityDegradationQuotationMode": {
+					"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 				}
-			]
+			},
+			"minProperties": 0,
+			"additionalProperties": false
 		},
 		"CoverageDescription": {
 			"description": "Subset of ProductInformation",

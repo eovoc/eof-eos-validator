@@ -154,7 +154,8 @@
 			},
 			"required": [
 				"title"
-			]
+			],
+			"additionalProperties": false
 		},
 		"CI_Contact": {
 			"$comment": "CI_Contact",
@@ -364,7 +365,8 @@
 			},
 			"required": [
 				"role"
-			]
+			],
+			"additionalProperties": false
 		},
 		"CI_RoleCode": {
 			"$comment": "CI_RoleCode",
@@ -582,7 +584,8 @@
 					},
 					"uniqueItems": true
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"LE_ProcessStepReport": {
 			"$comment": "LE_ProcessStepReport (added)",
@@ -1420,11 +1423,40 @@
 			},
 			"required": [
 				"level"
-			]
+			],
+			"additionalProperties": false
 		},
 		"MD_ScopeCode": {
 			"$comment": "MD_ScopeCode",
-			"type": "string"
+			"type": "string",
+			"enum": [
+				"attribute",
+				"attributeType",
+				"collectionHardware",
+				"collectionSession",
+				"dataset",
+				"series",
+				"nonGeographicDataset",
+				"dimensionGroup",
+				"feature",
+				"featureType",
+				"propertyType",
+				"fieldSession",
+				"software",
+				"service",
+				"model",
+				"tile",
+				"metadata",
+				"initiative",
+				"sample",
+				"document",
+				"repository",
+				"aggregate",
+				"product",
+				"collection",
+				"coverage",
+				"application"
+			]
 		},
 		"MD_ScopeDescription": {
 			"$comment": "MD_ScopeDescription",
