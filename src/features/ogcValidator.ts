@@ -24,14 +24,6 @@ const schemasReady: Promise<void> = (async () => {
   }
 })();
 
-//Load the main schema.
-let mainSchema: any;
-const mainSchemaReady: Promise<void> = (async () => {
-  const VALIDATION_SCHEMA = await getValidationSchemaPath();
-  const res = await fetch(VALIDATION_SCHEMA);
-  if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
-  mainSchema = await res.json();
-})();
 
 type OgcValidationReport = {
   isValid: boolean
@@ -86,21 +78,20 @@ function buildValidationReport(errors: null | undefined | ErrorObject[]){
 
 //Build the schema used for validation when user-defined mandatory properties are set: the main schema
 //with those properties added as required. Returns null when there is no mandatory property.
-export async function buildCustomSchema(mandatoryProperties: string[] = []): Promise<JsonSchema | null> {
-  return mandatoryProperties.length > 0 ? enforcePropertyAsMandatory(mandatoryProperties) : null;
+export async function buildCustomSchema(schema: JsonSchema, mandatoryProperties: string[] = []): Promise<JsonSchema | null> {
+  return mandatoryProperties.length > 0 ? enforcePropertyAsMandatory(schema, mandatoryProperties) : null;
 }
 
-export async function ogcValidator(data: unknown, mandatoryProperties: string[] = []): Promise<ValidationReport> {
+export async function ogcValidator(data: unknown, schema: JsonSchema, mandatoryProperties: string[] = []): Promise<ValidationReport> {
 
   await schemasReady;
-  await mainSchemaReady;
   const { ogcValidationMode } = await getConfig();
 
   //Use a schema with the user-defined mandatory properties added as required, if any.
-  const customSchema = await buildCustomSchema(mandatoryProperties);
+  const customSchema = await buildCustomSchema(schema, mandatoryProperties);
   console.log("Mandatory properties:", mandatoryProperties);
 
-  const validate = ajv.compile(customSchema ?? mainSchema);
+  const validate = ajv.compile(customSchema ?? schema);
   validate(data);
   //The custom schema is rebuilt on each validation: drop it from the ajv cache.
   if (customSchema) ajv.removeSchema(customSchema);

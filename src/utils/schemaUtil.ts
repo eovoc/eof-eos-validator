@@ -31,20 +31,24 @@ export async function getValidationSchemaPath(): Promise<string> {
     }
     return `${BASE}/${schemaPath}`;
 }
+
 export type JsonSchema = Record<string, any>;
 
-export async function  loadSchema(): Promise<JsonSchema>{
-    const VALIDATION_SCHEMA = await getValidationSchemaPath();
+export async function  loadSchema(url: string | null): Promise<JsonSchema>{
+
+    //Use the url, if not provided: retrieve the default schema.
+    const VALIDATION_SCHEMA =  url ?? await getValidationSchemaPath() ;
+    console.log("Schema URL:"+url);
     const res = await fetch(VALIDATION_SCHEMA);
     if (!res.ok) throw new Error(`Failed to load validation schema: ${res.status} ${res.statusText}`);
     return res.json();
 };
 
 
-export async function enforcePropertyAsMandatory(mandatoryProperties: string[]) : Promise<JsonSchema>{
+export async function enforcePropertyAsMandatory(schema: JsonSchema, mandatoryProperties: string[]) : Promise<JsonSchema>{
 
     //Load schema
-    const currentSchema = await loadSchema();
+    const currentSchema = schema;
     const mandatory = new Set(mandatoryProperties);
 
     //For each property, add it in the required section of the object containing the property.

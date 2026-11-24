@@ -6,13 +6,14 @@ import {ValidationReport} from "../types/ValidationResult";
 import {JsonFileContext, SettingsFileContext} from "../App";
 import ValidationReportPanel from "../components/ValidationReportPanel";
 import ExampleSelector from "../components/ExampleSelector";
+import SchemaLoader from "../components/SchemaLoader";
 import MarkdownDocumentationPanel from "../components/MarkdownDocumentationPanel";
 import {toJsonDataUrl} from "../utils/jsonUtil";
-import {loadSchema} from "../utils/schemaUtil";
+import {getValidationSchemaPath, JsonSchema, loadSchema} from "../utils/schemaUtil";
 
 // data: URL of the default schema. Loaded once for the whole application: the page
 // reads it in a state (see below), because assigning a module variable does not re-render.
-const defaultSchemaUrlReady: Promise<string> = loadSchema().then(toJsonDataUrl);
+const defaultSchemaUrlReady: Promise<string> = loadSchema(null).then(toJsonDataUrl);
 
 export default function OgcValidatorPage() {
   const { content, setContent } = useContext(JsonFileContext)!;
@@ -28,6 +29,8 @@ export default function OgcValidatorPage() {
   // data: URL of the custom schema (main schema + user-defined mandatory properties), if any.
   const [customSchemaUrl, setCustomSchemaUrl] = useState<string | null>(null);
   const [defaultSchemaUrl, setDefaultSchemaUrl] = useState<string | null>(null);
+  // Remote schema loaded with SchemaLoader (fetched only, not validated), and its URL.
+  const [schema, setSchema] = useState<JsonSchema>(loadSchema);
 
   useEffect(() => {
     let cancelled = false;
@@ -66,7 +69,7 @@ export default function OgcValidatorPage() {
       (customSchemaUrl ? `- [EOF-EOS Metadata Schema Modified](${customSchemaUrl})\n` : "") +
       `- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n` +
       `- [ISO 19115-4 Resource Lineage Metadata Schema (mdj.json)](${process.env.PUBLIC_URL}/schemas/mdj.json)`,
-    [customSchemaUrl,defaultSchemaUrl]);
+    [customSchemaUrl, defaultSchemaUrl]);
 
   const ready = content !== null && !parseError;
   let navigate = useNavigate();
@@ -74,8 +77,13 @@ export default function OgcValidatorPage() {
   //Reset validation result when content has changed.
   useEffect(() => {
     setResult(null);
-  }, [content, settings]);
+  }, [content, settings, schema]);
 
+
+  async function handleSchemaUrl(url: string) {
+    console.log("[validator] external schema loaded", url);
+    setSchema(await loadSchema(url));
+  }
 
   function handleExample(example: unknown) {
     setParseError(null);
@@ -90,7 +98,7 @@ export default function OgcValidatorPage() {
     setRuntimeError(null);
     console.log("[validator] starting validation");
     try {
-      const result = await ogcValidator(content, settings?.requiredProperties ?? []);
+      const result = await ogcValidator(content, schema, settings?.requiredProperties ?? []);
       console.log("[validator] done", result);
       setResult(result);
 
@@ -106,6 +114,7 @@ export default function OgcValidatorPage() {
     <>
         <div className="toolbar">
             <ExampleSelector onLoad={handleExample} />
+            <SchemaLoader onLoad={handleSchemaUrl} />
             <div className="toolbar-settings">{settings?.name} {settings?.version}</div>
         </div>
 

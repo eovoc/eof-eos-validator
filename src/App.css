@@ -591,3 +591,34 @@ code.stac-card-name {
   font-size: 0.9rem;
   font-weight: 600;
 }
+
+/* Remote JSON schema loader (URL + Load button) */
+
+.schema-loader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.schema-loader label {
+  font-weight: 600;
+}
+
+.schema-loader input {
+  min-width: 320px;
+  padding: 6px 10px;
+  border: 1px solid #c9cdd4;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.schema-loader input:focus {
+  outline: 2px solid #4f6ef7;
+  outline-offset: 1px;
+}
+
+.schema-loader-error {
+  color: #b91c1c;
+}
