@@ -41,7 +41,12 @@ export default function SettingsPage() {
         setFile(file);
         if(!parsed.name){ parsed.name="current settings"}
         if(!parsed.version){ parsed.version="1.0"}
-        setSettings(parsed as Settings);
+        const imported = parsed as Settings;
+        setSettings({
+          ...imported,
+          optionalProperties: sortAscending(imported.optionalProperties),
+          requiredProperties: sortAscending(imported.requiredProperties),
+        });
       }catch(error){
           setError(`"${file.name}" is not a valid settings file: ${error}.`);
           console.log(error);
@@ -69,7 +74,7 @@ export default function SettingsPage() {
     const from = to === "required" ? settings.optionalProperties : settings.requiredProperties;
     const target = to === "required" ? settings.requiredProperties : settings.optionalProperties;
     const nextFrom = from.filter((p) => p !== property);
-    const nextTarget = target.includes(property) ? target : [...target, property];
+    const nextTarget = sortAscending(target.includes(property) ? target : [...target, property]);
     setSettings(to === "required"
       ? { ...settings, optionalProperties: nextFrom, requiredProperties: nextTarget }
       : { ...settings, requiredProperties: nextFrom, optionalProperties: nextTarget });
