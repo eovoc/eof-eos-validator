@@ -26,7 +26,7 @@ export default function SettingsPage() {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (e) => {
-      let parsed: unknown;
+      let parsed: Settings;
       try {
         parsed = JSON.parse(e.target!.result as string);
       } catch(error) {
@@ -38,6 +38,8 @@ export default function SettingsPage() {
       try{
         validate(parsed);
         setFile(file);
+        if(!parsed.name){ parsed.name="current settings"}
+        if(!parsed.version){ parsed.version="1.0"}
         setSettings(parsed as Settings);
       }catch(error){
           setError(`"${file.name}" is not a valid settings file: ${error}.`);
@@ -56,7 +58,7 @@ export default function SettingsPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "settings.json";
+    a.download = "current-settings.json";
     a.click();
     URL.revokeObjectURL(url);
   },[]);
@@ -94,7 +96,7 @@ export default function SettingsPage() {
             e.target.value = "";
           }}
       />
-      {file && <div className="file-name centered">Imported: {file.name}</div>}
+      {file && <div className="file-name centered">{settings?.name}</div>}
 
       {error && <div className="parse-error">{error}</div>}
 
