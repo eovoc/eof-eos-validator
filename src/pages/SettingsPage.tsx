@@ -1,7 +1,7 @@
 import {useCallback, useContext, useRef, useState} from "react";
 import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
-import {FiDownload, FiUpload} from "react-icons/fi";
+import {FiDownload, FiUpload, FiArrowLeft, FiArrowRight} from "react-icons/fi";
 import { GoTab } from "react-icons/go";
 import {SettingsFileContext} from "../App";
 import {Settings, validate} from "../types/Settings";
@@ -12,7 +12,8 @@ import {sortAscending} from "../utils/settingsUtil";
 type Icon = (props: IconBaseProps) => JSX.Element;
 const ImportIcon = FiDownload as Icon;
 const ExportIcon = FiUpload as Icon;
-const MoveIcon = GoTab as Icon;
+const MoveLeftIcon = FiArrowLeft as Icon;
+const MoveRightIcon = FiArrowRight as Icon;
 
 export default function SettingsPage() {
 
@@ -124,7 +125,7 @@ export default function SettingsPage() {
                     title="Move to required properties"
                     aria-label={`Move ${property} to required properties`}
                 >
-                  <MoveIcon aria-hidden="true" />
+                  <MoveRightIcon aria-hidden="true" />
                 </button>
               </div>
           ))}
@@ -134,20 +135,20 @@ export default function SettingsPage() {
           <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
           {sortAscending(settings?.requiredProperties ?? []).map((property) => (
             <div className="property-row" key={property}>
-              <input
-                  type="text"
-                  className="property-input"
-                  value={property}
-                  disabled={true}
-              />
               <button
                   className="move-btn"
                   onClick={() => moveProperty(property, "optional")}
                   title="Move to optional properties"
                   aria-label={`Move ${property} to optional properties`}
               >
-                <MoveIcon aria-hidden="true" />
+                <MoveLeftIcon aria-hidden="true" />
               </button>
+              <input
+                  type="text"
+                  className="property-input"
+                  value={property}
+                  disabled={true}
+              />
             </div>
           ))}
         </details>
