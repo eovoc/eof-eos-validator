@@ -2,6 +2,7 @@ import {useCallback, useContext, useRef, useState} from "react";
 import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
 import {FiDownload, FiUpload} from "react-icons/fi";
+import { GoTab } from "react-icons/go";
 import {SettingsFileContext} from "../App";
 import {Settings, validate} from "../types/Settings";
 
@@ -10,6 +11,7 @@ import {Settings, validate} from "../types/Settings";
 type Icon = (props: IconBaseProps) => JSX.Element;
 const ImportIcon = FiDownload as Icon;
 const ExportIcon = FiUpload as Icon;
+const MoveIcon = GoTab as Icon;
 
 export default function SettingsPage() {
 
@@ -59,6 +61,17 @@ export default function SettingsPage() {
     URL.revokeObjectURL(url);
   },[]);
 
+  const moveProperty = useCallback((property: string, to: "required" | "optional") => {
+    if (!settings) return;
+    const from = to === "required" ? settings.optionalProperties : settings.requiredProperties;
+    const target = to === "required" ? settings.requiredProperties : settings.optionalProperties;
+    const nextFrom = from.filter((p) => p !== property);
+    const nextTarget = target.includes(property) ? target : [...target, property];
+    setSettings(to === "required"
+      ? { ...settings, optionalProperties: nextFrom, requiredProperties: nextTarget }
+      : { ...settings, requiredProperties: nextFrom, optionalProperties: nextTarget });
+  }, [settings, setSettings]);
+
   return (
     <>
       <div className="button-grid">
@@ -97,20 +110,36 @@ export default function SettingsPage() {
                     value={property}
                     disabled={true}
                 />
+                <button
+                    className="move-btn"
+                    onClick={() => moveProperty(property, "required")}
+                    title="Move to required properties"
+                    aria-label={`Move ${property} to required properties`}
+                >
+                  <MoveIcon aria-hidden="true" />
+                </button>
               </div>
           ))}
         </details>
 
         <details className="property-section" open>
           <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
-          {settings?.requiredProperties.map((property, index) => (
-            <div className="property-row" key={index}>
+          {settings?.requiredProperties.map((property) => (
+            <div className="property-row" key={property}>
               <input
                   type="text"
                   className="property-input"
                   value={property}
                   disabled={true}
               />
+              <button
+                  className="move-btn"
+                  onClick={() => moveProperty(property, "optional")}
+                  title="Move to optional properties"
+                  aria-label={`Move ${property} to optional properties`}
+              >
+                <MoveIcon aria-hidden="true" />
+              </button>
             </div>
           ))}
         </details>
