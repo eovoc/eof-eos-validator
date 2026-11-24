@@ -18,7 +18,6 @@ export default function SettingsPage() {
 
   const { settings, setSettings } = useContext(SettingsFileContext)!;
 
-  const [file, setFile] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -38,7 +37,6 @@ export default function SettingsPage() {
 
       try{
         validate(parsed);
-        setFile(file);
         if(!parsed.name){ parsed.name="current settings"}
         if(!parsed.version){ parsed.version="1.0"}
         const imported = parsed as Settings;
@@ -56,7 +54,7 @@ export default function SettingsPage() {
 
     };
     reader.readAsText(file);
-  },[setFile,setSettings,setError]);
+  },[setSettings,setError]);
 
   const  handleExport = useCallback((settings: Settings | null)=> {
     if (!settings) return;
