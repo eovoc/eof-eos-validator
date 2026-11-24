@@ -76,6 +76,7 @@ export default function SettingsPage() {
     const target = to === "required" ? settings.requiredProperties : settings.optionalProperties;
     const nextFrom = from.filter((p) => p !== property);
     const nextTarget = sortAscending(target.includes(property) ? target : [...target, property]);
+    settings.name = "current settings";
     setSettings(to === "required"
       ? { ...settings, optionalProperties: nextFrom, requiredProperties: nextTarget }
       : { ...settings, requiredProperties: nextFrom, optionalProperties: nextTarget });
@@ -103,7 +104,7 @@ export default function SettingsPage() {
             e.target.value = "";
           }}
       />
-      {file && <div className="file-name centered">{settings?.name}</div>}
+      {settings && <div className="file-name centered">{settings?.name}</div>}
 
       {error && <div className="parse-error">{error}</div>}
 
