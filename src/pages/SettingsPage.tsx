@@ -46,7 +46,7 @@ export default function SettingsPage() {
 
     };
     reader.readAsText(file);
-  },[file]);
+  },[setFile,setSettings,setError]);
 
   const  handleExport = useCallback((settings: Settings | null)=> {
     if (!settings) return;
@@ -57,7 +57,7 @@ export default function SettingsPage() {
     a.download = "settings.json";
     a.click();
     URL.revokeObjectURL(url);
-  },[settings]);
+  },[]);
 
   return (
     <>
