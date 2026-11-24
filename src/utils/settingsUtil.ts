@@ -18,3 +18,8 @@ export async function getDefaultSettings(): Promise<Settings>{
 
     return settings as Settings;
 }
+
+/** Returns a new array of the properties sorted alphabetically (case-insensitive); the input is not mutated. */
+export function sortAscending(properties: string[]): string[]{
+    return [...properties].sort((a, b) => a.localeCompare(b, undefined, {sensitivity: "base"}));
+}

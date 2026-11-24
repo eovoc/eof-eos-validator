@@ -5,6 +5,7 @@ import {FiDownload, FiUpload} from "react-icons/fi";
 import { GoTab } from "react-icons/go";
 import {SettingsFileContext} from "../App";
 import {Settings, validate} from "../types/Settings";
+import {sortAscending} from "../utils/settingsUtil";
 
 // TS 4.9 rejects components typed as returning ReactNode (react-icons + @types/react 19),
 // so narrow the icon types to return JSX.Element.
@@ -104,7 +105,7 @@ export default function SettingsPage() {
 
         <details className="property-section" open>
           <summary className="property-list-title">Optional properties ({settings?.optionalProperties.length})</summary>
-          {settings?.optionalProperties.map((property) => (
+          {sortAscending(settings?.optionalProperties ?? []).map((property) => (
               <div className="property-row" key={property}>
                 <input
                     type="text"
@@ -126,7 +127,7 @@ export default function SettingsPage() {
 
         <details className="property-section" open>
           <summary className="property-list-title">Required properties ({settings?.requiredProperties.length})</summary>
-          {settings?.requiredProperties.map((property) => (
+          {sortAscending(settings?.requiredProperties ?? []).map((property) => (
             <div className="property-row" key={property}>
               <input
                   type="text"
