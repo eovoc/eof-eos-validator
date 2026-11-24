@@ -1,4 +1,4 @@
-import {useContext, useRef, useState} from "react";
+import {useCallback, useContext, useRef, useState} from "react";
 import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
 import {FiDownload, FiUpload} from "react-icons/fi";
@@ -48,7 +48,7 @@ export default function SettingsPage() {
     reader.readAsText(f);
   }
 
-  function handleExport() {
+  const  handleExport = useCallback((settings: Settings | null)=> {
     if (!settings) return;
     const blob = new Blob([JSON.stringify(settings, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -57,7 +57,7 @@ export default function SettingsPage() {
     a.download = "settings.json";
     a.click();
     URL.revokeObjectURL(url);
-  }
+  },[settings]);
 
   return (
     <>
@@ -66,7 +66,7 @@ export default function SettingsPage() {
           <ImportIcon className="btn-icon" aria-hidden="true" />
           Import
         </button>
-        <button className="primary-btn" onClick={handleExport} disabled={!settings}>
+        <button className="primary-btn" onClick={() => handleExport(settings)} disabled={!settings}>
           <ExportIcon className="btn-icon" aria-hidden="true" />
           Export
         </button>
