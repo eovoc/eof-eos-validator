@@ -1,4 +1,5 @@
 import Ajv, { JSONSchemaType } from "ajv";
+import {supportedProperties} from "./SettingsProperties";
 
 export type Settings = {
   name: string,
@@ -13,8 +14,8 @@ const settingsSchema: JSONSchemaType<Settings> = {
   properties: {
     name: {type: "string"},
     version: {type: "string"},
-    requiredProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
-    optionalProperties: { type: "array", items: { type: "string", minLength: 0 }, uniqueItems: true },
+    requiredProperties: { type: "array", items: { type: "string", minLength: 0, enum: supportedProperties }, uniqueItems: true },
+    optionalProperties: { type: "array", items: { type: "string", minLength: 0, enum: supportedProperties}, uniqueItems: true },
   },
   required: ["requiredProperties", "optionalProperties"],
   additionalProperties: false, // rejects extra keys
