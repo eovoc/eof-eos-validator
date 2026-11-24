@@ -19,34 +19,34 @@ export default function SettingsPage() {
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  function handleFile(f: File | null) {
+  const handleFile = useCallback((file: File | null)=> {
     setError(null);
-    if (!f) return;
+    if (!file) return;
     const reader = new FileReader();
     reader.onload = (e) => {
       let parsed: unknown;
       try {
         parsed = JSON.parse(e.target!.result as string);
       } catch(error) {
-        setError(`"${f.name}" is not a valid JSON file. `+error);
+        setError(`"${file.name}" is not a valid JSON file. `+error);
         console.log(error);
         return;
       }
 
       try{
         validate(parsed);
-        setFile(f);
+        setFile(file);
         setSettings(parsed as Settings);
       }catch(error){
-          setError(`"${f.name}" is not a valid settings file: ${error}.`);
+          setError(`"${file.name}" is not a valid settings file: ${error}.`);
           console.log(error);
           return;
       }
 
 
     };
-    reader.readAsText(f);
-  }
+    reader.readAsText(file);
+  },[file]);
 
   const  handleExport = useCallback((settings: Settings | null)=> {
     if (!settings) return;
