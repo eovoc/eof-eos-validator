@@ -2,7 +2,6 @@ import {useCallback, useContext, useRef, useState} from "react";
 import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
 import {FiDownload, FiUpload, FiArrowLeft, FiArrowRight} from "react-icons/fi";
-import { GoTab } from "react-icons/go";
 import {SettingsFileContext} from "../App";
 import {Settings, validate} from "../types/Settings";
 import {sortAscending} from "../utils/settingsUtil";
