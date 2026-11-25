@@ -21,6 +21,9 @@ export default function SettingsPage() {
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const settingsName = "custom settings"
+  const settingsVersion= "1.0";
+
   const handleFile = useCallback((file: File | null)=> {
     setError(null);
     if (!file) return;
@@ -37,8 +40,8 @@ export default function SettingsPage() {
 
       try{
         validate(parsed);
-        if(!parsed.name){ parsed.name="current settings"}
-        if(!parsed.version){ parsed.version="1.0"}
+        if(!parsed.name){ parsed.name=settingsName}
+        if(!parsed.version){ parsed.version=settingsVersion}
         const imported = parsed as Settings;
         setSettings({
           ...imported,
@@ -62,7 +65,7 @@ export default function SettingsPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "current-settings.json";
+    a.download = "custom-settings.json";
     a.click();
     URL.revokeObjectURL(url);
   },[]);
@@ -73,7 +76,7 @@ export default function SettingsPage() {
     const target = to === "required" ? settings.requiredProperties : settings.optionalProperties;
     const nextFrom = from.filter((p) => p !== property);
     const nextTarget = sortAscending(target.includes(property) ? target : [...target, property]);
-    settings.name = "current settings";
+    settings.name = settingsName;
     setSettings(to === "required"
       ? { ...settings, optionalProperties: nextFrom, requiredProperties: nextTarget }
       : { ...settings, requiredProperties: nextFrom, optionalProperties: nextTarget });
