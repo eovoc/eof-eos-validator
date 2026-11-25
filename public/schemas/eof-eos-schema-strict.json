@@ -715,7 +715,6 @@
 					"$ref": "#/definitions/thesaurus/quality-degradation-quotation-mode-types"
 				}
 			},
-			"minProperties": 0,
 			"additionalProperties": false
 		},
 		"CoverageDescription": {
@@ -856,8 +855,10 @@
 				"description": "Enum generated from thesaurus SKOS 'Acquisition Station Types' (https://earth.esa.int/concepts/concept_scheme/acquisitionstation).",
 				"type": "string",
 				"enum": [
+					"ASF",
 					"BSK",
 					"FUI",
+					"HAJ",
 					"KRU",
 					"KSE",
 					"KSS",
@@ -868,7 +869,10 @@
 					"NSG",
 					"OHG",
 					"RED",
-					"TRS"
+					"SGS",
+					"TRA",
+					"TRS",
+					"TSJ"
 				]
 			},
 			"acquisition-subtypes": {
@@ -1251,6 +1255,7 @@
 					"BMF",
 					"BMW",
 					"BMWS",
+					"BXF",
 					"BS",
 					"BSF",
 					"BSW",
@@ -1264,6 +1269,7 @@
 					"MS7B",
 					"MS8B",
 					"PAN",
+					"PLR",
 					"PP",
 					"SC",
 					"SCH",
