@@ -1,4 +1,6 @@
 {
+  "name": "default settings",
+  "version": "1.0",
   "requiredProperties": [
   ],
   "optionalProperties": [
