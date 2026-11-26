@@ -60,7 +60,7 @@ export default function OgcValidatorPage() {
       "## References\n" +
       "\n" +
       "- [EO Metadata](https://eof-eos.io.esa.int/eopf-eos/data-model/6-metadata.html)\n" +
-      "- [EOPF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-soft.json)\n" +
+      "- [EOPF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-strict.json)\n" +
       // The schemas are loaded/built asynchronously: their links appear once they are ready.
       (defaultSchemaUrl ? `- [EOPF-EOS Metadata Schema (default)](${defaultSchemaUrl})\n` : "") +
       (customSchemaUrl ? `- [EOF-EOS Metadata Schema (custom)](${customSchemaUrl})\n` : "") +
