@@ -49,6 +49,17 @@ The script `diff/print-thesaurus-enums.sh` can generate the difference (addition
 
 This script should be used by replacing the old thesaurus with the current one `public/schemas/thesaurus-rdf/thesaurus.json`, before executing the conversion scripts.
 
+### Unused thesaurus checker script
+
+The script `diff/list-unused-thesaurus.sh` lists the entries of `definitions.thesaurus` that are never targeted by a `$ref` in the schema.
+By default it checks `public/schemas/eof-eos-schema-strict.json`; another schema can be given as first argument:
+
+```bash
+./scripts/diff/list-unused-thesaurus.sh [path/to/schema.json]
+```
+
+Exit code: `0` if all entries are used, `1` if some are unused, `2` on error.
+
 ## Details
 
 ### Convert a single RDF/XML file
