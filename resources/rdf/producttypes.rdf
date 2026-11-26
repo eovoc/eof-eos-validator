@@ -156,29 +156,16 @@
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a068234f-1775-490f-bdbf-aae73db35d8b">
 	<skos:prefLabel>OPER</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0552b02f-9c86-56e0-9800-7372890f00a8"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/83934b68-828e-5293-b6aa-bf7d7c428ec9"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/88609a68-9dbf-567f-b1b1-321d4345b2da"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7fa4a62e-0ae8-5fc8-b046-8c32a4d270a2"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/31e98fed-0159-54fd-887f-f00f3c92d6ed"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/8a6fb5f2-d099-5252-ad4d-c588d724612e"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/733c306c-eee0-48ad-9a46-568e96c1ace6"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0724d280-d691-52cf-a8c2-081ef6bf2765"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/da368cf8-9528-5831-b892-595d48d0f27f"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/bef564af-366d-51a2-86a3-2dd854098be1"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/81df103e-3e8c-549f-bbad-c9ed9e119166"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7fb917bd-f1a7-5033-af70-8773bdc92891"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/351bd289-0f54-5ba5-84ab-4156072d94b4"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b2827bd9-2027-534b-a350-4f4a1e62486f"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/9df5d769-58a8-5d83-8358-d09339e40fe2"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/6ef81d80-4505-5e3c-a7e6-6fa95e4e11a2"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/382ac890-6890-526b-b7a3-42799911c599"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/f4b321c7-13bc-5306-9fe4-239a1c47300b"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/bf03f060-4d3d-51bf-b244-73f6aa8c50ce"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/d4d12dc7-04a8-5ae8-93bd-629ca7f244e3"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/9df5d769-58a8-5d83-8358-d09339e40fe2"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/6ef81d80-4505-5e3c-a7e6-6fa95e4e11a2"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/9f7bcd57-802e-58ec-9c75-db0f720f1c3a"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/50d8927e-329a-5efe-958b-4931a4d9b70f"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/44446004-f93d-57a4-837d-a7776bb5a720"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/a5ddc423-fdec-5f65-acf4-51087b065cea"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/cbbd01ff-0c8e-5c2f-85e9-a142e5908457"/>
@@ -187,24 +174,35 @@
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/5cbac7f2-c52c-5f09-853f-958f1fecbded"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b2827bd9-2027-534b-a350-4f4a1e62486f"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/3ea37733-9202-52b1-9bb0-592e87cdacbc"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/c6d38828-f71c-53be-8dc7-661a10998f08"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/cd9afdcb-b866-5f94-84d1-d1c73347d64c"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/3078b489-b049-5328-ad71-f3da264d7c2f"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/d0920f88-c8d6-53c9-80dd-0e9226e84a71"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/de252973-e8f9-5b86-9957-1323f16c1e83"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7d485bb5-252e-535f-acaa-5e07ed22fd8e"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fee52d15-c827-563f-bd19-e3e3ca3d63a0"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b03977f9-db84-586a-8647-c9d9a29b1799"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/90cc3f07-3601-5191-8af3-86cc314a353d"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/bd59644c-3ad8-55b0-9288-62c091a4cd95"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b6726030-d6c2-5c61-896c-414d2490800f"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0089a40e-b337-4ddc-ada4-a580ad3c494d"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/f0b3f03d-a759-5c63-973c-98060e2c7ae1"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/ccdd9f0a-cd30-5022-b7cb-499862e5cd8c"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7fb917bd-f1a7-5033-af70-8773bdc92891"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/bef564af-366d-51a2-86a3-2dd854098be1"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/81df103e-3e8c-549f-bbad-c9ed9e119166"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/96500f09-338c-5566-be55-0b234a0da96b"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0268f0f5-5857-40da-b254-21eede03c8c0"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/e4c46b5f-80ae-4c0f-9e78-5472d21e2cc6"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b37e62df-a936-4cf1-856b-b55aac326405"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/c595ff29-f446-4b5d-a8d3-e1948016e212"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/f0b3f03d-a759-5c63-973c-98060e2c7ae1"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/ccdd9f0a-cd30-5022-b7cb-499862e5cd8c"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b6726030-d6c2-5c61-896c-414d2490800f"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0089a40e-b337-4ddc-ada4-a580ad3c494d"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/9f7bcd57-802e-58ec-9c75-db0f720f1c3a"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/50d8927e-329a-5efe-958b-4931a4d9b70f"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/6a36b82f-7269-5bf5-81a0-45877e066165"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0552b02f-9c86-56e0-9800-7372890f00a8"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/83934b68-828e-5293-b6aa-bf7d7c428ec9"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/c3496470-830a-5d67-a28c-e3b812b79a38"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/a58d7f51-9786-5dcb-a100-2af51c5b2ac0"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/377c302c-4a08-5efc-98ba-8a1c56aa7e51"/>
@@ -212,98 +210,16 @@
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/91d75764-3e85-53c7-8e4b-6b4d6d2ed8c9"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/e428bd05-cac0-56ed-bf3c-3250717fe62b"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/bc17f16f-c253-52c6-b2d5-486984bf0c88"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/6a36b82f-7269-5bf5-81a0-45877e066165"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/da368cf8-9528-5831-b892-595d48d0f27f"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/0724d280-d691-52cf-a8c2-081ef6bf2765"/>
 	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/2ca430d0-eb66-5d11-a420-7fc0e4fc795c"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/3078b489-b049-5328-ad71-f3da264d7c2f"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/d0920f88-c8d6-53c9-80dd-0e9226e84a71"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7d485bb5-252e-535f-acaa-5e07ed22fd8e"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fee52d15-c827-563f-bd19-e3e3ca3d63a0"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/b03977f9-db84-586a-8647-c9d9a29b1799"/>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/90cc3f07-3601-5191-8af3-86cc314a353d"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0c496e7a-68d5-42f4-bfae-e94c5e9f8019">
-	<skos:prefLabel>OESR</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/945dcff3-6011-4e4e-b1ca-c0dbdff54c77">
-	<skos:prefLabel>RERS</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2793a224-7fcd-4d9e-8363-51aa43369da3">
-	<skos:prefLabel>NERS</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f7bad198-cc33-457e-98f8-96f01b3d3819">
-	<skos:prefLabel>OESA</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1114cf7f-3933-4856-9d78-8770eaafd214">
-	<skos:prefLabel>RESA</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/11f9a1ce-181a-437e-8c4b-b1774a9c5717">
-	<skos:prefLabel>NESA</skos:prefLabel>
-	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/a068234f-1775-490f-bdbf-aae73db35d8b">
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/733c306c-eee0-48ad-9a46-568e96c1ace6"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/88609a68-9dbf-567f-b1b1-321d4345b2da"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/7fa4a62e-0ae8-5fc8-b046-8c32a4d270a2"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/31e98fed-0159-54fd-887f-f00f3c92d6ed"/>
+	<eos:productClassOf rdf:resource="https://earth.esa.int/concept/8a6fb5f2-d099-5252-ad4d-c588d724612e"/>
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0c496e7a-68d5-42f4-bfae-e94c5e9f8019">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/945dcff3-6011-4e4e-b1ca-c0dbdff54c77">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2793a224-7fcd-4d9e-8363-51aa43369da3">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f7bad198-cc33-457e-98f8-96f01b3d3819">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1114cf7f-3933-4856-9d78-8770eaafd214">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/11f9a1ce-181a-437e-8c4b-b1774a9c5717">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/a068234f-1775-490f-bdbf-aae73db35d8b">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0c496e7a-68d5-42f4-bfae-e94c5e9f8019">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/945dcff3-6011-4e4e-b1ca-c0dbdff54c77">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2793a224-7fcd-4d9e-8363-51aa43369da3">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f7bad198-cc33-457e-98f8-96f01b3d3819">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1114cf7f-3933-4856-9d78-8770eaafd214">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/11f9a1ce-181a-437e-8c4b-b1774a9c5717">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
 </rdf:Description>
 
@@ -316,54 +232,6 @@
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/0c496e7a-68d5-42f4-bfae-e94c5e9f8019"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0c496e7a-68d5-42f4-bfae-e94c5e9f8019">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/945dcff3-6011-4e4e-b1ca-c0dbdff54c77"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/945dcff3-6011-4e4e-b1ca-c0dbdff54c77">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2793a224-7fcd-4d9e-8363-51aa43369da3"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2793a224-7fcd-4d9e-8363-51aa43369da3">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/f7bad198-cc33-457e-98f8-96f01b3d3819"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f7bad198-cc33-457e-98f8-96f01b3d3819">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1114cf7f-3933-4856-9d78-8770eaafd214"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1114cf7f-3933-4856-9d78-8770eaafd214">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/productclass">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/11f9a1ce-181a-437e-8c4b-b1774a9c5717"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/11f9a1ce-181a-437e-8c4b-b1774a9c5717">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/productclass"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
 	<dct:title xml:lang="en">Product Types</dct:title>
 	<rdfs:label>Product Types</rdfs:label>
@@ -373,177 +241,135 @@
 	<skos:changeNote>2026/06/04 - Initial version</skos:changeNote>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6dd9aeea-24f9-46a0-b86e-63f8e81b9f58">
-	<skos:prefLabel>PSR_WB1_15</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1a870ee6-1832-49d8-b579-71d897d175ac">
-	<skos:prefLabel>AV2_OBS_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
+	<skos:prefLabel>L0_OPT_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/4bff654a-0162-443e-a617-998722298dae">
-	<skos:prefLabel>AV2_OBS_11</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L1BRPC_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/62093e92-2606-420b-9188-bd9ab5469b7b">
-	<skos:prefLabel>AV2_OBS_1C</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L1CGEO_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/cec5c867-8002-426e-8599-4c1f60249c15">
-	<skos:prefLabel>FBD_DWL_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L0_MD1_PAN</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/22926aeb-0688-423a-8fc6-043e38c9a904">
-	<skos:prefLabel>FBD_GDH_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L0_MD2_PAN</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/51bcd340-d78a-48d6-94d7-3dfbd4fd24dd">
-	<skos:prefLabel>FBD_GEC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L1BMD1_PAN</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/c350b927-c1b9-414b-a912-55c93eeae54a">
-	<skos:prefLabel>FBD_RAW_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L1BMD2_PAN</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/63c111bf-1316-4add-9399-78db0dfe0a9f">
-	<skos:prefLabel>FBD_SLC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L1CMD1_PAN</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bdf1fab-5dc4-493d-8cb4-9728c98e7ddc">
-	<skos:prefLabel>FBS_DWL_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/7bea324c-1941-4054-a2a8-e244ef505984">
+	<skos:prefLabel>L0_FBSPSTL</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/aacd608b-da6b-402d-8632-ad633ff7e83e">
-	<skos:prefLabel>FBS_GDH_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/4ac010b7-1917-4425-9323-0055255611f2">
+	<skos:prefLabel>L0_BXF____</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9292b0be-5c9f-4195-85c8-28334302c90c">
-	<skos:prefLabel>FBS_GEC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/c4c60837-48ee-41ab-83d1-c6f29188940d">
+	<skos:prefLabel>L1_BXF_SLC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bba3157-9626-49d0-952e-040d05cc638a">
-	<skos:prefLabel>FBS_RAW_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/af196f8a-c7f7-4177-8be4-925057b4e9fc">
+	<skos:prefLabel>L1_BXF_GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/eca51b6f-6691-4df2-b480-4d6dd192c920">
-	<skos:prefLabel>FBS_SLC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/b1492717-0cd9-46d6-882f-fb5eaaffbc03">
+	<skos:prefLabel>L1_BXF_GRD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/de038188-33df-4191-bb39-a760f8b5bf6b">
-	<skos:prefLabel>WB1_DWL_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/96dd2342-e32a-47b3-9bce-a372418090e2">
+	<skos:prefLabel>L0_PLR_STL</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/55dda322-ff64-4725-859d-a5984693e416">
-	<skos:prefLabel>WB1_GDH_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/b9c3aa93-a014-44ac-b664-c5235e59d3e7">
+	<skos:prefLabel>L0_PLR____</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9a2113f1-6e61-4f3c-99b3-bf1be442929c">
-	<skos:prefLabel>WB1_RAW_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/fe3f0199-deb7-4065-9d14-d133a79b16dd">
+	<skos:prefLabel>L1_PLR_SLC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/dce0f1a5-b32a-413c-af57-0e4382bbaf2e">
-	<skos:prefLabel>PLR_DWL_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/ab36d766-4959-4269-a6e7-e11424fd410e">
+	<skos:prefLabel>L1_PLR_GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/48557122-a9cd-40f0-a284-31a5724801e7">
-	<skos:prefLabel>PLR_GDH_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/4b7addff-23eb-47d2-a9f5-36654ec3146b">
+	<skos:prefLabel>L1_PLR_GRD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/b25d4adc-9000-4b8f-acc9-0419f3eb5649">
-	<skos:prefLabel>PLR_GEC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/c6cab09f-1424-4457-ba6d-cea91de4ea5f">
+	<skos:prefLabel>L0_SC__STL</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/61a48c74-db02-483b-b521-d3733c2f1be1">
-	<skos:prefLabel>PLR_RAW_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/b488ef84-0f4a-45bc-9b4c-c5a9f3f8b612">
+	<skos:prefLabel>L0_SC_____</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/e3d0de58-9aa1-4155-8460-1ff193531c70">
-	<skos:prefLabel>PLR_SLC_1P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
+	<skos:prefLabel>L1_SC__GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/fa5ae848-4311-45a6-96ec-f811529ba24b">
-	<skos:prefLabel>PSM_OB1_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d3e4d233-8c30-4feb-8d80-812ac9b19d56">
-	<skos:prefLabel>PSM_OB1_11</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12df105b-e8d9-42fa-a4d5-f1cd68ab124d">
-	<skos:prefLabel>PSM_OB1_1C</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0aa44dbc-ed1f-4e2f-ad4c-1194c60454de">
-	<skos:prefLabel>PSM_OB2_0P</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f4462496-3a87-4e01-9232-78e676819e61">
-	<skos:prefLabel>PSM_OB2_11</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/804ea0f0-0bae-4c2b-81f4-3224240c4695">
-	<skos:prefLabel>PSM_OB2_1C</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1b9a060c-3e80-4a00-afef-4f637ff736cb">
-	<skos:prefLabel>AL1_AV2_2F</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
+	<skos:prefLabel>L1_SC__GRD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/fa4e3c89-5966-5617-b2cc-f6aad122e685"/>
 </rdf:Description>
 
@@ -1037,8 +863,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
-	<skos:prefLabel>L1_SC__GRD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/bd393313-f583-5012-89f9-bf96c3c30d6c"/>
 </rdf:Description>
 
@@ -1051,70 +875,43 @@
 <rdf:Description rdf:about="https://earth.esa.int/concept/4073b69a-bc6e-4ca2-b2f3-8858cdaeb011">
 	<skos:prefLabel>LI3_X___1O</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/bbcd7812-ce80-4531-8122-18611214fc9d">
 	<skos:prefLabel>LI3_X___0R</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/63fa1535-6d12-434d-8696-58c98ee7cab1">
 	<skos:prefLabel>LI3_P___1O</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1b5897c4-534c-4490-bd1c-692bb38fd9d5">
 	<skos:prefLabel>LI3_P___0R</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/43e51108-ecbd-4b04-8bb8-e2ad6fa34a93">
 	<skos:prefLabel>LI3_XA__1O</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ead5bc04-2512-412d-9f3c-a44c63d8488a">
 	<skos:prefLabel>LI3_XB__1O</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/381c1e38-f66e-5880-9135-c823dc0b0ae0"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/4073b69a-bc6e-4ca2-b2f3-8858cdaeb011">
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/bbcd7812-ce80-4531-8122-18611214fc9d">
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/63fa1535-6d12-434d-8696-58c98ee7cab1">
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1b5897c4-534c-4490-bd1c-692bb38fd9d5">
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/43e51108-ecbd-4b04-8bb8-e2ad6fa34a93">
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ead5bc04-2512-412d-9f3c-a44c63d8488a">
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/066fe894-7475-5ff1-8c2f-54ce68bd2e1e"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
-	<skos:prefLabel>L0_OPT_MS_</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/5cbac7f2-c52c-5f09-853f-958f1fecbded"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/0c639e28-1284-4893-b5bc-f5da5e6fc77e">
@@ -1266,171 +1063,115 @@
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/bd59644c-3ad8-55b0-9288-62c091a4cd95"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/c60b55c6-e434-4b30-b286-ac2d97a814f1">
-	<skos:prefLabel>OCM2_LA__0</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/a8294b08-6f56-4cd6-a793-c5e4c8ab985d"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/8b6e0314-c9a7-4d08-96b0-63cbbed3097c">
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/2c94c588-a787-4067-a2b4-e96a4a954bb0">
-	<skos:prefLabel>OCM2_LA_1B</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
+	<skos:prefLabel>L1BOPT_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/5621f9f8-da57-4b10-a249-f5b5813ef9bd">
-	<skos:prefLabel>OCM2_LA_2B</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L2BOPT_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/0866cead-8250-4e51-b7a2-7a047e76388c">
-	<skos:prefLabel>OCM2_LA_2C</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/812fecc6-6003-4998-840c-dc829cf2a0a2"/>
+	<skos:prefLabel>L2CGEO_MS_</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b068a0ac-8159-5238-81d2-f41603ccce7a"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/8c37480b-6765-43be-b353-426a2a042618">
-	<skos:prefLabel>PSP_SM_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/c9d4e31a-4049-47d6-8f1d-fed1ce915de4">
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/4f8900be-8897-4abd-ad40-209bfe2cafd4">
-	<skos:prefLabel>PSP_SM_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SM__MGD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/95a06c74-ddc1-4188-a344-3031ccf8d813">
-	<skos:prefLabel>PSP_SM_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SM__GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a58ca6ff-f68b-4ecd-8a0f-f1b98e4f36a9">
-	<skos:prefLabel>PSP_SM_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SM__EEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/479ba5ca-c157-4dea-9f17-cec255a27731">
-	<skos:prefLabel>PSP_SC_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+<rdf:Description rdf:about="https://earth.esa.int/concept/367a5d02-0dfe-40b9-9324-5278fbfabf84">
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/2502ffda-ee5f-4849-ab7f-02e83c9ce2ff">
-	<skos:prefLabel>PSP_SC_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SL__MGD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/c466f557-2d7e-44d8-8ef0-17c75c4c380a">
-	<skos:prefLabel>PSP_SC_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SL__GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/54dca3b5-3405-475c-b877-11cb6345ea8a">
-	<skos:prefLabel>PSP_SC_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SL__EEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/06998935-13a3-49f6-9efc-80f07169eed3">
-	<skos:prefLabel>PSP_SL_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SC__SLC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/1ea98bce-c5e2-41bd-821a-23bc5b0e903f">
-	<skos:prefLabel>PSP_SL_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SC__MGD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
-	<skos:prefLabel>PSP_SL_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/22a23747-2099-42f6-aa15-e6611a1652a0">
-	<skos:prefLabel>PSP_SL_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SC__EEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/481e5886-51d6-4f69-a28e-ef8f55745282">
-	<skos:prefLabel>PSP_HS_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SCW_SLC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/fbf9ee7a-6d48-41e3-9cd2-570b11c552f7">
-	<skos:prefLabel>PSP_HS_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SCW_MGD</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/960b39dd-1ed4-4b8f-a74f-690e7ca8d95b">
-	<skos:prefLabel>PSP_HS_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SCW_GEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f697355e-849a-4f11-a43a-c5c95271e620">
-	<skos:prefLabel>PSP_HS_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8552fb5-1fb4-49ee-8e27-1922476afaeb">
-	<skos:prefLabel>PSP_ST_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/80ea484a-e4b9-457c-8c90-626f55a7b2f7">
-	<skos:prefLabel>PSP_ST_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/24fc6601-38a7-4863-9719-46c64eb399e5">
-	<skos:prefLabel>PSP_ST_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/84246dc5-5f0c-44e3-8d9f-f630ec7e9cb2">
-	<skos:prefLabel>PSP_ST_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b8df5611-23e6-4b60-b146-b59b81655002">
-	<skos:prefLabel>PSP_WS_SSC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8edc820-5b7b-42dc-a6bb-a2ca9e472852">
-	<skos:prefLabel>PSP_WS_MGD</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/221fbb37-ae9b-43aa-916f-75cf49fb6c87">
-	<skos:prefLabel>PSP_WS_GEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/92f46acc-8c0a-4950-9172-448aafe9efc4">
-	<skos:prefLabel>PSP_WS_EEC</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
+	<skos:prefLabel>L1_SCW_EEC</skos:prefLabel>
+	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/d0a37de2-3ceb-5005-b734-d6d3fbb37287"/>
 </rdf:Description>
 
@@ -1634,37 +1375,31 @@
 <rdf:Description rdf:about="https://earth.esa.int/concept/9e6b5fad-6a75-417d-998b-4917c855d49b">
 	<skos:prefLabel>CHR_MO1_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/6864d06e-3b10-4f70-871f-4bc388a98904">
 	<skos:prefLabel>CHR_MO2_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/2dfa684e-dc2b-4efd-89df-7e27e07a88d4">
 	<skos:prefLabel>CHR_MO3_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/9a565ec9-b51e-4624-940f-3c78e536fda4">
 	<skos:prefLabel>CHR_MO4_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/809e4907-bd0d-48cc-a336-ed266feb0a7e">
 	<skos:prefLabel>CHR_MO5_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/047bc940-82df-438d-8114-f6c1064ddf57">
 	<skos:prefLabel>HRC_HRC_1P</skos:prefLabel>
 	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/7e566af4-d83e-46f4-8986-2f62c440409c"/>
-	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/b3979ff2-d27d-5f22-9e06-a18c5759d9a5"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ca3a2989-04e3-4baf-a0d8-f9cc844ff206">
@@ -2002,8 +1737,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
-	<skos:prefLabel>L1BOPT_MS_</skos:prefLabel>
-	<eos:filenameShape rdf:resource="https://earth.esa.int/concept/3595806d-8fee-4823-be5c-70c404156e5e"/>
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/96500f09-338c-5566-be55-0b234a0da96b"/>
 </rdf:Description>
 
@@ -2823,11 +2556,7 @@
 	<eos:productTypeOf rdf:resource="https://earth.esa.int/concept/8a6fb5f2-d099-5252-ad4d-c588d724612e"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6dd9aeea-24f9-46a0-b86e-63f8e81b9f58">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1a870ee6-1832-49d8-b579-71d897d175ac">
+<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -2859,83 +2588,59 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bdf1fab-5dc4-493d-8cb4-9728c98e7ddc">
+<rdf:Description rdf:about="https://earth.esa.int/concept/7bea324c-1941-4054-a2a8-e244ef505984">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/aacd608b-da6b-402d-8632-ad633ff7e83e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4ac010b7-1917-4425-9323-0055255611f2">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9292b0be-5c9f-4195-85c8-28334302c90c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c4c60837-48ee-41ab-83d1-c6f29188940d">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bba3157-9626-49d0-952e-040d05cc638a">
+<rdf:Description rdf:about="https://earth.esa.int/concept/af196f8a-c7f7-4177-8be4-925057b4e9fc">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/eca51b6f-6691-4df2-b480-4d6dd192c920">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b1492717-0cd9-46d6-882f-fb5eaaffbc03">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/de038188-33df-4191-bb39-a760f8b5bf6b">
+<rdf:Description rdf:about="https://earth.esa.int/concept/96dd2342-e32a-47b3-9bce-a372418090e2">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/55dda322-ff64-4725-859d-a5984693e416">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b9c3aa93-a014-44ac-b664-c5235e59d3e7">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9a2113f1-6e61-4f3c-99b3-bf1be442929c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/fe3f0199-deb7-4065-9d14-d133a79b16dd">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/dce0f1a5-b32a-413c-af57-0e4382bbaf2e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/ab36d766-4959-4269-a6e7-e11424fd410e">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/48557122-a9cd-40f0-a284-31a5724801e7">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4b7addff-23eb-47d2-a9f5-36654ec3146b">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/b25d4adc-9000-4b8f-acc9-0419f3eb5649">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c6cab09f-1424-4457-ba6d-cea91de4ea5f">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/61a48c74-db02-483b-b521-d3733c2f1be1">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b488ef84-0f4a-45bc-9b4c-c5a9f3f8b612">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/e3d0de58-9aa1-4155-8460-1ff193531c70">
+<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/fa5ae848-4311-45a6-96ec-f811529ba24b">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d3e4d233-8c30-4feb-8d80-812ac9b19d56">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12df105b-e8d9-42fa-a4d5-f1cd68ab124d">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0aa44dbc-ed1f-4e2f-ad4c-1194c60454de">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f4462496-3a87-4e01-9232-78e676819e61">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/804ea0f0-0bae-4c2b-81f4-3224240c4695">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1b9a060c-3e80-4a00-afef-4f637ff736cb">
+<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3115,10 +2820,6 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/6c43a98f-83c7-4c7f-8fab-7d97b16ffdd0">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
@@ -3144,10 +2845,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ead5bc04-2512-412d-9f3c-a44c63d8488a">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3203,11 +2900,7 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/c60b55c6-e434-4b30-b286-ac2d97a814f1">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2c94c588-a787-4067-a2b4-e96a4a954bb0">
+<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3216,10 +2909,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/0866cead-8250-4e51-b7a2-7a047e76388c">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8c37480b-6765-43be-b353-426a2a042618">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3232,10 +2921,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a58ca6ff-f68b-4ecd-8a0f-f1b98e4f36a9">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/479ba5ca-c157-4dea-9f17-cec255a27731">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3259,10 +2944,6 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/22a23747-2099-42f6-aa15-e6611a1652a0">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
@@ -3280,38 +2961,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f697355e-849a-4f11-a43a-c5c95271e620">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8552fb5-1fb4-49ee-8e27-1922476afaeb">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/80ea484a-e4b9-457c-8c90-626f55a7b2f7">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/24fc6601-38a7-4863-9719-46c64eb399e5">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/84246dc5-5f0c-44e3-8d9f-f630ec7e9cb2">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b8df5611-23e6-4b60-b146-b59b81655002">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8edc820-5b7b-42dc-a6bb-a2ca9e472852">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/221fbb37-ae9b-43aa-916f-75cf49fb6c87">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/92f46acc-8c0a-4950-9172-448aafe9efc4">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3572,10 +3221,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/82cf930c-d3bc-4492-9c98-196d68cc43d3">
-	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
@@ -3715,11 +3360,7 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6dd9aeea-24f9-46a0-b86e-63f8e81b9f58">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1a870ee6-1832-49d8-b579-71d897d175ac">
+<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -3751,83 +3392,59 @@
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bdf1fab-5dc4-493d-8cb4-9728c98e7ddc">
+<rdf:Description rdf:about="https://earth.esa.int/concept/7bea324c-1941-4054-a2a8-e244ef505984">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/aacd608b-da6b-402d-8632-ad633ff7e83e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4ac010b7-1917-4425-9323-0055255611f2">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9292b0be-5c9f-4195-85c8-28334302c90c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c4c60837-48ee-41ab-83d1-c6f29188940d">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bba3157-9626-49d0-952e-040d05cc638a">
+<rdf:Description rdf:about="https://earth.esa.int/concept/af196f8a-c7f7-4177-8be4-925057b4e9fc">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/eca51b6f-6691-4df2-b480-4d6dd192c920">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b1492717-0cd9-46d6-882f-fb5eaaffbc03">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/de038188-33df-4191-bb39-a760f8b5bf6b">
+<rdf:Description rdf:about="https://earth.esa.int/concept/96dd2342-e32a-47b3-9bce-a372418090e2">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/55dda322-ff64-4725-859d-a5984693e416">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b9c3aa93-a014-44ac-b664-c5235e59d3e7">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9a2113f1-6e61-4f3c-99b3-bf1be442929c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/fe3f0199-deb7-4065-9d14-d133a79b16dd">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/dce0f1a5-b32a-413c-af57-0e4382bbaf2e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/ab36d766-4959-4269-a6e7-e11424fd410e">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/48557122-a9cd-40f0-a284-31a5724801e7">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4b7addff-23eb-47d2-a9f5-36654ec3146b">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/b25d4adc-9000-4b8f-acc9-0419f3eb5649">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c6cab09f-1424-4457-ba6d-cea91de4ea5f">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/61a48c74-db02-483b-b521-d3733c2f1be1">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b488ef84-0f4a-45bc-9b4c-c5a9f3f8b612">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/e3d0de58-9aa1-4155-8460-1ff193531c70">
+<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/fa5ae848-4311-45a6-96ec-f811529ba24b">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d3e4d233-8c30-4feb-8d80-812ac9b19d56">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12df105b-e8d9-42fa-a4d5-f1cd68ab124d">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0aa44dbc-ed1f-4e2f-ad4c-1194c60454de">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f4462496-3a87-4e01-9232-78e676819e61">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/804ea0f0-0bae-4c2b-81f4-3224240c4695">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1b9a060c-3e80-4a00-afef-4f637ff736cb">
+<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4007,10 +3624,6 @@
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/6c43a98f-83c7-4c7f-8fab-7d97b16ffdd0">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
@@ -4036,10 +3649,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ead5bc04-2512-412d-9f3c-a44c63d8488a">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4095,11 +3704,7 @@
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/c60b55c6-e434-4b30-b286-ac2d97a814f1">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2c94c588-a787-4067-a2b4-e96a4a954bb0">
+<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4108,10 +3713,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/0866cead-8250-4e51-b7a2-7a047e76388c">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8c37480b-6765-43be-b353-426a2a042618">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4124,10 +3725,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a58ca6ff-f68b-4ecd-8a0f-f1b98e4f36a9">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/479ba5ca-c157-4dea-9f17-cec255a27731">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4151,10 +3748,6 @@
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
 <rdf:Description rdf:about="https://earth.esa.int/concept/22a23747-2099-42f6-aa15-e6611a1652a0">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
@@ -4172,38 +3765,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f697355e-849a-4f11-a43a-c5c95271e620">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8552fb5-1fb4-49ee-8e27-1922476afaeb">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/80ea484a-e4b9-457c-8c90-626f55a7b2f7">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/24fc6601-38a7-4863-9719-46c64eb399e5">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/84246dc5-5f0c-44e3-8d9f-f630ec7e9cb2">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b8df5611-23e6-4b60-b146-b59b81655002">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8edc820-5b7b-42dc-a6bb-a2ca9e472852">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/221fbb37-ae9b-43aa-916f-75cf49fb6c87">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/92f46acc-8c0a-4950-9172-448aafe9efc4">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4464,10 +4025,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/82cf930c-d3bc-4492-9c98-196d68cc43d3">
-	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<skos:inScheme rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4609,18 +4166,10 @@
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6dd9aeea-24f9-46a0-b86e-63f8e81b9f58"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/6dd9aeea-24f9-46a0-b86e-63f8e81b9f58">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1a870ee6-1832-49d8-b579-71d897d175ac"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1a870ee6-1832-49d8-b579-71d897d175ac">
+<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -4681,162 +4230,114 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/4bdf1fab-5dc4-493d-8cb4-9728c98e7ddc"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/7bea324c-1941-4054-a2a8-e244ef505984"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bdf1fab-5dc4-493d-8cb4-9728c98e7ddc">
+<rdf:Description rdf:about="https://earth.esa.int/concept/7bea324c-1941-4054-a2a8-e244ef505984">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/aacd608b-da6b-402d-8632-ad633ff7e83e"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/4ac010b7-1917-4425-9323-0055255611f2"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/aacd608b-da6b-402d-8632-ad633ff7e83e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4ac010b7-1917-4425-9323-0055255611f2">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/9292b0be-5c9f-4195-85c8-28334302c90c"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/c4c60837-48ee-41ab-83d1-c6f29188940d"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9292b0be-5c9f-4195-85c8-28334302c90c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c4c60837-48ee-41ab-83d1-c6f29188940d">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/4bba3157-9626-49d0-952e-040d05cc638a"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/af196f8a-c7f7-4177-8be4-925057b4e9fc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/4bba3157-9626-49d0-952e-040d05cc638a">
+<rdf:Description rdf:about="https://earth.esa.int/concept/af196f8a-c7f7-4177-8be4-925057b4e9fc">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/eca51b6f-6691-4df2-b480-4d6dd192c920"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b1492717-0cd9-46d6-882f-fb5eaaffbc03"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/eca51b6f-6691-4df2-b480-4d6dd192c920">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b1492717-0cd9-46d6-882f-fb5eaaffbc03">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/de038188-33df-4191-bb39-a760f8b5bf6b"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/96dd2342-e32a-47b3-9bce-a372418090e2"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/de038188-33df-4191-bb39-a760f8b5bf6b">
+<rdf:Description rdf:about="https://earth.esa.int/concept/96dd2342-e32a-47b3-9bce-a372418090e2">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/55dda322-ff64-4725-859d-a5984693e416"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b9c3aa93-a014-44ac-b664-c5235e59d3e7"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/55dda322-ff64-4725-859d-a5984693e416">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b9c3aa93-a014-44ac-b664-c5235e59d3e7">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/9a2113f1-6e61-4f3c-99b3-bf1be442929c"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/fe3f0199-deb7-4065-9d14-d133a79b16dd"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/9a2113f1-6e61-4f3c-99b3-bf1be442929c">
+<rdf:Description rdf:about="https://earth.esa.int/concept/fe3f0199-deb7-4065-9d14-d133a79b16dd">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/dce0f1a5-b32a-413c-af57-0e4382bbaf2e"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/ab36d766-4959-4269-a6e7-e11424fd410e"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/dce0f1a5-b32a-413c-af57-0e4382bbaf2e">
+<rdf:Description rdf:about="https://earth.esa.int/concept/ab36d766-4959-4269-a6e7-e11424fd410e">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/48557122-a9cd-40f0-a284-31a5724801e7"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/4b7addff-23eb-47d2-a9f5-36654ec3146b"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/48557122-a9cd-40f0-a284-31a5724801e7">
+<rdf:Description rdf:about="https://earth.esa.int/concept/4b7addff-23eb-47d2-a9f5-36654ec3146b">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b25d4adc-9000-4b8f-acc9-0419f3eb5649"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/c6cab09f-1424-4457-ba6d-cea91de4ea5f"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/b25d4adc-9000-4b8f-acc9-0419f3eb5649">
+<rdf:Description rdf:about="https://earth.esa.int/concept/c6cab09f-1424-4457-ba6d-cea91de4ea5f">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/61a48c74-db02-483b-b521-d3733c2f1be1"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b488ef84-0f4a-45bc-9b4c-c5a9f3f8b612"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/61a48c74-db02-483b-b521-d3733c2f1be1">
+<rdf:Description rdf:about="https://earth.esa.int/concept/b488ef84-0f4a-45bc-9b4c-c5a9f3f8b612">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/e3d0de58-9aa1-4155-8460-1ff193531c70"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/e3d0de58-9aa1-4155-8460-1ff193531c70">
+<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/fa5ae848-4311-45a6-96ec-f811529ba24b"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/fa5ae848-4311-45a6-96ec-f811529ba24b">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/d3e4d233-8c30-4feb-8d80-812ac9b19d56"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/d3e4d233-8c30-4feb-8d80-812ac9b19d56">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/12df105b-e8d9-42fa-a4d5-f1cd68ab124d"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/12df105b-e8d9-42fa-a4d5-f1cd68ab124d">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/0aa44dbc-ed1f-4e2f-ad4c-1194c60454de"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/0aa44dbc-ed1f-4e2f-ad4c-1194c60454de">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/f4462496-3a87-4e01-9232-78e676819e61"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/f4462496-3a87-4e01-9232-78e676819e61">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/804ea0f0-0bae-4c2b-81f4-3224240c4695"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/804ea0f0-0bae-4c2b-81f4-3224240c4695">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/1b9a060c-3e80-4a00-afef-4f637ff736cb"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/1b9a060c-3e80-4a00-afef-4f637ff736cb">
+<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -5193,14 +4694,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/44352ec6-7674-40e8-b93c-7cf68b1d17e0">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/6c43a98f-83c7-4c7f-8fab-7d97b16ffdd0"/>
 </rdf:Description>
 
@@ -5253,14 +4746,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/ead5bc04-2512-412d-9f3c-a44c63d8488a">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/653ca95e-1ae3-410d-98f9-2d52b81a056b">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -5369,18 +4854,10 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/c60b55c6-e434-4b30-b286-ac2d97a814f1"/>
+	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://earth.esa.int/concept/c60b55c6-e434-4b30-b286-ac2d97a814f1">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/2c94c588-a787-4067-a2b4-e96a4a954bb0"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/2c94c588-a787-4067-a2b4-e96a4a954bb0">
+<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -5397,14 +4874,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/0866cead-8250-4e51-b7a2-7a047e76388c">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/8c37480b-6765-43be-b353-426a2a042618"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8c37480b-6765-43be-b353-426a2a042618">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -5429,14 +4898,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/a58ca6ff-f68b-4ecd-8a0f-f1b98e4f36a9">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/479ba5ca-c157-4dea-9f17-cec255a27731"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/479ba5ca-c157-4dea-9f17-cec255a27731">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -5481,14 +4942,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/8f3b14de-bde5-4277-9df4-1198b470eb7a">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
 	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/22a23747-2099-42f6-aa15-e6611a1652a0"/>
 </rdf:Description>
 
@@ -5525,70 +4978,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/f697355e-849a-4f11-a43a-c5c95271e620">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/e8552fb5-1fb4-49ee-8e27-1922476afaeb"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8552fb5-1fb4-49ee-8e27-1922476afaeb">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/80ea484a-e4b9-457c-8c90-626f55a7b2f7"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/80ea484a-e4b9-457c-8c90-626f55a7b2f7">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/24fc6601-38a7-4863-9719-46c64eb399e5"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/24fc6601-38a7-4863-9719-46c64eb399e5">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/84246dc5-5f0c-44e3-8d9f-f630ec7e9cb2"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/84246dc5-5f0c-44e3-8d9f-f630ec7e9cb2">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/b8df5611-23e6-4b60-b146-b59b81655002"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/b8df5611-23e6-4b60-b146-b59b81655002">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/e8edc820-5b7b-42dc-a6bb-a2ca9e472852"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/e8edc820-5b7b-42dc-a6bb-a2ca9e472852">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/221fbb37-ae9b-43aa-916f-75cf49fb6c87"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/221fbb37-ae9b-43aa-916f-75cf49fb6c87">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/92f46acc-8c0a-4950-9172-448aafe9efc4"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/92f46acc-8c0a-4950-9172-448aafe9efc4">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
@@ -6109,14 +5498,6 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://earth.esa.int/concept/82cf930c-d3bc-4492-9c98-196d68cc43d3">
-	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concepts/concept_scheme/producttype">
-	<skos:hasTopConcept rdf:resource="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df"/>
-</rdf:Description>
-
-<rdf:Description rdf:about="https://earth.esa.int/concept/62fb7960-e9b2-4dee-939f-25dba00321df">
 	<skos:topConceptOf rdf:resource="https://earth.esa.int/concepts/concept_scheme/producttype"/>
 </rdf:Description>
 
