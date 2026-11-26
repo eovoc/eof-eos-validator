@@ -47,7 +47,7 @@
           {
             "beginningDateTime": "2016-05-01T14:46:06.806Z",
             "endingDateTime": "2016-05-01T14:46:06.806Z",
-            "operationalMode": "STEREO",
+            "operationalMode": "BM",
             "resolution": 0.5,
             "acquisitionType": "NOMINAL",
             "wavelengths": [

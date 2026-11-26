@@ -511,7 +511,7 @@
 							"$ref": "#/definitions/AcquisitionAngles"
 						},
 						"operationalMode": {
-							"type": "string"
+							"$ref": "#/definitions/thesaurus/operational-mode"
 						},
 						"swathIdentifier": {
 							"type": "string"
