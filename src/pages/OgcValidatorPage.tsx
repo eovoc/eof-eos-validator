@@ -64,7 +64,7 @@ export default function OgcValidatorPage() {
       "- [EOPF-EOS Metadata Schema Viewer](https://eovoc.github.io/schema-viewer?schema=https%3A%2F%2Feovoc.github.io%2Feof-eos-validator%2Fschemas%2Feof-eos-schema-strict.json)\n" +
       // The schemas are loaded/built asynchronously: their links appear once they are ready.
       (defaultSchemaUrl ? `- [EOPF-EOS Metadata Schema (default)](${defaultSchemaUrl})\n` : "") +
-      (customSchemaUrl ? `- [EOF-EOS Metadata Schema (custom)](${customSchemaUrl})\n` : "") +
+      (customSchemaUrl ? `- [EOPF-EOS Metadata Schema (custom)](${customSchemaUrl})\n` : "") +
       `- [ISO 19115-4 Data Quality Metadata Schema (dqc.json)](${process.env.PUBLIC_URL}/schemas/dqc.json)\n` +
       `- [ISO 19115-4 Resource Lineage Metadata Schema (mdj.json)](${process.env.PUBLIC_URL}/schemas/mdj.json)`,
     [customSchemaUrl,defaultSchemaUrl]);
