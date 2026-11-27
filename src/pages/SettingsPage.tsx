@@ -1,14 +1,15 @@
 import {useCallback, useContext, useRef, useState} from "react";
 import type {JSX} from "react";
 import type {IconBaseProps} from "react-icons";
-import {FiDownload, FiUpload, FiArrowLeft, FiArrowRight} from "react-icons/fi";
+import {FiDownload, FiUpload, FiArrowLeft, FiArrowRight, FiRefreshCw} from "react-icons/fi";
 import {SettingsFileContext} from "../App";
 import {Settings, validate} from "../types/Settings";
-import {sortAscending} from "../utils/settingsUtil";
+import {getDefaultSettings, sortAscending} from "../utils/settingsUtil";
 
 // TS 4.9 rejects components typed as returning ReactNode (react-icons + @types/react 19),
 // so narrow the icon types to return JSX.Element.
 type Icon = (props: IconBaseProps) => JSX.Element;
+const ResetIcon = FiRefreshCw as Icon;
 const ImportIcon = FiDownload as Icon;
 const ExportIcon = FiUpload as Icon;
 const MoveLeftIcon = FiArrowLeft as Icon;
@@ -82,9 +83,19 @@ export default function SettingsPage() {
       : { ...settings, requiredProperties: nextFrom, optionalProperties: nextTarget });
   }, [settings, setSettings]);
 
+  const reset= useCallback(()=>{
+
+  getDefaultSettings().then((defaults) => setSettings(defaults))
+        .catch((err) => console.error("Failed to load default settings", err));
+  },[settings, setSettings]);
+
   return (
     <>
       <div className="button-grid">
+        <button className="primary-btn" onClick={()=>reset()}>
+          <ResetIcon className="btn-icon" aria-hidden="true" />
+          Reset
+        </button>
         <button className="primary-btn" onClick={() => fileInputRef.current?.click()}>
           <ImportIcon className="btn-icon" aria-hidden="true" />
           Import
